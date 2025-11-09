@@ -22,7 +22,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useQuestionProgress } from "@/hooks/use-question-progress";
 import { categories, difficulties, questionTopics, recommendations } from "@/data/questions";
 import {
@@ -35,7 +34,6 @@ import { cn } from "@/lib/utils";
 
 const ALL_CATEGORY = "全部领域";
 const ALL_DIFFICULTIES: Difficulty | "全部难度" = "全部难度";
-type DetailTab = "markdown" | "highlights" | "plan";
 const ALL_STATUS = "全部状态";
 const statusOptions = [ALL_STATUS, "已完成", "待复习", "已标星"] as const;
 type StatusFilter = (typeof statusOptions)[number];
@@ -52,7 +50,6 @@ function App() {
   const [category, setCategory] = useState<string>(ALL_CATEGORY);
   const [difficulty, setDifficulty] = useState<Difficulty | "全部难度">(ALL_DIFFICULTIES);
   const [activeId, setActiveId] = useState<string>(questionTopics[0]?.id ?? "");
-  const [detailTab, setDetailTab] = useState<DetailTab>("markdown");
   const [statusFilter, setStatusFilter] = useState<StatusFilter>(ALL_STATUS);
 
   const { getStatus, toggleCompleted, toggleReview, toggleStar, clearStatus } =
@@ -177,10 +174,6 @@ function App() {
   const activeStatus = activeTopic
     ? statusMap.get(activeTopic.id) ?? defaultQuestionStatus
     : defaultQuestionStatus;
-
-  useEffect(() => {
-    setDetailTab("markdown");
-  }, [activeTopic?.id]);
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-background">
@@ -540,54 +533,9 @@ function App() {
 
                 <Card className="shadow-xs">
                   <CardContent className="pt-4 pb-4">
-                    <Tabs
-                      value={detailTab}
-                      onValueChange={(value) => {
-                        if (value === "markdown" || value === "highlights" || value === "plan") {
-                          setDetailTab(value);
-                        }
-                      }}
-                    >
-                      <TabsList className="inline-flex max-w-full flex-wrap justify-start gap-2 bg-muted/40 px-2 py-1.5 rounded-lg">
-                        <TabsTrigger value="markdown">题目详解</TabsTrigger>
-                        <TabsTrigger value="highlights">速记要点</TabsTrigger>
-                        <TabsTrigger value="plan">复盘 checklist</TabsTrigger>
-                      </TabsList>
-                      <TabsContent value="markdown" className="mt-4">
-                        <QuestionMarkdown content={activeTopic.content} />
-                      </TabsContent>
-                      <TabsContent value="highlights" className="mt-4">
-                        <div className="rounded-xl border border-dashed border-muted-foreground/30 bg-muted/40 p-5 text-sm leading-relaxed">
-                          <h3 className="mb-3 text-base font-semibold text-foreground">
-                            面试官期望听到的关键点
-                          </h3>
-                          <ul className="grid list-disc gap-2 pl-5 text-muted-foreground">
-                            {activeTopic.keywords.map((item) => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                          <p className="mt-4 rounded-lg border border-transparent bg-primary/5 p-3 text-xs text-primary">
-                            建议：将答题结构拆分为“场景-挑战-解决方案-收益”，并准备至少一个实际项目案例。
-                          </p>
-                        </div>
-                      </TabsContent>
-                      <TabsContent value="plan" className="mt-4">
-                        <div className="rounded-xl bg-card p-5 text-sm leading-relaxed shadow-inner">
-                          <ol className="grid list-decimal gap-3 pl-5 text-foreground/80">
-                            <li>快速复述题目背景，明确面试官想考察的能力。</li>
-                            <li>结合 Markdown 详解列出 3 个核心观点，每个观点配一个真实项目案例。</li>
-                            <li>总结复盘时记录遗忘的知识点，加入明日练习清单。</li>
-                          </ol>
-                          <div className="mt-4 flex flex-wrap gap-2 text-xs text-muted-foreground">
-                            {activeTopic.tags.map((tag) => (
-                              <Badge key={tag} variant="secondary">
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-                      </TabsContent>
-                    </Tabs>
+                    <div className="rounded-xl border border-dashed border-muted-foreground/30 bg-muted/40 p-6 text-sm leading-relaxed shadow-sm">
+                      <QuestionMarkdown content={activeTopic.content} />
+                    </div>
                   </CardContent>
                 </Card>
               </>
