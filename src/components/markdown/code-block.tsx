@@ -1,6 +1,12 @@
+/**
+ * Author: Libra
+ * Date: 2025-11-09 15:07:44
+ * Description:
+ * LastEditors: Libra
+ */
 import { useMemo, useState } from "react";
 import hljs from "highlight.js";
-import "highlight.js/styles/github.css";
+import "highlight.js/styles/atom-one-dark.css";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -11,7 +17,11 @@ interface CodeBlockProps {
   className?: string;
 }
 
-export function CodeBlock({ code, language = "tsx", className }: CodeBlockProps) {
+export function CodeBlock({
+  code,
+  language = "tsx",
+  className,
+}: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
 
   const highlighted = useMemo(() => {
@@ -38,7 +48,7 @@ export function CodeBlock({ code, language = "tsx", className }: CodeBlockProps)
     <div
       className={cn(
         "group relative overflow-hidden rounded-xl border border-border/60 bg-background/80 shadow-sm",
-        className,
+        className
       )}
     >
       <div className="flex items-center justify-between border-b border-border/60 bg-muted/60 px-4 py-2 text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
@@ -62,5 +72,3 @@ export function CodeBlock({ code, language = "tsx", className }: CodeBlockProps)
     </div>
   );
 }
-
-

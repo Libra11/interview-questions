@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 
 import { QuestionMarkdown } from "@/components/markdown/question-markdown";
+import { QuestionList } from "@/components/question-list";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -22,6 +23,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useQuestionProgress } from "@/hooks/use-question-progress";
 import { categories, difficulties, questionTopics, recommendations } from "@/data/questions";
 import {
@@ -45,12 +53,37 @@ const toggleButtonBaseClass =
 const statusBadgeBaseClass =
   "flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium";
 
+const difficultyWeight: Record<Difficulty, number> = {
+  入门: 1,
+  中级: 2,
+  高级: 3,
+};
+
+type SortOption =
+  | "default"
+  | "updated-desc"
+  | "updated-asc"
+  | "title-asc"
+  | "difficulty-desc"
+  | "difficulty-asc";
+
+const sortOptionItems: { value: SortOption; label: string }[] = [
+  { value: "default", label: "默认排序" },
+  { value: "updated-desc", label: "按更新时间（新→旧）" },
+  { value: "updated-asc", label: "按更新时间（旧→新）" },
+  { value: "title-asc", label: "按标题（A→Z）" },
+  { value: "difficulty-desc", label: "按难度（高→低）" },
+  { value: "difficulty-asc", label: "按难度（低→高）" },
+];
+
 function App() {
   const [keyword, setKeyword] = useState("");
   const [category, setCategory] = useState<string>(ALL_CATEGORY);
   const [difficulty, setDifficulty] = useState<Difficulty | "全部难度">(ALL_DIFFICULTIES);
   const [activeId, setActiveId] = useState<string>(questionTopics[0]?.id ?? "");
   const [statusFilter, setStatusFilter] = useState<StatusFilter>(ALL_STATUS);
+  const [sortOption, setSortOption] = useState<SortOption>("default");
+  const [listDensity, setListDensity] = useState<"comfortable" | "compact">("comfortable");
 
   const { getStatus, toggleCompleted, toggleReview, toggleStar, clearStatus } =
     useQuestionProgress();
@@ -158,18 +191,53 @@ function App() {
     });
   }, [keyword, category, difficulty, statusFilter, statusMap]);
 
+  const sortedTopics = useMemo(() => {
+    if (sortOption === "default") {
+      return filteredTopics;
+    }
+    const sorted = [...filteredTopics];
+    switch (sortOption) {
+      case "updated-desc":
+        sorted.sort(
+          (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
+        );
+        break;
+      case "updated-asc":
+        sorted.sort(
+          (a, b) => new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime(),
+        );
+        break;
+      case "title-asc":
+        sorted.sort((a, b) => a.title.localeCompare(b.title, "zh-CN"));
+        break;
+      case "difficulty-desc":
+        sorted.sort(
+          (a, b) => difficultyWeight[b.difficulty] - difficultyWeight[a.difficulty],
+        );
+        break;
+      case "difficulty-asc":
+        sorted.sort(
+          (a, b) => difficultyWeight[a.difficulty] - difficultyWeight[b.difficulty],
+        );
+        break;
+      default:
+        break;
+    }
+    return sorted;
+  }, [filteredTopics, sortOption]);
+
   useEffect(() => {
-    if (!filteredTopics.length) {
+    if (!sortedTopics.length) {
       setActiveId("");
       return;
     }
-    if (!filteredTopics.some((topic) => topic.id === activeId)) {
-      setActiveId(filteredTopics[0].id);
+    if (!sortedTopics.some((topic) => topic.id === activeId)) {
+      setActiveId(sortedTopics[0].id);
     }
-  }, [filteredTopics, activeId]);
+  }, [sortedTopics, activeId]);
 
   const activeTopic: QuestionTopic | null =
-    filteredTopics.find((topic) => topic.id === activeId) ?? filteredTopics[0] ?? null;
+    sortedTopics.find((topic) => topic.id === activeId) ?? sortedTopics[0] ?? null;
 
   const activeStatus = activeTopic
     ? statusMap.get(activeTopic.id) ?? defaultQuestionStatus
@@ -332,71 +400,65 @@ function App() {
             </Card>
 
             <Card className="shadow-xs">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold">
-                  题库列表
-                  <span className="text-muted-foreground ml-2 text-sm font-normal">
-                    {filteredTopics.length} 条结果
-                  </span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col gap-2">
-                {filteredTopics.length === 0 ? (
-                  <div className="rounded-lg border border-dashed p-6 text-center text-sm text-muted-foreground">
-                    暂无匹配的题目，请尝试调整筛选条件。
+              <CardHeader className="space-y-4">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <CardTitle className="text-lg font-semibold">
+                      题库列表
+                      <span className="text-muted-foreground ml-2 text-sm font-normal">
+                        {sortedTopics.length} 条结果
+                      </span>
+                    </CardTitle>
+                    <CardDescription className="text-sm text-muted-foreground">
+                      根据需要调整排序与密度，虚拟滚动确保千级题目依然流畅。
+                    </CardDescription>
                   </div>
-                ) : (
-                  filteredTopics.map((topic) => {
-                    const status = statusMap.get(topic.id) ?? defaultQuestionStatus;
-                    const hasStatus =
-                      status.completed || status.review || status.starred;
-
-                    return (
-                      <button
-                        key={topic.id}
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Select value={sortOption} onValueChange={(value: SortOption) => setSortOption(value)}>
+                      <SelectTrigger className="w-[180px] text-xs sm:text-sm">
+                        <SelectValue placeholder="选择排序" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {sortOptionItems.map((item) => (
+                          <SelectItem key={item.value} value={item.value}>
+                            {item.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <div className="inline-flex items-center gap-1 rounded-full border border-border/80 bg-muted/40 p-1 shadow-inner">
+                      <Button
                         type="button"
-                        onClick={() => setActiveId(topic.id)}
-                        className={cn(
-                          "rounded-xl border bg-card px-4 py-3 text-left transition-all hover:border-primary/40 hover:shadow-sm",
-                          activeTopic?.id === topic.id &&
-                            "border-primary/60 bg-primary/5 shadow-md backdrop-blur",
-                        )}
+                        size="sm"
+                        variant={listDensity === "comfortable" ? "default" : "ghost"}
+                        className="h-7 px-3 text-xs"
+                        onClick={() => setListDensity("comfortable")}
                       >
-                        <div className="flex flex-wrap items-center justify-between gap-2">
-                          <p className="text-sm font-medium text-foreground">{topic.title}</p>
-                          <Badge variant="secondary" className="text-[11px]">
-                            {topic.difficulty}
-                          </Badge>
-                        </div>
-                        <p className="text-muted-foreground mt-1 line-clamp-2 text-xs leading-relaxed">
-                          {topic.summary}
-                        </p>
-                        {hasStatus && (
-                          <div className="mt-2 flex flex-wrap gap-1.5">
-                            {status.review && (
-                              <span className={STATUS_STYLES.review.className}>
-                                <STATUS_STYLES.review.icon className="size-3" />
-                                {STATUS_STYLES.review.label}
-                              </span>
-                            )}
-                            {status.starred && (
-                              <span className={STATUS_STYLES.starred.className}>
-                                <STATUS_STYLES.starred.icon className="size-3" />
-                                {STATUS_STYLES.starred.label}
-                              </span>
-                            )}
-                            {status.completed && (
-                              <span className={STATUS_STYLES.completed.className}>
-                                <STATUS_STYLES.completed.icon className="size-3" />
-                                {STATUS_STYLES.completed.label}
-                              </span>
-                            )}
-                          </div>
-                        )}
-                      </button>
-                    );
-                  })
-                )}
+                        舒适
+                      </Button>
+                      <Button
+                        type="button"
+                        size="sm"
+                        variant={listDensity === "compact" ? "default" : "ghost"}
+                        className="h-7 px-3 text-xs"
+                        onClick={() => setListDensity("compact")}
+                      >
+                        紧凑
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <QuestionList
+                  topics={sortedTopics}
+                  activeId={activeTopic?.id ?? ""}
+                  onSelect={(id) => setActiveId(id)}
+                  statusMap={statusMap}
+                  statusStyles={STATUS_STYLES}
+                  density={listDensity}
+                  emptyPlaceholder="暂无匹配的题目，请尝试调整筛选条件。"
+                />
               </CardContent>
             </Card>
 
