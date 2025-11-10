@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  ArrowLeft,
+  ArrowRight,
   BookOpenCheck,
   CheckCircle2,
   Clock3,
@@ -239,6 +241,25 @@ function App() {
   const activeTopic: QuestionTopic | null =
     sortedTopics.find((topic) => topic.id === activeId) ?? sortedTopics[0] ?? null;
 
+  const activeIndex = activeTopic
+    ? sortedTopics.findIndex((topic) => topic.id === activeTopic.id)
+    : -1;
+  const previousTopic =
+    activeIndex > 0 ? sortedTopics[activeIndex - 1] : null;
+  const nextTopic =
+    activeIndex >= 0 && activeIndex < sortedTopics.length - 1
+      ? sortedTopics[activeIndex + 1]
+      : null;
+
+  const handleSelectTopic = (id: string) => {
+    setActiveId(id);
+    if (typeof window !== "undefined") {
+      window.requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+  };
+
   const activeStatus = activeTopic
     ? statusMap.get(activeTopic.id) ?? defaultQuestionStatus
     : defaultQuestionStatus;
@@ -453,7 +474,7 @@ function App() {
                 <QuestionList
                   topics={sortedTopics}
                   activeId={activeTopic?.id ?? ""}
-                  onSelect={(id) => setActiveId(id)}
+                  onSelect={handleSelectTopic}
                   statusMap={statusMap}
                   statusStyles={STATUS_STYLES}
                   density={listDensity}
@@ -597,6 +618,57 @@ function App() {
                   <CardContent className="pt-4 pb-4">
                     <div className="rounded-xl border border-dashed border-muted-foreground/30 bg-muted/40 p-6 text-sm leading-relaxed shadow-sm">
                       <QuestionMarkdown content={activeTopic.content} />
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card className="overflow-hidden border border-border/60 shadow-xs">
+                  <CardContent className="space-y-3 bg-gradient-to-br from-background to-background/40 px-4 py-5">
+                    <div className="flex items-center justify-between text-xs text-muted-foreground">
+                      <span>第 {activeIndex + 1} / {sortedTopics.length} 题</span>
+                      <span>切换题目保持思路连贯</span>
+                    </div>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        onClick={() => previousTopic && handleSelectTopic(previousTopic.id)}
+                        disabled={!previousTopic}
+                        aria-label="上一题"
+                        className={cn(
+                          "group h-auto justify-between gap-3 rounded-xl border border-border/60 bg-background/80 px-4 py-3 text-left text-base shadow-sm transition hover:border-primary/50 hover:bg-primary/10 hover:shadow-md",
+                          !previousTopic && "opacity-60",
+                        )}
+                      >
+                        <ArrowLeft className="size-4 shrink-0 text-muted-foreground transition group-hover:text-primary" />
+                        <div className="flex flex-col">
+                          <span className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground transition group-hover:text-primary/80">
+                            上一题
+                          </span>
+                          <span className="text-sm font-medium leading-tight text-foreground transition group-hover:text-primary line-clamp-1">
+                            {previousTopic ? previousTopic.title : "已经是第一题"}
+                          </span>
+                        </div>
+                      </Button>
+                      <Button
+                        type="button"
+                        onClick={() => nextTopic && handleSelectTopic(nextTopic.id)}
+                        disabled={!nextTopic}
+                        aria-label="下一题"
+                        className={cn(
+                          "group h-auto justify-between gap-3 rounded-xl border border-border/60 bg-background/80 px-4 py-3 text-right text-base shadow-sm transition hover:border-primary/50 hover:bg-primary/10 hover:shadow-md",
+                          !nextTopic && "opacity-60",
+                        )}
+                      >
+                        <div className="flex flex-col items-end">
+                          <span className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground transition group-hover:text-primary/80">
+                            下一题
+                          </span>
+                          <span className="text-sm font-medium leading-tight text-foreground transition group-hover:text-primary line-clamp-1">
+                            {nextTopic ? nextTopic.title : "已经是最后一题"}
+                          </span>
+                        </div>
+                        <ArrowRight className="size-4 shrink-0 text-muted-foreground transition group-hover:text-primary" />
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>

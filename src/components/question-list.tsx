@@ -120,7 +120,12 @@ export function QuestionList({
           return (
             <button
               key={virtualRow.key}
-              ref={(node) => virtualizer.measureElement(node)}
+              ref={(node) => {
+                if (node) {
+                  virtualizer.measureElement(node);
+                }
+              }}
+              data-index={virtualRow.index}
               type="button"
               onClick={() => onSelect(topic.id)}
               className={cn(
