@@ -125,31 +125,6 @@ const copy2 = Object.assign({}, obj1, obj2); // 支持合并多个源对象
 // ✅ 支持合并多个对象
 // ✅ 返回目标对象（可链式调用）
 // ❌ 只拷贝自有可枚举属性
-// ❌ 触发 setter（与 ... 不同）
-```
-
-**`Object.assign` 与 `...` 的差异**
-
-```javascript
-const obj = {
-  _value: 0,
-  get value() {
-    console.log('getter 被调用');
-    return this._value;
-  },
-  set value(val) {
-    console.log('setter 被调用');
-    this._value = val;
-  }
-};
-
-// Object.assign 会触发 getter/setter
-const copy1 = Object.assign({}, obj);
-// 输出: getter 被调用
-
-// ... 不会触发 getter/setter（直接拷贝属性描述符）
-const copy2 = { ...obj };
-// 不输出
 ```
 
 ### 方式 3：数组的 `slice()` 和 `concat()`
@@ -300,12 +275,12 @@ function deepClone(obj) {
   if (obj === null || typeof obj !== 'object') {
     return obj;
   }
-  
+
   // 数组
   if (Array.isArray(obj)) {
     return obj.map(item => deepClone(item));
   }
-  
+
   // 对象
   const cloned = {};
   for (const key in obj) {
@@ -331,22 +306,22 @@ function deepClone(obj, cache = new WeakMap()) {
   if (obj === null || typeof obj !== 'object') {
     return obj;
   }
-  
+
   // 处理循环引用
   if (cache.has(obj)) {
     return cache.get(obj);
   }
-  
+
   // Date
   if (obj instanceof Date) {
     return new Date(obj);
   }
-  
+
   // RegExp
   if (obj instanceof RegExp) {
     return new RegExp(obj.source, obj.flags);
   }
-  
+
   // Map
   if (obj instanceof Map) {
     const cloned = new Map();
@@ -356,7 +331,7 @@ function deepClone(obj, cache = new WeakMap()) {
     });
     return cloned;
   }
-  
+
   // Set
   if (obj instanceof Set) {
     const cloned = new Set();
@@ -366,7 +341,7 @@ function deepClone(obj, cache = new WeakMap()) {
     });
     return cloned;
   }
-  
+
   // 数组
   if (Array.isArray(obj)) {
     const cloned = [];
@@ -376,16 +351,16 @@ function deepClone(obj, cache = new WeakMap()) {
     });
     return cloned;
   }
-  
+
   // 普通对象
   const cloned = Object.create(Object.getPrototypeOf(obj));
   cache.set(obj, cloned);
-  
+
   // 拷贝 Symbol 键
   Reflect.ownKeys(obj).forEach(key => {
     cloned[key] = deepClone(obj[key], cache);
   });
-  
+
   return cloned;
 }
 
@@ -452,23 +427,23 @@ function deepClone(obj, cache = new WeakMap()) {
   if (obj === null || typeof obj !== 'object') {
     return obj;
   }
-  
+
   // 如果已经拷贝过，直接返回缓存的引用
   if (cache.has(obj)) {
     return cache.get(obj);
   }
-  
+
   // 创建新对象并存入缓存
   const cloned = Array.isArray(obj) ? [] : {};
   cache.set(obj, cloned);
-  
+
   // 递归拷贝属性
   for (const key in obj) {
     if (obj.hasOwnProperty(key)) {
       cloned[key] = deepClone(obj[key], cache);
     }
   }
-  
+
   return cloned;
 }
 
@@ -547,126 +522,6 @@ const modern = structuredClone(obj); // 现代浏览器
 const complex = _.cloneDeep(obj);    // 或手动实现
 ```
 
-### 实际场景示例
-
-**场景 1：状态管理（Redux/Vuex）**
-
-```javascript
-// 通常只需浅拷贝（状态更新不应该深度嵌套）
-const newState = {
-  ...state,
-  user: {
-    ...state.user,
-    name: 'New Name'
-  }
-};
-
-// 避免深拷贝整个 store（性能开销大）
-```
-
-**场景 2：表单数据备份**
-
-```javascript
-// 使用 structuredClone 或 JSON 序列化
-const formData = {
-  name: 'Alice',
-  birthday: new Date('1990-01-01'),
-  hobbies: ['reading', 'coding']
-};
-
-// 方案 A：structuredClone（推荐）
-const backup = structuredClone(formData);
-
-// 方案 B：JSON 序列化（日期会变成字符串）
-const backup2 = JSON.parse(JSON.stringify(formData));
-backup2.birthday = new Date(backup2.birthday); // 需要手动转换
-```
-
-**场景 3：配置对象合并**
-
-```javascript
-// 使用递归深合并（不是拷贝）
-function deepMerge(target, source) {
-  for (const key in source) {
-    if (source[key] && typeof source[key] === 'object') {
-      target[key] = target[key] || {};
-      deepMerge(target[key], source[key]);
-    } else {
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-
-const defaultConfig = { a: 1, b: { c: 2 } };
-const userConfig = { b: { d: 3 } };
-const merged = deepMerge({ ...defaultConfig }, userConfig);
-// { a: 1, b: { c: 2, d: 3 } }
-```
-
-**场景 4：大数据列表拷贝**
-
-```javascript
-// 避免不必要的深拷贝
-const largeList = Array.from({ length: 10000 }, (_, i) => ({
-  id: i,
-  data: { /* 复杂数据 */ }
-}));
-
-// ❌ 慢：深拷贝整个列表
-const copy1 = structuredClone(largeList); // 耗时可能 > 100ms
-
-// ✅ 快：只拷贝需要修改的项
-const copy2 = largeList.map(item => 
-  item.id === targetId ? { ...item, updated: true } : item
-);
-```
-
-### 性能基准测试
-
-```javascript
-const testData = {
-  string: 'test',
-  number: 123,
-  nested: { deep: { value: [1, 2, 3] } },
-  date: new Date(),
-  array: Array.from({ length: 1000 }, (_, i) => ({ id: i }))
-};
-
-console.time('structuredClone');
-structuredClone(testData);
-console.timeEnd('structuredClone'); // ~2ms
-
-console.time('JSON');
-JSON.parse(JSON.stringify(testData));
-console.timeEnd('JSON'); // ~3ms
-
-console.time('手动递归');
-deepClone(testData);
-console.timeEnd('手动递归'); // ~5ms
-
-console.time('lodash');
-_.cloneDeep(testData);
-console.timeEnd('lodash'); // ~4ms
-```
-
-**性能优化建议**
-
-1. **优先浅拷贝**：大部分场景不需要深拷贝
-2. **避免拷贝大对象**：考虑使用 Immutable.js 或 Immer.js
-3. **按需拷贝**：只拷贝需要修改的部分
-4. **缓存拷贝结果**：避免重复拷贝相同数据
-
-```javascript
-// 使用 Immer.js（推荐）
-import produce from 'immer';
-
-const nextState = produce(state, draft => {
-  draft.user.name = 'New Name'; // 直接修改，Immer 自动处理不可变性
-});
-// 性能优于深拷贝，且代码更简洁
-```
-
 ---
 
 ## 总结
@@ -704,4 +559,3 @@ const nextState = produce(state, draft => {
 
 - MDN：[structuredClone()](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone)
 - 【练习】实现一个支持所有 JavaScript 类型的深拷贝函数，包括 Symbol、函数、原型链。
-

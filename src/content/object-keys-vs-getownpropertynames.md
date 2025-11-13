@@ -302,81 +302,6 @@ delete Object.prototype.inherited;
 | `Object.entries()` | ✅ | ❌ | ❌ | ❌ | `[string, any][]` |
 | `Object.values()` | ✅ | ❌ | ❌ | ❌ | `any[]` |
 
-### 实际场景选择指南
-
-```javascript
-// 场景 1：遍历对象的"公开"属性（最常见）
-// ✅ 使用 Object.keys()
-Object.keys(user).forEach(key => {
-  console.log(key, user[key]);
-});
-
-// 场景 2：深拷贝对象（需要复制所有属性，包括不可枚举）
-// ✅ 使用 Object.getOwnPropertyNames() + Object.getOwnPropertySymbols()
-function deepClone(obj) {
-  const clone = Object.create(Object.getPrototypeOf(obj));
-  
-  // 复制所有字符串属性（包括不可枚举）
-  Object.getOwnPropertyNames(obj).forEach(key => {
-    const descriptor = Object.getOwnPropertyDescriptor(obj, key);
-    Object.defineProperty(clone, key, descriptor);
-  });
-  
-  // 复制所有 Symbol 属性
-  Object.getOwnPropertySymbols(obj).forEach(sym => {
-    const descriptor = Object.getOwnPropertyDescriptor(obj, sym);
-    Object.defineProperty(clone, sym, descriptor);
-  });
-  
-  return clone;
-}
-
-// 场景 3：获取类的所有方法（包括不可枚举的构造函数）
-// ✅ 使用 Object.getOwnPropertyNames()
-class MyClass {
-  constructor() {
-    this.prop = 'value';
-  }
-  method() {}
-}
-
-Object.keys(MyClass.prototype);               // ['method']
-Object.getOwnPropertyNames(MyClass.prototype); 
-// ['constructor', 'method'] - 包含 constructor
-
-// 场景 4：检查对象是否为空
-// ✅ 使用 Object.keys() 或 Reflect.ownKeys()
-function isEmpty(obj) {
-  return Object.keys(obj).length === 0;        // 只检查可枚举属性
-}
-
-function isReallyEmpty(obj) {
-  return Reflect.ownKeys(obj).length === 0;    // 检查所有属性
-}
-
-isEmpty({});                                    // true
-isEmpty(Object.create(null, {
-  hidden: { value: 1, enumerable: false }
-}));                                            // true（有属性但不可枚举）
-
-isReallyEmpty({});                              // true
-isReallyEmpty(Object.create(null, {
-  hidden: { value: 1, enumerable: false }
-}));                                            // false
-
-// 场景 5：遍历对象时需要访问原型链
-// ✅ 使用 for...in + hasOwnProperty()
-for (let key in obj) {
-  if (obj.hasOwnProperty(key)) {
-    // 只处理自有属性
-    console.log(key, obj[key]);
-  }
-}
-
-// 场景 6：获取对象的所有键（包括 Symbol）
-// ✅ 使用 Reflect.ownKeys()
-Reflect.ownKeys(obj);  // 最完整的自有属性列表
-```
 
 ---
 
@@ -401,7 +326,7 @@ arr.propertyIsEnumerable('length');  // false
 function myFunc(a, b) {}
 
 Object.keys(myFunc);                 // []
-Object.getOwnPropertyNames(myFunc);  
+Object.getOwnPropertyNames(myFunc);
 // ['length', 'name', 'prototype', 'arguments', 'caller']
 
 myFunc.propertyIsEnumerable('name'); // false
@@ -433,7 +358,7 @@ MyClass.prototype.propertyIsEnumerable('constructor'); // false
 const err = new Error('oops');
 
 Object.keys(err);                    // []
-Object.getOwnPropertyNames(err);     
+Object.getOwnPropertyNames(err);
 // ['stack', 'message']（具体实现可能不同）
 
 err.propertyIsEnumerable('stack');   // false（多数浏览器）
@@ -444,7 +369,7 @@ err.propertyIsEnumerable('stack');   // false（多数浏览器）
 ```javascript
 // 浏览器环境
 Object.keys(window);                 // 很少（多数是可枚举的全局变量）
-Object.getOwnPropertyNames(window);  
+Object.getOwnPropertyNames(window);
 // 几千个（包括所有内置 API）
 
 window.propertyIsEnumerable('Array'); // false
@@ -691,11 +616,11 @@ const allKeys = [...stringKeys, ...symbolKeys];
 function getAllProperties(obj) {
   const keys = Reflect.ownKeys(obj);
   const props = {};
-  
+
   keys.forEach(key => {
     props[key] = Object.getOwnPropertyDescriptor(obj, key);
   });
-  
+
   return props;
 }
 
@@ -713,15 +638,15 @@ getAllProperties(obj);
 function getAllPropertiesWithPrototype(obj) {
   const props = new Set();
   let current = obj;
-  
+
   while (current !== null) {
     // 获取当前层级的所有属性
     Reflect.ownKeys(current).forEach(key => props.add(key));
-    
+
     // 向上遍历原型链
     current = Object.getPrototypeOf(current);
   }
-  
+
   return Array.from(props);
 }
 
@@ -741,60 +666,6 @@ const instance = new Child();
 getAllPropertiesWithPrototype(instance);
 // ['childProp', 'constructor', 'childMethod', 'parentMethod', ...]
 // 包含原型链上的所有属性
-```
-
-### 实用工具函数
-
-```javascript
-// 工具 1：完整的对象克隆（包括不可枚举和 Symbol）
-function deepClone(obj) {
-  if (obj === null || typeof obj !== 'object') {
-    return obj;
-  }
-  
-  // 创建相同原型的对象
-  const clone = Object.create(Object.getPrototypeOf(obj));
-  
-  // 复制所有属性（包括 Symbol 和不可枚举）
-  Reflect.ownKeys(obj).forEach(key => {
-    const descriptor = Object.getOwnPropertyDescriptor(obj, key);
-    Object.defineProperty(clone, key, descriptor);
-  });
-  
-  return clone;
-}
-
-// 工具 2：只获取可枚举的所有属性（包括 Symbol）
-function getEnumerableKeys(obj) {
-  const stringKeys = Object.keys(obj);
-  const symbolKeys = Object.getOwnPropertySymbols(obj).filter(sym =>
-    obj.propertyIsEnumerable(sym)
-  );
-  return [...stringKeys, ...symbolKeys];
-}
-
-// 工具 3：只获取不可枚举属性
-function getNonEnumerableKeys(obj) {
-  return Reflect.ownKeys(obj).filter(key =>
-    !obj.propertyIsEnumerable(key)
-  );
-}
-
-// 测试
-const testObj = {
-  public: 'visible'
-};
-
-Object.defineProperty(testObj, 'private', {
-  value: 'hidden',
-  enumerable: false
-});
-
-const sym = Symbol('test');
-testObj[sym] = 'symbol';
-
-getEnumerableKeys(testObj);     // ['public', Symbol(test)]
-getNonEnumerableKeys(testObj);  // ['private']
 ```
 
 ---
@@ -854,63 +725,6 @@ console.timeEnd('for...in');  // ~80ms
 // 4. for...in 最慢（需要遍历原型链并过滤）
 ```
 
-### 最佳实践总结
-
-**1. 默认使用 Object.keys()**
-
-```javascript
-// ✅ 99% 的情况
-Object.keys(obj).forEach(key => {
-  // 处理可枚举属性
-});
-```
-
-**2. 需要所有属性时使用 Reflect.ownKeys()**
-
-```javascript
-// ✅ 深拷贝、序列化、元编程
-Reflect.ownKeys(obj).forEach(key => {
-  // 处理所有属性（包括 Symbol 和不可枚举）
-});
-```
-
-**3. 需要区分可枚举性时分别获取**
-
-```javascript
-// ✅ 精确控制
-const enumerable = Object.keys(obj);
-const nonEnumerable = Object.getOwnPropertyNames(obj)
-  .filter(key => !obj.propertyIsEnumerable(key));
-```
-
-**4. 避免使用 for...in（除非需要原型链）**
-
-```javascript
-// ❌ 避免：容易出错，性能差
-for (let key in obj) {
-  if (obj.hasOwnProperty(key)) {
-    // ...
-  }
-}
-
-// ✅ 替代：使用 Object.keys()
-Object.keys(obj).forEach(key => {
-  // ...
-});
-```
-
-**5. 使用 Map 处理动态键**
-
-```javascript
-// ❌ 避免：对象作为 Map 使用
-const cache = {};
-cache[userInput] = value;  // 危险：userInput 可能是 '__proto__'
-
-// ✅ 推荐：使用 Map
-const cache = new Map();
-cache.set(userInput, value);  // 安全
-```
-
 ---
 
 ## 总结
@@ -960,4 +774,3 @@ cache.set(userInput, value);  // 安全
 - MDN：[Reflect.ownKeys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys)
 - MDN：[Property Attributes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#properties)
 - 【练习】实现一个深度比较函数 `deepEqual(a, b)`，需要正确处理不可枚举属性和 Symbol 属性。
-

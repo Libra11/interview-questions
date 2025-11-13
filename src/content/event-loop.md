@@ -349,8 +349,8 @@ console.log("5. 同步");
 
 // 执行顺序：
 // 3. 同步
-// 5. 同步
 // 1. async 函数开始
+// 5. 同步
 // 2. await 后 resolved
 // 4. async 函数返回 done
 ```
@@ -494,7 +494,6 @@ Promise.resolve().then(() => {
 // 执行顺序：
 // 3. Promise.then
 // 1. setTimeout 1
-// 3. Promise.then（如果有新的微任务）
 // 2. setTimeout 2
 ```
 
@@ -580,16 +579,6 @@ const throttledScroll = throttle(() => {
 
 ## 问题 5：浏览器和 Node.js 的事件循环有什么区别？
 
-### 浏览器的事件循环
-
-**浏览器的事件循环阶段**：
-
-```
-1. 执行宏任务（如 setTimeout）
-2. 执行所有微任务（Promise.then、queueMicrotask）
-3. 渲染（如果有需要）
-4. 重复步骤 1-3
-```
 
 **浏览器特有的任务**：
 
@@ -635,6 +624,7 @@ console.log("5. 同步");
 // 3. Promise.then（微任务）
 // 4. requestAnimationFrame（在渲染前）
 // 2. setTimeout（宏任务）
+// 2 / 4 → 二者之间的先后顺序 不要依赖，不同环境/时机可能反过来。
 ```
 
 ### Node.js 的事件循环
@@ -723,10 +713,16 @@ console.log("6. 同步");
 // 执行顺序（Node.js）：
 // 1. 同步
 // 6. 同步
-// 4. nextTick（优先级最高）
 // 5. Promise.then（微任务）
+// 4. nextTick（优先级最高）
 // 2. setTimeout（timers 阶段）
 // 3. setImmediate（check 阶段）
+
+// 在 ES Module 中，Promise.then / queueMicrotask 会先于 process.nextTick 执行
+// setTimeout(..., 0) 和 setImmediate(...) 的顺序，不是严格保证的。
+// Node 官方文档原话大意是：
+// 如果两者在主模块里一起调用，它们谁先执行是非确定性的，取决于当时进程性能等因素。
+
 ```
 
 **process.nextTick vs setImmediate**：
@@ -745,286 +741,6 @@ setImmediate(() => {
 // 执行顺序：
 // nextTick（先执行）
 // setImmediate（后执行）
-```
-
----
-
-## 问题 6：如何准确预测异步代码的执行顺序？
-
-### 执行顺序规则总结
-
-**核心规则**：
-
-1. **同步代码** → **process.nextTick（Node.js）** → **所有微任务** → **一个宏任务** → **所有微任务** → **一个宏任务** → ...
-
-2. **微任务队列**：Promise.then、queueMicrotask、MutationObserver、async/await 后的代码
-
-3. **宏任务队列**：setTimeout、setInterval、I/O 操作、UI 渲染、setImmediate（Node.js）
-
-4. **微任务优先级高于宏任务**：每次宏任务执行后，都会执行所有微任务
-
-### 经典面试题解析
-
-**题目 1**：
-
-```javascript
-console.log("1");
-
-setTimeout(() => {
-  console.log("2");
-  Promise.resolve().then(() => {
-    console.log("3");
-  });
-}, 0);
-
-Promise.resolve().then(() => {
-  console.log("4");
-  setTimeout(() => {
-    console.log("5");
-  }, 0);
-});
-
-console.log("6");
-
-// 执行顺序：
-// 1. 同步
-// 6. 同步
-// 4. Promise.then（微任务）
-// 2. setTimeout（宏任务）
-// 3. Promise.then（在宏任务中的微任务）
-// 5. setTimeout（下一个宏任务）
-```
-
-**题目 2**：
-
-```javascript
-async function async1() {
-  console.log("1");
-  await async2();
-  console.log("2");
-}
-
-async function async2() {
-  console.log("3");
-}
-
-console.log("4");
-
-setTimeout(() => {
-  console.log("5");
-}, 0);
-
-async1();
-
-new Promise((resolve) => {
-  console.log("6");
-  resolve();
-}).then(() => {
-  console.log("7");
-});
-
-console.log("8");
-
-// 执行顺序：
-// 4. 同步
-// 1. async1 开始
-// 3. async2
-// 6. Promise 构造函数（同步）
-// 8. 同步
-// 2. async1 await 后（微任务）
-// 7. Promise.then（微任务）
-// 5. setTimeout（宏任务）
-```
-
-**题目 3**：
-
-```javascript
-Promise.resolve().then(() => {
-  console.log("1");
-  Promise.resolve().then(() => {
-    console.log("2");
-    Promise.resolve().then(() => {
-      console.log("3");
-    });
-  });
-});
-
-setTimeout(() => {
-  console.log("4");
-}, 0);
-
-Promise.resolve().then(() => {
-  console.log("5");
-});
-
-console.log("6");
-
-// 执行顺序：
-// 6. 同步
-// 1. Promise.then（微任务）
-// 5. Promise.then（微任务）
-// 2. Promise.then（微任务中的微任务）
-// 3. Promise.then（微任务中的微任务）
-// 4. setTimeout（宏任务）
-```
-
-### 调试技巧
-
-**1. 使用 console.log 追踪执行顺序**：
-
-```javascript
-console.log("同步代码");
-Promise.resolve().then(() => console.log("微任务"));
-setTimeout(() => console.log("宏任务"), 0);
-```
-
-**2. 使用 Performance API（浏览器）**：
-
-```javascript
-performance.mark("start");
-Promise.resolve().then(() => {
-  performance.mark("microtask");
-  performance.measure("microtask", "start", "microtask");
-});
-```
-
-**3. 使用 async_hooks（Node.js）**：
-
-```javascript
-const async_hooks = require("async_hooks");
-const hook = async_hooks.createHook({
-  init(asyncId, type, triggerAsyncId) {
-    console.log(`Init: ${type} ${asyncId}`);
-  },
-});
-hook.enable();
-```
-
----
-
-## 问题 7：事件循环在实际项目中的应用场景
-
-### 场景 1：优化大量 DOM 操作
-
-```javascript
-// ❌ 问题：大量 DOM 操作阻塞主线程
-function updateDOM(items) {
-  items.forEach((item) => {
-    const element = document.createElement("div");
-    element.textContent = item;
-    document.body.appendChild(element);
-  });
-}
-
-// ✅ 解决方案：使用 requestIdleCallback 或 setTimeout 分批处理
-function updateDOMOptimized(items) {
-  let index = 0;
-
-  function processBatch() {
-    const batchSize = 100;
-    const end = Math.min(index + batchSize, items.length);
-
-    for (let i = index; i < end; i++) {
-      const element = document.createElement("div");
-      element.textContent = items[i];
-      document.body.appendChild(element);
-    }
-
-    index = end;
-
-    if (index < items.length) {
-      setTimeout(processBatch, 0); // 让出主线程
-    }
-  }
-
-  processBatch();
-}
-```
-
-### 场景 2：确保 DOM 更新后再执行
-
-```javascript
-// ✅ 使用 Promise 确保 DOM 更新后执行
-function updateAndWait(element, text) {
-  element.textContent = text;
-
-  return Promise.resolve().then(() => {
-    // DOM 更新已完成
-    console.log("DOM updated");
-  });
-}
-
-// ✅ 使用 MutationObserver 监听 DOM 变化
-function waitForDOMUpdate(element) {
-  return new Promise((resolve) => {
-    const observer = new MutationObserver(() => {
-      observer.disconnect();
-      resolve();
-    });
-    observer.observe(element, { childList: true, subtree: true });
-  });
-}
-```
-
-### 场景 3：批量处理异步操作
-
-```javascript
-// ✅ 使用 Promise.all 批量处理
-async function batchProcess(items) {
-  const results = await Promise.all(items.map((item) => processItem(item)));
-  return results;
-}
-
-// ✅ 使用队列控制并发数
-async function batchProcessWithLimit(items, limit) {
-  const results = [];
-  for (let i = 0; i < items.length; i += limit) {
-    const batch = items.slice(i, i + limit);
-    const batchResults = await Promise.all(
-      batch.map((item) => processItem(item))
-    );
-    results.push(...batchResults);
-  }
-  return results;
-}
-```
-
-### 场景 4：实现任务调度器
-
-```javascript
-class TaskScheduler {
-  constructor() {
-    this.queue = [];
-    this.running = false;
-  }
-
-  add(task) {
-    this.queue.push(task);
-    if (!this.running) {
-      this.run();
-    }
-  }
-
-  async run() {
-    this.running = true;
-
-    while (this.queue.length > 0) {
-      const task = this.queue.shift();
-      await task();
-
-      // 让出主线程
-      await new Promise((resolve) => setTimeout(resolve, 0));
-    }
-
-    this.running = false;
-  }
-}
-
-// 使用
-const scheduler = new TaskScheduler();
-scheduler.add(() => console.log("Task 1"));
-scheduler.add(() => console.log("Task 2"));
-scheduler.add(() => console.log("Task 3"));
 ```
 
 ---

@@ -443,22 +443,22 @@ const handler = {
     console.log(`读取属性: ${key}`);
     return Reflect.get(target, key, receiver); // 执行默认行为
   },
-  
+
   set(target, key, value, receiver) {
     console.log(`设置属性: ${key} = ${value}`);
     return Reflect.set(target, key, value, receiver);
   },
-  
+
   has(target, key) {
     console.log(`检查属性: ${key}`);
     return Reflect.has(target, key);
   },
-  
+
   deleteProperty(target, key) {
     console.log(`删除属性: ${key}`);
     return Reflect.deleteProperty(target, key);
   }
-  
+
   // ...其他 9 个拦截器
 };
 
@@ -520,7 +520,7 @@ function createValidatedProxy(target, schema) {
           `属性 ${key} 必须是 ${expectedType} 类型，实际是 ${typeof value}`
         );
       }
-      
+
       // 使用 Reflect 执行默认行为
       return Reflect.set(target, key, value, receiver);
     }
@@ -546,12 +546,12 @@ function createNegativeIndexArray(arr = []) {
   return new Proxy(arr, {
     get(target, key, receiver) {
       const index = Number(key);
-      
+
       // 处理负索引
       if (index < 0) {
         key = String(target.length + index);
       }
-      
+
       return Reflect.get(target, key, receiver);
     }
   });
@@ -562,44 +562,6 @@ const arr = createNegativeIndexArray([10, 20, 30, 40]);
 console.log(arr[0]);    // 10
 console.log(arr[-1]);   // 40（最后一个元素）
 console.log(arr[-2]);   // 30
-```
-
-**实战案例：观察者模式**
-
-```javascript
-function createObservable(target, callback) {
-  return new Proxy(target, {
-    set(target, key, value, receiver) {
-      const oldValue = target[key];
-      const result = Reflect.set(target, key, value, receiver);
-      
-      if (result && oldValue !== value) {
-        callback(key, oldValue, value);
-      }
-      
-      return result;
-    },
-    
-    deleteProperty(target, key) {
-      const oldValue = target[key];
-      const result = Reflect.deleteProperty(target, key);
-      
-      if (result) {
-        callback(key, oldValue, undefined);
-      }
-      
-      return result;
-    }
-  });
-}
-
-const obj = createObservable({ x: 1 }, (key, oldVal, newVal) => {
-  console.log(`${key}: ${oldVal} → ${newVal}`);
-});
-
-obj.x = 2;       // 输出: x: 1 → 2
-obj.y = 3;       // 输出: y: undefined → 3
-delete obj.x;    // 输出: x: 2 → undefined
 ```
 
 ---
@@ -663,19 +625,19 @@ function createImmutable(obj) {
     set(target, key, value) {
       throw new Error('对象不可修改');
     },
-    
+
     deleteProperty(target, key) {
       throw new Error('对象不可修改');
     },
-    
+
     get(target, key, receiver) {
       const value = Reflect.get(target, key, receiver);
-      
+
       // 递归代理嵌套对象
       if (value !== null && typeof value === 'object') {
         return createImmutable(value);
       }
-      
+
       return value;
     }
   });
@@ -689,120 +651,6 @@ const config = createImmutable({
 });
 
 config.api.url = 'https://evil.com'; // ❌ Error: 对象不可修改
-```
-
-### 场景 4：私有属性模拟
-
-```javascript
-function createPrivate() {
-  const privateData = new WeakMap();
-  
-  return function(target) {
-    privateData.set(target, {});
-    
-    return new Proxy(target, {
-      get(target, key, receiver) {
-        if (key.startsWith('_')) {
-          return privateData.get(target)[key];
-        }
-        return Reflect.get(target, key, receiver);
-      },
-      
-      set(target, key, value, receiver) {
-        if (key.startsWith('_')) {
-          privateData.get(target)[key] = value;
-          return true;
-        }
-        return Reflect.set(target, key, value, receiver);
-      }
-    });
-  };
-}
-
-const withPrivate = createPrivate();
-
-class User {
-  constructor(name, password) {
-    const proxy = withPrivate(this);
-    proxy._password = password; // 私有
-    proxy.name = name;          // 公开
-    return proxy;
-  }
-}
-
-const user = new User('Alice', 'secret123');
-console.log(user.name);       // 'Alice'
-console.log(user._password);  // undefined（外部无法访问）
-```
-
-### 场景 5：性能监控
-
-```javascript
-function createPerformanceProxy(target, label) {
-  return new Proxy(target, {
-    get(target, key, receiver) {
-      const start = performance.now();
-      const result = Reflect.get(target, key, receiver);
-      const end = performance.now();
-      
-      if (typeof result === 'function') {
-        return function(...args) {
-          console.log(`[${label}.${key}] 调用开始`);
-          const fnStart = performance.now();
-          const fnResult = result.apply(this, args);
-          const fnEnd = performance.now();
-          console.log(`[${label}.${key}] 耗时: ${fnEnd - fnStart}ms`);
-          return fnResult;
-        };
-      }
-      
-      return result;
-    }
-  });
-}
-
-const api = createPerformanceProxy({
-  fetchUser() {
-    // 模拟耗时操作
-    const sum = Array.from({ length: 1000000 }, (_, i) => i).reduce((a, b) => a + b);
-    return { id: 1, name: 'Alice' };
-  }
-}, 'API');
-
-api.fetchUser();
-// 输出: [API.fetchUser] 调用开始
-// 输出: [API.fetchUser] 耗时: 15.2ms
-```
-
-### 场景 6：自动持久化
-
-```javascript
-function createPersistent(key, initialValue = {}) {
-  const data = JSON.parse(localStorage.getItem(key) || JSON.stringify(initialValue));
-  
-  return new Proxy(data, {
-    set(target, prop, value, receiver) {
-      const result = Reflect.set(target, prop, value, receiver);
-      localStorage.setItem(key, JSON.stringify(target));
-      return result;
-    },
-    
-    deleteProperty(target, prop) {
-      const result = Reflect.deleteProperty(target, prop);
-      localStorage.setItem(key, JSON.stringify(target));
-      return result;
-    }
-  });
-}
-
-// 浏览器环境中使用
-const settings = createPersistent('app-settings', {
-  theme: 'light',
-  language: 'zh-CN'
-});
-
-settings.theme = 'dark'; // 自动保存到 localStorage
-console.log(settings);   // { theme: 'dark', language: 'zh-CN' }
 ```
 
 ---
@@ -843,76 +691,6 @@ console.timeEnd('Proxy + Reflect'); // ~25ms
 - 对于高频操作（如循环内部），优先直接访问
 - 对于元编程场景，Reflect 和 Proxy 的便利性远大于性能损失
 
-### 最佳实践
-
-**1. 在 Proxy 中总是使用 Reflect**
-
-```javascript
-// ✅ 推荐
-const proxy = new Proxy(target, {
-  get(target, key, receiver) {
-    return Reflect.get(target, key, receiver);
-  }
-});
-
-// ❌ 避免
-const proxy = new Proxy(target, {
-  get(target, key) {
-    return target[key]; // this 绑定可能错误
-  }
-});
-```
-
-**2. 优先使用 Reflect 的函数式 API**
-
-```javascript
-// ✅ 推荐（函数式，易组合）
-if (Reflect.has(obj, 'key')) {
-  Reflect.deleteProperty(obj, 'key');
-}
-
-// ❌ 避免（命令式，难组合）
-if ('key' in obj) {
-  delete obj.key;
-}
-```
-
-**3. 错误处理使用返回值而非异常**
-
-```javascript
-// ✅ 推荐
-if (Reflect.defineProperty(obj, 'key', descriptor)) {
-  console.log('定义成功');
-} else {
-  console.log('定义失败');
-}
-
-// ❌ 避免
-try {
-  Object.defineProperty(obj, 'key', descriptor);
-} catch (e) {
-  console.log('定义失败');
-}
-```
-
-**4. 高性能场景避免不必要的 Proxy**
-
-```javascript
-// ❌ 避免：对性能敏感的热点代码使用 Proxy
-function computeIntensive(data) {
-  const proxy = new Proxy(data, { /* ... */ });
-  for (let i = 0; i < 1000000; i++) {
-    proxy.value++; // 每次访问都触发拦截器
-  }
-}
-
-// ✅ 推荐：直接操作原对象
-function computeIntensive(data) {
-  for (let i = 0; i < 1000000; i++) {
-    data.value++;
-  }
-}
-```
 
 ---
 
@@ -960,4 +738,3 @@ function computeIntensive(data) {
 - MDN：[Reflect](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
 - ECMA-262：[Reflect 规范](https://tc39.es/ecma262/#sec-reflect-object)
 - 【练习】使用 Proxy + Reflect 实现一个支持链式调用的深度观察对象（监听嵌套属性变化）。
-

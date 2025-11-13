@@ -52,7 +52,7 @@ const proxy = new Proxy(obj, {
     console.log('value:', value);             // 25
     console.log('receiver:', receiver);       // proxy 对象本身
     console.log('receiver === proxy:', receiver === proxy); // true
-    
+
     // 手动设置属性
     target[property] = value;
     return true; // 必须返回 true 表示成功
@@ -113,7 +113,7 @@ const parentProxy = new Proxy(parent, {
     console.log('target:', target);           // { parentValue: 100 }
     console.log('receiver:', receiver);       // child 对象
     console.log('receiver === parentProxy:', receiver === parentProxy); // false
-    
+
     target[property] = value;
     return true;
   }
@@ -134,37 +134,38 @@ child.childValue = 200; // 触发 parentProxy 的 set 拦截器
 ### 场景 3：为什么需要 receiver？配合 Reflect.set
 
 ```js
-const data = {
+const base = {
   _value: 0,
-  get value() {
-    return this._value; // this 取决于调用者
-  },
-  set value(newValue) {
-    this._value = newValue;
+  set value(v) {
+    this._value = v;
   }
 };
 
-// ❌ 错误实现：直接操作 target
-const proxy1 = new Proxy(data, {
-  set(target, property, value) {
-    target[property] = value; // this 指向 target，而非 proxy
+// 错误实现：直接 target[property] = value
+const badProxy = new Proxy(base, {
+  set(target, prop, value) {
+    target[prop] = value;
     return true;
   }
 });
 
-proxy1.value = 10;
-console.log(proxy1._value); // undefined ← _value 被设置到 target，而非 proxy
-
-// ✅ 正确实现：使用 Reflect.set 传递 receiver
-const proxy2 = new Proxy(data, {
-  set(target, property, value, receiver) {
-    return Reflect.set(target, property, value, receiver);
-    // Reflect.set 会将 this 绑定到 receiver（即 proxy2）
+// 正确实现：Reflect.set 传递 receiver
+const goodProxy = new Proxy(base, {
+  set(target, prop, value, receiver) {
+    return Reflect.set(target, prop, value, receiver);
   }
 });
 
-proxy2.value = 10;
-console.log(proxy2._value); // 10 ← _value 正确设置到 proxy2
+// 让两个对象都“继承”各自的 proxy
+const child1 = { __proto__: badProxy };
+const child2 = { __proto__: goodProxy };
+
+child1.value = 10;
+child2.value = 20;
+
+console.log(child1._value); // 10
+console.log(child2._value); // 20
+console.log(base._value);   // 10
 ```
 
 **核心原理**：`Reflect.set(target, property, value, receiver)` 会在执行 setter 时将 `this` 绑定到 `receiver`，确保 getter/setter 中的 `this` 指向代理对象而非原始对象。
@@ -183,12 +184,12 @@ function track(target: object, key: PropertyKey) {
   if (!depsMap) {
     targetMap.set(target, (depsMap = new Map()));
   }
-  
+
   let dep = depsMap.get(key);
   if (!dep) {
     depsMap.set(key, (dep = new Set()));
   }
-  
+
   if (activeEffect) {
     dep.add(activeEffect);
   }
@@ -197,7 +198,7 @@ function track(target: object, key: PropertyKey) {
 function trigger(target: object, key: PropertyKey) {
   const depsMap = targetMap.get(target);
   if (!depsMap) return;
-  
+
   const dep = depsMap.get(key);
   if (dep) {
     dep.forEach(effect => effect());
@@ -210,29 +211,29 @@ function reactive<T extends object>(target: T): T {
     get(target, key, receiver) {
       // 依赖收集
       track(target, key);
-      
+
       // 使用 Reflect.get 正确传递 receiver
       const result = Reflect.get(target, key, receiver);
-      
+
       // 递归代理嵌套对象
       if (typeof result === 'object' && result !== null) {
         return reactive(result);
       }
-      
+
       return result;
     },
-    
+
     set(target, key, value, receiver) {
       const oldValue = target[key];
-      
+
       // 使用 Reflect.set 确保 this 绑定正确
       const result = Reflect.set(target, key, value, receiver);
-      
+
       // 值变化时触发更新（避免重复触发）
       if (oldValue !== value || (typeof value === 'object' && value !== null)) {
         trigger(target, key);
       }
-      
+
       return result;
     }
   });
@@ -371,15 +372,15 @@ function createValidator(schema) {
   return new Proxy({}, {
     set(target, property, value, receiver) {
       const validator = schema[property];
-      
+
       if (!validator) {
         throw new Error(`Property '${String(property)}' is not defined in schema`);
       }
-      
+
       if (!validator(value)) {
         throw new TypeError(`Invalid value for '${String(property)}'`);
       }
-      
+
       return Reflect.set(target, property, value, receiver);
     }
   });
@@ -403,4 +404,3 @@ user.email = 'a@b.com'; // ❌ Error: Property 'email' is not defined in schema
 - MDN：[Reflect.set()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect/set)
 - Vue 3 源码：[@vue/reactivity baseHandlers.ts](https://github.com/vuejs/core/blob/main/packages/reactivity/src/baseHandlers.ts)
 - 【练习】实现一个支持嵌套路径校验的数据校验代理（如 `user.profile.email` 的类型检查）。
-

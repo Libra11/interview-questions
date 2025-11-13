@@ -208,11 +208,11 @@ isNegativeZeroOld(-0);    // true
 function clamp(value, min, max) {
   if (value < min) return min;
   if (value > max) return max;
-  
+
   // 保持 -0 和 +0 的差异
   if (Object.is(value, -0)) return -0;
   if (Object.is(value, +0)) return +0;
-  
+
   return value;
 }
 
@@ -222,7 +222,7 @@ clamp(+0, -10, 10);       // +0
 
 ---
 
-## 问题 4：Object.is 的实现原理是什么？如何 Polyfill？
+## 问题 4：Object.is 的实现原理是什么?
 
 ### SameValue 算法
 
@@ -239,220 +239,10 @@ clamp(+0, -10, 10);       // +0
    - 否则返回 `false`
 3. 其他类型按 `===` 的规则比较
 
-### Polyfill 实现
-
-```javascript
-if (!Object.is) {
-  Object.is = function(x, y) {
-    // 1. 相同引用（处理大部分情况）
-    if (x === y) {
-      // 特殊情况：区分 +0 和 -0
-      // 1 / +0 === Infinity
-      // 1 / -0 === -Infinity
-      return x !== 0 || 1 / x === 1 / y;
-    }
-    
-    // 2. 不同引用
-    // 特殊情况：NaN !== NaN，但 Object.is(NaN, NaN) 为 true
-    return x !== x && y !== y;
-  };
-}
-
-// 测试 Polyfill
-Object.is(NaN, NaN);      // true
-Object.is(+0, -0);        // false
-Object.is(1, 1);          // true
-Object.is(null, null);    // true
-```
-
-**Polyfill 解析**：
-
-```javascript
-// 情况 1：x === y 为 true
-if (x === y) {
-  // 如果 x 是 0，需要区分 +0 和 -0
-  // 1 / +0 = Infinity
-  // 1 / -0 = -Infinity
-  return x !== 0 || 1 / x === 1 / y;
-  
-  // 示例：
-  // Object.is(+0, -0)
-  // → x === y → true（+0 === -0）
-  // → x !== 0 → false
-  // → 1 / x === 1 / y → Infinity === -Infinity → false
-  // 返回 false ✅
-}
-
-// 情况 2：x === y 为 false
-// 只有 NaN !== NaN，利用这个特性判断
-return x !== x && y !== y;
-
-// 示例：
-// Object.is(NaN, NaN)
-// → x === y → false（NaN !== NaN）
-// → x !== x → true（NaN !== NaN）
-// → y !== y → true（NaN !== NaN）
-// 返回 true ✅
-```
 
 ---
 
-## 问题 5：实际项目中如何选择 Object.is 和 ===？
-
-### 选择决策树
-
-```javascript
-// 1. 是否需要处理 NaN？
-if (needCompareNaN) {
-  // 使用 Object.is 或 Number.isNaN
-  Object.is(value, NaN);
-  Number.isNaN(value);    // 更语义化
-}
-
-// 2. 是否需要区分 +0 和 -0？
-if (needDistinguishZeros) {
-  // 使用 Object.is
-  Object.is(value1, value2);
-}
-
-// 3. 其他所有情况
-// 使用 ===（性能稍好，语义更通用）
-value1 === value2;
-```
-
-### 实际场景对比
-
-**场景 1：数组的 includes 方法**
-
-```javascript
-// Array.prototype.includes 内部使用 SameValueZero 算法
-// 类似 Object.is，但认为 +0 === -0
-[1, 2, NaN].includes(NaN); // true（✅ 可以找到 NaN）
-[1, 2, NaN].indexOf(NaN);  // -1（❌ indexOf 使用 ===）
-
-// includes 不区分 +0 和 -0
-[+0].includes(-0);         // true
-[+0].includes(+0);         // true
-```
-
-**场景 2：Map/Set 的键比较**
-
-```javascript
-// Map 和 Set 使用 SameValueZero 算法
-const map = new Map();
-map.set(NaN, 'value');
-map.get(NaN);              // 'value'（✅ 可以用 NaN 作为键）
-
-const set = new Set([NaN, NaN]);
-set.size;                  // 1（NaN 被去重）
-
-// 但 +0 和 -0 被视为相同的键
-const map2 = new Map();
-map2.set(+0, 'positive');
-map2.set(-0, 'negative');
-map2.size;                 // 1（-0 覆盖了 +0）
-map2.get(+0);              // 'negative'
-```
-
-**场景 3：React 的浅比较（shallowEqual）**
-
-```javascript
-// React.memo 和 shouldComponentUpdate 使用浅比较
-// 通常使用 ===，不处理 NaN 和 +0/-0
-function shallowEqual(obj1, obj2) {
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
-  
-  if (keys1.length !== keys2.length) {
-    return false;
-  }
-  
-  return keys1.every(key => obj1[key] === obj2[key]);
-}
-
-// 问题：NaN 会导致不必要的重新渲染
-shallowEqual({ x: NaN }, { x: NaN }); // false - ❌
-
-// 优化版本：使用 Object.is
-function shallowEqualWithNaN(obj1, obj2) {
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
-  
-  if (keys1.length !== keys2.length) {
-    return false;
-  }
-  
-  return keys1.every(key => Object.is(obj1[key], obj2[key]));
-}
-
-shallowEqualWithNaN({ x: NaN }, { x: NaN }); // true - ✅
-```
-
-**场景 4：测试框架的断言**
-
-```javascript
-// Jest 的 toBe 使用 Object.is
-expect(NaN).toBe(NaN);     // ✅ 通过
-expect(+0).toBe(-0);       // ❌ 失败
-
-// Jest 的 toEqual 用于深度比较（也使用 Object.is）
-expect({ x: NaN }).toEqual({ x: NaN }); // ✅ 通过
-```
-
-### 性能对比
-
-```javascript
-const obj1 = { x: 1, y: 2 };
-const obj2 = { x: 1, y: 2 };
-
-// 基准测试
-console.time('===');
-for (let i = 0; i < 10000000; i++) {
-  1 === 1;
-}
-console.timeEnd('==='); // ~5ms
-
-console.time('Object.is');
-for (let i = 0; i < 10000000; i++) {
-  Object.is(1, 1);
-}
-console.timeEnd('Object.is'); // ~15ms
-
-// 结论：=== 快约 3 倍，但差异在实际应用中可忽略
-```
-
-### 推荐做法
-
-```javascript
-// ✅ 推荐：大部分情况使用 ===
-if (value === expected) {
-  // 性能最优，语义清晰
-}
-
-// ✅ 推荐：明确需要处理 NaN 时使用 Number.isNaN
-if (Number.isNaN(value)) {
-  // 语义明确
-}
-
-// ✅ 推荐：需要同时处理 NaN 和 +0/-0 时使用 Object.is
-if (Object.is(value1, value2)) {
-  // 最严格的相等判断
-}
-
-// ❌ 避免：混用导致混淆
-if (value === NaN) {            // 总是 false
-  // 永远不会执行
-}
-
-// ❌ 避免：不必要的 Object.is
-if (Object.is(str1, str2)) {    // 对字符串没有必要
-  // 使用 === 即可
-}
-```
-
----
-
-## 问题 6：相关的比较算法有哪些？如何选择？
+## 问题 5：相关的比较算法有哪些？如何选择？
 
 ### JavaScript 的 4 种相等比较算法
 
@@ -511,32 +301,6 @@ set.size;                 // 2（NaN 和 0 各一个）
 | `+0` vs `-0` | `true` | `true` | `false` ✅ | `true` |
 | 对象引用 | 比较引用 | 比较引用 | 比较引用 | 比较引用 |
 
-### 选择指南
-
-```javascript
-// 1. 默认选择：===（99% 的情况）
-if (value === expected) {}
-
-// 2. 需要类型转换：==（但尽量避免）
-if (value == null) {      // 同时检查 null 和 undefined
-  // 唯一推荐的 == 使用场景
-}
-
-// 3. 需要处理 NaN：Number.isNaN 或 Object.is
-if (Number.isNaN(value)) {}    // 推荐
-if (Object.is(value, NaN)) {}  // 可选
-
-// 4. 需要区分 +0 和 -0：Object.is
-if (Object.is(value, -0)) {}
-
-// 5. 数组查找包含 NaN：includes
-arr.includes(NaN);        // ✅ 可以找到
-arr.indexOf(NaN);         // ❌ 返回 -1
-
-// 6. Map/Set 的键：自动使用 SameValueZero
-const map = new Map();
-map.set(NaN, 'value');    // ✅ 可以用 NaN 作为键
-```
 
 ---
 
@@ -581,4 +345,3 @@ map.set(NaN, 'value');    // ✅ 可以用 NaN 作为键
 - MDN：[Object.is()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is)
 - ECMA-262：[SameValue 算法](https://tc39.es/ecma262/#sec-samevalue)
 - 【练习】实现一个深度相等函数 `deepEqual(a, b)`，使用 `Object.is` 正确处理 NaN 和 +0/-0。
-
