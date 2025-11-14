@@ -166,49 +166,6 @@ Object.isExtensible(obj1);    // false
 Object.isExtensible(obj2);    // false（seal 会自动调用 preventExtensions）
 ```
 
-### seal() 的内部机制
-
-```javascript
-// seal() 的等价操作
-function sealEquivalent(obj) {
-  // 1. 防止扩展
-  Object.preventExtensions(obj);
-  
-  // 2. 将所有属性的 configurable 设为 false
-  Object.getOwnPropertyNames(obj).forEach(prop => {
-    const descriptor = Object.getOwnPropertyDescriptor(obj, prop);
-    descriptor.configurable = false;
-    Object.defineProperty(obj, prop, descriptor);
-  });
-  
-  return obj;
-}
-```
-
-### 使用场景
-
-```javascript
-// 场景：API 响应对象，防止结构被改变
-function fetchUser(id) {
-  const user = {
-    id: id,
-    name: 'Alice',
-    age: 25
-  };
-  
-  Object.seal(user);
-  
-  // 允许更新数据
-  user.name = 'Bob';        // ✅ 可以
-  
-  // 防止意外删除或添加字段
-  delete user.id;           // ❌ 失败
-  user.email = 'test';      // ❌ 失败
-  
-  return user;
-}
-```
-
 ---
 
 ## 问题 4：Object.freeze() 如何实现完全不可变？
@@ -256,27 +213,6 @@ Object.isSealed(obj);            // true（freeze 会自动调用 seal）
 Object.isExtensible(obj);        // false
 ```
 
-### freeze() 的内部机制
-
-```javascript
-// freeze() 的等价操作
-function freezeEquivalent(obj) {
-  // 1. 密封对象
-  Object.seal(obj);
-  
-  // 2. 将所有属性的 writable 设为 false
-  Object.getOwnPropertyNames(obj).forEach(prop => {
-    const descriptor = Object.getOwnPropertyDescriptor(obj, prop);
-    if (descriptor.writable !== undefined) {
-      descriptor.writable = false;
-    }
-    Object.defineProperty(obj, prop, descriptor);
-  });
-  
-  return obj;
-}
-```
-
 ### 浅冻结 vs 深冻结
 
 **重要：freeze() 只冻结对象本身，不冻结嵌套对象**
@@ -304,13 +240,13 @@ function deepFreeze(obj) {
   // 获取所有自有属性名
   Object.getOwnPropertyNames(obj).forEach(prop => {
     const value = obj[prop];
-    
+
     // 如果值是对象，递归冻结
     if (value !== null && typeof value === 'object') {
       deepFreeze(value);
     }
   });
-  
+
   // 冻结当前对象
   return Object.freeze(obj);
 }
@@ -325,34 +261,6 @@ const deepFrozen = {
 deepFreeze(deepFrozen);
 
 deepFrozen.address.city = 'Shanghai';  // ❌ 失败（深冻结）
-```
-
-### 使用场景
-
-```javascript
-// 场景 1：常量配置对象
-const APP_CONFIG = Object.freeze({
-  API_URL: 'https://api.example.com',
-  VERSION: '1.0.0',
-  FEATURES: Object.freeze({
-    darkMode: true,
-    analytics: false
-  })
-});
-
-// 场景 2：不可变状态（Redux 等状态管理）
-const initialState = Object.freeze({
-  user: null,
-  loading: false,
-  error: null
-});
-
-// 场景 3：枚举值
-const STATUS = Object.freeze({
-  PENDING: 'pending',
-  SUCCESS: 'success',
-  ERROR: 'error'
-});
 ```
 
 ---
@@ -389,62 +297,6 @@ Object.defineProperty(obj, 'id', {
 obj.name = 'Bob';         // 成功
 ```
 
-### 不同保护级别的组合
-
-```javascript
-const obj = {};
-
-// 级别 1：只读（可删除、可重新配置）
-Object.defineProperty(obj, 'readonly', {
-  value: 'value',
-  writable: false,
-  configurable: true,     // 可以删除或重新配置
-  enumerable: true
-});
-
-// 级别 2：不可删除（可修改、可重新配置）
-Object.defineProperty(obj, 'undeletable', {
-  value: 'value',
-  writable: true,
-  configurable: false,    // 不能删除，但可以修改
-  enumerable: true
-});
-
-// 级别 3：完全保护（不可修改、不可删除）
-Object.defineProperty(obj, 'protected', {
-  value: 'value',
-  writable: false,
-  configurable: false,    // 完全锁定
-  enumerable: true
-});
-```
-
-### 使用场景
-
-```javascript
-// 场景：类的私有属性模拟（ES5）
-function User(name) {
-  this.name = name;
-  
-  // 保护内部 ID，防止外部修改
-  let _id = Math.random().toString(36).substr(2, 9);
-  
-  Object.defineProperty(this, 'id', {
-    get() {
-      return _id;
-    },
-    set() {
-      throw new Error('ID cannot be changed');
-    },
-    configurable: false,
-    enumerable: true
-  });
-}
-
-const user = new User('Alice');
-user.id = 'hacked';  // Error: ID cannot be changed
-```
-
 ---
 
 ## 问题 6：如何使用 Proxy 实现更灵活的对象保护？
@@ -460,12 +312,12 @@ const protectedObj = new Proxy({ name: 'Alice' }, {
     if (!(prop in target)) {
       throw new Error(`Cannot add property ${prop}`);
     }
-    
+
     // 允许修改现有属性
     target[prop] = value;
     return true;
   },
-  
+
   defineProperty(target, prop, descriptor) {
     if (!(prop in target)) {
       throw new Error(`Cannot add property ${prop}`);
@@ -502,7 +354,7 @@ const readonlyObj = new Proxy({ name: 'Alice', age: 25 }, {
   set(target, prop, value) {
     throw new Error(`Cannot modify property ${prop}`);
   },
-  
+
   deleteProperty(target, prop) {
     throw new Error(`Cannot delete property ${prop}`);
   }
@@ -521,7 +373,7 @@ const conditionalProtected = new Proxy({ balance: 100 }, {
     if (prop === 'balance' && value < 0) {
       throw new Error('Balance cannot be negative');
     }
-    
+
     target[prop] = value;
     return true;
   }
@@ -538,19 +390,19 @@ function createProtectedProxy(obj) {
   return new Proxy(obj, {
     get(target, prop) {
       const value = Reflect.get(target, prop);
-      
+
       // 如果值是对象，递归创建保护代理
       if (value !== null && typeof value === 'object') {
         return createProtectedProxy(value);
       }
-      
+
       return value;
     },
-    
+
     set(target, prop, value) {
       throw new Error(`Cannot modify property ${prop}`);
     },
-    
+
     deleteProperty(target, prop) {
       throw new Error(`Cannot delete property ${prop}`);
     }
@@ -591,23 +443,23 @@ deepProtected.user.address.city = 'Shanghai'; // ❌ Error
 class User {
   // 公共属性
   name;
-  
+
   // 私有字段（只能在类内部访问）
   #id;
   #password;
   #balance = 0;
-  
+
   constructor(name, id, password) {
     this.name = name;
     this.#id = id;
     this.#password = password;
   }
-  
+
   // 公共方法可以访问私有字段
   getId() {
     return this.#id;
   }
-  
+
   withdraw(amount) {
     if (amount > this.#balance) {
       throw new Error('Insufficient balance');
@@ -615,7 +467,7 @@ class User {
     this.#balance -= amount;
     return this.#balance;
   }
-  
+
   getBalance() {
     return this.#balance;
   }
@@ -636,41 +488,6 @@ console.log(user.getId());        // '12345'
 console.log(user.getBalance());  // 0
 ```
 
-### 私有字段的特性
-
-```javascript
-class BankAccount {
-  #balance = 0;
-  #transactions = [];
-  
-  deposit(amount) {
-    this.#balance += amount;
-    this.#transactions.push({ type: 'deposit', amount });
-  }
-  
-  // 即使通过反射也无法访问
-  getPrivateFields() {
-    // 这些方法都无法访问私有字段
-    console.log(Object.keys(this));              // ['deposit', 'getPrivateFields']
-    console.log(Object.getOwnPropertyNames(this)); // ['deposit', 'getPrivateFields']
-    console.log(Reflect.ownKeys(this));         // ['deposit', 'getPrivateFields']
-    
-    // 私有字段完全隐藏
-    return {
-      balance: this.#balance,                   // 只能在类内部访问
-      transactions: this.#transactions
-    };
-  }
-}
-
-const account = new BankAccount();
-account.deposit(100);
-
-// 外部完全无法访问私有字段
-Object.keys(account);                            // []
-Reflect.ownKeys(account);                       // []
-```
-
 ### 私有字段 vs 其他保护方式
 
 | 方式 | 保护级别 | 可访问性 | 适用场景 |
@@ -679,94 +496,6 @@ Reflect.ownKeys(account);                       // []
 | `Object.freeze()` | 运行时保护 | 可读取，不可修改 | 常量、配置 |
 | `Object.defineProperty()` | 属性级保护 | 可读取，不可修改 | 单个属性保护 |
 | `Proxy` | 运行时拦截 | 可自定义规则 | 复杂保护逻辑 |
-
----
-
-## 问题 8：实际开发中如何选择合适的保护方式？
-
-### 决策树
-
-```
-需要保护对象？
-├─ 需要完全不可变？
-│  ├─ 是 → Object.freeze()（浅冻结）或 deepFreeze()（深冻结）
-│  └─ 否 → 继续
-├─ 需要防止结构变化（添加/删除）？
-│  ├─ 是 → Object.seal()
-│  └─ 否 → 继续
-├─ 只需要防止添加属性？
-│  ├─ 是 → Object.preventExtensions()
-│  └─ 否 → 继续
-├─ 需要条件保护或自定义规则？
-│  ├─ 是 → Proxy
-│  └─ 否 → 继续
-├─ 类设计中的私有数据？
-│  ├─ 是 → 私有字段 #field
-│  └─ 否 → 继续
-└─ 只需要保护单个属性？
-   └─ Object.defineProperty() 设置 writable/configurable
-```
-
-### 最佳实践
-
-```javascript
-// 1. 常量配置 → Object.freeze()
-const CONFIG = Object.freeze({
-  API_URL: 'https://api.example.com',
-  VERSION: '1.0.0'
-});
-
-// 2. API 响应对象 → Object.seal()
-function parseApiResponse(data) {
-  const result = { ...data };
-  Object.seal(result);  // 防止添加/删除字段，但允许更新值
-  return result;
-}
-
-// 3. 类私有数据 → 私有字段
-class SecureUser {
-  #password;
-  #token;
-  
-  constructor(password) {
-    this.#password = password;
-  }
-}
-
-// 4. 复杂保护逻辑 → Proxy
-const protectedState = new Proxy({ count: 0 }, {
-  set(target, prop, value) {
-    if (prop === 'count' && value < 0) {
-      throw new Error('Count cannot be negative');
-    }
-    target[prop] = value;
-    return true;
-  }
-});
-
-// 5. 单个属性保护 → Object.defineProperty()
-const obj = {};
-Object.defineProperty(obj, 'readonlyId', {
-  value: generateId(),
-  writable: false,
-  configurable: false
-});
-```
-
-### 性能考虑
-
-```javascript
-// Object.freeze() 性能最好（原生实现）
-const frozen = Object.freeze({ ...largeObject });  // 快
-
-// Proxy 有拦截器开销，但灵活性高
-const proxied = new Proxy({ ...largeObject }, handlers);  // 稍慢
-
-// 私有字段编译时优化，性能最好
-class Fast {
-  #private = 'value';  // 最快
-}
-```
 
 ---
 
@@ -798,4 +527,3 @@ class Fast {
 - [MDN: Object.freeze()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)
 - [MDN: Proxy](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
 - [MDN: Private class fields](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
-

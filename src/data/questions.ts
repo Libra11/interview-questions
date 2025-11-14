@@ -136,12 +136,12 @@ const parseFrontmatter = (filePath: string, raw: string) => {
   const order =
     typeof frontmatter.order === "number" && Number.isFinite(frontmatter.order)
       ? frontmatter.order
-      : Number.MAX_SAFE_INTEGER;
+      : undefined;
+  const sortOrder = order ?? Number.MAX_SAFE_INTEGER;
 
   const normalizedContent = body.replace(/^\s+/, "");
 
   return {
-    order,
     topic: {
       id,
       title,
@@ -154,7 +154,9 @@ const parseFrontmatter = (filePath: string, raw: string) => {
       keywords,
       content: normalizedContent,
       highlight,
+      order,
     } satisfies QuestionTopic,
+    sortOrder,
   };
 };
 
@@ -164,8 +166,8 @@ const parsedTopics = Object.entries(MARKDOWN_MODULES).map(([filePath, raw]) =>
 
 export const questionTopics: QuestionTopic[] = parsedTopics
   .sort((a, b) => {
-    if (a.order !== b.order) {
-      return a.order - b.order;
+    if (a.sortOrder !== b.sortOrder) {
+      return a.sortOrder - b.sortOrder;
     }
     return a.topic.title.localeCompare(b.topic.title, "zh-Hans");
   })

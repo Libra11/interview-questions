@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -40,7 +40,7 @@ import {
   type QuestionStatus,
   type QuestionTopic,
 } from "@/types/question";
-import { cn } from "@/lib/utils";
+import { cn, formatQuestionOrder } from "@/lib/utils";
 
 const ALL_CATEGORY = "全部领域";
 const ALL_DIFFICULTIES: Difficulty | "全部难度" = "全部难度";
@@ -48,6 +48,33 @@ const ALL_STATUS = "全部状态";
 const statusOptions = [ALL_STATUS, "已完成", "待复习", "已标星"] as const;
 type StatusFilter = (typeof statusOptions)[number];
 type StatusCountKey = Exclude<StatusFilter, typeof ALL_STATUS>;
+
+const LIST_ROUTE_HASH = "#/list";
+const QUESTION_ROUTE_PREFIX = "#/question/";
+
+type RouteState = { view: "list" } | { view: "detail"; topicId: string };
+
+const resolveRouteFromHash = (hash?: string): RouteState => {
+  if (!hash) {
+    return { view: "list" };
+  }
+
+  if (hash.startsWith(QUESTION_ROUTE_PREFIX)) {
+    const topicId = hash.slice(QUESTION_ROUTE_PREFIX.length).trim();
+    if (topicId) {
+      return { view: "detail", topicId };
+    }
+  }
+
+  return { view: "list" };
+};
+
+const getInitialRoute = (): RouteState => {
+  if (typeof window === "undefined") {
+    return { view: "list" };
+  }
+  return resolveRouteFromHash(window.location.hash);
+};
 
 const toggleButtonBaseClass =
   "inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-background/80 shadow-xs dark:bg-background/40";
@@ -82,10 +109,22 @@ function App() {
   const [keyword, setKeyword] = useState("");
   const [category, setCategory] = useState<string>(ALL_CATEGORY);
   const [difficulty, setDifficulty] = useState<Difficulty | "全部难度">(ALL_DIFFICULTIES);
-  const [activeId, setActiveId] = useState<string>(questionTopics[0]?.id ?? "");
   const [statusFilter, setStatusFilter] = useState<StatusFilter>(ALL_STATUS);
   const [sortOption, setSortOption] = useState<SortOption>("default");
-  const [listDensity, setListDensity] = useState<"comfortable" | "compact">("comfortable");
+  const [route, setRoute] = useState<RouteState>(() => getInitialRoute());
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const handleHashChange = () => {
+      setRoute(resolveRouteFromHash(window.location.hash));
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   const { getStatus, toggleCompleted, toggleReview, toggleStar, clearStatus } =
     useQuestionProgress();
@@ -139,6 +178,35 @@ function App() {
     待复习: reviewCount,
     已标星: starredCount,
   };
+
+  const handleNavigateToList = useCallback(() => {
+    setRoute({ view: "list" });
+    if (typeof window !== "undefined") {
+      window.location.hash = LIST_ROUTE_HASH;
+      const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+      if (typeof window.requestAnimationFrame === "function") {
+        window.requestAnimationFrame(scrollToTop);
+      } else {
+        scrollToTop();
+      }
+    }
+  }, []);
+
+  const handleNavigateToDetail = useCallback((topicId: string) => {
+    if (!topicId) {
+      return;
+    }
+    setRoute({ view: "detail", topicId });
+    if (typeof window !== "undefined") {
+      window.location.hash = `${QUESTION_ROUTE_PREFIX}${topicId}`;
+      const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+      if (typeof window.requestAnimationFrame === "function") {
+        window.requestAnimationFrame(scrollToTop);
+      } else {
+        scrollToTop();
+      }
+    }
+  }, []);
 
   const STATUS_STYLES = {
     completed: {
@@ -229,17 +297,20 @@ function App() {
   }, [filteredTopics, sortOption]);
 
   useEffect(() => {
-    if (!sortedTopics.length) {
-      setActiveId("");
-      return;
+    if (route.view === "detail") {
+      const exists = sortedTopics.some((topic) => topic.id === route.topicId);
+      if (!exists) {
+        handleNavigateToList();
+      }
     }
-    if (!sortedTopics.some((topic) => topic.id === activeId)) {
-      setActiveId(sortedTopics[0].id);
-    }
-  }, [sortedTopics, activeId]);
+  }, [route, sortedTopics, handleNavigateToList]);
 
   const activeTopic: QuestionTopic | null =
-    sortedTopics.find((topic) => topic.id === activeId) ?? sortedTopics[0] ?? null;
+    route.view === "detail"
+      ? sortedTopics.find((topic) => topic.id === route.topicId) ?? null
+      : null;
+
+  const highlightedId = route.view === "detail" ? route.topicId : "";
 
   const activeIndex = activeTopic
     ? sortedTopics.findIndex((topic) => topic.id === activeTopic.id)
@@ -250,15 +321,10 @@ function App() {
     activeIndex >= 0 && activeIndex < sortedTopics.length - 1
       ? sortedTopics[activeIndex + 1]
       : null;
-
-  const handleSelectTopic = (id: string) => {
-    setActiveId(id);
-    if (typeof window !== "undefined") {
-      window.requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    }
-  };
+  const activeOrderLabel =
+    activeTopic && activeIndex >= 0
+      ? formatQuestionOrder(activeTopic.order, activeIndex + 1)
+      : "--";
 
   const activeStatus = activeTopic
     ? statusMap.get(activeTopic.id) ?? defaultQuestionStatus
@@ -334,8 +400,8 @@ function App() {
           </CardHeader>
         </Card>
 
-        <div className="grid gap-6 pb-10 lg:grid-cols-[340px_minmax(0,1fr)] 2xl:grid-cols-[380px_minmax(0,1fr)]">
-          <div className="space-y-6">
+        {route.view === "list" ? (
+          <div className="space-y-6 pb-10">
             <Card className="shadow-xs">
               <CardHeader className="gap-5">
                 <div>
@@ -447,37 +513,17 @@ function App() {
                         ))}
                       </SelectContent>
                     </Select>
-                    <div className="inline-flex items-center gap-1 rounded-full border border-border/80 bg-muted/40 p-1 shadow-inner">
-                      <Button
-                        type="button"
-                        size="sm"
-                        variant={listDensity === "comfortable" ? "default" : "ghost"}
-                        className="h-7 px-3 text-xs"
-                        onClick={() => setListDensity("comfortable")}
-                      >
-                        舒适
-                      </Button>
-                      <Button
-                        type="button"
-                        size="sm"
-                        variant={listDensity === "compact" ? "default" : "ghost"}
-                        className="h-7 px-3 text-xs"
-                        onClick={() => setListDensity("compact")}
-                      >
-                        紧凑
-                      </Button>
-                    </div>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
                 <QuestionList
                   topics={sortedTopics}
-                  activeId={activeTopic?.id ?? ""}
-                  onSelect={handleSelectTopic}
+                  activeId={highlightedId}
+                  onSelect={handleNavigateToDetail}
                   statusMap={statusMap}
                   statusStyles={STATUS_STYLES}
-                  density={listDensity}
+                  layout="grid"
                   emptyPlaceholder="暂无匹配的题目，请尝试调整筛选条件。"
                 />
               </CardContent>
@@ -505,8 +551,21 @@ function App() {
               </CardContent>
             </Card>
           </div>
-
-          <div className="space-y-6">
+        ) : (
+          <div className="space-y-6 pb-10">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                onClick={handleNavigateToList}
+                className="gap-2"
+              >
+                <ArrowLeft className="size-4" />
+                返回题库列表
+              </Button>
+              <span className="text-xs text-muted-foreground">共 {sortedTopics.length} 题</span>
+            </div>
             {activeTopic ? (
               <>
                 <Card className="shadow-xs backdrop-blur">
@@ -520,6 +579,9 @@ function App() {
                         <Badge variant="secondary">更新于 {activeTopic.updatedAt}</Badge>
                       </div>
                       <CardTitle className="text-2xl font-semibold leading-tight md:text-3xl">
+                        <span className="mr-3 font-mono text-base uppercase tracking-wide text-muted-foreground">
+                          #{activeOrderLabel}
+                        </span>
                         {activeTopic.title}
                       </CardTitle>
                       <CardDescription className="text-base leading-relaxed text-muted-foreground">
@@ -631,7 +693,7 @@ function App() {
                       <Button
                         type="button"
                         variant="ghost"
-                        onClick={() => previousTopic && handleSelectTopic(previousTopic.id)}
+                        onClick={() => previousTopic && handleNavigateToDetail(previousTopic.id)}
                         disabled={!previousTopic}
                         aria-label="上一题"
                         className={cn(
@@ -651,7 +713,7 @@ function App() {
                       </Button>
                       <Button
                         type="button"
-                        onClick={() => nextTopic && handleSelectTopic(nextTopic.id)}
+                        onClick={() => nextTopic && handleNavigateToDetail(nextTopic.id)}
                         disabled={!nextTopic}
                         aria-label="下一题"
                         className={cn(
@@ -674,17 +736,17 @@ function App() {
                 </Card>
               </>
             ) : (
-              <Card className="h-full items-center justify-center border-dashed">
-                <CardContent className="flex h-full flex-col items-center justify-center gap-3 text-muted-foreground">
-                  <p className="text-sm">当前筛选条件暂无题目</p>
-                  <Button variant="outline" onClick={() => setKeyword("")}>
-                    重置搜索条件
+              <Card className="items-center justify-center border-dashed">
+                <CardContent className="flex flex-col items-center justify-center gap-3 text-muted-foreground">
+                  <p className="text-sm">当前题目不可用，请返回列表重新选择。</p>
+                  <Button variant="outline" size="sm" onClick={handleNavigateToList}>
+                    返回列表
                   </Button>
                 </CardContent>
               </Card>
             )}
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

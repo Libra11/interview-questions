@@ -92,12 +92,6 @@ arr[99999] → 0x1000 + 99999 × 8 = 0x1389F8
 // 无论索引多大，计算时间都是 O(1)
 ```
 
-**为什么是 O(1)？**
-
-1. **直接计算地址**：通过数学公式直接计算，不需要遍历
-2. **内存连续**：元素在内存中连续存储，可以直接跳转
-3. **固定时间**：计算时间与数组大小无关
-
 ### JavaScript 数组的特殊性
 
 **JavaScript 数组是对象**：
@@ -111,86 +105,9 @@ console.log(typeof arr); // "object"
 arr[0] === arr["0"]; // true
 ```
 
-**V8 引擎的优化**：
-
-V8 引擎会根据数组的使用情况，在两种存储模式之间切换：
-
-1. **快速元素（Fast Elements）**：连续整数索引，使用连续内存
-2. **字典元素（Dictionary Elements）**：稀疏数组或非连续索引，使用哈希表
-
-```javascript
-// 快速元素模式（连续索引）
-const fast = [1, 2, 3, 4, 5]; // O(1) 访问
-
-// 字典元素模式（稀疏数组）
-const sparse = [];
-sparse[0] = 1;
-sparse[10000] = 2; // 可能使用哈希表，但访问仍然是 O(1)
-```
-
 ---
 
-## 问题 3：数组访问性能的实际测试
-
-### 性能基准测试
-
-```javascript
-function benchmarkArrayAccess(size, iterations = 1000000) {
-  const arr = new Array(size).fill(0).map((_, i) => i);
-
-  // 测试访问第一个元素
-  console.time(`访问第一个元素 (${size} 个元素)`);
-  for (let i = 0; i < iterations; i++) {
-    const _ = arr[0];
-  }
-  console.timeEnd(`访问第一个元素 (${size} 个元素)`);
-
-  // 测试访问中间元素
-  const midIndex = Math.floor(size / 2);
-  console.time(`访问中间元素 (索引 ${midIndex})`);
-  for (let i = 0; i < iterations; i++) {
-    const _ = arr[midIndex];
-  }
-  console.timeEnd(`访问中间元素 (索引 ${midIndex})`);
-
-  // 测试访问最后一个元素
-  const lastIndex = size - 1;
-  console.time(`访问最后一个元素 (索引 ${lastIndex})`);
-  for (let i = 0; i < iterations; i++) {
-    const _ = arr[lastIndex];
-  }
-  console.timeEnd(`访问最后一个元素 (索引 ${lastIndex})`);
-}
-
-// 测试不同大小的数组
-benchmarkArrayAccess(1000);
-benchmarkArrayAccess(10000);
-benchmarkArrayAccess(100000);
-benchmarkArrayAccess(1000000);
-
-// 结果：所有位置的访问时间基本相同
-```
-
-### 实际测试结果
-
-```javascript
-// 典型测试结果（Chrome/Node.js）
-// 访问第一个元素 (100000 个元素): ~1.5ms
-// 访问中间元素 (索引 50000): ~1.5ms
-// 访问最后一个元素 (索引 99999): ~1.5ms
-
-// 结论：时间差异在测量误差范围内，可以认为相同
-```
-
-**影响性能的因素**：
-
-1. **CPU 缓存**：访问连续内存时，CPU 缓存命中率高
-2. **内存对齐**：元素对齐可以提高访问速度
-3. **JavaScript 引擎优化**：V8 等引擎的优化策略
-
----
-
-## 问题 4：数组与其他数据结构的访问性能对比
+## 问题 3：数组与其他数据结构的访问性能对比
 
 ### 数组 vs 链表
 
@@ -265,7 +182,7 @@ map.has("b"); // 哈希查找
 
 ---
 
-## 问题 5：什么时候数组访问会变慢？
+## 问题 4：什么时候数组访问会变慢？
 
 ### 稀疏数组
 
@@ -308,7 +225,7 @@ for (let i = 0; i < 100000; i++) {
 
 ---
 
-## 问题 6：实际项目中的性能优化
+## 问题 5：实际项目中的性能优化
 
 ### 场景 1：频繁访问数组元素
 
@@ -389,66 +306,6 @@ for (let i = 0; i < arr.length; i++) {
 
 ---
 
-## 问题 7：数组访问性能的最佳实践
-
-### 实践 1：使用 TypedArray 提升性能
-
-```javascript
-// 普通数组
-const normalArray = new Array(1000000).fill(0);
-
-// TypedArray（更快）
-const typedArray = new Int32Array(1000000);
-
-// TypedArray 的优势：
-// 1. 固定类型，不需要类型检查
-// 2. 连续内存，更好的缓存局部性
-// 3. 更小的内存占用
-
-// 性能对比
-console.time("普通数组访问");
-for (let i = 0; i < 1000000; i++) {
-  normalArray[i] = i;
-}
-console.timeEnd("普通数组访问"); // ~10ms
-
-console.time("TypedArray 访问");
-for (let i = 0; i < 1000000; i++) {
-  typedArray[i] = i;
-}
-console.timeEnd("TypedArray 访问"); // ~5ms（更快）
-```
-
-### 实践 2：避免稀疏数组
-
-```javascript
-// ❌ 避免：创建稀疏数组
-const sparse = new Array(100000);
-sparse[0] = 1;
-sparse[99999] = 2;
-
-// ✅ 推荐：使用 Map 或对象
-const map = new Map();
-map.set(0, 1);
-map.set(99999, 2);
-```
-
-### 实践 3：批量操作优化
-
-```javascript
-// ❌ 问题：逐个访问和修改
-const arr = new Array(100000).fill(0);
-for (let i = 0; i < arr.length; i++) {
-  arr[i] = Math.random(); // 每次访问
-}
-
-// ✅ 优化：批量操作（如果可能）
-const batch = new Array(1000).fill(0).map(() => Math.random());
-arr.splice(0, 1000, ...batch); // 批量替换
-```
-
----
-
 ## 总结
 
 **面试回答框架**
@@ -471,22 +328,6 @@ arr.splice(0, 1000, ...batch); // 批量替换
    - **数组 vs 链表**：数组 O(1) 访问，链表 O(n) 访问
    - **数组 vs Map**：数组 O(1) 访问，Map O(1) 查找（哈希）
 
-5. **性能优化**：
-   - 使用 TypedArray 提升性能
-   - 避免稀疏数组
-   - 选择合适的数据结构（数组 vs Map vs Set）
-   - 批量操作优化
-
-6. **实际应用**：
-   - 频繁访问：使用数组索引
-   - 频繁查找：使用 Map/Set
-   - 数值计算：使用 TypedArray
-
-7. **注意事项**：
-   - 数组访问很快，但创建和修改可能较慢
-   - 根据实际场景选择数据结构
-   - 避免过早优化，先测量再优化
-
 ---
 
 ## 延伸阅读
@@ -495,4 +336,3 @@ arr.splice(0, 1000, ...batch); // 批量替换
 - V8 博客：[Elements kinds in V8](https://v8.dev/blog/elements-kinds)
 - 【练习】实现一个性能测试工具，对比数组、Map、Set 的访问性能
 - 【练习】分析不同数组操作（push、pop、shift、unshift）的时间复杂度
-

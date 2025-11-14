@@ -24,6 +24,7 @@ export interface QuestionTopic {
   keywords: string[];
   content: string;
   highlight?: string;
+  order?: number;
 }
 
 export interface QuestionRecommendation {
@@ -31,5 +32,4 @@ export interface QuestionRecommendation {
   title: string;
   hint: string;
 }
-
 

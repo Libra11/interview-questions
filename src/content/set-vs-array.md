@@ -97,7 +97,7 @@ const users = [
   { id: 3, name: 'Charlie' }
 ];
 
-// 使用 Set 去重（需要配合 Map）
+// 使用 Map 去重
 const uniqueUsers = Array.from(
   new Map(users.map(user => [user.id, user])).values()
 );
@@ -142,39 +142,6 @@ largeAdminSet.has(99999);
 console.timeEnd('set has');         // ~0.001ms（快 500 倍）
 ```
 
-**实际应用：标签系统**
-
-```javascript
-// 场景：文章标签管理
-class ArticleTagManager {
-  constructor() {
-    this.tags = new Set();  // 使用 Set 存储标签
-  }
-  
-  addTag(tag) {
-    this.tags.add(tag);     // 自动去重
-  }
-  
-  hasTag(tag) {
-    return this.tags.has(tag);  // O(1) 快速查找
-  }
-  
-  removeTag(tag) {
-    return this.tags.delete(tag);  // O(1) 快速删除
-  }
-  
-  getAllTags() {
-    return [...this.tags];  // 转为数组用于展示
-  }
-}
-
-const manager = new ArticleTagManager();
-manager.addTag('JavaScript');
-manager.addTag('React');
-manager.addTag('JavaScript');  // 自动去重
-console.log(manager.getAllTags());  // ['JavaScript', 'React']
-```
-
 ### 3. 集合运算（交集、并集、差集）
 
 **Set 原生支持集合运算，数组需要手动实现**
@@ -201,53 +168,6 @@ const arrB = [3, 4, 5, 6];
 const arrIntersection = arrA.filter(x => arrB.includes(x));  // O(n²)
 ```
 
-**实际应用：权限系统**
-
-```javascript
-// 场景：用户权限管理
-class PermissionManager {
-  constructor() {
-    this.userPermissions = new Map();  // userId -> Set<permission>
-  }
-  
-  grantPermission(userId, permission) {
-    if (!this.userPermissions.has(userId)) {
-      this.userPermissions.set(userId, new Set());
-    }
-    this.userPermissions.get(userId).add(permission);
-  }
-  
-  hasPermission(userId, permission) {
-    return this.userPermissions.get(userId)?.has(permission) ?? false;
-  }
-  
-  // 获取多个用户的共同权限（交集）
-  getCommonPermissions(userIds) {
-    if (userIds.length === 0) return new Set();
-    
-    let common = this.userPermissions.get(userIds[0]) || new Set();
-    for (let i = 1; i < userIds.length; i++) {
-      const userPerms = this.userPermissions.get(userIds[i]) || new Set();
-      common = new Set([...common].filter(p => userPerms.has(p)));
-    }
-    return common;
-  }
-  
-  // 获取用户独有的权限（差集）
-  getUniquePermissions(userId, compareUserIds) {
-    const userPerms = this.userPermissions.get(userId) || new Set();
-    const comparePerms = new Set();
-    
-    compareUserIds.forEach(id => {
-      const perms = this.userPermissions.get(id) || new Set();
-      perms.forEach(p => comparePerms.add(p));
-    });
-    
-    return new Set([...userPerms].filter(p => !comparePerms.has(p)));
-  }
-}
-```
-
 ### 4. 动态添加/删除元素
 
 **Set 的 add/delete 操作性能优于数组的 push/splice**
@@ -258,23 +178,23 @@ class OnlineUserManager {
   constructor() {
     this.onlineUsers = new Set();  // 使用 Set 存储在线用户 ID
   }
-  
+
   userLogin(userId) {
     this.onlineUsers.add(userId);  // O(1) 添加
   }
-  
+
   userLogout(userId) {
     this.onlineUsers.delete(userId);  // O(1) 删除
   }
-  
+
   isUserOnline(userId) {
     return this.onlineUsers.has(userId);  // O(1) 查找
   }
-  
+
   getOnlineCount() {
     return this.onlineUsers.size;  // O(1) 获取大小
   }
-  
+
   getAllOnlineUsers() {
     return [...this.onlineUsers];  // 转为数组用于展示
   }
@@ -285,20 +205,20 @@ class OnlineUserManagerArray {
   constructor() {
     this.onlineUsers = [];  // 使用数组
   }
-  
+
   userLogin(userId) {
     if (!this.onlineUsers.includes(userId)) {  // O(n) 查找
       this.onlineUsers.push(userId);  // O(1) 添加
     }
   }
-  
+
   userLogout(userId) {
     const index = this.onlineUsers.indexOf(userId);  // O(n) 查找
     if (index > -1) {
       this.onlineUsers.splice(index, 1);  // O(n) 删除（需要移动元素）
     }
   }
-  
+
   isUserOnline(userId) {
     return this.onlineUsers.includes(userId);  // O(n) 查找
   }
@@ -351,27 +271,6 @@ const result2 = [...numberSet]
   .reduce((sum, n) => sum + n, 0);
 ```
 
-**实际应用：数据筛选和转换**
-
-```javascript
-// 场景：商品列表处理
-const products = [
-  { id: 1, name: 'Laptop', price: 999, category: 'Electronics' },
-  { id: 2, name: 'Book', price: 19, category: 'Books' },
-  { id: 3, name: 'Phone', price: 699, category: 'Electronics' }
-];
-
-// 数组：直接使用丰富的 API
-const expensiveElectronics = products
-  .filter(p => p.category === 'Electronics' && p.price > 500)
-  .map(p => ({ ...p, discountedPrice: p.price * 0.9 }))
-  .sort((a, b) => b.price - a.price);
-
-// Set：如果只需要唯一值，可以配合使用
-const uniqueCategories = [...new Set(products.map(p => p.category))];
-// ['Electronics', 'Books']
-```
-
 ### 3. 需要重复元素
 
 **某些场景下需要保留重复值**
@@ -382,17 +281,17 @@ class ShoppingCart {
   constructor() {
     this.items = [];  // 使用数组，允许重复商品
   }
-  
+
   addItem(productId, quantity = 1) {
     for (let i = 0; i < quantity; i++) {
       this.items.push(productId);  // 允许重复
     }
   }
-  
+
   getItemCount(productId) {
     return this.items.filter(id => id === productId).length;
   }
-  
+
   getTotalItems() {
     return this.items.length;
   }
@@ -466,264 +365,7 @@ console.log(matrix[1][2]);  // 6
 
 ---
 
-## 问题 4：性能对比：Set vs 数组
-
-### 查找性能对比
-
-```javascript
-// 测试数据：100 万条数据
-const size = 1000000;
-const testArray = Array.from({ length: size }, (_, i) => i);
-const testSet = new Set(testArray);
-
-// 测试：查找最后一个元素
-console.time('Array includes (worst case)');
-testArray.includes(size - 1);  // O(n) - 需要遍历整个数组
-console.timeEnd('Array includes (worst case)');
-// ~0.5-1ms
-
-console.time('Set has (worst case)');
-testSet.has(size - 1);  // O(1) - 哈希查找
-console.timeEnd('Set has (worst case)');
-// ~0.001ms（快 500-1000 倍）
-
-// 测试：查找第一个元素（数组最佳情况）
-console.time('Array includes (best case)');
-testArray.includes(0);  // O(1) - 第一个元素
-console.timeEnd('Array includes (best case)');
-// ~0.001ms
-
-console.time('Set has (best case)');
-testSet.has(0);  // O(1) - 哈希查找
-console.timeEnd('Set has (best case)');
-// ~0.001ms（两者相近）
-```
-
-### 添加/删除性能对比
-
-```javascript
-const iterations = 100000;
-
-// 数组：添加元素
-console.time('Array push');
-const arr1 = [];
-for (let i = 0; i < iterations; i++) {
-  arr1.push(i);  // O(1) 平均情况
-}
-console.timeEnd('Array push');
-// ~5-10ms
-
-// Set：添加元素
-console.time('Set add');
-const set1 = new Set();
-for (let i = 0; i < iterations; i++) {
-  set1.add(i);  // O(1) 平均情况
-}
-console.timeEnd('Set add');
-// ~10-15ms（Set 初始化稍慢，但后续操作相近）
-
-// 数组：删除元素（需要查找 + 移动）
-console.time('Array splice (delete)');
-const arr2 = Array.from({ length: iterations }, (_, i) => i);
-for (let i = 0; i < 1000; i++) {
-  const index = arr2.indexOf(i);  // O(n) 查找
-  if (index > -1) {
-    arr2.splice(index, 1);  // O(n) 删除（需要移动元素）
-  }
-}
-console.timeEnd('Array splice (delete)');
-// ~100-200ms（慢）
-
-// Set：删除元素
-console.time('Set delete');
-const set2 = new Set(Array.from({ length: iterations }, (_, i) => i));
-for (let i = 0; i < 1000; i++) {
-  set2.delete(i);  // O(1) 删除
-}
-console.timeEnd('Set delete');
-// ~0.5-1ms（快 100-200 倍）
-```
-
-### 去重性能对比
-
-```javascript
-const duplicateArray = Array.from({ length: 100000 }, (_, i) => i % 1000);
-
-// 方法 1：使用 Set 去重
-console.time('Set deduplication');
-const unique1 = [...new Set(duplicateArray)];
-console.timeEnd('Set deduplication');
-// ~2-5ms（最快）
-
-// 方法 2：filter + indexOf
-console.time('Array filter + indexOf');
-const unique2 = duplicateArray.filter((item, index) => 
-  duplicateArray.indexOf(item) === index
-);
-console.timeEnd('Array filter + indexOf');
-// ~5000-10000ms（慢 1000-2000 倍）
-
-// 方法 3：reduce + includes
-console.time('Array reduce + includes');
-const unique3 = duplicateArray.reduce((acc, curr) => {
-  if (!acc.includes(curr)) acc.push(curr);
-  return acc;
-}, []);
-console.timeEnd('Array reduce + includes');
-// ~3000-5000ms（慢）
-```
-
-**性能总结**
-
-| 操作 | 数组 | Set | 推荐 |
-|------|------|-----|------|
-| 查找元素 | O(n) `includes()` | O(1) `has()` | Set（数据量大时） |
-| 添加元素 | O(1) `push()` | O(1) `add()` | 相近 |
-| 删除元素 | O(n) `splice()` | O(1) `delete()` | Set |
-| 去重 | O(n²) 手动实现 | O(n) 自动 | Set |
-| 索引访问 | O(1) `arr[i]` | ❌ 不支持 | 数组 |
-| 遍历 | O(n) | O(n) | 相近 |
-
----
-
-## 问题 5：实际开发中如何选择？
-
-### 决策树
-
-```
-需要存储数据？
-├─ 需要去重？
-│  ├─ 是 → Set（自动去重）
-│  └─ 否 → 继续
-├─ 需要频繁查找/存在性检查？
-│  ├─ 是（数据量大） → Set（O(1) 查找）
-│  └─ 否 → 继续
-├─ 需要索引访问？
-│  ├─ 是 → 数组
-│  └─ 否 → 继续
-├─ 需要丰富的数组方法（map/filter/reduce）？
-│  ├─ 是 → 数组
-│  └─ 否 → 继续
-├─ 需要 JSON 序列化？
-│  ├─ 是 → 数组（或 Set 转数组）
-│  └─ 否 → 继续
-├─ 需要保留重复值？
-│  ├─ 是 → 数组
-│  └─ 否 → Set
-└─ 需要集合运算（交集/并集/差集）？
-   └─ Set（配合数组方法）
-```
-
-### 常见场景推荐
-
-**1. 使用 Set 的场景**
-
-```javascript
-// ✅ 场景 1：用户 ID 列表（需要去重和快速查找）
-const userIds = new Set([1001, 1002, 1003]);
-function isUserActive(userId) {
-  return userIds.has(userId);  // O(1) 快速查找
-}
-
-// ✅ 场景 2：标签系统（自动去重）
-const tags = new Set();
-tags.add('JavaScript');
-tags.add('React');
-tags.add('JavaScript');  // 自动去重
-
-// ✅ 场景 3：权限检查（频繁查找）
-const permissions = new Set(['read', 'write', 'delete']);
-function hasPermission(perm) {
-  return permissions.has(perm);
-}
-
-// ✅ 场景 4：在线用户列表（频繁添加/删除）
-const onlineUsers = new Set();
-onlineUsers.add(userId);      // O(1)
-onlineUsers.delete(userId);   // O(1)
-onlineUsers.has(userId);      // O(1)
-
-// ✅ 场景 5：集合运算
-const setA = new Set([1, 2, 3]);
-const setB = new Set([3, 4, 5]);
-const intersection = new Set([...setA].filter(x => setB.has(x)));
-```
-
-**2. 使用数组的场景**
-
-```javascript
-// ✅ 场景 1：有序列表（需要索引和顺序）
-const rankings = ['Alice', 'Bob', 'Charlie'];
-console.log(rankings[0]);  // 'Alice' - 第一名
-
-// ✅ 场景 2：需要重复值
-const shoppingCart = ['product-1', 'product-1', 'product-2'];
-// 购物车中同一商品可以添加多次
-
-// ✅ 场景 3：数据处理和转换
-const numbers = [1, 2, 3, 4, 5];
-const doubled = numbers.map(n => n * 2);  // [2, 4, 6, 8, 10]
-const evens = numbers.filter(n => n % 2 === 0);  // [2, 4]
-
-// ✅ 场景 4：API 数据交互（JSON 序列化）
-const apiData = {
-  items: [1, 2, 3, 4, 5]  // 可以直接序列化
-};
-JSON.stringify(apiData);
-
-// ✅ 场景 5：多维数据结构
-const matrix = [
-  [1, 2, 3],
-  [4, 5, 6]
-];
-console.log(matrix[1][2]);  // 6
-```
-
-**3. 组合使用（最佳实践）**
-
-```javascript
-// 场景：商品管理系统
-class ProductManager {
-  constructor() {
-    this.products = [];  // 数组：保持顺序，支持丰富操作
-    this.productIds = new Set();  // Set：快速查找和去重
-    this.categories = new Set();  // Set：唯一分类列表
-  }
-  
-  addProduct(product) {
-    // 使用 Set 检查是否已存在
-    if (this.productIds.has(product.id)) {
-      throw new Error('Product already exists');
-    }
-    
-    // 添加到数组（保持顺序）
-    this.products.push(product);
-    
-    // 更新 Set（快速查找）
-    this.productIds.add(product.id);
-    this.categories.add(product.category);
-  }
-  
-  // 使用数组的丰富方法进行筛选
-  getProductsByCategory(category) {
-    return this.products.filter(p => p.category === category);
-  }
-  
-  // 使用 Set 快速检查
-  hasProduct(id) {
-    return this.productIds.has(id);  // O(1)
-  }
-  
-  // 使用 Set 获取唯一分类
-  getAllCategories() {
-    return [...this.categories];
-  }
-}
-```
-
----
-
-## 问题 6：WeakSet 的使用场景是什么？
+## 问题 4：WeakSet 的使用场景是什么？
 
 **WeakSet 的特性**
 
@@ -742,21 +384,21 @@ function deepClone(obj) {
   if (obj === null || typeof obj !== 'object') {
     return obj;
   }
-  
+
   // 检查是否已处理过（防止循环引用）
   if (processed.has(obj)) {
     throw new Error('Circular reference detected');
   }
-  
+
   processed.add(obj);
-  
+
   const clone = Array.isArray(obj) ? [] : {};
   for (let key in obj) {
     if (obj.hasOwnProperty(key)) {
       clone[key] = deepClone(obj[key]);
     }
   }
-  
+
   processed.delete(obj);  // 清理标记
   return clone;
 }
@@ -769,10 +411,10 @@ document.addEventListener('click', (e) => {
     console.log('Element already clicked');
     return;
   }
-  
+
   clickedElements.add(e.target);
   console.log('First click on element');
-  
+
   // 当 DOM 节点被移除时，WeakSet 中的引用会自动清理
 });
 ```
@@ -813,4 +455,3 @@ document.addEventListener('click', (e) => {
 - [MDN: Set](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set)
 - [MDN: Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - [MDN: WeakSet](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
-

@@ -9,7 +9,7 @@ import type { ComponentType, ReactNode } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
 import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
+import { cn, formatQuestionOrder } from "@/lib/utils";
 import {
   defaultQuestionStatus,
   type QuestionStatus,
@@ -32,8 +32,9 @@ export interface QuestionListProps {
     review: StatusStyle;
     starred: StatusStyle;
   };
-  density: "comfortable" | "compact";
+  density?: "comfortable" | "compact";
   emptyPlaceholder?: ReactNode;
+  layout?: "stack" | "grid";
 }
 
 const densityConfig = {
@@ -59,12 +60,104 @@ export function QuestionList({
   onSelect,
   statusMap,
   statusStyles,
-  density,
+  density = "comfortable",
   emptyPlaceholder,
+  layout = "stack",
 }: QuestionListProps) {
   const parentRef = useRef<HTMLDivElement | null>(null);
 
   const config = densityConfig[density];
+  const isGridLayout = layout === "grid";
+
+  if (isGridLayout) {
+    if (topics.length === 0) {
+      return (
+        <div className="rounded-lg border border-dashed p-6 text-center text-sm text-muted-foreground">
+          {emptyPlaceholder ?? "暂无匹配的题目，请尝试调整筛选条件。"}
+        </div>
+      );
+    }
+
+    return (
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+        {topics.map((topic, index) => {
+          const status = statusMap.get(topic.id) ?? defaultQuestionStatus;
+          const hasStatus = status.completed || status.review || status.starred;
+          const itemOrderLabel = formatQuestionOrder(topic.order, index + 1);
+          const isActive = activeId === topic.id;
+
+          return (
+            <button
+              type="button"
+              key={topic.id}
+              onClick={() => onSelect(topic.id)}
+              className={cn(
+                "flex h-full flex-col gap-3 rounded-2xl border border-border/50 bg-card/95 p-4 text-left shadow-sm transition hover:border-primary/50 hover:bg-primary/5 hover:shadow-md",
+                isActive &&
+                  "border-primary/60 bg-primary/5 shadow-lg shadow-primary/15 ring-1 ring-primary/20",
+              )}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
+                      #{itemOrderLabel}
+                    </span>
+                    <Badge variant="secondary" className="text-[11px]">
+                      {topic.difficulty}
+                    </Badge>
+                  </div>
+                  <p className="text-sm font-semibold text-foreground line-clamp-2">{topic.title}</p>
+                </div>
+                <Badge variant="outline" className="shrink-0 text-[10px]">
+                  {topic.category}
+                </Badge>
+              </div>
+              <p className="text-xs leading-relaxed text-muted-foreground line-clamp-3">
+                {topic.summary}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {topic.tags.slice(0, 3).map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-border/60 px-2 py-0.5 text-[11px] text-muted-foreground"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                <span>更新 {topic.updatedAt}</span>
+                <span>{topic.estimatedTime}</span>
+              </div>
+              {hasStatus && (
+                <div className="flex flex-wrap gap-1.5 border-t border-dashed border-border/50 pt-2">
+                  {status.review && (
+                    <span className={statusStyles.review.className}>
+                      <statusStyles.review.icon className="size-3" />
+                      {statusStyles.review.label}
+                    </span>
+                  )}
+                  {status.starred && (
+                    <span className={statusStyles.starred.className}>
+                      <statusStyles.starred.icon className="size-3" />
+                      {statusStyles.starred.label}
+                    </span>
+                  )}
+                  {status.completed && (
+                    <span className={statusStyles.completed.className}>
+                      <statusStyles.completed.icon className="size-3" />
+                      {statusStyles.completed.label}
+                    </span>
+                  )}
+                </div>
+              )}
+            </button>
+          );
+        })}
+      </div>
+    );
+  }
 
   const virtualizer = useVirtualizer({
     count: topics.length,
@@ -116,6 +209,7 @@ export function QuestionList({
           const topic = topics[virtualRow.index];
           const status = statusMap.get(topic.id) ?? defaultQuestionStatus;
           const hasStatus = status.completed || status.review || status.starred;
+          const itemOrderLabel = formatQuestionOrder(topic.order, virtualRow.index + 1);
 
           return (
             <button
@@ -136,7 +230,12 @@ export function QuestionList({
               )}
             >
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className={cn(config.titleClass, "text-foreground")}>{topic.title}</p>
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
+                    #{itemOrderLabel}
+                  </span>
+                  <p className={cn(config.titleClass, "text-foreground")}>{topic.title}</p>
+                </div>
                 <Badge variant="secondary" className="text-[11px]">
                   {topic.difficulty}
                 </Badge>
@@ -172,5 +271,3 @@ export function QuestionList({
     </div>
   );
 }
-
-
