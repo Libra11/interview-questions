@@ -640,35 +640,6 @@ const routes = [
 </body>
 ```
 
-### 常见错误
-
-```html
-<!-- ❌ 错误 1：async 用于有依赖的脚本 -->
-<script async src="jquery.js"></script>
-<script async src="app.js"></script>
-<!-- app.js 依赖 jquery.js，但 async 不保证顺序 -->
-
-<!-- ✅ 正确：使用 defer -->
-<script defer src="jquery.js"></script>
-<script defer src="app.js"></script>
-
-<!-- ❌ 错误 2：defer 用于需要立即执行的脚本 -->
-<script defer src="critical-init.js"></script>
-<!-- 如果脚本需要立即执行，不应该使用 defer -->
-
-<!-- ✅ 正确：正常加载 -->
-<script src="critical-init.js"></script>
-
-<!-- ❌ 错误 3：多个 defer 脚本顺序错误 -->
-<script defer src="app.js"></script>
-<script defer src="utils.js"></script>
-<!-- utils.js 应该在 app.js 之前 -->
-
-<!-- ✅ 正确：调整顺序 -->
-<script defer src="utils.js"></script>
-<script defer src="app.js"></script>
-```
-
 ---
 
 ## 问题 8：现代框架中的脚本加载策略
