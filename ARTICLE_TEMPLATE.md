@@ -8,7 +8,7 @@
 ---
 title: 问题标题（简洁明了，直接提问）
 category: JavaScript/Vue/React/CSS/HTML/算法/网络等
-difficulty: 初级/中级/高级
+difficulty: 入门/中级/高级
 updatedAt: YYYY-MM-DD
 summary: >-
   简洁的文章摘要，2-3行描述文章核心内容和学习价值
