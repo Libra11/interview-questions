@@ -92,9 +92,9 @@ export function QuestionList({
               key={topic.id}
               onClick={() => onSelect(topic.id)}
               className={cn(
-                "flex h-full flex-col gap-3 rounded-2xl border border-border/50 bg-card/95 p-4 text-left shadow-sm transition hover:border-primary/50 hover:bg-primary/5 hover:shadow-md",
+                "flex h-full flex-col gap-4 rounded-2xl border border-border/40 bg-card/50 p-5 text-left shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card/80 hover:shadow-xl hover:shadow-primary/5",
                 isActive &&
-                  "border-primary/60 bg-primary/5 shadow-lg shadow-primary/15 ring-1 ring-primary/20",
+                  "border-primary/50 bg-primary/5 shadow-lg shadow-primary/10 ring-1 ring-primary/20",
               )}
             >
               <div className="flex items-start justify-between gap-3">
@@ -116,11 +116,11 @@ export function QuestionList({
               <p className="text-xs leading-relaxed text-muted-foreground line-clamp-3">
                 {topic.summary}
               </p>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {topic.tags.slice(0, 3).map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-border/60 px-2 py-0.5 text-[11px] text-muted-foreground"
+                    className="rounded-md bg-muted/50 px-2 py-1 text-[10px] font-medium text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
                   >
                     {tag}
                   </span>
@@ -223,10 +223,10 @@ export function QuestionList({
               type="button"
               onClick={() => onSelect(topic.id)}
               className={cn(
-                "mx-1 rounded-xl border border-border/50 bg-card text-left shadow-sm transition-all hover:border-primary/50 hover:bg-primary/5 hover:shadow-md",
+                "mx-1 rounded-xl border border-transparent bg-transparent text-left transition-all duration-200 hover:bg-muted/50",
                 config.buttonPadding,
                 activeId === topic.id &&
-                  "border-primary/60 bg-primary/5 shadow-lg shadow-primary/15 ring-1 ring-primary/20",
+                  "bg-primary/5 font-medium text-primary ring-1 ring-primary/10",
               )}
             >
               <div className="flex flex-wrap items-center justify-between gap-2">

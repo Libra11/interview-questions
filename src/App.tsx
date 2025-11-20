@@ -331,19 +331,20 @@ function App() {
     : defaultQuestionStatus;
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-background">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.16),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(129,140,248,0.18),_transparent_60%)]" />
+    <div className="relative min-h-screen overflow-x-hidden bg-background selection:bg-primary/20 selection:text-primary">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100/20 via-background to-background dark:from-blue-950/20 dark:via-background dark:to-background" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay" />
 
       <div className="flex min-h-screen w-full flex-col gap-8 px-6 py-10 lg:px-12 xl:px-16 2xl:px-24">
         <header className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <Badge variant="secondary" className="mb-3 text-xs uppercase tracking-[0.3em]">
+            <Badge variant="secondary" className="mb-4 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary shadow-sm ring-1 ring-primary/10">
               Frontend Interview Planner
             </Badge>
-            <h1 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+            <h1 className="bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-5xl lg:text-6xl">
               前端面试刷题手册
             </h1>
-            <p className="text-muted-foreground mt-2 max-w-2xl text-sm leading-relaxed md:text-base">
+            <p className="text-muted-foreground mt-4 max-w-2xl text-base leading-relaxed md:text-lg">
               精心整理 React、TypeScript、性能优化等高频面试题目，配合 Markdown 详解与答题要点，帮助你快速梳理知识结构。
             </p>
           </div>
@@ -352,48 +353,48 @@ function App() {
           </div>
         </header>
 
-        <Card className="relative overflow-hidden border border-primary/10 bg-gradient-to-br from-primary/5 via-background/70 to-background shadow-[0_20px_45px_-30px_rgba(59,130,246,0.45)]">
-          <div className="absolute inset-0 -z-10 opacity-90 [mask-image:radial-gradient(circle_at_top,_rgba(0,0,0,0.65),_transparent_70%)]">
-            <div className="absolute -left-24 -top-32 h-72 w-72 rounded-full bg-primary/30 blur-3xl" />
-            <div className="absolute -right-36 top-1/3 h-80 w-80 rounded-full bg-violet-400/30 blur-[120px]" />
+        <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-primary/10 via-background to-background ring-1 ring-black/5 dark:ring-white/10">
+          <div className="absolute inset-0 -z-10 opacity-50 mix-blend-soft-light">
+            <div className="absolute -left-24 -top-32 h-[500px] w-[500px] rounded-full bg-primary/20 blur-[100px]" />
+            <div className="absolute -right-36 top-1/3 h-[600px] w-[600px] rounded-full bg-blue-400/20 blur-[120px]" />
           </div>
-          <CardHeader className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-primary/20 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.3em] text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] dark:border-primary/40 dark:bg-primary/35 dark:text-foreground">
-                <Sparkles className="size-3.5 text-primary dark:text-primary" />
+          <CardHeader className="flex flex-col gap-8 p-8 md:flex-row md:items-center md:justify-between">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-primary shadow-[0_0_10px_rgba(59,130,246,0.2)]">
+                <Sparkles className="size-3.5" />
                 今日建议练习路径
               </div>
-              <CardTitle className="text-2xl font-semibold md:text-3xl">
+              <CardTitle className="text-3xl font-bold tracking-tight md:text-4xl">
                 数据驱动的练习看板
               </CardTitle>
-              <CardDescription className="max-w-2xl text-sm leading-relaxed md:text-base">
+              <CardDescription className="max-w-2xl text-base leading-relaxed">
                 建议先从基础题目热身，再进入核心专题，最后通过工程化题目串联流程，形成完整的面试表达。
               </CardDescription>
             </div>
-            <div className="grid w-full max-w-[680px] grid-cols-2 gap-3 text-sm sm:grid-cols-3 xl:grid-cols-6">
+            <div className="grid w-full max-w-[680px] grid-cols-2 gap-4 text-sm sm:grid-cols-3 xl:grid-cols-6">
               {[
-                { label: "题目总数", value: totalQuestions, gradient: "from-blue-500/25 to-blue-500/5", icon: BookOpenCheck },
-                { label: "覆盖领域", value: totalCategories, gradient: "from-indigo-500/25 to-indigo-500/5", icon: Layers },
-                { label: "核心标签", value: totalTags, gradient: "from-purple-500/25 to-purple-500/5", icon: Tag },
-                { label: "已完成", value: completedCount, gradient: "from-emerald-500/25 to-emerald-500/5", icon: CheckCircle2 },
-                { label: "待复习", value: reviewCount, gradient: "from-amber-500/25 to-amber-500/5", icon: Clock3 },
-                { label: "已标星", value: starredCount, gradient: "from-fuchsia-500/25 to-fuchsia-500/5", icon: Star },
+                { label: "题目总数", value: totalQuestions, color: "text-blue-600 dark:text-blue-400", bg: "bg-blue-500/10", border: "border-blue-200 dark:border-blue-800", icon: BookOpenCheck },
+                { label: "覆盖领域", value: totalCategories, color: "text-indigo-600 dark:text-indigo-400", bg: "bg-indigo-500/10", border: "border-indigo-200 dark:border-indigo-800", icon: Layers },
+                { label: "核心标签", value: totalTags, color: "text-purple-600 dark:text-purple-400", bg: "bg-purple-500/10", border: "border-purple-200 dark:border-purple-800", icon: Tag },
+                { label: "已完成", value: completedCount, color: "text-emerald-600 dark:text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-200 dark:border-emerald-800", icon: CheckCircle2 },
+                { label: "待复习", value: reviewCount, color: "text-amber-600 dark:text-amber-400", bg: "bg-amber-500/10", border: "border-amber-200 dark:border-amber-800", icon: Clock3 },
+                { label: "已标星", value: starredCount, color: "text-pink-600 dark:text-pink-400", bg: "bg-pink-500/10", border: "border-pink-200 dark:border-pink-800", icon: Star },
               ].map((item) => (
                 <div
                   key={item.label}
                   className={cn(
-                    "relative overflow-hidden rounded-xl border border-white/5 bg-gradient-to-br p-4 shadow-sm backdrop-blur",
-                    item.gradient,
+                    "group relative overflow-hidden rounded-2xl border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg",
+                    item.bg,
+                    item.border
                   )}
                 >
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <item.icon className="size-4 text-foreground/70" />
-                    <p className="text-xs">{item.label}</p>
+                    <item.icon className={cn("size-4 transition-colors group-hover:text-foreground", item.color)} />
+                    <p className="text-xs font-medium">{item.label}</p>
                   </div>
-                  <p className="mt-2 text-xl font-semibold text-foreground md:text-2xl">
+                  <p className={cn("mt-3 text-2xl font-bold tracking-tight", item.color)}>
                     {item.value}
                   </p>
-                  <span className="absolute -right-3 top-3 h-12 w-12 rounded-full bg-white/10 blur-xl" />
                 </div>
               ))}
             </div>
@@ -424,11 +425,13 @@ function App() {
                         key={item}
                         type="button"
                         size="sm"
-                        variant={category === item ? "default" : "ghost"}
+                        variant={category === item ? "default" : "outline"}
                         onClick={() => setCategory(item)}
                         className={cn(
-                          "rounded-full border transition",
-                          category === item && "shadow-md",
+                          "rounded-full border transition-all duration-300",
+                          category === item 
+                            ? "shadow-md ring-2 ring-primary/20" 
+                            : "bg-transparent hover:bg-primary/5 hover:text-primary hover:border-primary/30"
                         )}
                       >
                         {item}
@@ -445,7 +448,12 @@ function App() {
                         key={item}
                         asChild
                         variant={difficulty === item ? "default" : "outline"}
-                        className="cursor-pointer px-3 py-1 text-xs"
+                        className={cn(
+                          "cursor-pointer px-4 py-1.5 text-xs transition-all duration-300",
+                          difficulty === item 
+                            ? "shadow-md ring-2 ring-primary/20" 
+                            : "bg-transparent hover:bg-primary/5 hover:text-primary hover:border-primary/30"
+                        )}
                       >
                         <button type="button" onClick={() => setDifficulty(item)}>
                           {item}
@@ -467,16 +475,18 @@ function App() {
                           key={option}
                           type="button"
                           size="sm"
-                          variant={isActive ? "default" : "ghost"}
+                          variant={isActive ? "default" : "outline"}
                           onClick={() => setStatusFilter(option)}
                           className={cn(
-                            "rounded-full border transition",
-                            isActive && "shadow-md",
+                            "rounded-full border transition-all duration-300",
+                            isActive 
+                              ? "shadow-md ring-2 ring-primary/20" 
+                              : "bg-transparent hover:bg-primary/5 hover:text-primary hover:border-primary/30"
                           )}
                         >
                           {option}
                           {option !== ALL_STATUS && (
-                            <span className="ml-1 text-xs opacity-80">({count})</span>
+                            <span className="ml-1.5 text-xs opacity-80">({count})</span>
                           )}
                         </Button>
                       );

@@ -55,16 +55,23 @@ export function CodeBlock({
         className
       )}
     >
-      <div className="flex items-center justify-between border-b border-border/60 bg-muted/60 px-4 py-2 text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
-        <span>{language}</span>
+      <div className="flex items-center justify-between border-b border-border/40 bg-muted/30 px-4 py-2.5">
+        <div className="flex items-center gap-1.5">
+          <div className="size-2.5 rounded-full bg-red-500/20 group-hover:bg-red-500/80 transition-colors" />
+          <div className="size-2.5 rounded-full bg-amber-500/20 group-hover:bg-amber-500/80 transition-colors" />
+          <div className="size-2.5 rounded-full bg-emerald-500/20 group-hover:bg-emerald-500/80 transition-colors" />
+          <span className="ml-2 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/70">
+            {language}
+          </span>
+        </div>
         <Button
           type="button"
           variant="ghost"
           size="sm"
-          className="h-7 px-2 text-[11px]"
+          className="h-6 rounded-md px-2 text-[10px] font-medium text-muted-foreground hover:bg-background hover:text-foreground"
           onClick={handleCopy}
         >
-          {copied ? "已复制" : "复制"}
+          {copied ? "已复制" : "复制代码"}
         </Button>
       </div>
       <pre className="scrollbar-thin overflow-auto px-4 py-4 text-xs leading-6">

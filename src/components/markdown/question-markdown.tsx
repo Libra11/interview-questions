@@ -62,7 +62,7 @@ const CodeRenderer = ({ className, children, ...props }: MarkdownCodeProps) => {
       <code
         {...props}
         className={cn(
-          "rounded bg-muted px-1.5 py-0.5 font-mono text-[13px] text-foreground",
+          "rounded-md bg-muted/50 px-1.5 py-0.5 font-mono text-[13px] text-primary/80 ring-1 ring-inset ring-border/50",
           codeClassName,
         )}
       >
@@ -79,7 +79,7 @@ const markdownComponents: Components = {
     <h1
       {...props}
       className={cn(
-        "text-2xl font-semibold leading-tight tracking-tight text-foreground",
+        "bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-2xl font-bold leading-tight tracking-tight text-transparent",
         className,
       )}
     >
@@ -160,7 +160,7 @@ const markdownComponents: Components = {
     <blockquote
       {...props}
       className={cn(
-        "space-y-2 rounded-xl border-l-4 border-primary/50 bg-primary/10 px-4 py-3 text-sm leading-relaxed text-muted-foreground",
+        "my-4 space-y-2 rounded-r-xl border-l-4 border-primary/30 bg-muted/30 px-5 py-4 text-sm leading-relaxed text-muted-foreground shadow-sm",
         className,
       )}
     >
