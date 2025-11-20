@@ -2,10 +2,12 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
+  BookOpen,
   BookOpenCheck,
   CheckCircle2,
   Clock3,
   Layers,
+  PlayCircle,
   Sparkles,
   Star,
   Tag,
@@ -32,6 +34,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useQuestionProgress } from "@/hooks/use-question-progress";
 import { categories, difficulties, questionTopics, recommendations } from "@/data/questions";
 import {
@@ -41,6 +44,7 @@ import {
   type QuestionTopic,
 } from "@/types/question";
 import { cn, formatQuestionOrder } from "@/lib/utils";
+import { getAnimationComponent } from "@/components/animations/registry";
 
 const ALL_CATEGORY = "全部领域";
 const ALL_DIFFICULTIES: Difficulty | "全部难度" = "全部难度";
@@ -688,9 +692,44 @@ function App() {
 
                 <Card className="shadow-xs">
                   <CardContent className="pt-4 pb-4">
-                    <div className="rounded-xl border border-dashed border-muted-foreground/30 bg-muted/40 p-6 text-sm leading-relaxed shadow-sm">
-                      <QuestionMarkdown content={activeTopic.content} />
-                    </div>
+                    {(() => {
+                      const AnimationComponent = getAnimationComponent(activeTopic.id);
+                      
+                      if (AnimationComponent) {
+                        return (
+                          <Tabs defaultValue="markdown" className="w-full">
+                            <div className="mb-6 flex items-center justify-between">
+                              <TabsList className="h-9 w-full justify-start rounded-lg bg-muted/50 p-1 sm:w-auto">
+                                <TabsTrigger value="markdown" className="flex-1 gap-2 text-xs sm:flex-none">
+                                  <BookOpen className="size-3.5" />
+                                  原理详解
+                                </TabsTrigger>
+                                <TabsTrigger value="animation" className="flex-1 gap-2 text-xs sm:flex-none">
+                                  <PlayCircle className="size-3.5" />
+                                  动态演示
+                                </TabsTrigger>
+                              </TabsList>
+                            </div>
+                            
+                            <TabsContent value="markdown" className="mt-0 animate-in fade-in-50 slide-in-from-bottom-2 duration-300">
+                              <div className="rounded-xl border border-dashed border-muted-foreground/30 bg-muted/40 p-6 text-sm leading-relaxed shadow-sm">
+                                <QuestionMarkdown content={activeTopic.content} />
+                              </div>
+                            </TabsContent>
+                            
+                            <TabsContent value="animation" className="mt-0 animate-in fade-in-50 slide-in-from-bottom-2 duration-300">
+                              <AnimationComponent />
+                            </TabsContent>
+                          </Tabs>
+                        );
+                      }
+
+                      return (
+                        <div className="rounded-xl border border-dashed border-muted-foreground/30 bg-muted/40 p-6 text-sm leading-relaxed shadow-sm">
+                          <QuestionMarkdown content={activeTopic.content} />
+                        </div>
+                      );
+                    })()}
                   </CardContent>
                 </Card>
                 <Card className="overflow-hidden border border-border/60 shadow-xs">
