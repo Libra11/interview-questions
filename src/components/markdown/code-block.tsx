@@ -6,7 +6,11 @@
  */
 import { useMemo, useState } from "react";
 import hljs from "highlight.js";
+import vue from "highlight.js/lib/languages/xml"; // Vue uses XML/HTML syntax
 import "highlight.js/styles/atom-one-dark.css";
+
+// Register Vue language
+hljs.registerLanguage("vue", vue);
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
