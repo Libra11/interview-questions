@@ -1,3 +1,10 @@
+/**
+ * Author: Libra
+ * Date: 2025-11-20 09:29:28
+ * LastEditTime: 2025-11-21 17:59:50
+ * LastEditors: Libra
+ * Description:
+ */
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   ArrowLeft,
@@ -16,6 +23,7 @@ import {
 import { QuestionMarkdown } from "@/components/markdown/question-markdown";
 import { QuestionList } from "@/components/question-list";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeCustomizer } from "@/components/theme-customizer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -36,7 +44,7 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useQuestionProgress } from "@/hooks/use-question-progress";
-import { categories, difficulties, questionTopics, recommendations } from "@/data/questions";
+import { categories, difficulties, questionTopics } from "@/data/questions";
 import {
   defaultQuestionStatus,
   type Difficulty,
@@ -112,7 +120,9 @@ const sortOptionItems: { value: SortOption; label: string }[] = [
 function App() {
   const [keyword, setKeyword] = useState("");
   const [category, setCategory] = useState<string>(ALL_CATEGORY);
-  const [difficulty, setDifficulty] = useState<Difficulty | "全部难度">(ALL_DIFFICULTIES);
+  const [difficulty, setDifficulty] = useState<Difficulty | "全部难度">(
+    ALL_DIFFICULTIES
+  );
   const [statusFilter, setStatusFilter] = useState<StatusFilter>(ALL_STATUS);
   const [sortOption, setSortOption] = useState<SortOption>("default");
   const [route, setRoute] = useState<RouteState>(() => getInitialRoute());
@@ -139,7 +149,7 @@ function App() {
         topic,
         status: getStatus(topic.id),
       })),
-    [getStatus],
+    [getStatus]
   );
 
   const statusMap = useMemo(() => {
@@ -154,7 +164,7 @@ function App() {
   const totalCategories = categories.length;
   const totalTags = useMemo(
     () => new Set(questionTopics.flatMap((topic) => topic.tags)).size,
-    [],
+    []
   );
 
   const { completedCount, reviewCount, starredCount } = useMemo(() => {
@@ -174,7 +184,11 @@ function App() {
       }
     });
 
-    return { completedCount: completed, reviewCount: review, starredCount: starred };
+    return {
+      completedCount: completed,
+      reviewCount: review,
+      starredCount: starred,
+    };
   }, [questionStatuses]);
 
   const statusCounts: Record<StatusCountKey, number> = {
@@ -217,7 +231,7 @@ function App() {
       label: "已完成",
       className: cn(
         statusBadgeBaseClass,
-        "border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:border-emerald-400/40 dark:bg-emerald-500/20 dark:text-emerald-200",
+        "border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:border-emerald-400/40 dark:bg-emerald-500/20 dark:text-emerald-200"
       ),
       icon: CheckCircle2,
     },
@@ -225,7 +239,7 @@ function App() {
       label: "待复习",
       className: cn(
         statusBadgeBaseClass,
-        "border-amber-500/40 bg-amber-500/10 text-amber-600 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-200",
+        "border-amber-500/40 bg-amber-500/10 text-amber-600 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-200"
       ),
       icon: Clock3,
     },
@@ -233,7 +247,7 @@ function App() {
       label: "已标星",
       className: cn(
         statusBadgeBaseClass,
-        "border-violet-500/40 bg-violet-500/10 text-violet-600 dark:border-violet-400/40 dark:bg-violet-500/20 dark:text-violet-200",
+        "border-violet-500/40 bg-violet-500/10 text-violet-600 dark:border-violet-400/40 dark:bg-violet-500/20 dark:text-violet-200"
       ),
       icon: Star,
     },
@@ -246,22 +260,30 @@ function App() {
         !normalizedKeyword ||
         topic.title.toLowerCase().includes(normalizedKeyword) ||
         topic.summary.toLowerCase().includes(normalizedKeyword) ||
-        topic.tags.some((tag) => tag.toLowerCase().includes(normalizedKeyword)) ||
-        topic.keywords.some((tag) => tag.toLowerCase().includes(normalizedKeyword));
+        topic.tags.some((tag) =>
+          tag.toLowerCase().includes(normalizedKeyword)
+        ) ||
+        topic.keywords.some((tag) =>
+          tag.toLowerCase().includes(normalizedKeyword)
+        );
       const matchesCategory =
         category === ALL_CATEGORY ? true : topic.category === category;
       const matchesDifficulty =
-        difficulty === ALL_DIFFICULTIES ? true : topic.difficulty === difficulty;
+        difficulty === ALL_DIFFICULTIES
+          ? true
+          : topic.difficulty === difficulty;
       const status = statusMap.get(topic.id) ?? defaultQuestionStatus;
       const matchesStatus =
         statusFilter === ALL_STATUS
           ? true
           : statusFilter === "已完成"
-            ? status.completed
-            : statusFilter === "待复习"
-              ? status.review
-              : status.starred;
-      return matchesKeyword && matchesCategory && matchesDifficulty && matchesStatus;
+          ? status.completed
+          : statusFilter === "待复习"
+          ? status.review
+          : status.starred;
+      return (
+        matchesKeyword && matchesCategory && matchesDifficulty && matchesStatus
+      );
     });
   }, [keyword, category, difficulty, statusFilter, statusMap]);
 
@@ -273,12 +295,14 @@ function App() {
     switch (sortOption) {
       case "updated-desc":
         sorted.sort(
-          (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
+          (a, b) =>
+            new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
         );
         break;
       case "updated-asc":
         sorted.sort(
-          (a, b) => new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime(),
+          (a, b) =>
+            new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime()
         );
         break;
       case "title-asc":
@@ -286,12 +310,14 @@ function App() {
         break;
       case "difficulty-desc":
         sorted.sort(
-          (a, b) => difficultyWeight[b.difficulty] - difficultyWeight[a.difficulty],
+          (a, b) =>
+            difficultyWeight[b.difficulty] - difficultyWeight[a.difficulty]
         );
         break;
       case "difficulty-asc":
         sorted.sort(
-          (a, b) => difficultyWeight[a.difficulty] - difficultyWeight[b.difficulty],
+          (a, b) =>
+            difficultyWeight[a.difficulty] - difficultyWeight[b.difficulty]
         );
         break;
       default:
@@ -319,8 +345,7 @@ function App() {
   const activeIndex = activeTopic
     ? sortedTopics.findIndex((topic) => topic.id === activeTopic.id)
     : -1;
-  const previousTopic =
-    activeIndex > 0 ? sortedTopics[activeIndex - 1] : null;
+  const previousTopic = activeIndex > 0 ? sortedTopics[activeIndex - 1] : null;
   const nextTopic =
     activeIndex >= 0 && activeIndex < sortedTopics.length - 1
       ? sortedTopics[activeIndex + 1]
@@ -342,17 +367,22 @@ function App() {
       <div className="flex min-h-screen w-full flex-col gap-8 px-6 py-10 lg:px-12 xl:px-16 2xl:px-24">
         <header className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <Badge variant="secondary" className="mb-4 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary shadow-sm ring-1 ring-primary/10">
+            <Badge
+              variant="secondary"
+              className="mb-4 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary shadow-sm ring-1 ring-primary/10"
+            >
               Frontend Interview Planner
             </Badge>
             <h1 className="bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-5xl lg:text-6xl">
               前端面试刷题手册
             </h1>
             <p className="text-muted-foreground mt-4 max-w-2xl text-base leading-relaxed md:text-lg">
-              精心整理 React、TypeScript、性能优化等高频面试题目，配合 Markdown 详解与答题要点，帮助你快速梳理知识结构。
+              精心整理 React、TypeScript、性能优化等高频面试题目，配合 Markdown
+              详解与答题要点，帮助你快速梳理知识结构。
             </p>
           </div>
           <div className="flex items-center gap-3">
+            <ThemeCustomizer />
             <ThemeToggle />
           </div>
         </header>
@@ -360,11 +390,11 @@ function App() {
         <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-primary/10 via-background to-background ring-1 ring-black/5 dark:ring-white/10">
           <div className="absolute inset-0 -z-10 opacity-50 mix-blend-soft-light">
             <div className="absolute -left-24 -top-32 h-[500px] w-[500px] rounded-full bg-primary/20 blur-[100px]" />
-            <div className="absolute -right-36 top-1/3 h-[600px] w-[600px] rounded-full bg-blue-400/20 blur-[120px]" />
+            <div className="absolute -right-36 top-1/3 h-[600px] w-[600px] rounded-full bg-primary/20 blur-[120px]" />
           </div>
           <CardHeader className="flex flex-col gap-8 p-8 md:flex-row md:items-center md:justify-between">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-primary shadow-[0_0_10px_rgba(59,130,246,0.2)]">
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-primary shadow-[0_0_10px_hsl(var(--primary)/0.2)]">
                 <Sparkles className="size-3.5" />
                 今日建议练习路径
               </div>
@@ -375,14 +405,56 @@ function App() {
                 建议先从基础题目热身，再进入核心专题，最后通过工程化题目串联流程，形成完整的面试表达。
               </CardDescription>
             </div>
-            <div className="grid w-full max-w-[680px] grid-cols-2 gap-4 text-sm sm:grid-cols-3 xl:grid-cols-6">
+            <div className="grid w-full max-w-[840px] grid-cols-2 gap-4 text-sm sm:grid-cols-3 xl:grid-cols-6">
               {[
-                { label: "题目总数", value: totalQuestions, color: "text-blue-600 dark:text-blue-400", bg: "bg-blue-500/10", border: "border-blue-200 dark:border-blue-800", icon: BookOpenCheck },
-                { label: "覆盖领域", value: totalCategories, color: "text-indigo-600 dark:text-indigo-400", bg: "bg-indigo-500/10", border: "border-indigo-200 dark:border-indigo-800", icon: Layers },
-                { label: "核心标签", value: totalTags, color: "text-purple-600 dark:text-purple-400", bg: "bg-purple-500/10", border: "border-purple-200 dark:border-purple-800", icon: Tag },
-                { label: "已完成", value: completedCount, color: "text-emerald-600 dark:text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-200 dark:border-emerald-800", icon: CheckCircle2 },
-                { label: "待复习", value: reviewCount, color: "text-amber-600 dark:text-amber-400", bg: "bg-amber-500/10", border: "border-amber-200 dark:border-amber-800", icon: Clock3 },
-                { label: "已标星", value: starredCount, color: "text-pink-600 dark:text-pink-400", bg: "bg-pink-500/10", border: "border-pink-200 dark:border-pink-800", icon: Star },
+                {
+                  label: "题目总数",
+                  value: totalQuestions,
+                  color: "text-blue-600 dark:text-blue-400",
+                  bg: "bg-blue-500/10",
+                  border: "border-blue-100 dark:border-blue-900",
+                  icon: BookOpenCheck,
+                },
+                {
+                  label: "覆盖领域",
+                  value: totalCategories,
+                  color: "text-indigo-600 dark:text-indigo-400",
+                  bg: "bg-indigo-500/10",
+                  border: "border-indigo-100 dark:border-indigo-900",
+                  icon: Layers,
+                },
+                {
+                  label: "核心标签",
+                  value: totalTags,
+                  color: "text-purple-600 dark:text-purple-400",
+                  bg: "bg-purple-500/10",
+                  border: "border-purple-100 dark:border-purple-900",
+                  icon: Tag,
+                },
+                {
+                  label: "已完成",
+                  value: completedCount,
+                  color: "text-emerald-600 dark:text-emerald-400",
+                  bg: "bg-emerald-500/10",
+                  border: "border-emerald-100 dark:border-emerald-900",
+                  icon: CheckCircle2,
+                },
+                {
+                  label: "待复习",
+                  value: reviewCount,
+                  color: "text-amber-600 dark:text-amber-400",
+                  bg: "bg-amber-500/10",
+                  border: "border-amber-100 dark:border-amber-900",
+                  icon: Clock3,
+                },
+                {
+                  label: "已标星",
+                  value: starredCount,
+                  color: "text-pink-600 dark:text-pink-400",
+                  bg: "bg-pink-500/10",
+                  border: "border-pink-100 dark:border-pink-900",
+                  icon: Star,
+                },
               ].map((item) => (
                 <div
                   key={item.label}
@@ -392,11 +464,31 @@ function App() {
                     item.border
                   )}
                 >
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <item.icon className={cn("size-4 transition-colors group-hover:text-foreground", item.color)} />
-                    <p className="text-xs font-medium">{item.label}</p>
+                  <item.icon
+                    className={cn(
+                      "absolute -bottom-4 -right-4 size-20 opacity-[0.08] transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12",
+                      item.color
+                    )}
+                  />
+                  <div className="relative z-10 flex items-center gap-2 text-muted-foreground">
+                    <div className="rounded-lg bg-background/40 p-1.5 ring-1 ring-black/5 backdrop-blur-sm dark:ring-white/10">
+                      <item.icon
+                        className={cn(
+                          "size-3.5 transition-colors group-hover:text-foreground",
+                          item.color
+                        )}
+                      />
+                    </div>
+                    <p className="text-xs font-medium opacity-80">
+                      {item.label}
+                    </p>
                   </div>
-                  <p className={cn("mt-3 text-2xl font-bold tracking-tight", item.color)}>
+                  <p
+                    className={cn(
+                      "relative z-10 mt-3 text-3xl font-bold tracking-tight",
+                      item.color
+                    )}
+                  >
                     {item.value}
                   </p>
                 </div>
@@ -410,8 +502,12 @@ function App() {
             <Card className="shadow-xs">
               <CardHeader className="gap-5">
                 <div>
-                  <CardTitle className="text-lg font-semibold">筛选器</CardTitle>
-                  <CardDescription>支持按关键词、领域与难度进行组合筛选。</CardDescription>
+                  <CardTitle className="text-lg font-semibold">
+                    筛选器
+                  </CardTitle>
+                  <CardDescription>
+                    支持按关键词、领域与难度进行组合筛选。
+                  </CardDescription>
                 </div>
                 <Input
                   placeholder="搜索关键词，例如：悬挂闭包、LCP..."
@@ -422,7 +518,9 @@ function App() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <section>
-                  <h3 className="text-sm font-medium text-muted-foreground">领域</h3>
+                  <h3 className="text-sm font-medium text-muted-foreground">
+                    领域
+                  </h3>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {[ALL_CATEGORY, ...categories].map((item) => (
                       <Button
@@ -433,8 +531,8 @@ function App() {
                         onClick={() => setCategory(item)}
                         className={cn(
                           "rounded-full border transition-all duration-300",
-                          category === item 
-                            ? "shadow-md ring-2 ring-primary/20" 
+                          category === item
+                            ? "shadow-md ring-2 ring-primary/20"
                             : "bg-transparent hover:bg-primary/5 hover:text-primary hover:border-primary/30"
                         )}
                       >
@@ -445,7 +543,9 @@ function App() {
                 </section>
 
                 <section>
-                  <h3 className="text-sm font-medium text-muted-foreground">难度</h3>
+                  <h3 className="text-sm font-medium text-muted-foreground">
+                    难度
+                  </h3>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {[ALL_DIFFICULTIES, ...difficulties].map((item) => (
                       <Badge
@@ -454,12 +554,15 @@ function App() {
                         variant={difficulty === item ? "default" : "outline"}
                         className={cn(
                           "cursor-pointer px-4 py-1.5 text-xs transition-all duration-300",
-                          difficulty === item 
-                            ? "shadow-md ring-2 ring-primary/20" 
+                          difficulty === item
+                            ? "shadow-md ring-2 ring-primary/20"
                             : "bg-transparent hover:bg-primary/5 hover:text-primary hover:border-primary/30"
                         )}
                       >
-                        <button type="button" onClick={() => setDifficulty(item)}>
+                        <button
+                          type="button"
+                          onClick={() => setDifficulty(item)}
+                        >
                           {item}
                         </button>
                       </Badge>
@@ -468,12 +571,16 @@ function App() {
                 </section>
 
                 <section>
-                  <h3 className="text-sm font-medium text-muted-foreground">练习状态</h3>
+                  <h3 className="text-sm font-medium text-muted-foreground">
+                    练习状态
+                  </h3>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {statusOptions.map((option) => {
                       const isActive = statusFilter === option;
                       const count =
-                        option === ALL_STATUS ? undefined : statusCounts[option as StatusCountKey];
+                        option === ALL_STATUS
+                          ? undefined
+                          : statusCounts[option as StatusCountKey];
                       return (
                         <Button
                           key={option}
@@ -483,14 +590,16 @@ function App() {
                           onClick={() => setStatusFilter(option)}
                           className={cn(
                             "rounded-full border transition-all duration-300",
-                            isActive 
-                              ? "shadow-md ring-2 ring-primary/20" 
+                            isActive
+                              ? "shadow-md ring-2 ring-primary/20"
                               : "bg-transparent hover:bg-primary/5 hover:text-primary hover:border-primary/30"
                           )}
                         >
                           {option}
                           {option !== ALL_STATUS && (
-                            <span className="ml-1.5 text-xs opacity-80">({count})</span>
+                            <span className="ml-1.5 text-xs opacity-80">
+                              ({count})
+                            </span>
                           )}
                         </Button>
                       );
@@ -515,7 +624,12 @@ function App() {
                     </CardDescription>
                   </div>
                   <div className="flex flex-wrap items-center gap-3">
-                    <Select value={sortOption} onValueChange={(value: SortOption) => setSortOption(value)}>
+                    <Select
+                      value={sortOption}
+                      onValueChange={(value: SortOption) =>
+                        setSortOption(value)
+                      }
+                    >
                       <SelectTrigger className="w-[180px] text-xs sm:text-sm">
                         <SelectValue placeholder="选择排序" />
                       </SelectTrigger>
@@ -542,28 +656,6 @@ function App() {
                 />
               </CardContent>
             </Card>
-
-            <Card className="shadow-xs">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold">加分练习</CardTitle>
-                <CardDescription>
-                  面试官常追问的延伸话题，可准备 1-2 个案例作为亮点。
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {recommendations.map((item) => (
-                  <div
-                    key={item.id}
-                    className="rounded-lg border border-dashed border-muted-foreground/20 p-4"
-                  >
-                    <p className="text-sm font-medium text-foreground">{item.title}</p>
-                    <p className="text-muted-foreground mt-1 text-xs leading-relaxed">
-                      {item.hint}
-                    </p>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
           </div>
         ) : (
           <div className="space-y-6 pb-10">
@@ -578,7 +670,9 @@ function App() {
                 <ArrowLeft className="size-4" />
                 返回题库列表
               </Button>
-              <span className="text-xs text-muted-foreground">共 {sortedTopics.length} 题</span>
+              <span className="text-xs text-muted-foreground">
+                共 {sortedTopics.length} 题
+              </span>
             </div>
             {activeTopic ? (
               <>
@@ -586,11 +680,18 @@ function App() {
                   <CardHeader className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                     <div className="space-y-3">
                       <div className="flex flex-wrap items-center gap-2">
-                        <Badge variant="outline" className="uppercase tracking-wide">
+                        <Badge
+                          variant="outline"
+                          className="uppercase tracking-wide"
+                        >
                           {activeTopic.category}
                         </Badge>
-                        <Badge variant="secondary">{activeTopic.difficulty}</Badge>
-                        <Badge variant="secondary">更新于 {activeTopic.updatedAt}</Badge>
+                        <Badge variant="secondary">
+                          {activeTopic.difficulty}
+                        </Badge>
+                        <Badge variant="secondary">
+                          更新于 {activeTopic.updatedAt}
+                        </Badge>
                       </div>
                       <CardTitle className="text-2xl font-semibold leading-tight md:text-3xl">
                         <span className="mr-3 font-mono text-base uppercase tracking-wide text-muted-foreground">
@@ -608,7 +709,7 @@ function App() {
                       )}
                     </div>
                     <CardAction className="flex min-w-[220px] flex-col gap-4">
-      <div>
+                      <div>
                         <p className="text-xs uppercase tracking-wide text-muted-foreground">
                           预计练习时长
                         </p>
@@ -618,7 +719,11 @@ function App() {
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {activeTopic.keywords.map((keywordItem) => (
-                          <Badge key={keywordItem} variant="outline" className="text-xs">
+                          <Badge
+                            key={keywordItem}
+                            variant="outline"
+                            className="text-xs"
+                          >
                             {keywordItem}
                           </Badge>
                         ))}
@@ -636,12 +741,14 @@ function App() {
                               toggleButtonBaseClass,
                               "border-violet-500/40 text-violet-600 hover:bg-violet-500/10 dark:text-violet-200",
                               activeStatus.starred &&
-                                "border-violet-500 bg-violet-500/20 text-violet-700 dark:border-violet-400 dark:bg-violet-500/30 dark:text-violet-100",
+                                "border-violet-500 bg-violet-500/20 text-violet-700 dark:border-violet-400 dark:bg-violet-500/30 dark:text-violet-100"
                             )}
                           >
                             <Star
                               className="size-4"
-                              fill={activeStatus.starred ? "currentColor" : "none"}
+                              fill={
+                                activeStatus.starred ? "currentColor" : "none"
+                              }
                             />
                             标星
                           </button>
@@ -653,7 +760,7 @@ function App() {
                               toggleButtonBaseClass,
                               "border-amber-500/40 text-amber-600 hover:bg-amber-500/10 dark:text-amber-200",
                               activeStatus.review &&
-                                "border-amber-500 bg-amber-500/20 text-amber-700 dark:border-amber-400 dark:bg-amber-500/30 dark:text-amber-100",
+                                "border-amber-500 bg-amber-500/20 text-amber-700 dark:border-amber-400 dark:bg-amber-500/30 dark:text-amber-100"
                             )}
                           >
                             <Clock3 className="size-4" />
@@ -667,13 +774,13 @@ function App() {
                               toggleButtonBaseClass,
                               "border-emerald-500/40 text-emerald-600 hover:bg-emerald-500/10 dark:text-emerald-200",
                               activeStatus.completed &&
-                                "border-emerald-500 bg-emerald-500/20 text-emerald-700 dark:border-emerald-400 dark:bg-emerald-500/30 dark:text-emerald-100",
+                                "border-emerald-500 bg-emerald-500/20 text-emerald-700 dark:border-emerald-400 dark:bg-emerald-500/30 dark:text-emerald-100"
                             )}
                           >
                             <CheckCircle2 className="size-4" />
                             已完成
                           </button>
-      </div>
+                        </div>
                         {(activeStatus.completed ||
                           activeStatus.review ||
                           activeStatus.starred) && (
@@ -683,7 +790,7 @@ function App() {
                             className="inline-flex items-center text-xs text-muted-foreground underline-offset-4 transition hover:text-foreground hover:underline"
                           >
                             重置状态
-        </button>
+                          </button>
                         )}
                       </div>
                     </CardAction>
@@ -693,31 +800,47 @@ function App() {
                 <Card className="shadow-xs">
                   <CardContent className="pt-4 pb-4">
                     {(() => {
-                      const AnimationComponent = getAnimationComponent(activeTopic.id);
-                      
+                      const AnimationComponent = getAnimationComponent(
+                        activeTopic.id
+                      );
+
                       if (AnimationComponent) {
                         return (
                           <Tabs defaultValue="markdown" className="w-full">
                             <div className="mb-6 flex items-center justify-between">
                               <TabsList className="h-9 w-full justify-start rounded-lg bg-muted/50 p-1 sm:w-auto">
-                                <TabsTrigger value="markdown" className="flex-1 gap-2 text-xs sm:flex-none">
+                                <TabsTrigger
+                                  value="markdown"
+                                  className="flex-1 gap-2 text-xs sm:flex-none"
+                                >
                                   <BookOpen className="size-3.5" />
                                   原理详解
                                 </TabsTrigger>
-                                <TabsTrigger value="animation" className="flex-1 gap-2 text-xs sm:flex-none">
+                                <TabsTrigger
+                                  value="animation"
+                                  className="flex-1 gap-2 text-xs sm:flex-none"
+                                >
                                   <PlayCircle className="size-3.5" />
                                   动态演示
                                 </TabsTrigger>
                               </TabsList>
                             </div>
-                            
-                            <TabsContent value="markdown" className="mt-0 animate-in fade-in-50 slide-in-from-bottom-2 duration-300">
+
+                            <TabsContent
+                              value="markdown"
+                              className="mt-0 animate-in fade-in-50 slide-in-from-bottom-2 duration-300"
+                            >
                               <div className="rounded-xl border border-dashed border-muted-foreground/30 bg-muted/40 p-6 text-sm leading-relaxed shadow-sm">
-                                <QuestionMarkdown content={activeTopic.content} />
+                                <QuestionMarkdown
+                                  content={activeTopic.content}
+                                />
                               </div>
                             </TabsContent>
-                            
-                            <TabsContent value="animation" className="mt-0 animate-in fade-in-50 slide-in-from-bottom-2 duration-300">
+
+                            <TabsContent
+                              value="animation"
+                              className="mt-0 animate-in fade-in-50 slide-in-from-bottom-2 duration-300"
+                            >
                               <AnimationComponent />
                             </TabsContent>
                           </Tabs>
@@ -735,19 +858,24 @@ function App() {
                 <Card className="overflow-hidden border border-border/60 shadow-xs">
                   <CardContent className="space-y-3 bg-gradient-to-br from-background to-background/40 px-4 py-5">
                     <div className="flex items-center justify-between text-xs text-muted-foreground">
-                      <span>第 {activeIndex + 1} / {sortedTopics.length} 题</span>
+                      <span>
+                        第 {activeIndex + 1} / {sortedTopics.length} 题
+                      </span>
                       <span>切换题目保持思路连贯</span>
                     </div>
                     <div className="grid gap-3 sm:grid-cols-2">
                       <Button
                         type="button"
                         variant="ghost"
-                        onClick={() => previousTopic && handleNavigateToDetail(previousTopic.id)}
+                        onClick={() =>
+                          previousTopic &&
+                          handleNavigateToDetail(previousTopic.id)
+                        }
                         disabled={!previousTopic}
                         aria-label="上一题"
                         className={cn(
                           "group h-auto justify-between gap-3 rounded-xl border border-border/60 bg-background/80 px-4 py-3 text-left text-base shadow-sm transition hover:border-primary/50 hover:bg-primary/10 hover:shadow-md",
-                          !previousTopic && "opacity-60",
+                          !previousTopic && "opacity-60"
                         )}
                       >
                         <ArrowLeft className="size-4 shrink-0 text-muted-foreground transition group-hover:text-primary" />
@@ -756,18 +884,22 @@ function App() {
                             上一题
                           </span>
                           <span className="text-sm font-medium leading-tight text-foreground transition group-hover:text-primary line-clamp-1">
-                            {previousTopic ? previousTopic.title : "已经是第一题"}
+                            {previousTopic
+                              ? previousTopic.title
+                              : "已经是第一题"}
                           </span>
                         </div>
                       </Button>
                       <Button
                         type="button"
-                        onClick={() => nextTopic && handleNavigateToDetail(nextTopic.id)}
+                        onClick={() =>
+                          nextTopic && handleNavigateToDetail(nextTopic.id)
+                        }
                         disabled={!nextTopic}
                         aria-label="下一题"
                         className={cn(
                           "group h-auto justify-between gap-3 rounded-xl border border-border/60 bg-background/80 px-4 py-3 text-right text-base shadow-sm transition hover:border-primary/50 hover:bg-primary/10 hover:shadow-md",
-                          !nextTopic && "opacity-60",
+                          !nextTopic && "opacity-60"
                         )}
                       >
                         <div className="flex flex-col items-end">
@@ -787,8 +919,14 @@ function App() {
             ) : (
               <Card className="items-center justify-center border-dashed">
                 <CardContent className="flex flex-col items-center justify-center gap-3 text-muted-foreground">
-                  <p className="text-sm">当前题目不可用，请返回列表重新选择。</p>
-                  <Button variant="outline" size="sm" onClick={handleNavigateToList}>
+                  <p className="text-sm">
+                    当前题目不可用，请返回列表重新选择。
+                  </p>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={handleNavigateToList}
+                  >
                     返回列表
                   </Button>
                 </CardContent>
