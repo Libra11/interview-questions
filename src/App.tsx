@@ -694,8 +694,8 @@ function App() {
               </Card>
             </div>
 
-            <Card className="shadow-xs">
-              <CardHeader className="space-y-4">
+            <Card className="border-none bg-transparent shadow-none">
+              <CardHeader className="space-y-4 px-0">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <CardTitle className="text-lg font-semibold">

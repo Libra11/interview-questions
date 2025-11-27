@@ -99,7 +99,7 @@ export function QuestionList({
               key={topic.id}
               onClick={() => onSelect(topic.id)}
               className={cn(
-                "group relative flex h-full flex-col gap-4 rounded-2xl border border-border/40 bg-card/50 p-5 text-left shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-ring/60 hover:bg-card/80 hover:shadow-xl hover:shadow-ring/5",
+                "group relative flex h-full flex-col gap-4 rounded-2xl border border-border/40 bg-muted/30 p-5 text-left shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-ring/60 hover:bg-muted/50 hover:shadow-xl hover:shadow-ring/5",
                 isActive &&
                   "border-ring/50 bg-accent shadow-lg shadow-ring/10 ring-1 ring-ring/20"
               )}
