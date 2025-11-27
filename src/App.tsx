@@ -1,7 +1,7 @@
 /**
  * Author: Libra
  * Date: 2025-11-20 09:29:28
- * LastEditTime: 2025-11-22 01:30:04
+ * LastEditTime: 2025-11-27 14:11:48
  * LastEditors: Libra
  * Description:
  */
@@ -18,6 +18,7 @@ import {
   Sparkles,
   Star,
   Tag,
+  Target as TargetIcon,
 } from "lucide-react";
 
 import { QuestionMarkdown } from "@/components/markdown/question-markdown";
@@ -87,6 +88,8 @@ const getInitialRoute = (): RouteState => {
   }
   return resolveRouteFromHash(window.location.hash);
 };
+
+import { getCategoryConfig } from "@/lib/category-config";
 
 const toggleButtonBaseClass =
   "inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-background/80 shadow-xs dark:bg-background/40";
@@ -498,116 +501,198 @@ function App() {
         </Card>
 
         {route.view === "list" ? (
-          <div className="space-y-6 pb-10">
-            <Card className="shadow-xs">
-              <CardHeader className="gap-5">
-                <div>
-                  <CardTitle className="text-lg font-semibold">
-                    筛选器
-                  </CardTitle>
-                  <CardDescription>
-                    支持按关键词、领域与难度进行组合筛选。
-                  </CardDescription>
+          <div className="space-y-8 pb-10">
+            {/* 搜索与筛选区域 */}
+            <div className="space-y-4">
+              <div className="group relative flex h-12 items-center rounded-2xl border border-muted bg-background/60 px-3 shadow-sm backdrop-blur-sm transition-all hover:border-primary/30 hover:shadow-md focus-within:border-primary/50 focus-within:ring-4 focus-within:ring-primary/10">
+                <div className="pointer-events-none flex items-center text-muted-foreground transition-colors group-hover:text-primary/70 group-focus-within:text-primary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
                 </div>
                 <Input
-                  placeholder="搜索关键词，例如：悬挂闭包、LCP..."
+                  placeholder="搜索题目关键词，例如：闭包、Promise、Fiber..."
                   value={keyword}
                   onChange={(event) => setKeyword(event.target.value)}
-                  aria-label="搜索题目"
+                  className="h-full border-none bg-transparent px-3 text-base shadow-none placeholder:text-muted-foreground/50 focus-visible:ring-0"
                 />
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <section>
-                  <h3 className="text-sm font-medium text-muted-foreground">
-                    领域
-                  </h3>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {[ALL_CATEGORY, ...categories].map((item) => (
-                      <Button
-                        key={item}
-                        type="button"
-                        size="sm"
-                        variant={category === item ? "default" : "outline"}
-                        onClick={() => setCategory(item)}
-                        className={cn(
-                          "rounded-full border transition-all duration-300",
-                          category === item
-                            ? "shadow-md ring-2 ring-primary/20"
-                            : "bg-transparent hover:bg-primary/5 hover:text-primary hover:border-primary/30"
-                        )}
-                      >
-                        {item}
-                      </Button>
-                    ))}
-                  </div>
-                </section>
+              </div>
 
-                <section>
-                  <h3 className="text-sm font-medium text-muted-foreground">
-                    难度
-                  </h3>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {[ALL_DIFFICULTIES, ...difficulties].map((item) => (
-                      <Badge
-                        key={item}
-                        asChild
-                        variant={difficulty === item ? "default" : "outline"}
-                        className={cn(
-                          "cursor-pointer px-4 py-1.5 text-xs transition-all duration-300",
-                          difficulty === item
-                            ? "shadow-md ring-2 ring-primary/20"
-                            : "bg-transparent hover:bg-primary/5 hover:text-primary hover:border-primary/30"
-                        )}
-                      >
-                        <button
-                          type="button"
-                          onClick={() => setDifficulty(item)}
-                        >
-                          {item}
-                        </button>
-                      </Badge>
-                    ))}
-                  </div>
-                </section>
+              <Card className="border-none bg-gradient-to-b from-background/50 to-background/80 shadow-sm ring-1 ring-black/5 backdrop-blur-xl dark:ring-white/10">
+                <CardContent className="space-y-8 p-6">
+                  {/* 第一行：技术领域 */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Layers className="size-4 text-muted-foreground" />
+                      <h3 className="text-sm font-semibold text-foreground/80">
+                        技术领域
+                      </h3>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {[ALL_CATEGORY, ...categories].map((item) => {
+                        const isAll = item === ALL_CATEGORY;
+                        const isActive = category === item;
+                        const config = getCategoryConfig(item);
+                        const Icon = config.icon;
 
-                <section>
-                  <h3 className="text-sm font-medium text-muted-foreground">
-                    练习状态
-                  </h3>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {statusOptions.map((option) => {
-                      const isActive = statusFilter === option;
-                      const count =
-                        option === ALL_STATUS
-                          ? undefined
-                          : statusCounts[option as StatusCountKey];
-                      return (
-                        <Button
-                          key={option}
-                          type="button"
-                          size="sm"
-                          variant={isActive ? "default" : "outline"}
-                          onClick={() => setStatusFilter(option)}
-                          className={cn(
-                            "rounded-full border transition-all duration-300",
-                            isActive
-                              ? "shadow-md ring-2 ring-primary/20"
-                              : "bg-transparent hover:bg-primary/5 hover:text-primary hover:border-primary/30"
-                          )}
-                        >
-                          {option}
-                          {option !== ALL_STATUS && (
-                            <span className="ml-1.5 text-xs opacity-80">
-                              ({count})
-                            </span>
-                          )}
-                        </Button>
-                      );
-                    })}
+                        return (
+                          <button
+                            key={item}
+                            onClick={() => setCategory(item)}
+                            className={cn(
+                              "group relative flex items-center gap-2 rounded-xl border px-3 py-2 text-sm font-medium transition-all duration-300",
+                              isActive
+                                ? cn(
+                                    "shadow-md ring-1 ring-inset",
+                                    isAll
+                                      ? "border-primary/20 bg-primary/10 text-primary ring-primary/20"
+                                      : cn(
+                                          config.bg,
+                                          config.border,
+                                          config.color,
+                                          "ring-current/20"
+                                        )
+                                  )
+                                : "border-transparent bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
+                            )}
+                          >
+                            {!isAll && (
+                              <Icon
+                                className={cn(
+                                  "size-4 transition-transform duration-300 group-hover:scale-110",
+                                  isActive
+                                    ? "opacity-100"
+                                    : "opacity-60 grayscale group-hover:grayscale-0"
+                                )}
+                              />
+                            )}
+                            {item}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
-                </section>
-              </CardContent>
-            </Card>
+
+                  {/* 分割线 */}
+                  <div className="h-px w-full bg-border/40" />
+
+                  {/* 第二行：难度与状态 */}
+                  <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
+                    {/* 难度筛选 - 改为横向排列 */}
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <TargetIcon className="size-4 text-muted-foreground" />
+                        <h3 className="text-sm font-semibold text-foreground/80">
+                          难度等级
+                        </h3>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {[ALL_DIFFICULTIES, ...difficulties].map((item) => {
+                          const isActive = difficulty === item;
+                          return (
+                            <button
+                              key={item}
+                              onClick={() => setDifficulty(item)}
+                              className={cn(
+                                "flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition-all",
+                                isActive
+                                  ? "border-primary/20 bg-primary/5 text-primary shadow-sm"
+                                  : "border-transparent bg-muted/50 text-muted-foreground hover:bg-muted"
+                              )}
+                            >
+                              <span>{item}</span>
+                              {item !== ALL_DIFFICULTIES && (
+                                <div className="flex gap-0.5 opacity-60">
+                                  {[1, 2, 3].map((level) => (
+                                    <div
+                                      key={level}
+                                      className={cn(
+                                        "h-1.5 w-3 rounded-full transition-colors",
+                                        difficultyWeight[item as Difficulty] >=
+                                          level
+                                          ? "bg-current"
+                                          : "bg-current/20"
+                                      )}
+                                    />
+                                  ))}
+                                </div>
+                              )}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* 状态筛选 */}
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 className="size-4 text-muted-foreground" />
+                        <h3 className="text-sm font-semibold text-foreground/80">
+                          练习状态
+                        </h3>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {statusOptions.map((option) => {
+                          const isActive = statusFilter === option;
+                          const count =
+                            option === ALL_STATUS
+                              ? undefined
+                              : statusCounts[option as StatusCountKey];
+
+                          let activeClass =
+                            "border-primary/20 bg-primary/5 text-primary";
+                          if (option === "已完成")
+                            activeClass =
+                              "border-emerald-500/20 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400";
+                          if (option === "待复习")
+                            activeClass =
+                              "border-amber-500/20 bg-amber-500/10 text-amber-600 dark:text-amber-400";
+                          if (option === "已标星")
+                            activeClass =
+                              "border-violet-500/20 bg-violet-500/10 text-violet-600 dark:text-violet-400";
+
+                          return (
+                            <button
+                              key={option}
+                              onClick={() => setStatusFilter(option)}
+                              className={cn(
+                                "relative flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-medium transition-all hover:opacity-80",
+                                isActive
+                                  ? cn("shadow-sm", activeClass)
+                                  : "border-transparent bg-muted/50 text-muted-foreground hover:bg-muted"
+                              )}
+                            >
+                              {option}
+                              {count !== undefined && (
+                                <span
+                                  className={cn(
+                                    "ml-1 rounded-full px-1.5 py-0.5 text-[10px]",
+                                    isActive
+                                      ? "bg-background/50"
+                                      : "bg-background/30"
+                                  )}
+                                >
+                                  {count}
+                                </span>
+                              )}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
 
             <Card className="shadow-xs">
               <CardHeader className="space-y-4">
