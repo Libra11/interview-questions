@@ -7,7 +7,7 @@ summary: >-
   深入理解 Next.js App Router 中 not-found.tsx 文件的作用，掌握如何自定义 404 页面和处理未找到的资源。
 tags:
   - Next.js
-  - 404
+  - "404"
   - not-found
   - 错误处理
 estimatedTime: 16 分钟
