@@ -1,7 +1,7 @@
 /**
  * Author: Libra
  * Date: 2025-11-20 09:29:28
- * LastEditTime: 2025-11-27 14:11:48
+ * LastEditTime: 2025-12-04 17:15:15
  * LastEditors: Libra
  * Description:
  */
@@ -882,8 +882,8 @@ function App() {
                   </CardHeader>
                 </Card>
 
-                <Card className="shadow-xs">
-                  <CardContent className="pt-4 pb-4">
+                <Card className="shadow-xs border-none py-0">
+                  <CardContent>
                     {(() => {
                       const AnimationComponent = getAnimationComponent(
                         activeTopic.id
@@ -940,13 +940,13 @@ function App() {
                     })()}
                   </CardContent>
                 </Card>
-                <Card className="overflow-hidden border border-border/60 shadow-xs">
+                <Card className="overflow-hidden border border-border/60 shadow-xs py-0">
                   <CardContent className="space-y-3 bg-gradient-to-br from-background to-background/40 px-4 py-5">
                     <div className="flex items-center justify-between text-xs text-muted-foreground">
                       <span>
                         第 {activeIndex + 1} / {sortedTopics.length} 题
                       </span>
-                      <span>切换题目保持思路连贯</span>
+                      <span>切换题目</span>
                     </div>
                     <div className="grid gap-3 sm:grid-cols-2">
                       <Button
