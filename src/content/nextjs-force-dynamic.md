@@ -1,5 +1,5 @@
 ---
-title: "Dynamic = force-dynamic" 有哪些作用？
+title: Dynamic = force-dynamic 有哪些作用？
 category: Next.js
 difficulty: 中级
 updatedAt: 2025-12-04

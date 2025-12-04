@@ -1,5 +1,5 @@
 ---
-title: "revalidate" 如何控制缓存失效？
+title: revalidate 如何控制缓存失效？
 category: Next.js
 difficulty: 中级
 updatedAt: 2025-12-04
