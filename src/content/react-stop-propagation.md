@@ -1,7 +1,7 @@
 ---
 title: 如何阻止事件冒泡？
 category: React
-difficulty: 初级
+difficulty: 入门
 updatedAt: 2025-12-08
 summary: >-
   掌握 React 中阻止事件冒泡的方法，理解合成事件与原生事件的冒泡差异。

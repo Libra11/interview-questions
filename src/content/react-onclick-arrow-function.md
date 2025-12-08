@@ -1,7 +1,7 @@
 ---
 title: 为什么 onClick 写成 onClick={() => fn()} 而不是 fn()？
 category: React
-difficulty: 初级
+difficulty: 入门
 updatedAt: 2025-12-08
 summary: >-
   理解 React 事件处理函数的正确写法，避免常见的事件绑定错误。
