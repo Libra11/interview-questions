@@ -17,7 +17,7 @@ keywords:
   - React hooks
   - component comparison
 highlight: 函数组件捕获渲染时的值，类组件总是读取最新的值，这是两者最本质的区别。
-order: 205
+order: 463
 ---
 
 ## 问题 1：语法层面有什么区别？

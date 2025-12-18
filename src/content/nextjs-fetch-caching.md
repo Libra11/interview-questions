@@ -17,7 +17,7 @@ keywords:
   - 缓存策略
   - no-cache
 highlight: 掌握 Next.js 15 中 fetch 缓存的新默认行为，理解如何正确配置缓存策略
-order: 317
+order: 703
 ---
 
 ## 问题 1：Next.js 15 之前的 fetch 缓存行为是什么？

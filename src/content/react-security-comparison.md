@@ -17,7 +17,7 @@ keywords:
   - XSS comparison
   - security design
 highlight: 三大框架都有 XSS 防护，React 的显式 dangerouslySetInnerHTML 命名更能提醒开发者注意安全。
-order: 293
+order: 650
 ---
 
 ## 问题 1：默认转义机制

@@ -17,7 +17,7 @@ keywords:
   - 插件化架构
   - 扩展开发
 highlight: 掌握 Electron 插件系统的设计方法，让应用具备可扩展能力。
-order: 98
+order: 306
 ---
 
 ## 问题 1：插件系统的核心组成部分？

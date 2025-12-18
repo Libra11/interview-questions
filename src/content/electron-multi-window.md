@@ -16,7 +16,7 @@ keywords:
   - 窗口管理
   - 窗口通信
 highlight: 通过 BrowserWindow 创建多个窗口，使用 IPC 或主进程作为中介实现窗口间通信
-order: 22
+order: 140
 ---
 
 ## 问题 1：如何创建多个窗口？

@@ -17,7 +17,7 @@ keywords:
   - 单向绑定
   - 双向绑定
 highlight: v-bind 是单向绑定（数据→视图），v-model 是双向绑定（数据↔视图），v-model 本质是 v-bind + 事件监听的语法糖。
-order: 226
+order: 531
 ---
 
 ## 问题 1：v-bind 是什么？

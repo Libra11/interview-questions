@@ -16,7 +16,7 @@ keywords:
   - HTML 解析
   - 浏览器渲染
 highlight: 理解 DOM 树的构建过程是优化页面性能的基础
-order: 112
+order: 361
 ---
 
 ## 问题 1：DOM 树构建的基本流程

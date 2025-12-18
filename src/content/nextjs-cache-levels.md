@@ -17,7 +17,7 @@ keywords:
   - Data Cache
   - Full Route Cache
 highlight: Next.js 提供四层缓存机制，从请求级到客户端全方位优化应用性能
-order: 2
+order: 9
 ---
 
 ## 问题 1：Next.js 有哪些缓存层级？

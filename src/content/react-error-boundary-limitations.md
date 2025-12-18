@@ -17,7 +17,7 @@ keywords:
   - event handlers
   - async errors
 highlight: 错误边界无法捕获事件处理、异步代码、服务端渲染和自身的错误。
-order: 273
+order: 624
 ---
 
 ## 问题 1：无法捕获的错误类型

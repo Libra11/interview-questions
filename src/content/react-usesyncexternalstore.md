@@ -17,7 +17,7 @@ keywords:
   - subscription
   - concurrent mode
 highlight: useSyncExternalStore 用于安全地订阅外部数据源，解决并发渲染中的撕裂问题。
-order: 217
+order: 508
 ---
 
 ## 问题 1：为什么需要 useSyncExternalStore？

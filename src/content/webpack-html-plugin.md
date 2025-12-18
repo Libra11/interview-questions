@@ -16,7 +16,7 @@ keywords:
   - HTML 生成
   - 资源注入
 highlight: HtmlWebpackPlugin 自动生成 HTML 文件，并将打包后的 JS、CSS 等资源自动注入到 HTML 中。
-order: 622
+order: 752
 ---
 
 ## 问题 1：HtmlWebpackPlugin 解决什么问题？

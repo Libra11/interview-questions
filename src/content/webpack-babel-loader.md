@@ -17,7 +17,7 @@ keywords:
   - ES6 转换
   - JavaScript 编译
 highlight: babel-loader 是 Webpack 和 Babel 的桥梁，让 Webpack 能够使用 Babel 转译 JavaScript 代码。
-order: 614
+order: 744
 ---
 
 ## 问题 1：babel-loader 的作用

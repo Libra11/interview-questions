@@ -16,7 +16,7 @@ keywords:
   - onMounted
   - setup 生命周期
 highlight: Composition API 提供 onXxx 形式的生命周期函数，可在 setup 中多次调用。
-order: 207
+order: 472
 ---
 
 ## 问题 1：生命周期钩子的对应关系

@@ -17,7 +17,7 @@ keywords:
   - contenthash
   - 缓存优化
 highlight: hash 是项目级别，chunkhash 是 chunk 级别，contenthash 是文件内容级别，推荐使用 contenthash。
-order: 609
+order: 739
 ---
 
 ## 问题 1：三种 hash 的定义

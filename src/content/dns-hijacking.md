@@ -17,7 +17,7 @@ keywords:
   - 网络安全
   - HTTPS
 highlight: DNS 劫持是常见的网络攻击手段，了解其原理和防护方法对保障网络安全至关重要
-order: 3
+order: 13
 ---
 
 ## 问题 1：什么是 DNS 劫持？

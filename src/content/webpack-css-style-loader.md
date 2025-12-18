@@ -16,7 +16,7 @@ keywords:
   - style-loader
   - CSS 处理
 highlight: css-loader 解析 CSS 文件为 JS 模块，style-loader 将 CSS 注入到 DOM 的 style 标签中。
-order: 616
+order: 746
 ---
 
 ## 问题 1：css-loader 的作用

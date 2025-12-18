@@ -17,7 +17,7 @@ keywords:
   - 独立构建
   - 微前端
 highlight: Module Federation 通过将大应用拆分成独立构建的小应用，每个应用单独构建，从而减少单次构建时间。
-order: 660
+order: 790
 ---
 
 ## 问题 1：Module Federation 如何影响构建？

@@ -16,7 +16,7 @@ keywords:
   - 过渡动画
   - CSS 动画
 highlight: Transition 通过在元素插入/移除时添加 CSS 类名，配合 CSS 过渡或动画实现效果。
-order: 257
+order: 593
 ---
 
 ## 问题 1：Transition 的基本原理

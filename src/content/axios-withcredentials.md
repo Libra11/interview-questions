@@ -17,7 +17,7 @@ keywords:
   - 跨域Cookie
   - axios配置
 highlight: 掌握 withCredentials 的作用和配置方法，理解跨域请求中的凭证传递机制
-order: 208
+order: 474
 ---
 
 ## 问题 1：withCredentials 是什么，有什么作用？

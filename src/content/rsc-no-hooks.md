@@ -17,7 +17,7 @@ keywords:
   - useEffect
   - Hooks 限制
 highlight: 理解 RSC 的 Hooks 限制，是掌握服务器组件设计理念的关键
-order: 26
+order: 163
 ---
 
 ## 问题 1：Server Component 不支持哪些 Hooks？

@@ -16,7 +16,7 @@ keywords:
   - WeakMap
   - 性能对比
 highlight: 理解频繁增删场景下 Map 的优势，以及 Object 在序列化与静态结构中的便利性。
-order: 6
+order: 35
 ---
 
 ## 问题 1：Object 与 Map 的核心区别是什么？

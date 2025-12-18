@@ -18,7 +18,7 @@ keywords:
   - vue 3 compiler
   - diff algorithm
 highlight: Vue 3 通过编译时的静态分析，引入 Patch Flags 和 Block Tree，将 Diff 算法的复杂度从树的大小降低到了动态节点的数量。
-order: 125
+order: 396
 ---
 
 ## 问题 1：什么是 Patch Flags (静态标记)？

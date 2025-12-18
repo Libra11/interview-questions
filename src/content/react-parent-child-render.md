@@ -17,7 +17,7 @@ keywords:
   - React.memo
   - render optimization
 highlight: 默认情况下父组件渲染会导致所有子组件渲染，但可以通过 React.memo 等方式避免。
-order: 244
+order: 566
 ---
 
 ## 问题 1：默认行为是什么？

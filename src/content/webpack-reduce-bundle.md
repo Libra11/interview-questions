@@ -17,7 +17,7 @@ keywords:
   - code splitting
   - minification
 highlight: 减少 bundle 体积的方法：Tree Shaking、代码分割、压缩、按需引入、外部化依赖。
-order: 270
+order: 619
 ---
 
 ## 问题 1：Tree Shaking

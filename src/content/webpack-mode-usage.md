@@ -17,7 +17,7 @@ keywords:
   - production
   - 构建优化
 highlight: mode 是 webpack 4 引入的核心配置，通过简单的配置即可启用对应环境的内置优化
-order: 1
+order: 6
 ---
 
 ## 问题 1：webpack 的 mode 配置是什么？

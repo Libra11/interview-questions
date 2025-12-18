@@ -17,7 +17,7 @@ keywords:
   - trigger
   - effect
 highlight: reactive 通过 Proxy 的 get 拦截收集依赖，set 拦截触发更新。
-order: 266
+order: 611
 ---
 
 ## 问题 1：核心数据结构

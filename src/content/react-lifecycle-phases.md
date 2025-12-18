@@ -17,7 +17,7 @@ keywords:
   - componentDidUpdate
   - componentWillUnmount
 highlight: React 生命周期分为挂载、更新、卸载三个阶段，函数组件用 useEffect 统一处理。
-order: 207
+order: 471
 ---
 
 ## 问题 1：生命周期有哪三个阶段？

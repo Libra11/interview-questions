@@ -17,7 +17,7 @@ keywords:
   - component communication
   - typescript events
 highlight: defineEmits 是 <script setup> 中声明组件触发事件的核心 API，它提供了完整的类型推导支持。
-order: 138
+order: 420
 ---
 
 ## 问题 1：defineEmits 是什么？

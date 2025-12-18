@@ -17,7 +17,7 @@ keywords:
   - 请求拦截
   - 路由控制
 highlight: 掌握 Next.js Middleware 的核心功能和实际应用
-order: 316
+order: 701
 ---
 
 ## 问题 1：Next.js Middleware 是什么，它的作用是什么？

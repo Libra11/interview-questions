@@ -17,7 +17,7 @@ keywords:
   - 表单提交
   - 渐进增强
 highlight: 掌握 Server Actions 的核心优势，理解其在表单处理和渐进增强方面的创新
-order: 316
+order: 702
 ---
 
 ## 问题 1：什么是 Server Actions？

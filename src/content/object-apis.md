@@ -17,7 +17,7 @@ keywords:
   - 原型链
   - 对象遍历
 highlight: 掌握 Object 的核心 API，理解属性描述符和原型链操作，能够灵活运用各种对象操作方法
-order: 37
+order: 200
 ---
 
 ## 问题 1：Object 的属性操作 API

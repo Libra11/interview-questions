@@ -18,7 +18,7 @@ keywords:
   - 前端路由
   - React Router
 highlight: HashRouter 使用 URL hash，BrowserRouter 使用 History API
-order: 204
+order: 460
 ---
 
 ## 问题 1：HashRouter 和 BrowserRouter 有什么区别？

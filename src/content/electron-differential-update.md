@@ -16,7 +16,7 @@ keywords:
   - blockmap
   - 增量更新
 highlight: 差分更新通过 blockmap 文件只下载变化的数据块，大幅减少下载量
-order: 56
+order: 244
 ---
 
 ## 问题 1：什么是差分更新？

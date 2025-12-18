@@ -17,7 +17,7 @@ keywords:
   - 清除浮动
   - margin 重叠
 highlight: BFC 是 CSS 布局中的重要概念，理解 BFC 能帮助解决很多常见的布局问题
-order: 105
+order: 332
 ---
 
 ## 问题 1：什么是 BFC？

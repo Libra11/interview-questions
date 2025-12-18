@@ -18,7 +18,7 @@ keywords:
   - 样式封装
   - DOM 封装
 highlight: Shadow DOM 提供了真正的样式和 DOM 封装，隔离组件内外部的影响
-order: 205
+order: 465
 ---
 
 ## 问题 1：什么是 Shadow DOM？

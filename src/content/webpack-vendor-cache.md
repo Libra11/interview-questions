@@ -17,7 +17,7 @@ keywords:
   - splitChunks
   - 缓存优化
 highlight: 通过 runtimeChunk、deterministic moduleIds、合理的 splitChunks 配置，确保 vendor chunk 的 hash 稳定。
-order: 653
+order: 783
 ---
 
 ## 问题 1：Vendor Chunk 缓存失效的原因

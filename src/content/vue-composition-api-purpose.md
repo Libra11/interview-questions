@@ -16,7 +16,7 @@ keywords:
   - vue3 api
   - 逻辑复用
 highlight: Composition API 的核心目的是解决逻辑复用困难和代码组织混乱两大问题。
-order: 202
+order: 453
 ---
 
 ## 问题 1：Options API 有什么问题？

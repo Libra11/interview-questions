@@ -17,7 +17,7 @@ keywords:
   - file input
   - defaultValue
 highlight: 非受控组件适合文件上传、简单表单、第三方库集成等不需要实时控制的场景。
-order: 263
+order: 604
 ---
 
 ## 问题 1：非受控组件是什么？

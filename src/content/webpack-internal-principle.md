@@ -18,7 +18,7 @@ keywords:
   - 模块解析
   - 依赖图
 highlight: Webpack 通过构建依赖图、编译模块、生成 bundle 完成打包过程
-order: 220
+order: 519
 ---
 
 ## 问题 1：Webpack 的整体执行流程是什么？

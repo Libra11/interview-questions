@@ -16,7 +16,7 @@ keywords:
   - 事件循环
   - libuv
 highlight: Electron 通过整合 Chromium 和 Node.js 的事件循环实现了两者的无缝结合
-order: 3
+order: 14
 ---
 
 ## 问题 1：Electron 是如何集成 Node.js 的？

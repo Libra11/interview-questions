@@ -17,7 +17,7 @@ keywords:
   - 图片优化
   - 边缘计算
 highlight: Vercel Image Optimization 提供边缘计算、自动格式转换和全球 CDN 分发
-order: 13
+order: 81
 ---
 
 ## 问题 1：Vercel Image Optimization 是什么？

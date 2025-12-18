@@ -17,7 +17,7 @@ keywords:
   - memoization
   - optimization
 highlight: useCallback 本身有开销，只有配合 React.memo 或作为依赖时才有意义。
-order: 246
+order: 570
 ---
 
 ## 问题 1：useCallback 的常见误用？

@@ -18,7 +18,7 @@ keywords:
   - 代码分割
   - 压缩优化
 highlight: 通过代码分割、压缩、tree-shaking 等多种手段优化打包体积
-order: 213
+order: 497
 ---
 
 ## 问题 1：有哪些优化产物大小的方法？

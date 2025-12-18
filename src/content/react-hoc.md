@@ -17,7 +17,7 @@ keywords:
   - React 模式
   - 代码复用
 highlight: 掌握 HOC 的核心概念和实现模式，理解如何使用 HOC 实现逻辑复用
-order: 9
+order: 56
 ---
 
 ## 问题 1：什么是高阶组件（HOC）？

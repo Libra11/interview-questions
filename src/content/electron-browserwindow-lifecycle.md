@@ -16,7 +16,7 @@ keywords:
   - 窗口事件
   - ready-to-show
 highlight: 理解 BrowserWindow 生命周期是管理窗口状态和优化用户体验的关键
-order: 8
+order: 46
 ---
 
 ## 问题 1：BrowserWindow 的生命周期有哪些阶段？

@@ -16,7 +16,7 @@ keywords:
   - ASAR劣势
   - 打包选择
 highlight: ASAR 提升性能和基本保护，但有原生模块和调试方面的限制
-order: 62
+order: 256
 ---
 
 ## 问题 1：ASAR 的优势

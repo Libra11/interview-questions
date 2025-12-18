@@ -17,7 +17,7 @@ keywords:
   - speed-measure
   - 优化定位
 highlight: 使用 speed-measure-webpack-plugin 分析各 loader 和 plugin 的耗时，结合 stats 输出定位性能瓶颈。
-order: 707
+order: 837
 ---
 
 ## 问题 1：使用 speed-measure-webpack-plugin

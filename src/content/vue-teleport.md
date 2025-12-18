@@ -18,7 +18,7 @@ keywords:
   - z-index stacking context
   - event bubbling
 highlight: Teleport 允许我们将组件的一部分模板“传送”到 DOM 中的任何位置，同时保持组件树的逻辑结构不变（如事件冒泡）。
-order: 130
+order: 407
 ---
 
 ## 问题 1：什么是 Teleport？解决了什么问题？

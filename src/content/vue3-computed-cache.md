@@ -16,7 +16,7 @@ keywords:
   - 惰性求值
   - dirty 标记
 highlight: computed 使用 dirty 标记实现缓存，依赖变化时标记为脏，下次访问时重新计算。
-order: 267
+order: 613
 ---
 
 ## 问题 1：缓存的核心原理

@@ -17,7 +17,7 @@ keywords:
   - SyntheticEvent
   - event pooling
 highlight: React 使用事件委托将所有事件统一绑定到根节点，通过合成事件抹平浏览器差异。
-order: 238
+order: 554
 ---
 
 ## 问题 1：React 事件系统如何工作？

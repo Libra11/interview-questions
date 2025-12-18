@@ -16,7 +16,7 @@ keywords:
   - NaN
   - +0 vs -0
 highlight: 理解 Object.is 在 NaN 和 +0/-0 场景下的特殊行为，掌握实际项目中的选择策略
-order: 15
+order: 96
 ---
 
 ## 问题 1：Object.is 与 === 的核心差异是什么？

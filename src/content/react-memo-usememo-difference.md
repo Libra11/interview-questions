@@ -18,7 +18,7 @@ keywords:
   - 性能优化
   - 缓存
 highlight: memo 缓存组件，useMemo 缓存值，两者解决不同层面的性能问题
-order: 106
+order: 340
 ---
 
 ## 问题 1：React.memo 是什么？

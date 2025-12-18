@@ -17,7 +17,7 @@ keywords:
   - no-store
   - Next.js 缓存
 highlight: 掌握 Next.js 中 fetch 的缓存模式配置，合理控制数据缓存策略
-order: 301
+order: 658
 ---
 
 ## 问题 1：Next.js 中 fetch 支持哪些缓存模式？

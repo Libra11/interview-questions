@@ -17,7 +17,7 @@ keywords:
   - 列表渲染
   - Diff 算法
 highlight: 理解 key 在 React Diff 算法中的核心作用，掌握正确使用 key 的最佳实践
-order: 1
+order: 5
 ---
 
 ## 问题 1：React 中 key 的作用是什么？

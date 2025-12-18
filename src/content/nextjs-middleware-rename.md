@@ -17,7 +17,7 @@ keywords:
   - proxy
   - 重命名
 highlight: 理解 Next.js 16 中 middleware 重命名的原因，掌握新的代理模式设计思路
-order: 315
+order: 699
 ---
 
 ## 问题 1：Next.js 16 中 middleware.ts 重命名的背景是什么？

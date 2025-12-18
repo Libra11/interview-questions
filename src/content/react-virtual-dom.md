@@ -17,7 +17,7 @@ keywords:
   - DOM abstraction
   - reconciliation
 highlight: 虚拟 DOM 是真实 DOM 的 JavaScript 对象表示，React 通过它实现高效的 UI 更新。
-order: 218
+order: 511
 ---
 
 ## 问题 1：什么是虚拟 DOM？

@@ -16,7 +16,7 @@ keywords:
   - 上下文隔离
   - contextBridge
 highlight: preload + contextIsolation 是 Electron 安全架构的核心，正确使用可以有效防止安全漏洞
-order: 40
+order: 208
 ---
 
 ## 问题 1：正确的架构是什么样的？

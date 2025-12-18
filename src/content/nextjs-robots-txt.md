@@ -17,7 +17,7 @@ keywords:
   - SEO
   - 搜索引擎
 highlight: robots.txt 告诉搜索引擎哪些页面可以爬取，哪些页面应该忽略
-order: 27
+order: 166
 ---
 
 ## 问题 1：什么是 robots.txt？

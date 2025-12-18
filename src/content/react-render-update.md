@@ -17,7 +17,7 @@ keywords:
   - Reconciliation
   - 双缓冲
 highlight: 理解 React 完整的渲染流程和 Fiber 架构的核心原理
-order: 5
+order: 29
 ---
 
 ## 问题 1：React 渲染的完整流程是什么？

@@ -18,7 +18,7 @@ keywords:
   - vendor 分离
   - 缓存优化
 highlight: 通过 SplitChunksPlugin 配置 cacheGroups 实现源码和依赖的分离
-order: 207
+order: 473
 ---
 
 ## 问题 1：为什么要区分源代码和依赖代码？

@@ -16,7 +16,7 @@ keywords:
   - 类型支持
   - 类型推导
 highlight: Vue3 使用 TypeScript 重写，提供完整的类型定义和自动类型推导。
-order: 250
+order: 579
 ---
 
 ## 问题 1：Vue3 的 TypeScript 改进

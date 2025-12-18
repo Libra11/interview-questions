@@ -16,7 +16,7 @@ keywords:
   - ESLint
   - 代码风格
 highlight: 通过 ESLint、Prettier、Git Hooks、TypeScript 等工具实现团队代码规范化。
-order: 278
+order: 635
 ---
 
 ## 问题 1：代码风格统一

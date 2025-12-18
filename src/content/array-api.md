@@ -18,7 +18,7 @@ keywords:
   - filter
   - reduce
 highlight: 掌握 Array 的核心 API，理解函数式编程方法，能够选择合适的数组方法解决问题
-order: 42
+order: 213
 ---
 
 ## 问题 1：Array 的基本操作方法

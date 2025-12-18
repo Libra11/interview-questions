@@ -17,7 +17,7 @@ keywords:
   - Babel
   - 代码分析
 highlight: AST 是现代前端工具链的基础,理解 AST 能帮助我们深入理解代码转换和分析的原理
-order: 12
+order: 72
 ---
 
 ## 问题 1:什么是抽象语法树(AST)?

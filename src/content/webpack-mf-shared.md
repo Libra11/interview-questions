@@ -17,7 +17,7 @@ keywords:
   - singleton
   - 版本协商
 highlight: Shared 配置让多个应用共享同一份依赖，通过版本协商机制选择合适的版本，避免重复加载。
-order: 669
+order: 799
 ---
 
 ## 问题 1：Shared 的作用

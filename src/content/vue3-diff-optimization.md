@@ -16,7 +16,7 @@ keywords:
   - 最长递增子序列
   - Block Tree
 highlight: Vue3 通过 Block Tree 跳过静态节点、PatchFlags 精确更新、最长递增子序列减少 DOM 移动。
-order: 245
+order: 569
 ---
 
 ## 问题 1：Vue2 vs Vue3 diff 对比

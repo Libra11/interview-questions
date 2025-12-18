@@ -17,7 +17,7 @@ keywords:
   - typed Redux
   - Redux Toolkit
 highlight: 通过定义 State、Action 类型，使用 Redux Toolkit 的类型推断，实现端到端类型安全。
-order: 285
+order: 642
 ---
 
 ## 问题 1：定义 State 类型

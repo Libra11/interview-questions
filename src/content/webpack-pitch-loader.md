@@ -16,7 +16,7 @@ keywords:
   - Loader 执行阶段
   - style-loader
 highlight: Pitch 是 Loader 的前置阶段，从左到右执行，可以提前返回结果跳过后续 Loader。
-order: 618
+order: 748
 ---
 
 ## 问题 1：什么是 Pitch？

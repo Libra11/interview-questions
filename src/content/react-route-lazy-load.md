@@ -17,7 +17,7 @@ keywords:
   - Suspense
   - code splitting
 highlight: 使用 React.lazy 动态导入组件，配合 Suspense 显示加载状态，实现路由级别的代码分割。
-order: 260
+order: 598
 ---
 
 ## 问题 1：基本实现？

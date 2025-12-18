@@ -17,7 +17,7 @@ keywords:
   - 工作原理
   - 生命周期
 highlight: Compiler 是 Webpack 的核心引擎，负责整个构建流程的调度，通过 Tapable 钩子系统驱动插件执行。
-order: 694
+order: 824
 ---
 
 ## 问题 1：Compiler 的角色

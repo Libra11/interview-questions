@@ -17,7 +17,7 @@ keywords:
   - memoization
   - render optimization
 highlight: React.memo 通过浅比较 props，如果 props 没变则跳过渲染，返回上次的渲染结果。
-order: 245
+order: 568
 ---
 
 ## 问题 1：React.memo 是什么？

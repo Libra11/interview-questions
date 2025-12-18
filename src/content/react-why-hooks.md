@@ -17,7 +17,7 @@ keywords:
   - class component problems
   - logic reuse
 highlight: Hooks 解决了类组件中逻辑复用困难、代码分散、this 绑定等问题。
-order: 209
+order: 479
 ---
 
 ## 问题 1：类组件有什么痛点？

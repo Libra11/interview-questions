@@ -17,7 +17,7 @@ keywords:
   - 类型约束
   - 分布式条件类型
 highlight: 掌握 extends 在条件类型中的多种用法，实现灵活的类型判断和转换
-order: 308
+order: 681
 ---
 
 ## 问题 1：TypeScript 中 extends 在条件类型中的作用是什么？

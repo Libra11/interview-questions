@@ -16,7 +16,7 @@ keywords:
   - async/await
   - Promise
 highlight: 理解 forEach 不等待异步函数的本质原因，掌握串行和并行执行的选择策略，能够正确处理循环中的异步操作
-order: 22
+order: 139
 ---
 
 ## 问题 1：forEach 中调用异步函数会发生什么？

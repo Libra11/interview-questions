@@ -17,7 +17,7 @@ keywords:
   - meta 标签
   - Next.js
 highlight: Metadata API 提供类型安全的方式来定义页面元数据，支持静态和动态生成
-order: 23
+order: 147
 ---
 
 ## 问题 1：什么是 Metadata API？

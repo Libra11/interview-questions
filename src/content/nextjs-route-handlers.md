@@ -17,7 +17,7 @@ keywords:
   - API Routes
   - RESTful API
 highlight: 理解 route.ts 如何替代 Pages Router 的 API Routes，掌握创建 API 端点的最佳实践
-order: 407
+order: 717
 ---
 
 ## 问题 1：route.ts 是什么？

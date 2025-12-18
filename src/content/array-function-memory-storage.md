@@ -18,7 +18,7 @@ keywords:
   - 堆内存
   - 栈内存
 highlight: 掌握 JavaScript 数组和函数的内存存储机制，理解引用类型的内存分配和管理
-order: 58
+order: 249
 ---
 
 ## 问题 1：JavaScript 内存模型概述

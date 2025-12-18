@@ -17,7 +17,7 @@ keywords:
   - Token认证
   - 无状态认证
 highlight: JWT 是一种无状态的身份验证方案，通过签名保证 Token 的完整性和真实性
-order: 9
+order: 53
 ---
 
 ## 问题 1：什么是 JWT？

@@ -17,7 +17,7 @@ keywords:
   - keep-alive
   - activated hook
 highlight: 使用 <component :is="..."> 可以灵活地在不同组件间切换，配合 <KeepAlive> 可以缓存非活动组件实例。
-order: 129
+order: 404
 ---
 
 ## 问题 1：什么是动态组件？如何使用？

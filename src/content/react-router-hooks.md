@@ -17,7 +17,7 @@ keywords:
   - useLocation
   - React Router Hooks
 highlight: useNavigate 用于编程式导航，useParams 获取路由参数，useLocation 获取当前位置信息。
-order: 258
+order: 594
 ---
 
 ## 问题 1：useNavigate 的功能？

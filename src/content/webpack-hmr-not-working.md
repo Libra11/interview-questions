@@ -17,7 +17,7 @@ keywords:
   - 问题排查
   - 调试
 highlight: HMR 不工作通常由配置缺失、没有 accept 处理、WebSocket 连接问题或浏览器缓存导致。
-order: 704
+order: 834
 ---
 
 ## 问题 1：检查配置

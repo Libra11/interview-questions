@@ -16,7 +16,7 @@ keywords:
   - enumerable
   - Symbol
 highlight: 理解可枚举性的设计哲学，掌握不同遍历方法在实际场景中的权衡
-order: 16
+order: 103
 ---
 
 ## 问题 1：Object.keys 与 Object.getOwnPropertyNames 的核心区别是什么？

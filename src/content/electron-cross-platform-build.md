@@ -16,7 +16,7 @@ keywords:
   - 多平台构建
   - CI/CD
 highlight: 可以在本地打包当前平台，或使用 CI/CD 服务实现真正的跨平台打包
-order: 59
+order: 251
 ---
 
 ## 问题 1：本地打包

@@ -16,7 +16,7 @@ keywords:
   - Webpack Plugin
   - 打包优化
 highlight: 掌握 HtmlWebpackPlugin、MiniCssExtractPlugin、DefinePlugin 等核心插件的作用和使用场景。
-order: 621
+order: 751
 ---
 
 ## 问题 1：HTML 相关插件

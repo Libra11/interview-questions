@@ -17,7 +17,7 @@ keywords:
   - electron go
   - 原生模块优化
 highlight: 了解如何用 Rust/Go 编写高性能原生模块，大幅提升 Electron 应用性能。
-order: 93
+order: 297
 ---
 
 ## 问题 1：为什么要用 Rust/Go 优化？

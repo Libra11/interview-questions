@@ -17,7 +17,7 @@ keywords:
   - props drilling
   - reactive provide
 highlight: Provide/Inject 允许祖先组件向其所有后代组件注入数据，而无需通过 Props 逐层传递，是解决跨层级通信的利器。
-order: 135
+order: 417
 ---
 
 ## 问题 1：Provide / Inject 解决了什么问题？

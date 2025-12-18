@@ -17,7 +17,7 @@ keywords:
   - vue provide inject
   - es modules
 highlight: 虽然 globalProperties 是 Vue 2 原型挂载的替代品，但在 Vue 3 中，使用 ES 模块导入或 Provide/Inject 通常是更推荐的现代化实践。
-order: 133
+order: 413
 ---
 
 ## 问题 1：Vue 3 如何替代 Vue 2 的 Vue.prototype？

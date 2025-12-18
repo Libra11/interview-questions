@@ -17,7 +17,7 @@ keywords:
   - 副作用
   - 配置错误
 highlight: sideEffects false 可能导致 CSS、polyfill 等有副作用的代码被意外移除，需要正确配置例外文件。
-order: 640
+order: 770
 ---
 
 ## 问题 1：CSS 文件被移除

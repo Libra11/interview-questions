@@ -17,7 +17,7 @@ keywords:
   - 缓存失效
   - Next.js 缓存
 highlight: 了解缓存未命中的场景有助于优化应用性能和用户体验
-order: 7
+order: 42
 ---
 
 ## 问题 1：什么是 Cache Miss？

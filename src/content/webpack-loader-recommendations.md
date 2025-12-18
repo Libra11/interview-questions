@@ -17,7 +17,7 @@ keywords:
   - css-loader
   - file-loader
 highlight: Loader 是 Webpack 的核心概念,让 Webpack 能够处理各种类型的文件
-order: 9
+order: 58
 ---
 
 ## 问题 1:什么是 Webpack Loader?

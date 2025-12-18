@@ -18,7 +18,7 @@ keywords:
   - 多线程
   - 离线应用
 highlight: 三种 Worker 各有特点：WebWorker 用于计算密集任务，SharedWorker 用于跨页面通信，ServiceWorker 用于离线缓存和推送
-order: 110
+order: 356
 ---
 
 ## 问题 1：三种 Worker 的基本概念是什么？

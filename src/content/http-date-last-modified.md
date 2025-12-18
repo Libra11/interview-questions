@@ -18,7 +18,7 @@ keywords:
   - 条件请求
   - If-Modified-Since
 highlight: Date 表示响应生成时间，Last-Modified 表示资源最后修改时间，两者配合实现缓存验证机制
-order: 86
+order: 283
 ---
 
 ## 问题 1：Date 和 Last-Modified 分别表示什么？

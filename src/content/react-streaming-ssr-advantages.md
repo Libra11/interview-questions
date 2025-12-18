@@ -17,7 +17,7 @@ keywords:
   - TTFB
   - progressive rendering
 highlight: Streaming SSR 优势：更快的 TTFB、渐进式渲染、更好的用户体验、更低的服务器压力。
-order: 280
+order: 637
 ---
 
 ## 问题 1：更快的 TTFB

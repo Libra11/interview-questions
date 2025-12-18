@@ -17,7 +17,7 @@ keywords:
   - 跨域
   - CORS
 highlight: 理解浏览器安全的基石——同源策略的工作原理和限制
-order: 2
+order: 11
 ---
 
 ## 问题 1：什么是同源策略

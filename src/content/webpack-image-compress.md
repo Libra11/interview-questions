@@ -17,7 +17,7 @@ keywords:
   - image-minimizer
   - 资源优化
 highlight: 使用 image-minimizer-webpack-plugin 或 image-webpack-loader 可以在构建时自动压缩图片，支持 PNG、JPEG、SVG 等格式。
-order: 679
+order: 809
 ---
 
 ## 问题 1：使用 image-minimizer-webpack-plugin

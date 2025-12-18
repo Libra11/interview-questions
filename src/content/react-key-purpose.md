@@ -17,7 +17,7 @@ keywords:
   - key prop
   - index key problem
 highlight: key 帮助 React 识别列表中哪些元素变化了，是 Diff 算法高效工作的关键。
-order: 222
+order: 522
 ---
 
 ## 问题 1：key 的作用是什么？

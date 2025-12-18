@@ -17,7 +17,7 @@ keywords:
   - 类型推断
   - 高级类型
 highlight: 掌握 infer 在条件类型中的使用，实现复杂的类型推断和转换
-order: 307
+order: 678
 ---
 
 ## 问题 1：TypeScript 中 infer 关键字是什么？

@@ -17,7 +17,7 @@ keywords:
   - App Router vs Pages Router
   - Next.js 迁移
 highlight: 理解 Route Handlers 与 API Routes 的核心区别和迁移方法
-order: 310
+order: 685
 ---
 
 ## 问题 1：Route Handlers 和 API Routes 的基本区别是什么？

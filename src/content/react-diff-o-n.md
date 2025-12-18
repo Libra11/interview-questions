@@ -17,7 +17,7 @@ keywords:
   - heuristic
   - tree comparison
 highlight: React 通过"同层比较、类型判断、key 标识"三个假设，放弃最优解换取 O(n) 复杂度。
-order: 221
+order: 520
 ---
 
 ## 问题 1：传统树 Diff 为什么是 O(n³)？

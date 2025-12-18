@@ -17,7 +17,7 @@ keywords:
   - Vite configuration
   - fast development
 highlight: Vite 提供极快的开发服务器启动和热更新，是 React 项目的现代化构建工具选择。
-order: 289
+order: 646
 ---
 
 ## 问题 1：创建 React + Vite 项目

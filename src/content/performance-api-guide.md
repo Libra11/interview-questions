@@ -17,7 +17,7 @@ keywords:
   - Navigation Timing
   - Resource Timing
 highlight: Performance API 是浏览器提供的强大性能监控工具,能够精确测量各种性能指标
-order: 19
+order: 124
 ---
 
 ## 问题 1:什么是 Performance API?

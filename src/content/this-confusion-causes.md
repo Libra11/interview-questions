@@ -18,7 +18,7 @@ keywords:
   - 上下文
   - 箭头函数
 highlight: 理解 this 指向混乱的根本原因，掌握不同场景下 this 的绑定规则和解决方案
-order: 101
+order: 316
 ---
 
 ## 问题 1：函数作为普通函数调用时 this 指向问题

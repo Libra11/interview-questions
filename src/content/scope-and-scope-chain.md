@@ -19,7 +19,7 @@ keywords:
   - 闭包
   - 变量查找
 highlight: 理解 JavaScript 作用域的本质和作用域链的查找机制，掌握闭包产生的根本原因
-order: 57
+order: 248
 ---
 
 ## 问题 1：什么是作用域？JavaScript 有哪些作用域类型？

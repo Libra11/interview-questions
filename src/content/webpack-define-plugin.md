@@ -16,7 +16,7 @@ keywords:
   - 环境变量
   - 全局常量
 highlight: DefinePlugin 在编译时将代码中的变量替换为指定的值，常用于注入环境变量和版本信息。
-order: 623
+order: 753
 ---
 
 ## 问题 1：DefinePlugin 的作用

@@ -16,7 +16,7 @@ keywords:
   - 路由变化
   - 版本迁移
 highlight: Vue Router 4 配合 Vue 3，采用 createRouter 创建实例，移除了 * 通配符，改用正则匹配。
-order: 228
+order: 535
 ---
 
 ## 问题 1：创建方式变化

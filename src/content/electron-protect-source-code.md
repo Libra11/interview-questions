@@ -17,7 +17,7 @@ keywords:
   - 代码混淆
   - asar 加密
 highlight: 了解 Electron 源码保护的方法和局限性，合理选择保护策略。
-order: 94
+order: 298
 ---
 
 ## 问题 1：为什么 Electron 源码容易被查看？

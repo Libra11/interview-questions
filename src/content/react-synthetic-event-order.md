@@ -18,7 +18,7 @@ keywords:
   - 事件顺序
   - 事件委托
 highlight: React 17+ 中，原生事件先于合成事件触发，事件委托在 root 节点上
-order: 104
+order: 331
 ---
 
 ## 问题 1：什么是 React 合成事件？

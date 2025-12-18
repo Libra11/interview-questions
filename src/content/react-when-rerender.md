@@ -17,7 +17,7 @@ keywords:
   - state change
   - props change
 highlight: 组件重新渲染的三个条件：state 变化、props 变化、父组件渲染。
-order: 243
+order: 564
 ---
 
 ## 问题 1：触发重新渲染的条件？

@@ -17,7 +17,7 @@ keywords:
   - 最长递增子序列
   - patchKeyedChildren
 highlight: 深入理解 Vue 3 Diff 算法的核心实现和优化策略
-order: 18
+order: 119
 ---
 
 ## 问题 1：Vue 3 Diff 算法的整体流程是什么？

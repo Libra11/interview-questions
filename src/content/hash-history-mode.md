@@ -18,7 +18,7 @@ keywords:
   - pushState
   - replaceState
 highlight: hash 模式使用 URL 锚点，history 模式使用 HTML5 History API，各有优缺点
-order: 103
+order: 323
 ---
 
 ## 问题 1：hash 模式是什么？

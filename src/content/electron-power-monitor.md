@@ -17,7 +17,7 @@ keywords:
   - 系统休眠监听
   - 锁屏检测
 highlight: 学会使用 powerMonitor 监听系统电源状态，优化应用在休眠/唤醒时的行为。
-order: 81
+order: 277
 ---
 
 ## 问题 1：powerMonitor 是什么，有哪些常用事件？

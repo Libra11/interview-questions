@@ -17,7 +17,7 @@ keywords:
   - var()
   - CSS Variables
 highlight: 掌握 CSS 变量,实现灵活的样式管理和主题切换
-order: 15
+order: 93
 ---
 
 ## 问题 1：CSS 变量的基本语法

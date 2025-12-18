@@ -17,7 +17,7 @@ keywords:
   - React profiler
   - optimization
 highlight: 定位慢组件的步骤：Profiler 分析、检查渲染次数、检查渲染耗时、分析原因、针对性优化。
-order: 294
+order: 651
 ---
 
 ## 问题 1：使用 React DevTools Profiler

@@ -18,7 +18,7 @@ keywords:
   - Promise.race
   - 异步编程
 highlight: 实现 Promise 的核心是理解状态机制、then 链式调用和异步执行，掌握这些原理才能真正理解异步编程
-order: 111
+order: 357
 ---
 
 ## 问题 1：Promise 的核心原理是什么？

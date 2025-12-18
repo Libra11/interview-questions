@@ -16,7 +16,7 @@ keywords:
   - FFI
   - 动态链接库
 highlight: node-ffi-napi 允许在 Node.js 中直接调用 C 语言动态库函数
-order: 78
+order: 273
 ---
 
 ## 问题 1：安装配置

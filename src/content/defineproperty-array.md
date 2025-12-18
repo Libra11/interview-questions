@@ -16,7 +16,7 @@ keywords:
   - Vue 响应式
   - Proxy
 highlight: 理解为何 Vue 2 需要重写数组方法，以及 Proxy 如何彻底解决这个问题。
-order: 7
+order: 39
 ---
 
 ## 问题 1：Object.defineProperty 能监听数组的索引变化吗？

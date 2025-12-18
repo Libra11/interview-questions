@@ -17,7 +17,7 @@ keywords:
   - HTTP持久连接
   - TCP连接复用
 highlight: HTTP 长连接通过复用 TCP 连接减少握手开销，显著提升网络性能
-order: 8
+order: 47
 ---
 
 ## 问题 1：什么是 HTTP 长连接？

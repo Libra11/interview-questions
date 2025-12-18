@@ -17,7 +17,7 @@ keywords:
   - reactive dependencies
   - computed properties
 highlight: computed 具有缓存机制，只有依赖的响应式数据变化时才重新计算；而普通函数每次调用都会执行，无缓存。
-order: 150
+order: 432
 ---
 
 ## 问题 1：核心区别是什么？

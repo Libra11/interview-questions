@@ -17,7 +17,7 @@ keywords:
   - Babel
   - JavaScript syntax
 highlight: JSX 是 JavaScript 的语法扩展，会被编译成 React.createElement 调用，而不是真正的 HTML。
-order: 203
+order: 455
 ---
 
 ## 问题 1：JSX 的本质是什么？

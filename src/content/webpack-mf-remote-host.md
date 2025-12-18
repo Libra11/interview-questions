@@ -17,7 +17,7 @@ keywords:
   - 远程模块
   - 主机应用
 highlight: Host 是消费远程模块的应用，Remote 是提供模块的应用，一个应用可以同时是 Host 和 Remote。
-order: 668
+order: 798
 ---
 
 ## 问题 1：基本概念

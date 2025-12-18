@@ -18,7 +18,7 @@ keywords:
   - batching
   - lifecycle
 highlight: setState 不会立即修改 state，而是将更新加入队列，通过 React 的调度机制批量处理，最后触发重新渲染和生命周期方法。
-order: 159
+order: 441
 ---
 
 ## 问题 1：setState 的基本用法

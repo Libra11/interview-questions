@@ -18,7 +18,7 @@ keywords:
   - 并发请求
   - 错误处理
 highlight: axios 是基于 Promise 的 HTTP 客户端，提供拦截器、请求取消、自动转换等强大功能
-order: 93
+order: 296
 ---
 
 ## 问题 1：axios 有哪些核心特性？

@@ -16,7 +16,7 @@ keywords:
   - preload
   - contextBridge
 highlight: 通过 preload 脚本和 contextBridge 可以安全地在渲染进程中使用 Node.js 功能
-order: 10
+order: 59
 ---
 
 ## 问题 1：渲染进程默认能访问 Node API 吗？

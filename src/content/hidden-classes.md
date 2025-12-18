@@ -17,7 +17,7 @@ keywords:
   - V8引擎
   - 性能优化
 highlight: 理解隐藏类的工作原理，掌握 JavaScript 引擎优化机制，能够编写高性能的 JavaScript 代码
-order: 38
+order: 203
 ---
 
 ## 问题 1：什么是隐藏类（Hidden Classes）？

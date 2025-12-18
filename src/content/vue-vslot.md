@@ -16,7 +16,7 @@ keywords:
   - 插槽语法
   - 具名插槽
 highlight: v-slot 和 # 是同一个指令的完整写法和简写，# 是 v-slot 的语法糖。
-order: 227
+order: 533
 ---
 
 ## 问题 1：v-slot 与 # 的关系

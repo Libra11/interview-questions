@@ -17,7 +17,7 @@ keywords:
   - 'null'
   - 原型查找
 highlight: 理解原型链的完整结构和终点，掌握原型查找机制，深入理解 JavaScript 的继承本质
-order: 53
+order: 237
 ---
 
 ## 问题 1：原型链的终点是什么？

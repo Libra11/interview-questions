@@ -20,7 +20,7 @@ keywords:
   - SSO
   - 单点登录
 highlight: 掌握 Session、JWT、OAuth 等主流鉴权方案，根据场景选择合适的认证方式
-order: 102
+order: 317
 ---
 
 ## 问题 1：Session-Cookie 鉴权如何工作？

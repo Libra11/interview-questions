@@ -16,7 +16,7 @@ keywords:
   - 性能优化
   - v-memo
 highlight: 通过合理的组件拆分、v-memo、computed 缓存等方式减少不必要的重新渲染。
-order: 246
+order: 571
 ---
 
 ## 问题 1：理解渲染触发条件

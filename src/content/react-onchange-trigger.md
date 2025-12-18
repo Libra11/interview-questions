@@ -17,7 +17,7 @@ keywords:
   - React event
   - form events
 highlight: React 的 onChange 在每次输入时触发（类似原生 input 事件），而非失焦时触发。
-order: 264
+order: 606
 ---
 
 ## 问题 1：React onChange vs 原生 change？

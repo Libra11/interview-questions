@@ -17,7 +17,7 @@ keywords:
   - immutable
   - predictable
 highlight: 纯函数保证相同输入得到相同输出，让状态变化可预测、可测试、可调试。
-order: 234
+order: 546
 ---
 
 ## 问题 1：什么是纯函数？

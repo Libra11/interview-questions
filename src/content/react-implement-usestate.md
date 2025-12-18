@@ -17,7 +17,7 @@ keywords:
   - useState principle
   - custom hooks
 highlight: useState 通过闭包和链表实现，每个组件维护一个 Hooks 链表，按调用顺序存储状态。
-order: 309
+order: 683
 ---
 
 ## 问题 1：最简实现

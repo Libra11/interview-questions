@@ -17,7 +17,7 @@ keywords:
   - SharedWorker
   - LocalStorage事件
 highlight: 浏览器提供了多种标签页间通信方式，从简单的 LocalStorage 事件到强大的 BroadcastChannel
-order: 12
+order: 73
 ---
 
 ## 问题 1：为什么需要标签页间通信？

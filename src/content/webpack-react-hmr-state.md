@@ -17,7 +17,7 @@ keywords:
   - 状态保留
   - 热更新
 highlight: React Fast Refresh 通过保留组件实例和 Hooks 状态实现热更新时不丢失状态，但修改 Hooks 顺序等情况会触发重置。
-order: 644
+order: 774
 ---
 
 ## 问题 1：React Fast Refresh 的工作原理

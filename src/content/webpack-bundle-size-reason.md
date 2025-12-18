@@ -17,7 +17,7 @@ keywords:
   - 问题排查
   - 优化
 highlight: 打包文件过大通常由未配置 Tree-shaking、引入整个库、未压缩、Source Map 内联等原因导致。
-order: 702
+order: 832
 ---
 
 ## 问题 1：常见原因

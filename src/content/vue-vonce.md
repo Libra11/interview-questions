@@ -16,7 +16,7 @@ keywords:
   - 一次性渲染
   - 静态优化
 highlight: v-once 让元素和组件只渲染一次，后续更新会被跳过，适合纯静态内容。
-order: 225
+order: 529
 ---
 
 ## 问题 1：v-once 是什么？

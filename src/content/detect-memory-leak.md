@@ -18,7 +18,7 @@ keywords:
   - Performance Monitor
   - 垃圾回收
 highlight: 内存泄漏检测的核心是使用 Chrome DevTools 的 Memory 工具，通过堆快照和时间线分析找出未释放的对象
-order: 113
+order: 364
 ---
 
 ## 问题 1：什么是内存泄漏？

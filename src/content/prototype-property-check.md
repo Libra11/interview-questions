@@ -16,7 +16,7 @@ keywords:
   - Object.keys
   - 原型链
 highlight: 理解自有属性与继承属性的本质差异，掌握 for...in、Object.keys 等遍历方法的行为差异
-order: 13
+order: 82
 ---
 
 ## 问题 1：如何判断属性是来自对象自身还是原型链？

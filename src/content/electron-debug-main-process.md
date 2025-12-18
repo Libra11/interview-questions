@@ -17,7 +17,7 @@ keywords:
   - node inspect
   - vscode electron 调试
 highlight: 掌握多种主进程调试方法，提升 Electron 开发效率。
-order: 82
+order: 278
 ---
 
 ## 问题 1：使用 VSCode 调试主进程

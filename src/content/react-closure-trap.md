@@ -17,7 +17,7 @@ keywords:
   - React hooks
   - useRef
 highlight: 闭包陷阱是指 Hooks 中捕获了过时的 state/props 值，可通过 useRef、函数式更新等方式解决。
-order: 271
+order: 620
 ---
 
 ## 问题 1：什么是闭包陷阱？

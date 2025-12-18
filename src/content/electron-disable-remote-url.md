@@ -16,7 +16,7 @@ keywords:
   - 导航拦截
   - URL白名单
 highlight: 通过 will-navigate 和 new-window 事件拦截导航，只允许加载本地或白名单 URL
-order: 43
+order: 216
 ---
 
 ## 问题 1：为什么要限制远程 URL？

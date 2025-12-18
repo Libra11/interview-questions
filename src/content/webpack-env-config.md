@@ -17,7 +17,7 @@ keywords:
   - production
   - webpack-merge
 highlight: 通过 webpack-merge 合并基础配置和环境特定配置，配合环境变量实现灵活的多环境构建。
-order: 691
+order: 821
 ---
 
 ## 问题 1：配置文件分离

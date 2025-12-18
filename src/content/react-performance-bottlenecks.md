@@ -17,7 +17,7 @@ keywords:
   - render optimization
   - React profiler
 highlight: 常见瓶颈包括不必要的重渲染、大列表渲染、频繁状态更新、大型 bundle 等。
-order: 265
+order: 608
 ---
 
 ## 问题 1：不必要的重渲染

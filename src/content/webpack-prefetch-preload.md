@@ -17,7 +17,7 @@ keywords:
   - 预加载
   - 预获取
 highlight: Preload 是高优先级加载当前页面需要的资源，Prefetch 是低优先级预获取未来可能需要的资源。
-order: 649
+order: 779
 ---
 
 ## 问题 1：Preload 是什么？

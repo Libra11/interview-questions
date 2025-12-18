@@ -17,7 +17,7 @@ keywords:
   - vue 3.5
   - ref attribute
 highlight: useTemplateRef 是 Vue 3.5 引入的新 API，提供了更明确和类型安全的方式来获取模板引用，避免了 ref 名称冲突问题。
-order: 142
+order: 424
 ---
 
 ## 问题 1：什么是 useTemplateRef？

@@ -17,7 +17,7 @@ keywords:
   - deb
   - 依赖问题
 highlight: Linux 打包需要处理依赖、沙箱权限和桌面集成等特有问题
-order: 70
+order: 265
 ---
 
 ## 问题 1：打包格式选择

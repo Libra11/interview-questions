@@ -18,7 +18,7 @@ keywords:
   - 性能优化
   - React Fiber
 highlight: requestIdleCallback 让开发者能在浏览器空闲时执行低优先级任务，避免阻塞主线程
-order: 96
+order: 303
 ---
 
 ## 问题 1：requestIdleCallback 是什么？

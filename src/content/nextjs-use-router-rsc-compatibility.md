@@ -17,7 +17,7 @@ keywords:
   - Server Components
   - 路由导航
 highlight: 掌握 useRouter 在 RSC 中的使用限制和正确的导航方式
-order: 308
+order: 679
 ---
 
 ## 问题 1：useRouter 在 RSC 中有什么限制？

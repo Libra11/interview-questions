@@ -17,7 +17,7 @@ keywords:
   - 构建加速
   - Webpack5
 highlight: Webpack 5 持久化缓存将构建结果缓存到文件系统，二次构建时直接复用，大幅提升构建速度。
-order: 662
+order: 792
 ---
 
 ## 问题 1：什么是持久化缓存？

@@ -18,7 +18,7 @@ keywords:
   - 垃圾回收
   - 内存泄漏
 highlight: 理解 WeakSet 和 WeakMap 的核心差异，掌握它们在不同场景下的应用，避免内存泄漏问题
-order: 44
+order: 218
 ---
 
 ## 问题 1：WeakSet 和 WeakMap 的基本概念

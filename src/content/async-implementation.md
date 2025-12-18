@@ -18,7 +18,7 @@ keywords:
   - async/await
   - 生成器
 highlight: 掌握 JavaScript 异步编程的演进历程，理解各种实现方式的特点，能够选择合适的异步解决方案
-order: 52
+order: 234
 ---
 
 ## 问题 1：异步编程的发展历程

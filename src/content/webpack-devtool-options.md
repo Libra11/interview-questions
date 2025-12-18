@@ -17,7 +17,7 @@ keywords:
   - eval
   - cheap
 highlight: devtool 配置决定 Source Map 的生成方式，不同配置在构建速度、调试质量、文件大小之间有不同权衡。
-order: 673
+order: 803
 ---
 
 ## 问题 1：配置选项概览

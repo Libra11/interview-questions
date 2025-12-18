@@ -17,7 +17,7 @@ keywords:
   - React configuration
   - webpack config
 highlight: React 项目的 Webpack 配置包括 Babel 转译、JSX 处理、热更新、代码分割等。
-order: 286
+order: 643
 ---
 
 ## 问题 1：基础配置

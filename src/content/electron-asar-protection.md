@@ -16,7 +16,7 @@ keywords:
   - 源码保护
   - 代码混淆
 highlight: ASAR 本身不提供加密，需要结合代码混淆、字节码编译等手段保护源码
-order: 61
+order: 255
 ---
 
 ## 问题 1：ASAR 的保护程度

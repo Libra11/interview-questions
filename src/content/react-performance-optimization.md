@@ -18,7 +18,7 @@ keywords:
   - useMemo
   - 代码分割
 highlight: 从组件设计、渲染策略、打包优化等多维度进行性能优化
-order: 115
+order: 369
 ---
 
 ## 问题 1：组件层面有哪些优化手段？

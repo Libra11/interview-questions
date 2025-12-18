@@ -17,7 +17,7 @@ keywords:
   - 打包优化
   - 第三方库
 highlight: externals 让我们可以将第三方库从 bundle 中排除,通过 CDN 加载,减小打包体积
-order: 13
+order: 85
 ---
 
 ## 问题 1:什么是 webpack externals?

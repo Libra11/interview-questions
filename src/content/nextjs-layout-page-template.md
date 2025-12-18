@@ -17,7 +17,7 @@ keywords:
   - template.tsx
   - 布局组件
 highlight: 理解 layout、page 和 template 的核心区别，掌握何时使用每种文件类型
-order: 406
+order: 716
 ---
 
 ## 问题 1：page.tsx 的作用是什么？

@@ -20,7 +20,7 @@ keywords:
   - Unicode
   - UTF-8
 highlight: 分清历史遗留的 escape 与现代 UTF-8 编码 API 的适用场景，才能避免跨语言的 URL 解析 bug。
-order: 110
+order: 355
 ---
 
 ## 问题一：为什么同时存在三种“编码”函数？

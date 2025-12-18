@@ -17,7 +17,7 @@ keywords:
   - TypeScript React
   - component typing
 highlight: React.FC 的缺点：隐式 children、泛型支持差、defaultProps 问题。推荐直接声明 props 类型。
-order: 284
+order: 641
 ---
 
 ## 问题 1：什么是 React.FC？

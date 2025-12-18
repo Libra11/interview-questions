@@ -18,7 +18,7 @@ keywords:
   - rejected
   - 状态转换
 highlight: 理解 Promise 状态的一次性和不可逆性，掌握状态转换的时机和条件，避免常见的状态管理错误。
-order: 30
+order: 177
 ---
 
 ## 问题 1：Promise 有哪三种状态？

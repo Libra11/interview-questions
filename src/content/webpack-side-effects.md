@@ -17,7 +17,7 @@ keywords:
   - Tree-shaking
   - 死代码消除
 highlight: sideEffects 字段告诉 Webpack 哪些文件是"纯净"的，可以安全地移除未使用的导出，实现更彻底的 Tree-shaking。
-order: 635
+order: 765
 ---
 
 ## 问题 1：什么是副作用（Side Effects）？

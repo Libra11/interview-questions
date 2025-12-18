@@ -17,7 +17,7 @@ keywords:
   - Suspense
   - 流式渲染
 highlight: 理解 loading.tsx 如何基于 React Suspense 实现自动加载状态，提升用户体验
-order: 408
+order: 718
 ---
 
 ## 问题 1：loading.tsx 是什么？

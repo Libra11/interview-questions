@@ -16,7 +16,7 @@ keywords:
   - 全局快捷键
   - 热键
 highlight: globalShortcut 注册的快捷键在应用失去焦点时也能触发
-order: 28
+order: 168
 ---
 
 ## 问题 1：什么是全局快捷键？

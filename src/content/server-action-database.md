@@ -17,7 +17,7 @@ keywords:
   - Prisma
   - ORM
 highlight: Server Action 可以直接访问数据库，无需中间层，简化数据操作流程
-order: 37
+order: 201
 ---
 
 ## 问题 1：Server Action 如何连接数据库？

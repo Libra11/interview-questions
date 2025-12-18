@@ -16,7 +16,7 @@ keywords:
   - 浅层响应式
   - reactive 区别
 highlight: reactive 深层响应，shallowReactive 只有第一层是响应式的，嵌套对象不会被代理。
-order: 214
+order: 500
 ---
 
 ## 问题 1：核心区别

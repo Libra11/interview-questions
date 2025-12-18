@@ -18,7 +18,7 @@ keywords:
   - 取消令牌
   - 异步控制
 highlight: 原生 Promise 不支持取消，但可以通过取消令牌、竞态模式等方案实现取消效果
-order: 104
+order: 330
 ---
 
 ## 问题 1：Promise 本身是否支持取消？

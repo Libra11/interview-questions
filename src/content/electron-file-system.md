@@ -16,7 +16,7 @@ keywords:
   - fs模块
   - 文件读写
 highlight: 在主进程中使用 Node.js fs 模块，通过 IPC 向渲染进程提供文件操作能力
-order: 33
+order: 187
 ---
 
 ## 问题 1：主进程如何访问文件系统？

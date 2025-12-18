@@ -19,7 +19,7 @@ keywords:
   - prop validation
   - typescript props
 highlight: Vue 提供了灵活的 Props 定义方式，推荐在 <script setup> 中使用 defineProps 配合 TypeScript 类型声明，以获得最佳的类型推导和开发体验。
-order: 141
+order: 423
 ---
 
 ## 问题 1：Options API (选项式 API) 有哪两种方式？

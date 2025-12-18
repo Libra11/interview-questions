@@ -17,7 +17,7 @@ keywords:
   - 泛型
   - 工具类型
 highlight: 总结实际项目中常用的 TypeScript 特性，帮助提升开发效率和代码质量
-order: 119
+order: 383
 ---
 
 ## 问题 1：类型推断和类型注解

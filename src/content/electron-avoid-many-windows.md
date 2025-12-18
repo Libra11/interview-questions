@@ -16,7 +16,7 @@ keywords:
   - 窗口复用
   - 性能优化
 highlight: 每个 BrowserWindow 都是独立进程，过多窗口会消耗大量内存
-order: 47
+order: 224
 ---
 
 ## 问题 1：为什么要限制窗口数量？

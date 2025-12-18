@@ -17,7 +17,7 @@ keywords:
   - 递归查询
   - 迭代查询
 highlight: DNS 通过分层查询将域名转换为 IP 地址，是互联网访问的第一步
-order: 17
+order: 107
 ---
 
 ## 问题 1：什么是 DNS？

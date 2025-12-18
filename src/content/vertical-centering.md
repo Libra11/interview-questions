@@ -18,7 +18,7 @@ keywords:
   - align-items
   - vertical-align
 highlight: 垂直居中比水平居中更复杂，掌握多种方案能够应对不同的布局需求
-order: 108
+order: 348
 ---
 
 ## 问题 1：单行文本如何垂直居中？

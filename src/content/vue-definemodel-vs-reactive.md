@@ -19,7 +19,7 @@ keywords:
   - two-way binding
   - props vs state
 highlight: reactive 用于创建组件内部的响应式对象，而 defineModel 是专门用于简化父子组件双向绑定 (v-model) 的语法糖。
-order: 139
+order: 421
 ---
 
 ## 问题 1：defineModel 和 reactive 的核心区别是什么？

@@ -21,7 +21,7 @@ keywords:
   - trigger
   - WeakMap
 highlight: 理解 Vue3 响应式系统的革新设计，掌握基于 Proxy 的数据劫持和 effect 系统
-order: 55
+order: 243
 ---
 
 ## 问题：Vue3 响应式实现的原理是什么？

@@ -17,7 +17,7 @@ keywords:
   - 特异性
   - 权重计算
 highlight: 掌握 CSS 选择器的完整体系和优先级规则
-order: 19
+order: 121
 ---
 
 ## 问题 1：CSS 选择器的分类

@@ -17,7 +17,7 @@ keywords:
   - 打包体积
   - 代码分割
 highlight: Webpack 优化是一个系统工程,需要从构建、打包、运行时等多个维度综合考虑
-order: 7
+order: 44
 ---
 
 ## 问题 1:如何优化 Webpack 构建速度?

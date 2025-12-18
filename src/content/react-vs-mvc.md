@@ -17,7 +17,7 @@ keywords:
   - component architecture
   - Flux
 highlight: React 用单向数据流和组件化替代了 MVC 的双向绑定，让数据流动更可预测。
-order: 202
+order: 452
 ---
 
 ## 问题 1：传统 MVC 是什么？

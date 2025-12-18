@@ -17,7 +17,7 @@ keywords:
   - SSR
   - SSG
 highlight: 理解 Pages Router 两种主要数据获取方法的核心差异和适用场景
-order: 418
+order: 728
 ---
 
 ## 问题 1：getStaticProps 是什么？

@@ -16,7 +16,7 @@ keywords:
   - ipcRenderer.send
   - 双向通信
 highlight: invoke 返回 Promise 用于双向通信，send 用于单向消息发送
-order: 15
+order: 94
 ---
 
 ## 问题 1：两者的基本用法是什么？

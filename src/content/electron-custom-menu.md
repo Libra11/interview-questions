@@ -16,7 +16,7 @@ keywords:
   - 应用菜单
   - 上下文菜单
 highlight: 使用 Menu.buildFromTemplate 创建菜单，通过 role 或 click 定义菜单行为
-order: 26
+order: 160
 ---
 
 ## 问题 1：如何创建应用菜单？

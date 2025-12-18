@@ -16,7 +16,7 @@ keywords:
   - 跨平台菜单
   - 应用菜单
 highlight: macOS 菜单在屏幕顶部且有应用菜单，Windows 菜单在窗口内
-order: 32
+order: 183
 ---
 
 ## 问题 1：菜单位置有什么不同？

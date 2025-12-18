@@ -16,7 +16,7 @@ keywords:
   - 多进程
   - 进程隔离
 highlight: Electron 继承了 Chromium 的多进程架构，实现了窗口间的进程隔离
-order: 5
+order: 25
 ---
 
 ## 问题 1：Chromium 的多进程架构是什么？

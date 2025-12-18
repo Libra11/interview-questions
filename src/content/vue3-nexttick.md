@@ -16,7 +16,7 @@ keywords:
   - 异步更新
   - Promise
 highlight: nextTick 利用 Promise 微任务，在 DOM 更新后执行回调。
-order: 264
+order: 607
 ---
 
 ## 问题 1：为什么需要 nextTick？

@@ -16,7 +16,7 @@ keywords:
   - 组件名称
   - inheritAttrs
 highlight: defineOptions 用于在 script setup 中定义组件选项，如 name、inheritAttrs 等。
-order: 253
+order: 585
 ---
 
 ## 问题 1：为什么需要 defineOptions？

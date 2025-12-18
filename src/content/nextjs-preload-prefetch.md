@@ -17,7 +17,7 @@ keywords:
   - 资源预加载
   - 链接预取
 highlight: 理解 preload 和 prefetch 的本质区别，掌握 Next.js 自动优化导航性能的机制
-order: 405
+order: 715
 ---
 
 ## 问题 1：preload 和 prefetch 的基本概念是什么？

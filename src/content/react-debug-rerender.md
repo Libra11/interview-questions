@@ -17,7 +17,7 @@ keywords:
   - React DevTools
   - render log
 highlight: 使用 React DevTools Profiler、why-did-you-render、console.log 等方法定位重复渲染原因。
-order: 314
+order: 696
 ---
 
 ## 问题 1：添加渲染日志

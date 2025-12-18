@@ -17,7 +17,7 @@ keywords:
   - content-box
   - border-box
 highlight: 理解盒模型是掌握 CSS 布局的基础
-order: 13
+order: 79
 ---
 
 ## 问题 1：什么是 CSS 盒模型

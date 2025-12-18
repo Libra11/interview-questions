@@ -18,7 +18,7 @@ keywords:
   - 浏览器对象模型
   - 文档对象模型
 highlight: 理解 JavaScript 的完整生态系统，掌握各个组成部分的职责和相互关系
-order: 40
+order: 209
 ---
 
 ## 问题 1：JavaScript 生态系统的整体架构

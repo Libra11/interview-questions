@@ -17,7 +17,7 @@ keywords:
   - getDerivedStateFromError
   - componentDidCatch
 highlight: 错误边界通过 getDerivedStateFromError 更新状态显示 fallback，通过 componentDidCatch 记录错误。
-order: 274
+order: 626
 ---
 
 ## 问题 1：整体流程

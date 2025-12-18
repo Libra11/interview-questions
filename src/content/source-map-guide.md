@@ -17,7 +17,7 @@ keywords:
   - 调试工具
   - devtool
 highlight: Source Map 是连接压缩代码和源代码的桥梁,是现代前端调试的关键工具
-order: 11
+order: 70
 ---
 
 ## 问题 1:什么是 Source Map?

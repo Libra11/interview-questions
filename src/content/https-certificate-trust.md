@@ -17,7 +17,7 @@ keywords:
   - CA认证
   - 数字签名
 highlight: 理解 HTTPS 证书信任机制，掌握证书验证的完整流程和安全原理
-order: 202
+order: 451
 ---
 
 ## 问题 1：什么是 HTTPS 证书，为什么需要它?

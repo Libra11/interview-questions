@@ -18,7 +18,7 @@ keywords:
   - SplitChunks
   - 代码复用
 highlight: 通过 SplitChunksPlugin 实现多入口应用的模块共享和优化
-order: 219
+order: 516
 ---
 
 ## 问题 1：什么是多入口应用？

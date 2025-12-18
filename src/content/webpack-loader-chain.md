@@ -16,7 +16,7 @@ keywords:
   - Loader 串联
   - 管道模式
 highlight: Loader 采用管道模式串联执行，前一个 Loader 的输出是后一个 Loader 的输入。
-order: 611
+order: 741
 ---
 
 ## 问题 1：Loader 的链式调用

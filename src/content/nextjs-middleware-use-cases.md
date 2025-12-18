@@ -17,7 +17,7 @@ keywords:
   - 认证授权
   - 国际化
 highlight: 掌握 Middleware 的常见使用场景和实战技巧
-order: 320
+order: 710
 ---
 
 ## 问题 1：认证和授权场景如何实现？

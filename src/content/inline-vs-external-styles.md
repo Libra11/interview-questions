@@ -17,7 +17,7 @@ keywords:
   - link标签
   - style标签
 highlight: 理解不同样式加载方式的优缺点,选择合适的加载策略
-order: 11
+order: 68
 ---
 
 ## 问题 1：什么是内联样式和外联样式

@@ -17,7 +17,7 @@ keywords:
   - React cache
   - props
 highlight: 掌握 Server Component 的数据传递方式，是构建高效 RSC 应用的关键
-order: 30
+order: 178
 ---
 
 ## 问题 1：通过 props 传递数据

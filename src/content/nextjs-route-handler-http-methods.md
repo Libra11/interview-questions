@@ -17,7 +17,7 @@ keywords:
   - Route Handlers
   - RESTful
 highlight: 掌握 Route Handlers 中各种 HTTP 方法的使用方式
-order: 311
+order: 687
 ---
 
 ## 问题 1：Route Handlers 如何定义不同的 HTTP 方法？

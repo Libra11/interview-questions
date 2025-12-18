@@ -16,7 +16,7 @@ keywords:
   - SaaS
   - 租户隔离
 highlight: 通过租户识别、配置隔离、主题定制实现多租户 SaaS 应用。
-order: 275
+order: 629
 ---
 
 ## 问题 1：多租户架构模式

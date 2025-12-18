@@ -17,7 +17,7 @@ keywords:
   - file-loader
   - url-loader
 highlight: Asset Modules 是 Webpack 5 内置的资源处理方式，无需额外 loader 即可处理图片、字体等资源文件。
-order: 664
+order: 794
 ---
 
 ## 问题 1：什么是 Asset Modules？

@@ -18,7 +18,7 @@ keywords:
   - cross-browser
   - react events
 highlight: React 合成事件系统通过事件委托、对象池和统一的事件接口，实现了更好的性能和跨浏览器兼容性。
-order: 157
+order: 439
 ---
 
 ## 问题 1：什么是合成事件？

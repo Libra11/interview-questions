@@ -17,7 +17,7 @@ keywords:
   - 死代码消除
   - 静态分析
 highlight: Tree-shaking 通过 AST 分析 import/export 语句，标记未使用的导出，最后由压缩工具移除死代码。
-order: 699
+order: 829
 ---
 
 ## 问题 1：整体流程

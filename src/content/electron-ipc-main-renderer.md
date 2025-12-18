@@ -16,7 +16,7 @@ keywords:
   - ipcRenderer
   - 进程间通信
 highlight: ipcMain 在主进程中接收消息，ipcRenderer 在渲染进程中发送和接收消息
-order: 13
+order: 80
 ---
 
 ## 问题 1：ipcMain 和 ipcRenderer 分别是什么？

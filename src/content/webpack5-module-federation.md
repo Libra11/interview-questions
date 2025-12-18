@@ -17,7 +17,7 @@ keywords:
   - 微前端
   - 跨应用共享
 highlight: Module Federation 允许多个独立构建的应用在运行时动态共享代码，是实现微前端的强大工具。
-order: 663
+order: 793
 ---
 
 ## 问题 1：什么是模块联邦？

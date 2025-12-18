@@ -17,7 +17,7 @@ keywords:
   - 内存泄漏
   - 标记清除
 highlight: 掌握 JavaScript 内存管理原理，能够识别和预防内存泄漏，优化应用的内存使用
-order: 39
+order: 206
 ---
 
 ## 问题 1：JavaScript 内存管理的基本概念

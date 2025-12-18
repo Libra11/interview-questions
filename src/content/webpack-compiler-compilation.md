@@ -17,7 +17,7 @@ keywords:
   - Webpack 对象
   - 构建流程
 highlight: Compiler 代表整个 Webpack 环境，全局唯一；Compilation 代表一次编译过程，每次构建都会创建新实例。
-order: 626
+order: 756
 ---
 
 ## 问题 1：Compiler 是什么？

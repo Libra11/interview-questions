@@ -16,7 +16,7 @@ keywords:
   - 依赖注入
   - 跨层级通信
 highlight: provide/inject 用于祖先组件向后代组件传递数据，避免 props 逐层传递。
-order: 208
+order: 476
 ---
 
 ## 问题 1：什么是 provide/inject？

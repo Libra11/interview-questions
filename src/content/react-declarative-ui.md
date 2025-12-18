@@ -17,7 +17,7 @@ keywords:
   - React paradigm
   - UI programming
 highlight: 声明式 UI 让你描述"想要什么"，而不是"怎么做"，React 负责处理 DOM 更新的细节。
-order: 201
+order: 447
 ---
 
 ## 问题 1：什么是声明式编程？

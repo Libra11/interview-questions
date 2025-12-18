@@ -18,7 +18,7 @@ keywords:
   - 原型链
   - 继承
 highlight: 理解 class 语法糖的本质，掌握两种构造函数在继承、this 绑定、提升等方面的差异。
-order: 26
+order: 159
 ---
 
 ## 问题 1：new Class 与 new Function 的核心区别是什么？

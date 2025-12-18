@@ -17,7 +17,7 @@ keywords:
   - 类型安全
   - 开发体验
 highlight: 理解 TypeScript 的优势能够帮助做出更好的技术选型决策
-order: 120
+order: 387
 ---
 
 ## 问题 1：类型安全

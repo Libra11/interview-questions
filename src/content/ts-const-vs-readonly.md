@@ -17,7 +17,7 @@ keywords:
   - 不可变性
   - 常量
 highlight: 理解 const 和 readonly 的核心差异，掌握在不同场景下的正确使用
-order: 312
+order: 691
 ---
 
 ## 问题 1：const 和 readonly 的基本定义是什么？

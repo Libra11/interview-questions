@@ -17,7 +17,7 @@ keywords:
   - 静态生成
   - 渲染模式
 highlight: 理解三种渲染模式的本质区别，掌握在实际项目中的最佳实践
-order: 319
+order: 707
 ---
 
 ## 问题 1：什么是 CSR、SSR 和 SSG？

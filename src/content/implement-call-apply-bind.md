@@ -18,7 +18,7 @@ keywords:
   - this
   - 函数绑定
 highlight: call、apply、bind 都用于改变函数的 this 指向，区别在于参数传递方式和执行时机
-order: 116
+order: 372
 ---
 
 ## 问题 1：call、apply、bind 的作用和区别是什么？

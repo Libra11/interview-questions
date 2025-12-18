@@ -17,7 +17,7 @@ keywords:
   - Base64
   - 资源模块
 highlight: file-loader 输出文件返回 URL，url-loader 小文件转 Base64 大文件回退到 file-loader。
-order: 615
+order: 745
 ---
 
 ## 问题 1：file-loader 的作用

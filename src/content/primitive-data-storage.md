@@ -18,7 +18,7 @@ keywords:
   - 堆内存
   - 内存分配
 highlight: 理解 JavaScript 内存分配机制，掌握基本类型和引用类型的存储差异，避免内存泄漏问题
-order: 33
+order: 189
 ---
 
 ## 问题 1：JavaScript 中的数据类型分类

@@ -16,7 +16,7 @@ keywords:
   - 代码保护
   - obfuscation
 highlight: 掌握 asar 打包与代码混淆的结合使用，提升源码保护效果。
-order: 95
+order: 301
 ---
 
 ## 问题 1：标准的保护流程是什么？

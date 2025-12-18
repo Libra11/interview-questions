@@ -17,7 +17,7 @@ keywords:
   - transition
   - priority
 highlight: startTransition 将更新标记为非紧急，可被用户交互打断，而普通 setState 是紧急更新。
-order: 227
+order: 532
 ---
 
 ## 问题 1：两者有什么区别？

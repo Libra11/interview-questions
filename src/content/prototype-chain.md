@@ -18,7 +18,7 @@ keywords:
   - __proto__
   - 继承
 highlight: 原型链是 JavaScript 实现继承的核心机制，每个对象都有 __proto__ 指向其构造函数的 prototype
-order: 119
+order: 382
 ---
 
 ## 问题 1：什么是原型？

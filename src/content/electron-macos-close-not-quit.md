@@ -16,7 +16,7 @@ keywords:
   - 窗口不退出
   - activate事件
 highlight: 监听 window-all-closed 事件，在 macOS 上不调用 app.quit()
-order: 69
+order: 264
 ---
 
 ## 问题 1：macOS 的默认行为

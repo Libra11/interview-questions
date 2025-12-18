@@ -16,7 +16,7 @@ keywords:
   - HMR
   - 开发效率
 highlight: 渲染进程使用 Vite/Webpack HMR，主进程使用 electron-reload 或手动重启
-order: 72
+order: 267
 ---
 
 ## 问题 1：渲染进程热更新

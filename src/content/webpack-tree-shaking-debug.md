@@ -17,7 +17,7 @@ keywords:
   - 调试
   - 解决方案
 highlight: Tree-shaking 不生效通常由 CommonJS 模块、Babel 配置、缺少 sideEffects 或开发模式导致。
-order: 703
+order: 833
 ---
 
 ## 问题 1：检查模块格式

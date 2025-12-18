@@ -18,7 +18,7 @@ keywords:
   - 执行阶段
   - 变量环境
 highlight: 掌握执行上下文生命周期的各个阶段，理解 JavaScript 代码执行的底层机制
-order: 57
+order: 247
 ---
 
 ## 问题 1：执行上下文生命周期概述

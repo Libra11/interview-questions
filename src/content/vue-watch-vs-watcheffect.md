@@ -17,7 +17,7 @@ keywords:
   - reactive dependencies
   - lazy evaluation
 highlight: watch 需要显式指定依赖且默认惰性执行，适合需要访问旧值或精确控制依赖的场景；watchEffect 自动追踪依赖且立即执行，适合简单的副作用逻辑。
-order: 145
+order: 427
 ---
 
 ## 问题 1：watch 和 watchEffect 的核心区别是什么？

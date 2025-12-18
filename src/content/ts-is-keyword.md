@@ -17,7 +17,7 @@ keywords:
   - Type Guard
   - 类型谓词
 highlight: 掌握 is 关键字在自定义类型守卫中的使用，实现精确的类型收窄
-order: 306
+order: 675
 ---
 
 ## 问题 1：TypeScript 中 is 关键字是什么？

@@ -18,7 +18,7 @@ keywords:
   - Object.create
   - 工厂模式
 highlight: 掌握 JavaScript 对象创建的多种方式，理解各种方式的优缺点，能够选择合适的对象创建模式
-order: 54
+order: 239
 ---
 
 ## 问题 1：对象字面量

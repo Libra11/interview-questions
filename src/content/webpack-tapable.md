@@ -17,7 +17,7 @@ keywords:
   - 发布订阅
   - Plugin 机制
 highlight: Tapable 是 Webpack 的插件架构核心，提供了多种类型的钩子，让插件能够介入构建流程的各个阶段。
-order: 620
+order: 750
 ---
 
 ## 问题 1：什么是 Tapable？

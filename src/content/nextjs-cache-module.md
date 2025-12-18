@@ -17,7 +17,7 @@ keywords:
   - revalidateTag
   - Next.js 缓存
 highlight: next/cache 模块提供了强大的缓存控制能力，是 Next.js 缓存系统的核心
-order: 40
+order: 210
 ---
 
 ## 问题 1：next/cache 模块提供了哪些功能？

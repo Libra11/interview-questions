@@ -16,7 +16,7 @@ keywords:
   - Options Store
   - Setup Store
 highlight: defineStore 支持 Options（对象）和 Setup（函数）两种写法，Setup 写法更灵活，Options 写法更直观。
-order: 236
+order: 551
 ---
 
 ## 问题 1：Options Store（对象写法）

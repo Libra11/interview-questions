@@ -17,7 +17,7 @@ keywords:
   - 调试
   - devtool
 highlight: Source Map 是源代码与编译后代码的映射文件，让浏览器调试时能显示原始源代码而非压缩后的代码。
-order: 672
+order: 802
 ---
 
 ## 问题 1：为什么需要 Source Map？

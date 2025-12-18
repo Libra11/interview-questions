@@ -18,7 +18,7 @@ keywords:
   - block
   - display
 highlight: 块级元素独占一行可设置宽高，行内元素不换行宽高由内容决定
-order: 97
+order: 305
 ---
 
 ## 问题 1：块级元素和行内元素有什么区别？

@@ -17,7 +17,7 @@ keywords:
   - middleware
   - side effects
 highlight: Thunk 简单直接用函数处理异步，Saga 用 Generator 处理复杂异步流程。
-order: 235
+order: 548
 ---
 
 ## 问题 1：Redux-thunk 是什么？

@@ -16,7 +16,7 @@ keywords:
   - 按需加载
   - ESM
 highlight: 通过 ESM 格式、sideEffects 配置、具名导出实现有效的 Tree-shaking。
-order: 271
+order: 621
 ---
 
 ## 问题 1：Tree-shaking 原理

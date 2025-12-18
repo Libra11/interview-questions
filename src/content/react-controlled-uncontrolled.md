@@ -17,7 +17,7 @@ keywords:
   - React form
   - useRef
 highlight: 受控组件由 React 状态驱动，非受控组件由 DOM 自身管理状态，选择取决于具体场景。
-order: 206
+order: 467
 ---
 
 ## 问题 1：什么是受控组件？

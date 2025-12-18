@@ -17,7 +17,7 @@ keywords:
   - 社交分享
   - Facebook
 highlight: Open Graph 让你的网页在社交媒体上分享时显示丰富的预览信息
-order: 25
+order: 155
 ---
 
 ## 问题 1：什么是 Open Graph？

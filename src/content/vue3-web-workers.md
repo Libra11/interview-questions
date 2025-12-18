@@ -16,7 +16,7 @@ keywords:
   - 多线程
   - 性能优化
 highlight: Web Workers 在独立线程执行耗时任务，配合 Vue3 的响应式系统实现非阻塞的数据处理。
-order: 249
+order: 577
 ---
 
 ## 问题 1：为什么需要 Web Workers？

@@ -18,7 +18,7 @@ keywords:
   - enum
   - readonly
 highlight: TypeScript 的关键词是构建类型系统的基础，理解它们的用法能够写出更安全和可维护的代码
-order: 109
+order: 352
 ---
 
 ## 问题 1：类型定义相关的关键词有哪些？

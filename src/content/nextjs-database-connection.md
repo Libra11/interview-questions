@@ -17,7 +17,7 @@ keywords:
   - PostgreSQL
   - ORM
 highlight: 掌握在 Next.js 中使用 Prisma 连接数据库的完整方案
-order: 315
+order: 698
 ---
 
 ## 问题 1：如何在 Next.js 中设置 Prisma 和 PostgreSQL？

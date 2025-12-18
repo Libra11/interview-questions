@@ -17,7 +17,7 @@ keywords:
   - JWT
   - Middleware
 highlight: Edge Runtime 只支持 JWT 会话策略，需要特殊处理才能在边缘环境中验证用户身份
-order: 19
+order: 123
 ---
 
 ## 问题 1：Edge Runtime 的限制

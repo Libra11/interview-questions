@@ -17,7 +17,7 @@ keywords:
   - 响应报文
   - HTTP结构
 highlight: 掌握 HTTP 报文的完整结构，理解请求和响应的组成部分
-order: 209
+order: 478
 ---
 
 ## 问题 1：HTTP 请求报文的结构是怎样的？

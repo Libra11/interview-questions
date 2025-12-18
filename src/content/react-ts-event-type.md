@@ -17,7 +17,7 @@ keywords:
   - event handler type
   - SyntheticEvent
 highlight: React 事件使用 React.XXXEvent 类型，事件处理函数使用 React.XXXEventHandler 类型。
-order: 282
+order: 639
 ---
 
 ## 问题 1：常见事件类型

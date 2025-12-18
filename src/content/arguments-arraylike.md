@@ -18,7 +18,7 @@ keywords:
   - rest parameters
   - call stack
 highlight: arguments 是早期补丁，出于性能与兼容保留为类数组，现代写法优先使用 ...rest。
-order: 120
+order: 384
 ---
 
 ## 问题一：arguments 到底长什么样？

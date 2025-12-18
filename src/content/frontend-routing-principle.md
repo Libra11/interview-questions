@@ -18,7 +18,7 @@ keywords:
   - History 路由
   - 单页应用
 highlight: 前端路由通过 Hash 或 History API 实现，无需刷新页面即可切换视图
-order: 119
+order: 381
 ---
 
 ## 问题 1：什么是前端路由？

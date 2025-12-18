@@ -18,7 +18,7 @@ keywords:
   - 动态参数
   - rest parameters
 highlight: 掌握普通函数和箭头函数在动态参数处理上的本质区别，理解现代参数处理的最佳实践
-order: 56
+order: 245
 ---
 
 ## 问题 1：arguments 对象的差异

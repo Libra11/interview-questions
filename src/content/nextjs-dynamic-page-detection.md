@@ -17,7 +17,7 @@ keywords:
   - force-dynamic
   - 渲染决策
 highlight: 理解 Next.js 如何自动检测页面是否需要动态渲染，掌握控制渲染模式的方法
-order: 414
+order: 724
 ---
 
 ## 问题 1：Next.js 如何判断页面是动态还是静态？

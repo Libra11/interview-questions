@@ -16,7 +16,7 @@ keywords:
   - 模块转换
   - 文件处理
 highlight: Loader 是 Webpack 的文件转换器，让 Webpack 能够处理 JavaScript 和 JSON 以外的所有文件类型。
-order: 610
+order: 740
 ---
 
 ## 问题 1：什么是 Loader？

@@ -16,7 +16,7 @@ keywords:
   - AST
   - render function
 highlight: 模板编译分为三步：解析成 AST、转换优化 AST、生成渲染函数代码。
-order: 201
+order: 449
 ---
 
 ## 问题 1：模板编译的整体流程

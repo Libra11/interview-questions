@@ -16,7 +16,7 @@ keywords:
   - Reflect
   - 原型链
 highlight: 理解 receiver 参数在继承场景中的关键作用，以及为何要配合 Reflect.set 使用。
-order: 8
+order: 49
 ---
 
 ## 问题 1：Proxy set 拦截器有哪些参数？

@@ -17,7 +17,7 @@ keywords:
   - virtual DOM
   - unidirectional data flow
 highlight: React 的核心思想是通过组件化、声明式 UI 和单向数据流来构建可预测、可维护的用户界面。
-order: 200
+order: 444
 ---
 
 ## 问题 1：React 的核心设计理念是什么？

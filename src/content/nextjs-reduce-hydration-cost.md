@@ -17,7 +17,7 @@ keywords:
   - 性能优化
   - TTI
 highlight: 通过减少客户端 JavaScript、延迟 hydration 和优化组件可以显著降低 hydration 成本
-order: 11
+order: 69
 ---
 
 ## 问题 1：什么是 Hydration Cost？

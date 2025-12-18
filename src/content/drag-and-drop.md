@@ -18,7 +18,7 @@ keywords:
   - mousemove
   - mouseup
 highlight: 通过监听 mousedown、mousemove、mouseup 事件，计算位置偏移量实现元素拖拽
-order: 95
+order: 300
 ---
 
 ## 问题 1：如何实现基础的拖拽功能？

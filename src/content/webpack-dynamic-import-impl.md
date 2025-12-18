@@ -17,7 +17,7 @@ keywords:
   - 异步加载
   - JSONP
 highlight: Webpack 将 import() 转换为运行时代码，通过 JSONP 方式动态创建 script 标签加载异步 Chunk。
-order: 700
+order: 830
 ---
 
 ## 问题 1：编译时转换

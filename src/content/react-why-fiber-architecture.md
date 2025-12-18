@@ -18,7 +18,7 @@ keywords:
   - 可中断渲染
   - 并发模式
 highlight: Fiber 架构通过可中断的渲染解决了 Stack Reconciler 的性能瓶颈
-order: 113
+order: 365
 ---
 
 ## 问题 1：Stack Reconciler 有什么问题？

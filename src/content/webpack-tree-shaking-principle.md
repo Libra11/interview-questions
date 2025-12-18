@@ -18,7 +18,7 @@ keywords:
   - ES Module
   - sideEffects
 highlight: tree-shaking 基于 ES Module 的静态结构特性消除未使用的代码
-order: 212
+order: 493
 ---
 
 ## 问题 1：什么是 tree-shaking？

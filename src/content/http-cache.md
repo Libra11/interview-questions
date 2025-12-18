@@ -21,7 +21,7 @@ keywords:
   - Last-Modified
   - Expires
 highlight: HTTP 缓存分为强缓存和协商缓存，合理使用缓存可以显著提升网站性能
-order: 135
+order: 416
 ---
 
 ## 问题 1：什么是 HTTP 缓存？

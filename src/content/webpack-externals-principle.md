@@ -18,7 +18,7 @@ keywords:
   - CDN 加载
   - 打包优化
 highlight: externals 将依赖从 bundle 中排除，通过全局变量或其他方式访问
-order: 206
+order: 469
 ---
 
 ## 问题 1：externals 是什么？

@@ -18,7 +18,7 @@ keywords:
   - performance
   - compilerOptions
 highlight: app.config 提供了丰富的应用级配置选项，可以自定义错误处理、性能追踪、全局属性等行为。
-order: 155
+order: 437
 ---
 
 ## 问题 1：app.config 有哪些常用配置？

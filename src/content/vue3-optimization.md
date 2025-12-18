@@ -16,7 +16,7 @@ keywords:
   - 性能提升
   - 编译优化
 highlight: Vue3 通过 Proxy 响应式、编译优化、Tree-shaking 等多方面优化，性能提升显著。
-order: 241
+order: 561
 ---
 
 ## 问题 1：响应式系统优化

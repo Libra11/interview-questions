@@ -17,7 +17,7 @@ keywords:
   - immutable state
   - pure reducer
 highlight: Redux 三原则：单一数据源、状态只读、使用纯函数修改，保证状态变化可预测。
-order: 233
+order: 544
 ---
 
 ## 问题 1：三大原则是什么？

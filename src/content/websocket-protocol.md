@@ -17,7 +17,7 @@ keywords:
   - 握手协议
   - 数据帧
 highlight: WebSocket 通过升级 HTTP 连接实现全双工通信，提供低延迟的实时数据传输
-order: 16
+order: 105
 ---
 
 ## 问题 1：什么是 WebSocket？

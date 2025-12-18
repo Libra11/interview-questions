@@ -17,7 +17,7 @@ keywords:
   - Server Components
   - Next.js 默认行为
 highlight: 理解 RSC 中 fetch 默认缓存的设计理念和性能优势
-order: 303
+order: 664
 ---
 
 ## 问题 1：RSC 中 fetch 的默认缓存行为是什么？

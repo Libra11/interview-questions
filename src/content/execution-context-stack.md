@@ -18,7 +18,7 @@ keywords:
   - 栈溢出
   - 函数调用
 highlight: 掌握执行上下文栈的工作机制，理解 JavaScript 函数调用和执行的底层原理
-order: 59
+order: 252
 ---
 
 ## 问题 1：执行上下文栈的基本概念

@@ -18,7 +18,7 @@ keywords:
   - Blob
   - URL.createObjectURL
 highlight: 使用 a 标签的 download 属性配合 Blob 和 URL.createObjectURL 可以实现纯前端文件下载
-order: 128
+order: 401
 ---
 
 ## 问题 1：如何使用 a 标签的 download 属性？

@@ -16,7 +16,7 @@ keywords:
   - 滚动行为
   - 回到顶部
 highlight: scrollBehavior 函数可以控制路由切换时的滚动位置，支持回到顶部、保存位置、滚动到锚点等。
-order: 233
+order: 545
 ---
 
 ## 问题 1：基本用法

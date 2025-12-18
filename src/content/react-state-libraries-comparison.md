@@ -18,7 +18,7 @@ keywords:
   - Zustand
   - state management
 highlight: Recoil 原子化+选择器，Jotai 极简原子化，Zustand 类 Redux 但更简单。
-order: 236
+order: 550
 ---
 
 ## 问题 1：Zustand 的特点？

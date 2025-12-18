@@ -19,7 +19,7 @@ keywords:
   - 变量提升
   - 暂时性死区
 highlight: let 和 const 具有块级作用域，不存在变量提升，const 声明的是常量引用而非常量值
-order: 124
+order: 393
 ---
 
 ## 问题 1：作用域有什么区别？

@@ -17,7 +17,7 @@ keywords:
   - 文件指纹
   - 缓存策略
 highlight: contenthash 基于文件内容生成，Webpack 对模块内容进行 hash 计算，只有内容变化时 hash 才会变化。
-order: 651
+order: 781
 ---
 
 ## 问题 1：contenthash 的生成原理

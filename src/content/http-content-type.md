@@ -18,7 +18,7 @@ keywords:
   - application/json
   - multipart/form-data
 highlight: Content-Type 指定 HTTP 消息体的媒体类型，帮助接收方正确解析数据
-order: 88
+order: 287
 ---
 
 ## 问题 1：Content-Type 是什么，有什么作用？

@@ -17,7 +17,7 @@ keywords:
   - React internals
   - Fiber properties
 highlight: Fiber 是一个 JavaScript 对象，包含组件类型、状态、副作用、链表指针等信息。
-order: 252
+order: 582
 ---
 
 ## 问题 1：Fiber 节点的基本结构？

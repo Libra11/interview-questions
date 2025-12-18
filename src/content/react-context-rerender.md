@@ -17,7 +17,7 @@ keywords:
   - 重渲染
   - useMemo
 highlight: 掌握 Context 性能优化的核心策略，避免全局状态更新导致的性能问题
-order: 2
+order: 10
 ---
 
 ## 问题 1：Context 为什么会导致大范围重渲染？

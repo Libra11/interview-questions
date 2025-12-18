@@ -18,7 +18,7 @@ keywords:
   - '302'
   - HSTS
 highlight: 使用 301 永久重定向配合 HSTS 头，确保所有 HTTP 请求安全地转向 HTTPS
-order: 87
+order: 285
 ---
 
 ## 问题 1：应该使用哪个 HTTP 状态码进行重定向？

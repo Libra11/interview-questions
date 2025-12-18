@@ -17,7 +17,7 @@ keywords:
   - script标签
   - 回调函数
 highlight: 理解 JSONP 利用 script 标签实现跨域的巧妙原理
-order: 3
+order: 15
 ---
 
 ## 问题 1：什么是 JSONP

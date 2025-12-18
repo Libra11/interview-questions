@@ -17,7 +17,7 @@ keywords:
   - 热更新
   - 自动刷新
 highlight: Live Reload 刷新整个页面，HMR 只替换变化的模块，保留应用状态，开发体验更好。
-order: 641
+order: 771
 ---
 
 ## 问题 1：Live Reload 是什么？

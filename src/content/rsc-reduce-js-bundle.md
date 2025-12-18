@@ -17,7 +17,7 @@ keywords:
   - Bundle Size
   - 性能优化
 highlight: RSC 通过将组件代码保留在服务器端，大幅减少客户端 JavaScript 体积
-order: 29
+order: 175
 ---
 
 ## 问题 1：RSC 如何避免发送组件代码到客户端？

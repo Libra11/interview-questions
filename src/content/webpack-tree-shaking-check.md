@@ -17,7 +17,7 @@ keywords:
   - ES Module
   - sideEffects
 highlight: 通过检查 package.json 的 module 字段和 sideEffects 声明，结合打包分析工具，可以判断依赖是否支持 Tree-shaking。
-order: 639
+order: 769
 ---
 
 ## 问题 1：检查 package.json 配置

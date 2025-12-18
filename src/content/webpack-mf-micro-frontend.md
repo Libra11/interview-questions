@@ -17,7 +17,7 @@ keywords:
   - 架构设计
   - 应用集成
 highlight: Module Federation 通过 Shell + 子应用的架构模式，实现微前端的独立开发、独立部署和运行时集成。
-order: 671
+order: 801
 ---
 
 ## 问题 1：微前端架构模式

@@ -17,7 +17,7 @@ keywords:
   - 同步钩子
   - 异步钩子
 highlight: Tapable 提供 9 种 Hook 类型，按同步/异步、串行/并行、是否有返回值等维度分类，满足不同的插件需求。
-order: 695
+order: 825
 ---
 
 ## 问题 1：Hook 类型概览

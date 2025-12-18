@@ -16,7 +16,7 @@ keywords:
   - getCurrentInstance
   - 组件实例
 highlight: setup 中无法使用 this，应通过 getCurrentInstance() 或 setup 参数获取所需信息。
-order: 206
+order: 468
 ---
 
 ## 问题 1：为什么 setup 中不能用 this？

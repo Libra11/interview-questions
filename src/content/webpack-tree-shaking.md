@@ -17,7 +17,7 @@ keywords:
   - ES Module
   - 副作用
 highlight: Tree Shaking 依赖 ES Module 的静态结构,能在构建时删除未使用的代码,显著减小打包体积
-order: 8
+order: 51
 ---
 
 ## 问题 1:什么是 Tree Shaking?

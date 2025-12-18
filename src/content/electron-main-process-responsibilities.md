@@ -16,7 +16,7 @@ keywords:
   - 应用管理
   - BrowserWindow
 highlight: 主进程是 Electron 应用的大脑，负责管理整个应用的生命周期和所有窗口
-order: 6
+order: 31
 ---
 
 ## 问题 1：主进程负责哪些核心工作？

@@ -18,7 +18,7 @@ keywords:
   - Flexbox
   - text-align
 highlight: 水平居中是 CSS 布局的基础技能，掌握多种实现方案可以应对不同的元素类型和场景
-order: 107
+order: 343
 ---
 
 ## 问题 1：行内元素如何水平居中？

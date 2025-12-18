@@ -17,7 +17,7 @@ keywords:
   - 导航优化
   - 性能提升
 highlight: 理解 Next.js Link 组件如何自动预取页面，实现近乎瞬时的导航体验
-order: 413
+order: 723
 ---
 
 ## 问题 1：Link prefetch 的基本原理是什么？

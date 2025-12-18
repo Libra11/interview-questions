@@ -18,7 +18,7 @@ keywords:
   - HTML5
   - DOM
 highlight: 使用 data-* 属性可以在 HTML 元素上存储自定义数据，通过 dataset API 方便地读取和操作
-order: 104
+order: 328
 ---
 
 ## 问题 1：什么是自定义属性？

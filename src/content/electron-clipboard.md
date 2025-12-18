@@ -16,7 +16,7 @@ keywords:
   - 剪贴板
   - 复制粘贴
 highlight: Electron 的 clipboard 模块支持文本、HTML、图片和自定义格式
-order: 80
+order: 275
 ---
 
 ## 问题 1：基本文本操作

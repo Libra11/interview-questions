@@ -16,7 +16,7 @@ keywords:
   - diff 算法
   - 列表渲染
 highlight: key 帮助 Vue 识别节点身份，使 diff 算法能够正确复用和重排元素。
-order: 223
+order: 525
 ---
 
 ## 问题 1：key 的作用

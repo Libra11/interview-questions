@@ -17,7 +17,7 @@ keywords:
   - 窗口不显示
   - 渲染问题
 highlight: 掌握 Electron 窗口黑屏问题的排查思路和解决方案。
-order: 105
+order: 333
 ---
 
 ## 问题 1：常见的黑屏原因有哪些？

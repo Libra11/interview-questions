@@ -17,7 +17,7 @@ keywords:
   - React Native
   - custom renderer
 highlight: React 将核心协调算法与渲染器分离，通过 react-reconciler 包支持自定义渲染目标。
-order: 307
+order: 677
 ---
 
 ## 问题 1：React 的分层架构

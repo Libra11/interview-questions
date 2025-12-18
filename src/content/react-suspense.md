@@ -17,7 +17,7 @@ keywords:
   - fallback
   - code splitting
 highlight: Suspense 让组件可以"等待"某些操作完成，在等待期间显示 fallback 内容。
-order: 228
+order: 534
 ---
 
 ## 问题 1：Suspense 是什么？

@@ -18,7 +18,7 @@ keywords:
   - useLocation
   - 路由守卫
 highlight: 通过 useLocation、useNavigate 和 history 监听路由变化
-order: 114
+order: 367
 ---
 
 ## 问题 1：React Router 如何监听路由变化？

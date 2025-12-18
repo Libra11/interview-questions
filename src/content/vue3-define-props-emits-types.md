@@ -16,7 +16,7 @@ keywords:
   - defineEmits 类型
   - 类型推导
 highlight: defineProps 和 defineEmits 支持泛型类型参数，编译器会自动推导并生成运行时代码。
-order: 251
+order: 581
 ---
 
 ## 问题 1：defineProps 类型推导

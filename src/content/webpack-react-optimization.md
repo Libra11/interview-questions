@@ -17,7 +17,7 @@ keywords:
   - 代码分割
   - Fast Refresh
 highlight: React 项目优化包括使用 Fast Refresh、代码分割、生产环境配置、以及使用更快的编译工具如 SWC。
-order: 682
+order: 812
 ---
 
 ## 问题 1：开发体验优化

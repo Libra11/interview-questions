@@ -17,7 +17,7 @@ keywords:
   - Resource Timing
   - 性能监控
 highlight: 准确统计请求耗时是性能优化的基础,Performance API 提供了完整的性能数据
-order: 18
+order: 118
 ---
 
 ## 问题 1:为什么要统计请求耗时?

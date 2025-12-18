@@ -16,7 +16,7 @@ keywords:
   - 立即执行
   - 依赖收集
 highlight: watchEffect 必须立即执行才能自动收集依赖，这是它"自动追踪"特性的基础。
-order: 205
+order: 464
 ---
 
 ## 问题 1：watchEffect 为什么要立即执行？

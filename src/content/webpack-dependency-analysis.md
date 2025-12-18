@@ -17,7 +17,7 @@ keywords:
   - 模块解析
   - 依赖图
 highlight: Webpack 通过解析 AST 识别 import/require 语句，递归分析依赖，构建完整的模块依赖图。
-order: 696
+order: 826
 ---
 
 ## 问题 1：依赖分析流程

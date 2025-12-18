@@ -16,7 +16,7 @@ keywords:
   - Windows安装包
   - 安装程序
 highlight: NSIS 是 Electron Builder 默认的 Windows 安装包格式，支持丰富的定制选项
-order: 64
+order: 258
 ---
 
 ## 问题 1：NSIS 基本配置

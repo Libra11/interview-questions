@@ -17,7 +17,7 @@ keywords:
   - 条件类型
   - 工具类型
 highlight: infer 是 TypeScript 类型编程的核心特性，掌握它能够实现强大的类型推断和转换
-order: 116
+order: 374
 ---
 
 ## 问题 1：infer 是什么？

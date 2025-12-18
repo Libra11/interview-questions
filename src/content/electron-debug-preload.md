@@ -17,7 +17,7 @@ keywords:
   - preload 断点
   - contextBridge 调试
 highlight: 掌握 preload 脚本的调试技巧，快速定位和解决上下文隔离相关问题。
-order: 83
+order: 279
 ---
 
 ## 问题 1：preload 脚本的调试难点是什么？

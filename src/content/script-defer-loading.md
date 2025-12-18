@@ -19,7 +19,7 @@ keywords:
   - 脚本延迟
   - 性能优化
 highlight: 理解 defer 和 async 的执行时机差异，掌握不同场景下的脚本加载策略，能够根据需求选择最合适的加载方式。
-order: 28
+order: 171
 ---
 
 ## 问题 1：JavaScript 脚本延迟加载有哪些方式？

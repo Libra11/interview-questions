@@ -17,7 +17,7 @@ keywords:
   - 动态渲染
   - 降级机制
 highlight: 理解 Next.js 何时以及为何从静态生成切换到服务端渲染
-order: 415
+order: 725
 ---
 
 ## 问题 1：什么是 fallback 到 SSR？

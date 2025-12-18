@@ -16,7 +16,7 @@ keywords:
   - 性能配置
   - 渲染优化
 highlight: 合理配置 webPreferences 可以显著提升应用启动速度和运行性能
-order: 48
+order: 226
 ---
 
 ## 问题 1：哪些配置影响性能？

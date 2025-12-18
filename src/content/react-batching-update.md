@@ -17,7 +17,7 @@ keywords:
   - setState
   - React 18
 highlight: 批量更新将多次 setState 合并为一次渲染，React 18 扩展到所有场景自动批处理。
-order: 248
+order: 574
 ---
 
 ## 问题 1：什么是批量更新？

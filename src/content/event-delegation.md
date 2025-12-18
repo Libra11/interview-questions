@@ -15,7 +15,7 @@ keywords:
   - event.target
   - closest()
 highlight: 掌握事件委托在动态列表、大量子元素场景中的性能优势与实现技巧
-order: 10
+order: 60
 ---
 
 ## 问题 1：什么是事件委托？为什么需要它？

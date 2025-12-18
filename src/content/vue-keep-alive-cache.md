@@ -16,7 +16,7 @@ keywords:
   - 组件缓存
   - LRU 缓存
 highlight: keep-alive 使用 LRU 缓存策略，将组件实例保存在内存中，切换时复用而非重建。
-order: 247
+order: 573
 ---
 
 ## 问题 1：keep-alive 的作用

@@ -16,7 +16,7 @@ keywords:
   - Vuex
   - 状态管理
 highlight: Pinia 是 Vue 官方推荐的状态管理库，更简洁、更好的 TypeScript 支持、无 mutations。
-order: 235
+order: 549
 ---
 
 ## 问题 1：Pinia 的主要优势

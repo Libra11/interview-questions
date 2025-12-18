@@ -16,7 +16,7 @@ keywords:
   - ipcMain.on
   - 请求响应
 highlight: handle 用于请求-响应模式，on 用于单向消息或需要手动回复的场景
-order: 14
+order: 87
 ---
 
 ## 问题 1：两者的基本区别是什么？

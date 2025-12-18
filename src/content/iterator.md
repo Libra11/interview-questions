@@ -16,7 +16,7 @@ keywords:
   - Generator
   - Symbol.iterator
 highlight: 理解迭代器协议的设计哲学，掌握生成器函数和自定义迭代器的实现，能够处理复杂的数据遍历场景
-order: 21
+order: 136
 ---
 
 ## 问题 1：什么是迭代器（Iterator）？迭代器协议是什么？

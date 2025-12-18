@@ -18,7 +18,7 @@ keywords:
   - SplitChunks 配置
   - 缓存优化
 highlight: 通过 SplitChunksPlugin 的 cacheGroups 配置实现源码和依赖的完全分离
-order: 214
+order: 501
 ---
 
 ## 问题 1：为什么要分离源码和依赖？

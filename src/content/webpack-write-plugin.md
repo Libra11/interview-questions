@@ -18,7 +18,7 @@ keywords:
   - Compilation
   - Tapable 钩子
 highlight: 掌握 Compiler、Compilation 对象和 Tapable 钩子系统
-order: 217
+order: 510
 ---
 
 ## 问题 1：Plugin 的基本结构是什么？

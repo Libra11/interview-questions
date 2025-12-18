@@ -18,7 +18,7 @@ keywords:
   - HTML Templates
   - 原生组件
 highlight: Web Components 是浏览器原生支持的组件化方案，无需框架即可创建可复用的自定义元素
-order: 105
+order: 336
 ---
 
 ## 问题 1：Web Components 是什么？

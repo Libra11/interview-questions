@@ -17,7 +17,7 @@ keywords:
   - terser
   - 生产环境
 highlight: 通过 terser-webpack-plugin 的 drop_console 或 pure_funcs 配置，可以在生产构建时自动移除 console 语句。
-order: 678
+order: 808
 ---
 
 ## 问题 1：使用 TerserPlugin

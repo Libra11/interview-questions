@@ -16,7 +16,7 @@ keywords:
   - 类型推导
   - 类型安全
 highlight: Pinia 原生支持 TypeScript，Setup Store 自动推导类型，Options Store 需要少量类型标注。
-order: 240
+order: 559
 ---
 
 ## 问题 1：Setup Store 自动类型推导

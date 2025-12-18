@@ -17,7 +17,7 @@ keywords:
   - 性能优化
   - Core Web Vitals
 highlight: LCP 衡量页面主要内容的加载速度，是 Core Web Vitals 的关键指标
-order: 28
+order: 169
 ---
 
 ## 问题 1：什么是 LCP？

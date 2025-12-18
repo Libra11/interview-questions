@@ -16,7 +16,7 @@ keywords:
   - 惰性求值
   - 缓存机制
 highlight: computed 通过 dirty 标志实现缓存，只有依赖变化时才重新计算，且是惰性求值的。
-order: 204
+order: 461
 ---
 
 ## 问题 1：computed 的核心特性

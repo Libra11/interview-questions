@@ -17,7 +17,7 @@ keywords:
   - sideEffects
   - ES Module
 highlight: Tree-shaking 失效通常由 CommonJS 模块、Babel 配置错误、缺少 sideEffects 声明或代码副作用导致。
-order: 681
+order: 811
 ---
 
 ## 问题 1：使用了 CommonJS

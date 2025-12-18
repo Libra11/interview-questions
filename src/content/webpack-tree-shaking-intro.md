@@ -17,7 +17,7 @@ keywords:
   - DCE
   - 打包优化
 highlight: Tree-shaking 是一种死代码消除技术，通过静态分析移除 JavaScript 中未使用的代码，减少打包体积。
-order: 636
+order: 766
 ---
 
 ## 问题 1：什么是 Tree-shaking？

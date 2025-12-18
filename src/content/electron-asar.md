@@ -16,7 +16,7 @@ keywords:
   - 归档格式
   - 应用打包
 highlight: ASAR 是 Electron 的归档格式，将应用文件打包成单个文件以提高性能和保护源码
-order: 60
+order: 254
 ---
 
 ## 问题 1：什么是 ASAR？

@@ -17,7 +17,7 @@ keywords:
   - 服务端渲染
   - 静态生成
 highlight: 理解 Next.js 如何通过服务端渲染和静态生成解决传统 React 应用的 SEO 问题
-order: 404
+order: 714
 ---
 
 ## 问题 1：传统 React 应用的 SEO 问题是什么？

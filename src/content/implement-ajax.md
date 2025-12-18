@@ -18,7 +18,7 @@ keywords:
   - Promise
   - Fetch
 highlight: AJAX 的核心是 XMLHttpRequest 对象，现代开发推荐使用 Fetch API 或封装好的库如 Axios
-order: 122
+order: 389
 ---
 
 ## 问题 1：什么是 AJAX？

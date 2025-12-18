@@ -17,7 +17,7 @@ keywords:
   - revalidate
   - 缓存更新
 highlight: 理解 ISR 如何平衡静态生成的性能和内容的新鲜度
-order: 417
+order: 727
 ---
 
 ## 问题 1：什么是 ISR？

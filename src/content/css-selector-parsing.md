@@ -17,7 +17,7 @@ keywords:
   - 选择器优先级
   - CSS 性能
 highlight: 理解 CSS 选择器的解析机制能够帮助编写更高效的样式代码
-order: 114
+order: 366
 ---
 
 ## 问题 1：CSS 选择器的解析顺序

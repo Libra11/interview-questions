@@ -17,7 +17,7 @@ keywords:
   - mouse modifiers
   - passive once capture
 highlight: Vue 的事件修饰符让我们能够以声明式的方式处理 DOM 事件的细节，无需在方法中编写事件处理逻辑。
-order: 149
+order: 431
 ---
 
 ## 问题 1：Vue 有哪些事件修饰符？

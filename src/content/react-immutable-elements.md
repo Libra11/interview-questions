@@ -17,7 +17,7 @@ keywords:
   - React element
   - state immutability
 highlight: React 元素是不可变的快照，一旦创建就不能修改，这是 React 高效更新和可预测性的基础。
-order: 204
+order: 459
 ---
 
 ## 问题 1：什么是 React 元素？

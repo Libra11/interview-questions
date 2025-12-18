@@ -17,7 +17,7 @@ keywords:
   - crawler
   - indexing
 highlight: SSR 返回完整 HTML，搜索引擎爬虫无需执行 JS 即可获取页面内容，提高索引效率。
-order: 276
+order: 630
 ---
 
 ## 问题 1：搜索引擎爬虫如何工作？

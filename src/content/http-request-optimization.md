@@ -17,7 +17,7 @@ keywords:
   - 资源打包
   - 性能优化
 highlight: 掌握 HTTP 请求数量治理的策略和技术，提升 Web 应用性能
-order: 212
+order: 490
 ---
 
 ## 问题 1：为什么需要控制 HTTP 请求数量？

@@ -17,7 +17,7 @@ keywords:
   - work loop
   - requestIdleCallback
 highlight: Fiber 通过链表结构和循环遍历替代递归，配合时间切片实现可中断渲染。
-order: 253
+order: 584
 ---
 
 ## 问题 1：为什么递归不能中断？

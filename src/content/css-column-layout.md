@@ -17,7 +17,7 @@ keywords:
   - column-width
   - 多栏布局
 highlight: 掌握 CSS 原生的多栏布局能力,轻松实现报纸式排版
-order: 7
+order: 38
 ---
 
 ## 问题 1：什么是 CSS 分栏布局

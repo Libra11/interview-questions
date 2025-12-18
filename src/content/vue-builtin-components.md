@@ -21,7 +21,7 @@ keywords:
   - teleport
   - suspense
 highlight: Vue 内置组件无需注册即可直接在模板中使用，涵盖了动画、缓存、传送门和异步依赖处理等核心场景。
-order: 131
+order: 409
 ---
 
 ## 问题 1：Vue 提供了哪些内置组件？

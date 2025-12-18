@@ -17,7 +17,7 @@ keywords:
   - 服务器组件
   - React 18
 highlight: React Server Component 是 React 18 引入的革命性特性，重新定义了前端组件的渲染模式
-order: 24
+order: 153
 ---
 
 ## 问题 1：React Server Component 的基本概念是什么？

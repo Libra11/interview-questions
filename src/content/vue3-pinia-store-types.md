@@ -16,7 +16,7 @@ keywords:
   - Store 类型
   - TypeScript
 highlight: Pinia 原生支持 TypeScript，Setup Store 自动推导类型，Options Store 需要定义 State 接口。
-order: 256
+order: 591
 ---
 
 ## 问题 1：Setup Store 自动类型推导

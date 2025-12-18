@@ -17,7 +17,7 @@ keywords:
   - CSS定位
   - 吸顶效果
 highlight: 掌握 CSS 原生的粘性定位,轻松实现吸顶吸底效果
-order: 9
+order: 55
 ---
 
 ## 问题 1：什么是 position: sticky

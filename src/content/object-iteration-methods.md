@@ -20,7 +20,7 @@ keywords:
   - Reflect.ownKeys
   - 对象遍历
 highlight: 理解不同遍历方式在可枚举性、Symbol 属性、原型链等方面的差异，掌握实际开发中的选择策略。
-order: 29
+order: 174
 ---
 
 ## 问题 1：JavaScript 中有哪些对象遍历方式？

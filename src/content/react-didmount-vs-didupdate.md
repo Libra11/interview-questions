@@ -17,7 +17,7 @@ keywords:
   - lifecycle methods
   - side effects
 highlight: componentDidMount 只在首次挂载后执行一次，componentDidUpdate 在每次更新后执行。
-order: 208
+order: 475
 ---
 
 ## 问题 1：执行时机有什么不同？

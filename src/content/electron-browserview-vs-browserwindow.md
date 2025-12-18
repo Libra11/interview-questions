@@ -16,7 +16,7 @@ keywords:
   - 嵌入视图
   - webview
 highlight: BrowserView 是嵌入在窗口内的视图，BrowserWindow 是独立的系统窗口
-order: 24
+order: 149
 ---
 
 ## 问题 1：BrowserView 是什么？

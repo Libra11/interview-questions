@@ -16,7 +16,7 @@ keywords:
   - DI 容器
   - 模块管理
 highlight: 学会在 Electron 中使用依赖注入模式，构建松耦合的业务模块。
-order: 89
+order: 288
 ---
 
 ## 问题 1：什么是依赖注入，为什么要用？

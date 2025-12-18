@@ -17,7 +17,7 @@ keywords:
   - 清除浮动
   - margin合并
 highlight: 理解 BFC 机制,解决常见的布局问题
-order: 20
+order: 132
 ---
 
 ## 问题 1：什么是 BFC

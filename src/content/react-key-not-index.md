@@ -17,7 +17,7 @@ keywords:
   - React key
   - reconciliation
 highlight: 使用 index 作为 key 在列表变化时会导致错误的组件复用、状态混乱和性能问题。
-order: 311
+order: 688
 ---
 
 ## 问题 1：key 的作用

@@ -19,7 +19,7 @@ keywords:
   - forEach
   - 迭代器
 highlight: 掌握 Map 和 Set 的多种遍历方式，理解迭代器协议，能够选择最适合的遍历方法
-order: 34
+order: 191
 ---
 
 ## 问题 1：Map 对象有哪些遍历方法？

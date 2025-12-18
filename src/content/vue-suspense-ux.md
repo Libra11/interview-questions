@@ -16,7 +16,7 @@ keywords:
   - 首屏体验
   - 加载状态
 highlight: Suspense 统一管理异步依赖的加载状态，提供优雅的 loading 体验，避免页面闪烁。
-order: 248
+order: 575
 ---
 
 ## 问题 1：首屏加载的痛点

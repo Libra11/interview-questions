@@ -17,7 +17,7 @@ keywords:
   - Cloudinary
   - Imgix
 highlight: 自定义 loader 让你可以使用任何图片优化服务或自建图片处理系统
-order: 14
+order: 88
 ---
 
 ## 问题 1：什么是 Image Loader？

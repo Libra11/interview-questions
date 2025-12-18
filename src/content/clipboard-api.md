@@ -18,7 +18,7 @@ keywords:
   - 复制
   - 粘贴
 highlight: 使用现代 Clipboard API 实现安全可靠的剪切板操作，支持文本、图片等多种数据类型
-order: 91
+order: 292
 ---
 
 ## 问题 1：如何复制文本到剪切板？

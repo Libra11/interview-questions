@@ -16,7 +16,7 @@ keywords:
   - 性能分析
   - 内存分析
 highlight: 使用 Chrome DevTools 的 Performance 和 Memory 面板定位性能瓶颈
-order: 51
+order: 232
 ---
 
 ## 问题 1：如何使用 DevTools 分析性能？

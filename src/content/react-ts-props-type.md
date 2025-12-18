@@ -17,7 +17,7 @@ keywords:
   - component props
   - type definition
 highlight: 使用 interface 或 type 定义 Props 类型，通过泛型参数传递给组件。
-order: 281
+order: 638
 ---
 
 ## 问题 1：基本定义方式

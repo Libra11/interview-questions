@@ -17,7 +17,7 @@ keywords:
   - Worker Pool
   - 并行处理
 highlight: thread-loader 通过创建 Worker Pool，将耗时的 loader 任务分配到多个子进程并行执行，加速构建。
-order: 655
+order: 785
 ---
 
 ## 问题 1：thread-loader 的作用

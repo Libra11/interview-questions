@@ -18,7 +18,7 @@ keywords:
   - prototype
   - this
 highlight: 箭头函数没有 prototype 和自己的 this，本质上不是为构造对象设计的
-order: 107
+order: 341
 ---
 
 ## 问题 1：箭头函数作为构造函数会发生什么？

@@ -17,7 +17,7 @@ keywords:
   - 生产环境
   - 缓存失效
 highlight: hash 是项目级别的，任何文件变化都会导致所有文件 hash 变化，缓存全部失效，应使用 contenthash。
-order: 652
+order: 782
 ---
 
 ## 问题 1：hash 的问题

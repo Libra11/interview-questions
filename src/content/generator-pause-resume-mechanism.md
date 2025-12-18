@@ -18,7 +18,7 @@ keywords:
   - 协程
   - 状态机
 highlight: Generator 通过保存执行上下文和状态机实现函数的暂停和恢复，是 JavaScript 实现协程的基础
-order: 102
+order: 320
 ---
 
 ## 问题 1：Generator 的基本中断和恢复行为是什么？

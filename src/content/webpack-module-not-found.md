@@ -17,7 +17,7 @@ keywords:
   - 路径错误
   - 解析问题
 highlight: Module not found 错误通常由路径拼写错误、缺少依赖、扩展名配置或别名配置问题导致。
-order: 706
+order: 836
 ---
 
 ## 问题 1：检查路径拼写

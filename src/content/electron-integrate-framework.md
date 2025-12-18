@@ -18,7 +18,7 @@ keywords:
   - Vue
   - Svelte
 highlight: 前端框架在渲染进程中运行，通过构建工具打包后由 Electron 加载
-order: 71
+order: 266
 ---
 
 ## 问题 1：集成方式概述

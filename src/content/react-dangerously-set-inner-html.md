@@ -17,7 +17,7 @@ keywords:
   - HTML injection
   - security
 highlight: dangerouslySetInnerHTML 绕过 React 的转义机制，可能导致 XSS 攻击，必须对内容进行消毒。
-order: 292
+order: 649
 ---
 
 ## 问题 1：什么是 dangerouslySetInnerHTML？

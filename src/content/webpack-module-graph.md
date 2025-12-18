@@ -17,7 +17,7 @@ keywords:
   - 依赖关系
   - Webpack5
 highlight: ModuleGraph 是 Webpack 5 引入的数据结构，存储模块间的依赖关系，支持更高效的 Tree-shaking 和优化。
-order: 697
+order: 827
 ---
 
 ## 问题 1：什么是 ModuleGraph？

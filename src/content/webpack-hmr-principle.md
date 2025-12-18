@@ -17,7 +17,7 @@ keywords:
   - WebSocket
   - 模块替换
 highlight: HMR 通过 WebSocket 通信和模块热替换实现无刷新更新,极大提升开发体验
-order: 15
+order: 98
 ---
 
 ## 问题 1:什么是热更新(HMR)?

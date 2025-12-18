@@ -16,7 +16,7 @@ keywords:
   - Electron Forge
   - 打包对比
 highlight: Electron Builder 功能全面适合复杂项目，Electron Forge 官方推荐更易上手
-order: 53
+order: 236
 ---
 
 ## 问题 1：两者的基本区别

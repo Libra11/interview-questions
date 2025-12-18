@@ -16,7 +16,7 @@ keywords:
   - Plugin vs Loader
   - 钩子机制
 highlight: Loader 专注于文件转换，Plugin 通过钩子介入整个构建流程，功能更强大、范围更广。
-order: 619
+order: 749
 ---
 
 ## 问题 1：Plugin 的作用是什么？

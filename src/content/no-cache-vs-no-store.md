@@ -17,7 +17,7 @@ keywords:
   - HTTP缓存
   - Cache-Control
 highlight: 理解 no-cache 和 no-store 的本质区别，掌握 HTTP 缓存控制的最佳实践
-order: 204
+order: 458
 ---
 
 ## 问题 1：no-cache 和 no-store 分别是什么意思？

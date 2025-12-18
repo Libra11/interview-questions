@@ -18,7 +18,7 @@ keywords:
   - key 属性
   - 协调算法
 highlight: React Diff 通过树层级、组件类型和 key 三个策略实现 O(n) 复杂度
-order: 109
+order: 351
 ---
 
 ## 问题 1：什么是 Diff 算法？

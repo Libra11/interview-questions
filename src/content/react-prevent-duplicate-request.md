@@ -17,7 +17,7 @@ keywords:
   - loading state
   - request deduplication
 highlight: 防止重复请求的方法：loading 状态禁用、防抖、请求取消、请求去重。
-order: 299
+order: 656
 ---
 
 ## 问题 1：使用 loading 状态

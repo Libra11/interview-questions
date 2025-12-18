@@ -17,7 +17,7 @@ keywords:
   - React Hooks
   - asynchronous data fetching
 highlight: useMemo 无法直接等待异步结果，它会立即返回 Promise 对象而不是解析后的数据。
-order: 123
+order: 392
 ---
 
 ## 问题 1：useMemo 能否接收 async 函数？

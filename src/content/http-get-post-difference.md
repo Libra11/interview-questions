@@ -17,7 +17,7 @@ keywords:
   - HTTP方法
   - 请求参数
 highlight: GET 和 POST 的本质区别在于语义和使用场景，而不仅仅是参数传递方式
-order: 7
+order: 41
 ---
 
 ## 问题 1：GET 和 POST 的基本区别是什么？

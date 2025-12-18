@@ -18,7 +18,7 @@ keywords:
   - 加密
   - 数字证书
 highlight: HTTPS 通过加密、身份验证和数据完整性校验三重保障确保通信安全
-order: 6
+order: 32
 ---
 
 ## 问题 1：HTTPS 是什么？

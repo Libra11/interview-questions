@@ -17,7 +17,7 @@ keywords:
   - 路由保护
   - RBAC
 highlight: Middleware 在边缘运行，可以高效地进行权限检查和路由保护
-order: 20
+order: 128
 ---
 
 ## 问题 1：Middleware 权限检查的基本原理

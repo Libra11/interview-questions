@@ -18,7 +18,7 @@ keywords:
   - 自动执行器
   - 异步编程
 highlight: async/await 本质上是 Generator 函数和自动执行器的语法糖，理解其原理有助于深入掌握异步编程
-order: 126
+order: 397
 ---
 
 ## 问题 1：async/await 的本质是什么？

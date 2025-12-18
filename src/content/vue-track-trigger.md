@@ -16,7 +16,7 @@ keywords:
   - 依赖收集
   - 派发更新
 highlight: track 在读取数据时收集依赖，trigger 在修改数据时触发更新，两者构成响应式的核心。
-order: 210
+order: 484
 ---
 
 ## 问题 1：track 和 trigger 的作用

@@ -16,7 +16,7 @@ keywords:
   - 框架选择
   - 架构对比
 highlight: Electron 以 JavaScript 为入口，NW.js 以 HTML 为入口，两者架构理念不同
-order: 4
+order: 20
 ---
 
 ## 问题 1：NW.js 是什么？

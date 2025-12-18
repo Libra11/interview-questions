@@ -17,7 +17,7 @@ keywords:
   - 状态管理
   - reducer
 highlight: 掌握 useReducer 的核心概念和使用场景，理解何时选择 useReducer 而非 useState
-order: 4
+order: 23
 ---
 
 ## 问题 1：useReducer 是什么？

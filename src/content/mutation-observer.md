@@ -17,7 +17,7 @@ keywords:
   - DOM变化
   - 异步回调
 highlight: 掌握现代浏览器监听 DOM 变化的标准方案
-order: 6
+order: 33
 ---
 
 ## 问题 1：什么是 MutationObserver

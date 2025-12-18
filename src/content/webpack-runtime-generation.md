@@ -17,7 +17,7 @@ keywords:
   - __webpack_require__
   - 模块系统
 highlight: Webpack Runtime 是打包后代码的运行时环境，包含模块加载、缓存、异步加载等核心功能。
-order: 701
+order: 831
 ---
 
 ## 问题 1：Runtime 的组成

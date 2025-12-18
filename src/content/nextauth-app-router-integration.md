@@ -17,7 +17,7 @@ keywords:
   - App Router
   - 身份验证
 highlight: Auth.js v5 为 App Router 提供了原生支持，包括 Server Components 和 Server Actions
-order: 18
+order: 117
 ---
 
 ## 问题 1：NextAuth 和 Auth.js 的关系

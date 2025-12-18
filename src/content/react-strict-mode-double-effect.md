@@ -17,7 +17,7 @@ keywords:
   - double invoke
   - development mode
 highlight: StrictMode 故意执行两次 effect 来帮助发现副作用清理问题，只在开发模式生效。
-order: 312
+order: 690
 ---
 
 ## 问题 1：现象

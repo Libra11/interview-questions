@@ -16,7 +16,7 @@ keywords:
   - Circular Dependency
   - 模块加载
 highlight: Webpack 通过模块缓存机制处理循环依赖，但可能导致获取到未完成初始化的模块，需要注意代码设计。
-order: 630
+order: 760
 ---
 
 ## 问题 1：什么是循环依赖？

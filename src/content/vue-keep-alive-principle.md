@@ -18,7 +18,7 @@ keywords:
   - LRU 算法
   - 生命周期
 highlight: keep-alive 通过 LRU 缓存策略缓存组件实例，避免重复渲染
-order: 203
+order: 456
 ---
 
 ## 问题 1：keep-alive 是什么？

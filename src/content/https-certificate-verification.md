@@ -17,7 +17,7 @@ keywords:
   - OCSP
   - CRL
 highlight: 证书验证是 HTTPS 安全的关键环节，通过多重检查确保服务器身份的真实性
-order: 18
+order: 116
 ---
 
 ## 问题 1：证书验证的目的是什么？

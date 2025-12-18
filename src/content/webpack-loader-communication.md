@@ -18,7 +18,7 @@ keywords:
   - loader 执行顺序
   - this 上下文
 highlight: Loader 通过管道模式串联，从右到左执行，通过返回值传递数据
-order: 215
+order: 504
 ---
 
 ## 问题 1：Loader 的执行顺序是什么？

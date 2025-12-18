@@ -18,7 +18,7 @@ keywords:
   - Cache-Control
   - ETag
 highlight: 掌握 HTTP 缓存的两大核心机制及其应用场景
-order: 1
+order: 3
 ---
 
 ## 问题 1：什么是 HTTP 缓存

@@ -17,7 +17,7 @@ keywords:
   - Context pitfalls
   - optimization
 highlight: Context 值变化会导致所有消费者重新渲染，不适合存储频繁变化的状态。
-order: 232
+order: 542
 ---
 
 ## 问题 1：Context 的性能问题？

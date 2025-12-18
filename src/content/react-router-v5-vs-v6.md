@@ -17,7 +17,7 @@ keywords:
   - routing changes
   - migration
 highlight: v6 使用 Routes 替代 Switch，引入相对路由、Outlet 嵌套、Hooks API 等重大改进。
-order: 256
+order: 590
 ---
 
 ## 问题 1：路由配置的变化？

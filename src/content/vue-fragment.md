@@ -16,7 +16,7 @@ keywords:
   - 多根节点
   - Vue3 新特性
 highlight: Fragment 允许组件拥有多个根节点，减少不必要的 DOM 嵌套。
-order: 220
+order: 518
 ---
 
 ## 问题 1：什么是 Fragment？

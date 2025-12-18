@@ -17,7 +17,7 @@ keywords:
   - Scheduler
   - task priority
 highlight: React 使用 Lane 模型管理优先级，通过位运算高效处理多优先级任务的调度。
-order: 254
+order: 586
 ---
 
 ## 问题 1：优先级有哪些级别？

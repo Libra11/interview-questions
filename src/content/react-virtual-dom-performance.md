@@ -17,7 +17,7 @@ keywords:
   - batch update
   - reconciliation
 highlight: 虚拟 DOM 的价值不在于"比 DOM 快"，而在于提供声明式编程的同时保持合理的性能。
-order: 219
+order: 514
 ---
 
 ## 问题 1：虚拟 DOM 真的更快吗？

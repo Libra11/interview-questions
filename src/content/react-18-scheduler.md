@@ -17,7 +17,7 @@ keywords:
   - task queue
   - concurrent rendering
 highlight: Scheduler 使用优先级队列和时间切片，通过 Lane 模型管理任务优先级，实现可中断渲染。
-order: 308
+order: 680
 ---
 
 ## 问题 1：Scheduler 的作用

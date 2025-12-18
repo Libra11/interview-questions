@@ -16,7 +16,7 @@ keywords:
   - defineProps
   - 类型检查
 highlight: Vue props 支持运行时类型校验和 TypeScript 编译时类型检查两种方式。
-order: 216
+order: 506
 ---
 
 ## 问题 1：运行时类型校验

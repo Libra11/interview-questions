@@ -17,7 +17,7 @@ keywords:
   - useMemo
   - useCallback
 highlight: 避免重复渲染的方法：React.memo、useMemo、useCallback、状态下移、children 模式。
-order: 247
+order: 572
 ---
 
 ## 问题 1：使用 React.memo

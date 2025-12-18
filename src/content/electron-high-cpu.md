@@ -17,7 +17,7 @@ keywords:
   - 性能问题
   - cpu 优化
 highlight: 掌握 Electron 应用 CPU 占用过高的排查和优化方法。
-order: 107
+order: 342
 ---
 
 ## 问题 1：CPU 占用高的常见原因

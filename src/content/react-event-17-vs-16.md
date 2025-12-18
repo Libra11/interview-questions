@@ -17,7 +17,7 @@ keywords:
   - document vs root
   - event changes
 highlight: React 17 将事件委托从 document 移到根容器，废弃事件池，改善多版本共存。
-order: 240
+order: 558
 ---
 
 ## 问题 1：事件委托位置变化？

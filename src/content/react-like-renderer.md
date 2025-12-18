@@ -17,7 +17,7 @@ keywords:
   - reconciliation
   - custom renderer
 highlight: 简化版渲染器包括：虚拟 DOM 创建、Diff 算法、DOM 操作、Hooks 实现。
-order: 305
+order: 671
 ---
 
 ## 问题 1：虚拟 DOM 结构

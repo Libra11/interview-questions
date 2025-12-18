@@ -18,7 +18,7 @@ keywords:
   - 迭代器协议
   - 协程
 highlight: 掌握 Generator 的执行机制和状态保存原理，理解其在现代 JavaScript 中的重要作用
-order: 65
+order: 260
 ---
 
 ## 问题 1：Generator 的基本执行机制是什么？

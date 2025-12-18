@@ -16,7 +16,7 @@ keywords:
   - 双向绑定
   - modelValue
 highlight: v-model 是 props + emit 的语法糖，本质是 :modelValue + @update:modelValue 的简写。
-order: 218
+order: 512
 ---
 
 ## 问题 1：v-model 的本质

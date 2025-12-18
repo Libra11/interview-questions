@@ -17,7 +17,7 @@ keywords:
   - time slicing
   - priority
 highlight: 并发渲染让 React 可以中断长时间渲染，优先响应用户交互，保持界面流畅。
-order: 224
+order: 526
 ---
 
 ## 问题 1：什么是并发渲染？

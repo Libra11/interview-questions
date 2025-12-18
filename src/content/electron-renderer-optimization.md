@@ -16,7 +16,7 @@ keywords:
   - Web Worker
   - 防抖节流
 highlight: 将重计算移到 Web Worker，使用防抖节流和虚拟化技术优化渲染性能
-order: 49
+order: 229
 ---
 
 ## 问题 1：如何使用 Web Worker？

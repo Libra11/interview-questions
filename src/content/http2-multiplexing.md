@@ -17,7 +17,7 @@ keywords:
   - 二进制分帧
   - 流
 highlight: HTTP/2 多路复用通过二进制分帧层实现单一连接上的并发传输，解决了 HTTP/1.x 的队头阻塞问题
-order: 10
+order: 62
 ---
 
 ## 问题 1：什么是 HTTP/2 多路复用？

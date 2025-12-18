@@ -18,7 +18,7 @@ keywords:
   - 开发体验
   - 性能优化
 highlight: Webpack 基于 bundle，Vite 基于 ESM，两者在构建理念上有本质区别
-order: 210
+order: 485
 ---
 
 ## 问题 1：构建原理有什么本质区别？

@@ -17,7 +17,7 @@ keywords:
   - immutability
   - state management
 highlight: React 选择不可变数据而非响应式，是为了可预测性、并发渲染支持和函数式编程理念。
-order: 304
+order: 668
 ---
 
 ## 问题 1：响应式系统是什么？

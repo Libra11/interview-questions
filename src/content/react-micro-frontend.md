@@ -17,7 +17,7 @@ keywords:
   - single-spa
   - qiankun
 highlight: React 微前端可通过 Module Federation、single-spa、qiankun 等方案实现应用拆分和集成。
-order: 306
+order: 674
 ---
 
 ## 问题 1：微前端是什么？

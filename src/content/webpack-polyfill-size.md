@@ -17,7 +17,7 @@ keywords:
   - useBuiltIns
   - browserslist
 highlight: 通过 @babel/preset-env 的 useBuiltIns 配置和精确的 browserslist，可以按需引入 Polyfill，大幅减少体积。
-order: 680
+order: 810
 ---
 
 ## 问题 1：Polyfill 体积问题

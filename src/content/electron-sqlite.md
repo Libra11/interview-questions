@@ -16,7 +16,7 @@ keywords:
   - 本地数据库
   - better-sqlite3
 highlight: SQLite 在主进程运行，渲染进程通过 IPC 调用数据库操作
-order: 75
+order: 270
 ---
 
 ## 问题 1：选择 SQLite 库

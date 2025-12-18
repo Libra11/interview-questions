@@ -17,7 +17,7 @@ keywords:
   - React Query
   - SWR
 highlight: 前端缓存可通过内存缓存、localStorage、IndexedDB 实现，配合过期策略和更新机制。
-order: 300
+order: 657
 ---
 
 ## 问题 1：简单内存缓存

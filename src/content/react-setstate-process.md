@@ -19,7 +19,7 @@ keywords:
   - automatic batching
   - render phase
 highlight: setState 并不会立即修改 DOM，而是触发一次状态更新调度。React 会通过 Render 阶段计算差异，并在 Commit 阶段统一应用变更。
-order: 127
+order: 400
 ---
 
 ## 问题 1：setState 的宏观流程是怎样的？

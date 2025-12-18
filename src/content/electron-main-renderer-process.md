@@ -16,7 +16,7 @@ keywords:
   - Renderer Process
   - 进程通信
 highlight: 主进程管理应用生命周期和原生功能，渲染进程负责展示 UI
-order: 2
+order: 8
 ---
 
 ## 问题 1：主进程和渲染进程分别是什么？

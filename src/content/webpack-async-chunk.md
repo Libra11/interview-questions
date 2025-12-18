@@ -17,7 +17,7 @@ keywords:
   - 动态加载
   - import()
 highlight: Async Chunk 是通过动态导入 import() 产生的异步加载的代码块，在需要时才会被请求和执行。
-order: 648
+order: 778
 ---
 
 ## 问题 1：什么是 Async Chunk？

@@ -16,7 +16,7 @@ keywords:
   - 从右到左
   - enforce
 highlight: Loader 默认从右到左、从下到上执行，可通过 enforce 属性调整为 pre 或 post 阶段执行。
-order: 612
+order: 742
 ---
 
 ## 问题 1：基本执行顺序

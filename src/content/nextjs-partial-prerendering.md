@@ -17,7 +17,7 @@ keywords:
   - 混合渲染
   - 流式渲染
 highlight: 理解 PPR 如何结合静态生成和动态渲染的优势，实现最佳性能
-order: 416
+order: 726
 ---
 
 ## 问题 1：什么是 Partial Prerendering？

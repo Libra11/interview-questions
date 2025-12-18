@@ -17,7 +17,7 @@ keywords:
   - FormData
   - 云存储
 highlight: Server Action 完全支持文件上传，可以直接处理 File 对象
-order: 38
+order: 204
 ---
 
 ## 问题 1：Server Action 如何接收文件？

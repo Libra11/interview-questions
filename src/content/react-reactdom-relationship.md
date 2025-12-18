@@ -17,7 +17,7 @@ keywords:
   - 渲染器
   - 跨平台
 highlight: 理解 React 核心库与渲染器的分离设计，掌握 React 的跨平台能力
-order: 7
+order: 43
 ---
 
 ## 问题 1：react 和 react-dom 的职责是什么？

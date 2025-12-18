@@ -17,7 +17,7 @@ keywords:
   - security
   - escaping
 highlight: React 默认对 JSX 中的值进行转义，自动防止大多数 XSS 攻击。
-order: 291
+order: 648
 ---
 
 ## 问题 1：React 的默认防护

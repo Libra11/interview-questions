@@ -17,7 +17,7 @@ keywords:
   - automatic batching
   - React 18
 highlight: setState 本身是同步的，但更新是批量的。React 18 实现了自动批处理，所有场景都是"异步"表现。
-order: 310
+order: 686
 ---
 
 ## 问题 1：setState 的本质

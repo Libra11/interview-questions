@@ -16,7 +16,7 @@ keywords:
   - shallowReadonly
   - 只读响应式
 highlight: readonly 深层只读，shallowReadonly 只有第一层只读，嵌套对象仍可修改。
-order: 213
+order: 496
 ---
 
 ## 问题 1：readonly 的作用

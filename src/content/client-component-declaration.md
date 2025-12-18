@@ -16,7 +16,7 @@ keywords:
   - use client
   - React 客户端组件
 highlight: 正确声明 Client Component 是使用 Next.js App Router 的基础
-order: 27
+order: 164
 ---
 
 ## 问题 1：如何声明一个 Client Component？

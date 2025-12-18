@@ -17,7 +17,7 @@ keywords:
   - 绑定规则
   - 箭头函数
 highlight: 掌握 this 的四种绑定规则，理解箭头函数的 this 特性，能够准确判断 this 指向
-order: 48
+order: 227
 ---
 
 ## 问题 1：this 的基本概念

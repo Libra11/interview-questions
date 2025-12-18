@@ -17,7 +17,7 @@ keywords:
   - 预检请求
   - Access-Control-Allow-Origin
 highlight: 掌握现代 Web 开发中最常用的跨域解决方案 CORS
-order: 4
+order: 19
 ---
 
 ## 问题 1：什么是 CORS

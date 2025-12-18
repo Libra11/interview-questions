@@ -17,7 +17,7 @@ keywords:
   - React architecture
   - code organization
 highlight: 大型项目推荐按功能模块组织，结合分层架构，保持清晰的依赖关系和职责划分。
-order: 298
+order: 655
 ---
 
 ## 问题 1：常见的组织方式

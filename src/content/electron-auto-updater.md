@@ -16,7 +16,7 @@ keywords:
   - 自动更新
   - 应用更新
 highlight: autoUpdater 通过检查远程服务器的版本信息，自动下载并安装更新
-order: 52
+order: 235
 ---
 
 ## 问题 1：autoUpdater 的基本原理

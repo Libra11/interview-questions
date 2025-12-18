@@ -16,7 +16,7 @@ keywords:
   - history 模式
   - 路由模式
 highlight: hash 模式兼容性好无需服务器配置，history 模式 URL 更美观但需要服务器支持。
-order: 229
+order: 537
 ---
 
 ## 问题 1：两种模式的原理

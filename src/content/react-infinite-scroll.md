@@ -17,7 +17,7 @@ keywords:
   - intersection observer
   - pagination
 highlight: 无限滚动可通过 Intersection Observer 或滚动事件监听实现，配合分页加载数据。
-order: 296
+order: 653
 ---
 
 ## 问题 1：使用 Intersection Observer

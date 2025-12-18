@@ -16,7 +16,7 @@ keywords:
   - 编译过程
   - 打包原理
 highlight: Webpack 构建流程分为初始化、编译、输出三个阶段，理解这个流程是掌握 Webpack 的关键。
-order: 604
+order: 734
 ---
 
 ## 问题 1：Webpack 构建流程概览

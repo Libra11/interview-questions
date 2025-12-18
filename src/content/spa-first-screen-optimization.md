@@ -17,7 +17,7 @@ keywords:
   - 代码分割
   - SSR
 highlight: SPA 首屏优化需要从资源加载、代码分割、渲染优化等多个维度综合施策
-order: 10
+order: 64
 ---
 
 ## 问题 1:SPA 首屏加载慢的原因是什么?

@@ -18,7 +18,7 @@ keywords:
   - 响应拦截
   - 责任链模式
 highlight: Axios 拦截器通过责任链模式实现请求和响应的统一处理
-order: 202
+order: 450
 ---
 
 ## 问题 1：什么是 Axios 拦截器？

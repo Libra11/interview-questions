@@ -17,7 +17,7 @@ keywords:
   - 崩溃收集
   - sentry electron
 highlight: 掌握 Electron 错误上报体系的设计，及时发现和解决线上问题。
-order: 103
+order: 322
 ---
 
 ## 问题 1：需要捕获哪些类型的错误？

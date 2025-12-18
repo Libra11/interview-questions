@@ -17,7 +17,7 @@ keywords:
   - 二进制数据
   - 文件下载
 highlight: 理解 application/octet-stream 的含义和使用场景，掌握二进制数据传输
-order: 205
+order: 462
 ---
 
 ## 问题 1：application/octet-stream 是什么？

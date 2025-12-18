@@ -17,7 +17,7 @@ keywords:
   - 表格固定
   - table header
 highlight: 表头吸顶是常见的交互需求，掌握多种实现方案可以应对不同的业务场景
-order: 103
+order: 325
 ---
 
 ## 问题 1：使用 CSS position: sticky 实现

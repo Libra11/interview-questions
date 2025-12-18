@@ -18,7 +18,7 @@ keywords:
   - this 上下文
   - loader 开发
 highlight: 掌握 this 上下文 API、异步处理、缓存机制等核心概念
-order: 216
+order: 507
 ---
 
 ## 问题 1：Loader 的基本结构是什么？

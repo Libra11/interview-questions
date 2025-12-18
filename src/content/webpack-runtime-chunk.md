@@ -17,7 +17,7 @@ keywords:
   - 长期缓存
   - contenthash
 highlight: runtimeChunk 将 Webpack 运行时代码提取到单独文件，避免业务代码变化影响其他 chunk 的 hash，优化缓存。
-order: 647
+order: 777
 ---
 
 ## 问题 1：什么是 Runtime？

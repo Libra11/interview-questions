@@ -17,7 +17,7 @@ keywords:
   - Selective Hydration
   - renderToPipeableStream
 highlight: React 18 SSR 新特性：Streaming HTML、选择性 Hydration、Suspense 支持、并发渲染。
-order: 279
+order: 636
 ---
 
 ## 问题 1：Streaming SSR

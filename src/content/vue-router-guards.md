@@ -16,7 +16,7 @@ keywords:
   - beforeEach
   - 导航守卫
 highlight: 路由守卫分为全局守卫、路由独享守卫和组件内守卫三类，按特定顺序执行。
-order: 231
+order: 541
 ---
 
 ## 问题 1：路由守卫的分类

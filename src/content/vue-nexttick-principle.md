@@ -18,7 +18,7 @@ keywords:
   - microtask
   - dom update
 highlight: Vue 的 DOM 更新是异步的，nextTick 利用 Event Loop 的微任务机制，确保回调在 DOM 更新循环结束后执行。
-order: 126
+order: 398
 ---
 
 ## 问题 1：nextTick 的作用是什么？

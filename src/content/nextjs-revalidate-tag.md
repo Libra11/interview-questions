@@ -17,7 +17,7 @@ keywords:
   - 按需重新验证
   - 标签系统
 highlight: 掌握 revalidateTag 实现精确的缓存控制和按需重新验证
-order: 302
+order: 661
 ---
 
 ## 问题 1：revalidateTag 是什么，它解决了什么问题？

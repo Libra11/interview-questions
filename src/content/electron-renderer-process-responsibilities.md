@@ -16,7 +16,7 @@ keywords:
   - DOM操作
   - 用户界面
 highlight: 渲染进程专注于 UI 展示和用户交互，运行在 Chromium 环境中
-order: 7
+order: 40
 ---
 
 ## 问题 1：渲染进程的核心职责是什么？

@@ -16,7 +16,7 @@ keywords:
   - TransitionGroup
   - 列表动画
 highlight: FLIP 通过记录位置变化，使用 transform 反向补偿，实现 60fps 的流畅动画。
-order: 259
+order: 597
 ---
 
 ## 问题 1：什么是 FLIP？

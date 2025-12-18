@@ -16,7 +16,7 @@ keywords:
   - Notification
   - 系统通知
 highlight: 使用 Electron 的 Notification API 创建跨平台原生通知
-order: 31
+order: 179
 ---
 
 ## 问题 1：如何创建基本通知？

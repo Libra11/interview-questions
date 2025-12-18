@@ -17,7 +17,7 @@ keywords:
   - Server Component
   - 请求头
 highlight: 掌握在 Server Components 中使用 cookies 和 headers 的方法和注意事项
-order: 306
+order: 673
 ---
 
 ## 问题 1：如何在 Server Component 中读取 cookies 和 headers？

@@ -17,7 +17,7 @@ keywords:
   - 响应式系统
   - 计算属性
 highlight: 掌握 computed 和 watch 的核心区别，理解何时使用哪个 API
-order: 11
+order: 71
 ---
 
 ## 问题 1：computed 和 watch 的基本区别是什么？

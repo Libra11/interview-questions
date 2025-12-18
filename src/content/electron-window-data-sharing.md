@@ -16,7 +16,7 @@ keywords:
   - 数据共享
   - MessagePort
 highlight: 窗口间数据共享可通过主进程中转、共享存储或 MessagePort 直连实现
-order: 23
+order: 145
 ---
 
 ## 问题 1：通过主进程中转数据

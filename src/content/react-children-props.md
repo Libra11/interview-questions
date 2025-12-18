@@ -17,7 +17,7 @@ keywords:
   - 子组件操作
   - Props 注入
 highlight: 掌握操作 React children 的核心 API，理解如何动态增强子组件
-order: 20
+order: 130
 ---
 
 ## 问题 1：为什么需要给 children 添加额外属性？

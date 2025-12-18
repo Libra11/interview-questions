@@ -16,7 +16,7 @@ keywords:
   - computed
   - 计算属性
 highlight: Pinia 的 getters 本质上就是 computed，在 Setup Store 中可以直接使用 computed。
-order: 238
+order: 555
 ---
 
 ## 问题 1：getters 的本质

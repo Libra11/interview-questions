@@ -17,7 +17,7 @@ keywords:
   - 预编译
   - 构建加速
 highlight: DllPlugin 将第三方库预先打包成 DLL 文件，主构建时直接引用，避免重复编译，加速构建。
-order: 658
+order: 788
 ---
 
 ## 问题 1：DllPlugin 的作用

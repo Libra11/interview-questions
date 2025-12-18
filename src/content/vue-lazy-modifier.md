@@ -17,7 +17,7 @@ keywords:
   - input binding
   - change event
 highlight: .lazy 修饰符将 v-model 的更新时机从每次输入（input 事件）改为失去焦点或按下回车（change 事件），减少不必要的更新。
-order: 147
+order: 429
 ---
 
 ## 问题 1：.lazy 修饰符的作用是什么？

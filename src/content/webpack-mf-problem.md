@@ -17,7 +17,7 @@ keywords:
   - 微前端
   - 独立部署
 highlight: Module Federation 解决了多个独立应用之间的代码共享问题，实现运行时动态加载，支持独立开发和部署。
-order: 667
+order: 797
 ---
 
 ## 问题 1：传统方案的问题

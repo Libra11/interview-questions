@@ -17,7 +17,7 @@ keywords:
   - 边缘计算
   - Vercel Edge
 highlight: Next.js 中间件运行在 Edge Runtime 上，提供低延迟的全球化请求处理能力
-order: 1
+order: 4
 ---
 
 ## 问题 1：什么是 Edge Runtime？

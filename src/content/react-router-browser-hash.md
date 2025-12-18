@@ -17,7 +17,7 @@ keywords:
   - History API
   - hash routing
 highlight: BrowserRouter 使用 History API 实现，HashRouter 使用 URL hash 实现，各有适用场景。
-order: 257
+order: 592
 ---
 
 ## 问题 1：两者的基本区别？

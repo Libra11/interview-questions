@@ -17,7 +17,7 @@ keywords:
   - Promise
   - async/await
 highlight: 掌握事件循环的执行顺序，理解宏任务与微任务的优先级，能够准确预测异步代码的执行结果
-order: 17
+order: 109
 ---
 
 ## 问题 1：什么是事件循环（Event Loop）？为什么需要它？

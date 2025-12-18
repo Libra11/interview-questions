@@ -17,7 +17,7 @@ keywords:
   - dependency array
   - side effects
 highlight: useEffect 在渲染完成后异步执行，清理函数在下次 effect 执行前或组件卸载时调用。
-order: 210
+order: 483
 ---
 
 ## 问题 1：useEffect 什么时候执行？

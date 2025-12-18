@@ -16,7 +16,7 @@ keywords:
   - React diff
   - 算法对比
 highlight: Vue3 使用编译时优化 + 双端比较 + LIS，React 使用 Fiber 架构 + 单向遍历。
-order: 262
+order: 603
 ---
 
 ## 问题 1：核心理念差异

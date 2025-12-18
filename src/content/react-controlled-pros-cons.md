@@ -16,7 +16,7 @@ keywords:
   - form validation
   - React forms
 highlight: 受控组件提供实时验证和完全控制，但代码量较多；适合需要即时反馈的复杂表单。
-order: 262
+order: 602
 ---
 
 ## 问题 1：受控组件的优点？

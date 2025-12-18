@@ -18,7 +18,7 @@ keywords:
   - ESM
   - Bundle
 highlight: Webpack 打包成 bundle，Vite 保留 ESM 格式并优化依赖
-order: 209
+order: 481
 ---
 
 ## 问题 1：Webpack 和 Vite 的产物结构有什么不同？

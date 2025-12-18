@@ -17,7 +17,7 @@ keywords:
   - shallow comparison
   - props reference
 highlight: memo 不生效的常见原因：对象/函数 props 每次都是新引用、children 变化、自定义比较函数问题。
-order: 315
+order: 700
 ---
 
 ## 问题 1：对象 props 每次都是新引用

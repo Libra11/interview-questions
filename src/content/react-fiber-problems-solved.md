@@ -17,7 +17,7 @@ keywords:
   - priority scheduling
   - concurrent rendering
 highlight: Fiber 解决了主线程阻塞、无法区分优先级、无法中断渲染三大问题。
-order: 251
+order: 580
 ---
 
 ## 问题 1：解决主线程阻塞

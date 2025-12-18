@@ -17,7 +17,7 @@ keywords:
   - 性能优化
   - Edge Runtime
 highlight: 通过静态生成、边缘部署和缓存策略可以显著降低 TTFB
-order: 10
+order: 63
 ---
 
 ## 问题 1：什么是 TTFB？

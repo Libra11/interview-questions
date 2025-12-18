@@ -17,7 +17,7 @@ keywords:
   - 静态生成
   - fallback
 highlight: 理解 getStaticPaths 如何为动态路由预生成静态页面，掌握 fallback 模式的使用
-order: 419
+order: 729
 ---
 
 ## 问题 1：getStaticPaths 是什么？

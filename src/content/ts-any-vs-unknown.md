@@ -17,7 +17,7 @@ keywords:
   - 类型安全
   - 类型检查
 highlight: 理解 any 和 unknown 的核心差异，掌握在实际开发中如何选择合适的顶层类型
-order: 301
+order: 660
 ---
 
 ## 问题 1：any 和 unknown 的基本定义是什么？

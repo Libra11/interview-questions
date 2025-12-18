@@ -16,7 +16,7 @@ keywords:
   - Vue 编译器
   - 编译优化
 highlight: 编译器在解析模板时分析节点的动态绑定，为每个动态节点生成对应的 PatchFlag。
-order: 261
+order: 601
 ---
 
 ## 问题 1：编译流程概览

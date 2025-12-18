@@ -17,7 +17,7 @@ keywords:
   - HTTP缓存
   - 304响应
 highlight: 掌握 Last-Modified 的生成原理和缓存验证机制，理解条件请求的工作流程
-order: 206
+order: 466
 ---
 
 ## 问题 1：Last-Modified 是什么，有什么作用？

@@ -17,7 +17,7 @@ keywords:
   - Edge Runtime 限制
   - Next.js 中间件
 highlight: 理解 Middleware 读取请求体的限制和正确的处理方式
-order: 319
+order: 708
 ---
 
 ## 问题 1：Middleware 能读取请求 body 吗？

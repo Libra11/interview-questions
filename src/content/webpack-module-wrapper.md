@@ -17,7 +17,7 @@ keywords:
   - Webpack 运行时
   - 模块隔离
 highlight: Webpack 将每个模块包装成函数，通过运行时的 __webpack_require__ 实现模块加载和缓存。
-order: 633
+order: 763
 ---
 
 ## 问题 1：为什么需要模块包装？

@@ -17,7 +17,7 @@ keywords:
   - hooks order
   - linked list
 highlight: Hooks 依赖调用顺序来关联状态，条件语句会破坏顺序导致状态错乱。
-order: 216
+order: 505
 ---
 
 ## 问题 1：Hooks 的规则是什么？

@@ -18,7 +18,7 @@ keywords:
   - Omit
   - Record
 highlight: 掌握 TypeScript 内置工具类型的使用方法和实现原理，提升类型编程能力
-order: 304
+order: 669
 ---
 
 ## 问题 1：TypeScript 有哪些常用的内置工具类型？

@@ -17,7 +17,7 @@ keywords:
   - 构建加速
   - 中间缓存
 highlight: HardSourceWebpackPlugin 缓存 Webpack 的中间模块结果，二次构建时跳过未变化模块的处理，大幅提升构建速度。
-order: 657
+order: 787
 ---
 
 ## 问题 1：HardSourceWebpackPlugin 的作用

@@ -17,7 +17,7 @@ keywords:
   - 边缘节点
   - 缓存策略
 highlight: CDN 通过智能 DNS 解析和边缘节点缓存,将资源就近分发给用户,大幅提升访问速度
-order: 17
+order: 106
 ---
 
 ## 问题 1:什么是 CDN?

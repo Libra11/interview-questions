@@ -17,7 +17,7 @@ keywords:
   - SEO
   - Next.js
 highlight: generateMetadata 允许基于动态数据生成页面元数据，是实现动态 SEO 的关键
-order: 24
+order: 151
 ---
 
 ## 问题 1：generateMetadata 的基本作用

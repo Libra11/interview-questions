@@ -17,7 +17,7 @@ keywords:
   - arrow function
   - function reference
 highlight: onClick 需要传递函数引用，而不是函数调用结果。fn() 会立即执行，() => fn() 传递的是函数。
-order: 242
+order: 562
 ---
 
 ## 问题 1：两种写法的区别？

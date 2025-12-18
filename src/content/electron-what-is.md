@@ -16,7 +16,7 @@ keywords:
   - 跨平台
   - 桌面应用开发
 highlight: Electron 是一个使用 Web 技术构建跨平台桌面应用的框架
-order: 1
+order: 2
 ---
 
 ## 问题 1：什么是 Electron？

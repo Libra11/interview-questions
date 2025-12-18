@@ -17,7 +17,7 @@ keywords:
   - 按需加载
   - 异步加载
 highlight: import() 是动态导入语法，返回 Promise，Webpack 会将其自动分割成单独的 chunk，实现按需加载。
-order: 646
+order: 776
 ---
 
 ## 问题 1：import() 的基本用法

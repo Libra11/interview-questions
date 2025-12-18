@@ -16,7 +16,7 @@ keywords:
   - Store 交互
   - 跨 store 调用
 highlight: Pinia 中多个 Store 可以直接相互导入使用，在 actions、getters 中调用其他 Store。
-order: 239
+order: 557
 ---
 
 ## 问题 1：基本交互方式

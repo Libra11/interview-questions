@@ -17,7 +17,7 @@ keywords:
   - Vite HMR
   - Webpack HMR
 highlight: Vite 的 HMR 基于 ESM，实现了毫秒级的精确模块替换，而 Webpack 需要重新构建模块依赖图
-order: 5
+order: 30
 ---
 
 ## 问题 1：什么是热更新（HMR）？

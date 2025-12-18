@@ -16,7 +16,7 @@ keywords:
   - keyboard modifiers
   - ctrl alt shift
 highlight: .exact 修饰符用于精确控制触发事件所需的系统修饰键组合，确保没有其他修饰键被按下。
-order: 148
+order: 430
 ---
 
 ## 问题 1：.exact 修饰符的作用是什么？

@@ -17,7 +17,7 @@ keywords:
   - 静态渲染
   - 动态渲染
 highlight: 掌握 App Router 中渲染模式的控制方法，是优化 Next.js 应用性能的关键
-order: 21
+order: 137
 ---
 
 ## 问题 1：App Router 中有哪些渲染模式？

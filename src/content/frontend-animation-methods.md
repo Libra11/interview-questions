@@ -19,7 +19,7 @@ keywords:
   - Canvas
   - SVG
 highlight: 前端动画有 CSS、JavaScript、Canvas、SVG 等多种实现方式，需根据场景选择合适方案
-order: 106
+order: 339
 ---
 
 ## 问题 1：CSS Transition 如何实现动画？

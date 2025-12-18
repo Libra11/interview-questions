@@ -17,7 +17,7 @@ keywords:
   - lazy loading
   - bundle optimization
 highlight: 代码分割将代码拆分成多个 bundle，按需加载，减少首屏加载时间。
-order: 288
+order: 645
 ---
 
 ## 问题 1：什么是代码分割？

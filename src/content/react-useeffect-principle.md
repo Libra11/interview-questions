@@ -17,7 +17,7 @@ keywords:
   - 副作用管理
   - 依赖项
 highlight: 掌握 useEffect 的核心原理和执行机制，理解副作用在 React 中的处理方式
-order: 3
+order: 17
 ---
 
 ## 问题 1：useEffect 的基本执行流程是什么？

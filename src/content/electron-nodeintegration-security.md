@@ -16,7 +16,7 @@ keywords:
   - 安全风险
   - XSS攻击
 highlight: 关闭 nodeIntegration 是防止渲染进程被恶意代码利用的关键安全措施
-order: 11
+order: 66
 ---
 
 ## 问题 1：nodeIntegration 是什么？

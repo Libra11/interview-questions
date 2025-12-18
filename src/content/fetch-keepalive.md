@@ -17,7 +17,7 @@ keywords:
   - 页面卸载
   - 数据上报
 highlight: 掌握 fetch keepalive 的作用和使用场景，实现可靠的数据上报
-order: 214
+order: 498
 ---
 
 ## 问题 1：fetch keepalive 是什么？

@@ -18,7 +18,7 @@ keywords:
   - beforeCreate
   - created
 highlight: Vue 生命周期钩子让我们能在组件的不同阶段执行代码。Vue 3 在 Composition API 中提供了以 on 开头的组合式钩子函数。
-order: 146
+order: 428
 ---
 
 ## 问题 1：Vue 3 有哪些生命周期钩子？

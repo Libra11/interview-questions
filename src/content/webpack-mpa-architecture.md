@@ -17,7 +17,7 @@ keywords:
   - 入口配置
   - HtmlWebpackPlugin
 highlight: 多页面应用需要配置多入口、自动生成 HTML、提取公共代码，并考虑构建性能优化。
-order: 689
+order: 819
 ---
 
 ## 问题 1：基本架构

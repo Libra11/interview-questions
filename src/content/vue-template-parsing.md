@@ -18,7 +18,7 @@ keywords:
   - AST
   - 渲染函数
 highlight: Vue 模板编译经历解析、优化、生成三个阶段，最终转换为渲染函数
-order: 105
+order: 335
 ---
 
 ## 问题 1：Vue 模板编译的整体流程是什么？

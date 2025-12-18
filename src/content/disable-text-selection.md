@@ -18,7 +18,7 @@ keywords:
   - 文本保护
   - 防复制
 highlight: 使用 CSS user-select 属性可以禁止文本选中，但需要注意用户体验和可访问性问题
-order: 133
+order: 412
 ---
 
 ## 问题 1：如何使用 CSS 禁止文本选中？

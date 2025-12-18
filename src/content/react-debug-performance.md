@@ -17,7 +17,7 @@ keywords:
   - Profiler
   - performance optimization
 highlight: 使用 React DevTools Profiler、Chrome DevTools、console.time 等工具定位性能瓶颈。
-order: 290
+order: 647
 ---
 
 ## 问题 1：React DevTools Profiler

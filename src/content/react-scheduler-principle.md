@@ -19,7 +19,7 @@ keywords:
   - concurrent rendering
   - fiber architecture
 highlight: Scheduler 通过任务优先级和时间切片机制，实现了可中断的渲染，让高优先级任务能够快速响应，提升用户体验。
-order: 161
+order: 443
 ---
 
 ## 问题 1：为什么需要 Scheduler？

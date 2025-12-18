@@ -17,7 +17,7 @@ keywords:
   - 请求去重
   - Next.js 优化
 highlight: 掌握 Next.js 请求记忆化机制，理解单次渲染中的自动去重优化
-order: 304
+order: 667
 ---
 
 ## 问题 1：什么是 fetch request memoization？

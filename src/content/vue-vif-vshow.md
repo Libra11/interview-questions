@@ -16,7 +16,7 @@ keywords:
   - 条件渲染
   - 性能对比
 highlight: v-if 是真正的条件渲染，v-show 只是切换 CSS display 属性。
-order: 222
+order: 523
 ---
 
 ## 问题 1：核心区别

@@ -16,7 +16,7 @@ keywords:
   - 多页面应用
   - MPA 配置
 highlight: 多入口配置需要 entry 对象形式 + HtmlWebpackPlugin 多实例 + 合理的代码分割策略。
-order: 606
+order: 736
 ---
 
 ## 问题 1：基本的多入口配置

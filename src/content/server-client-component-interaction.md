@@ -17,7 +17,7 @@ keywords:
   - 组件交互
   - 数据传递
 highlight: 掌握 Server Component 和 Client Component 的交互模式是构建 RSC 应用的核心技能
-order: 31
+order: 182
 ---
 
 ## 问题 1：Server Component 如何向 Client Component 传递数据？

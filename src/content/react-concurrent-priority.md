@@ -17,7 +17,7 @@ keywords:
   - scheduler
   - lanes
 highlight: React 使用 Lane 模型管理优先级，高优先级更新可以中断低优先级渲染。
-order: 226
+order: 530
 ---
 
 ## 问题 1：React 有哪些优先级？

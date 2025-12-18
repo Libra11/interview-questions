@@ -18,7 +18,7 @@ keywords:
   - module/nomodule
   - Babel
 highlight: 通过 module/nomodule 模式实现现代浏览器加载 ES6，旧浏览器加载 ES5
-order: 208
+order: 477
 ---
 
 ## 问题 1：为什么需要差异化打包？

@@ -17,7 +17,7 @@ keywords:
   - 渲染缓存
   - 静态生成
 highlight: Full Route Cache 缓存静态渲染的完整输出，包括 HTML 和 RSC Payload
-order: 4
+order: 22
 ---
 
 ## 问题 1：什么是 Full Route Cache（渲染器缓存）？

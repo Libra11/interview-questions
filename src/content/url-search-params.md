@@ -18,7 +18,7 @@ keywords:
   - query string
   - URL解析
 highlight: URLSearchParams 提供了简洁的 API 来处理 URL 查询参数，避免了手动字符串解析的复杂性
-order: 131
+order: 408
 ---
 
 ## 问题 1：什么是 URLSearchParams？

@@ -18,7 +18,7 @@ keywords:
   - completeWork
   - Fiber 遍历
 highlight: Render 阶段通过 beginWork 和 completeWork 深度优先遍历 Fiber 树
-order: 111
+order: 358
 ---
 
 ## 问题 1：Render 阶段是什么？

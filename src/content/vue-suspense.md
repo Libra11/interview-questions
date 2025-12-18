@@ -16,7 +16,7 @@ keywords:
   - 异步组件
   - loading 状态
 highlight: Suspense 用于协调异步依赖的加载状态，在等待时显示 fallback 内容。
-order: 221
+order: 521
 ---
 
 ## 问题 1：什么是 Suspense？

@@ -16,7 +16,7 @@ keywords:
   - 异步依赖
   - 内部实现
 highlight: Suspense 追踪异步依赖，在所有依赖 resolve 前显示 fallback，之后切换到默认内容。
-order: 265
+order: 609
 ---
 
 ## 问题 1：Suspense 的核心概念

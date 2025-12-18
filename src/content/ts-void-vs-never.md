@@ -17,7 +17,7 @@ keywords:
   - 函数返回值
   - 底层类型
 highlight: 理解 void 和 never 的核心差异，掌握在不同场景下的正确使用
-order: 303
+order: 666
 ---
 
 ## 问题 1：void 和 never 的基本定义是什么？

@@ -16,7 +16,7 @@ keywords:
   - 一切皆模块
   - 依赖图
 highlight: Webpack 的核心思想是 "一切皆模块"，通过依赖图将所有资源统一管理和打包。
-order: 601
+order: 731
 ---
 
 ## 问题 1：Webpack 的核心思想是什么？

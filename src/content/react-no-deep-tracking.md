@@ -17,7 +17,7 @@ keywords:
   - React vs Vue
   - state management
 highlight: React 采用不可变数据 + 显式更新，通过引用比较判断变化，无需深度追踪依赖。
-order: 303
+order: 665
 ---
 
 ## 问题 1：两种响应式模型

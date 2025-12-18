@@ -17,7 +17,7 @@ keywords:
   - 认证中间件
   - Next.js API
 highlight: 掌握在 Route Handlers 中实现和使用中间件的方法
-order: 312
+order: 689
 ---
 
 ## 问题 1：Route Handler 中的中间件是什么概念？

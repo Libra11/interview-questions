@@ -16,7 +16,7 @@ keywords:
   - Next.js 配置
   - experimental
 highlight: Server Actions 在 Next.js 13.4+ 已经稳定，无需额外配置即可使用
-order: 33
+order: 188
 ---
 
 ## 问题 1：Server Actions 需要特殊配置吗？

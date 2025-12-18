@@ -17,7 +17,7 @@ keywords:
   - 模块联邦
   - browserview 微前端
 highlight: 了解 Electron 中微前端的实现方案，支持大型应用的模块化开发。
-order: 92
+order: 294
 ---
 
 ## 问题 1：Electron 中微前端有哪些实现方案？

@@ -17,7 +17,7 @@ keywords:
   - Next.js 路由
   - React Server Components
 highlight: 全面理解 Next.js 两种路由系统的核心差异，掌握迁移和选择策略
-order: 402
+order: 712
 ---
 
 ## 问题 1：App Router 和 Pages Router 的基本结构有什么不同？

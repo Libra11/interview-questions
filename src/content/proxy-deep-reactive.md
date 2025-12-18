@@ -18,7 +18,7 @@ keywords:
   - reactive
   - 嵌套对象
 highlight: 理解 Proxy 浅代理的局限性，掌握递归代理和懒代理两种深度监听实现方式，以及性能权衡。
-order: 27
+order: 167
 ---
 
 ## 问题 1：Proxy 默认能监听到嵌套对象的变化吗？

@@ -17,7 +17,7 @@ keywords:
   - 工具对比
   - Tree-shaking
 highlight: Rollup 更适合打包库，输出更干净；Webpack 更适合打包应用，功能更全面。
-order: 687
+order: 817
 ---
 
 ## 问题 1：核心差异

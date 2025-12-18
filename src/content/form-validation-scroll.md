@@ -18,7 +18,7 @@ keywords:
   - 用户体验
   - 表单提交
 highlight: 通过 scrollIntoView 和错误收集机制，自动定位到第一个校验失败的表单字段
-order: 99
+order: 309
 ---
 
 ## 问题 1：如何滚动到第一个错误字段？

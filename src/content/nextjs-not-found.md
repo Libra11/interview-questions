@@ -17,7 +17,7 @@ keywords:
   - notFound
   - 页面未找到
 highlight: 理解 not-found.tsx 的工作机制，掌握如何创建用户友好的 404 页面
-order: 410
+order: 720
 ---
 
 ## 问题 1：not-found.tsx 是什么？

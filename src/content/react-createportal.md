@@ -18,7 +18,7 @@ keywords:
   - 模态框
   - DOM 层级
 highlight: Portal 可以将组件渲染到任意 DOM 节点，同时保持 React 组件树的完整性
-order: 107
+order: 344
 ---
 
 ## 问题 1：createPortal 是什么？

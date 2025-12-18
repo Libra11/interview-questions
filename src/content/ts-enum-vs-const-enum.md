@@ -17,7 +17,7 @@ keywords:
   - 枚举类型
   - 编译优化
 highlight: 理解枚举和常量枚举的本质区别，掌握在不同场景下的正确选择
-order: 313
+order: 694
 ---
 
 ## 问题 1：TypeScript 中的枚举（enum）是什么？

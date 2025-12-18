@@ -17,7 +17,7 @@ keywords:
   - 代码分割
   - 懒加载
 highlight: webpack 通过 JSONP 实现异步加载,动态创建 script 标签加载 chunk 文件
-order: 14
+order: 92
 ---
 
 ## 问题 1:什么是异步加载?

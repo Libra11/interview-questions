@@ -17,7 +17,7 @@ keywords:
   - render phase
   - DOM update
 highlight: Reconcile 阶段计算变化（可中断），Commit 阶段执行 DOM 更新（不可中断）。
-order: 255
+order: 588
 ---
 
 ## 问题 1：两个阶段的概述？

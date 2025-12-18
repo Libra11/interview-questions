@@ -18,7 +18,7 @@ keywords:
   - Well-known Symbol
   - 迭代器
 highlight: Symbol 是 ES6 引入的第七种原始数据类型，具有唯一性和不可枚举的特点，常用于创建私有属性和实现元编程
-order: 121
+order: 388
 ---
 
 ## 问题 1：什么是 Symbol？

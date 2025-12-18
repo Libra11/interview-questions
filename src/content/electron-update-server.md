@@ -16,7 +16,7 @@ keywords:
   - 自动更新
   - 部署
 highlight: 可以使用静态文件服务器、GitHub Releases 或专用更新服务来托管更新
-order: 54
+order: 238
 ---
 
 ## 问题 1：服务器需要提供什么？

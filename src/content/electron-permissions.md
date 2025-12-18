@@ -17,7 +17,7 @@ keywords:
   - 麦克风
   - 系统权限
 highlight: macOS 需要在 Info.plist 声明权限，Windows 通过系统设置管理
-order: 79
+order: 274
 ---
 
 ## 问题 1：权限类型

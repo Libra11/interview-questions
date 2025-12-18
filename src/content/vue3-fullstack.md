@@ -16,7 +16,7 @@ keywords:
   - Vue3 Node
   - Monorepo
 highlight: 通过 Monorepo 架构、类型共享、统一开发体验构建全栈应用。
-order: 277
+order: 633
 ---
 
 ## 问题 1：项目结构

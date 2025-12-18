@@ -17,7 +17,7 @@ keywords:
   - 工具对比
   - 选型
 highlight: ESBuild 用 Go 编写，速度极快但功能有限；Webpack 功能全面但较慢。可以结合使用，用 esbuild-loader 加速 Webpack。
-order: 686
+order: 816
 ---
 
 ## 问题 1：核心差异

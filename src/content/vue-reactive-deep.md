@@ -16,7 +16,7 @@ keywords:
   - 嵌套响应式
   - 懒代理
 highlight: reactive 通过懒代理实现深层响应，只有在访问嵌套对象时才创建其 Proxy。
-order: 211
+order: 489
 ---
 
 ## 问题 1：reactive 如何处理嵌套对象？

@@ -17,7 +17,7 @@ keywords:
   - SEO
   - performance
 highlight: SSR 的主要优势：更快的首屏渲染、更好的 SEO、更好的社交分享支持。
-order: 275
+order: 628
 ---
 
 ## 问题 1：更快的首屏渲染

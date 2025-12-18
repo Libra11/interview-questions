@@ -17,7 +17,7 @@ keywords:
   - CA
   - 证书链
 highlight: 数字证书是 HTTPS 安全的基石，通过 CA 签名验证服务器身份，建立加密通信
-order: 14
+order: 86
 ---
 
 ## 问题 1：什么是数字证书？

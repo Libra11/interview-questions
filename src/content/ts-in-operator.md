@@ -17,7 +17,7 @@ keywords:
   - 映射类型
   - 类型收窄
 highlight: 掌握 in 运算符在映射类型和类型守卫中的不同作用，提升类型编程能力
-order: 305
+order: 672
 ---
 
 ## 问题 1：TypeScript 中 in 运算符有哪些用法？

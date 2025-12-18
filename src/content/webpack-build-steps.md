@@ -16,7 +16,7 @@ keywords:
   - 编译步骤
   - Webpack 原理
 highlight: Webpack 构建分为初始化、编译、输出三大阶段，包含配置合并、模块构建、代码生成等关键步骤。
-order: 631
+order: 761
 ---
 
 ## 问题 1：构建流程概览

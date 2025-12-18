@@ -17,7 +17,7 @@ keywords:
   - selective hydration
   - server rendering
 highlight: Streaming SSR 允许服务端边渲染边发送 HTML，客户端可以选择性水合，大幅提升首屏体验。
-order: 230
+order: 538
 ---
 
 ## 问题 1：传统 SSR 的问题？

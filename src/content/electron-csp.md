@@ -16,7 +16,7 @@ keywords:
   - 内容安全策略
   - 安全头
 highlight: CSP 通过限制脚本、样式等资源的来源，有效防止 XSS 攻击
-order: 44
+order: 217
 ---
 
 ## 问题 1：什么是 CSP？

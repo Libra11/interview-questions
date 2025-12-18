@@ -17,7 +17,7 @@ keywords:
   - 服务端渲染
   - 渲染流程
 highlight: 理解 RSC 和 SSR 的本质区别，是掌握现代 React 应用架构的关键
-order: 25
+order: 156
 ---
 
 ## 问题 1：传统 SSR 的渲染流程是怎样的？

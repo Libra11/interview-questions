@@ -17,7 +17,7 @@ keywords:
   - react-window
   - performance
 highlight: 虚拟列表只渲染可视区域的元素，通过计算滚动位置动态更新显示内容，大幅提升性能。
-order: 297
+order: 654
 ---
 
 ## 问题 1：虚拟列表的原理

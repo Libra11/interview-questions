@@ -17,7 +17,7 @@ keywords:
   - Metadata API
   - SEO
 highlight: Next.js 自动去重和合并 metadata，确保每个 meta 标签只出现一次
-order: 29
+order: 173
 ---
 
 ## 问题 1：为什么会出现重复 meta 标签？

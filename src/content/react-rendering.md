@@ -17,7 +17,7 @@ keywords:
   - 批量更新
   - Fiber 架构
 highlight: 深入理解 React 的完整渲染流程和 React 18 的并发特性
-order: 14
+order: 90
 ---
 
 ## 问题 1：React 的初始渲染流程是什么？

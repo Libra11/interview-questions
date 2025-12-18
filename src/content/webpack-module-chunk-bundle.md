@@ -17,7 +17,7 @@ keywords:
   - Bundle
   - 概念区分
 highlight: Module 是源文件，Chunk 是模块的集合，Bundle 是最终输出的文件，它们是构建过程中的不同阶段产物。
-order: 632
+order: 762
 ---
 
 ## 问题 1：Module（模块）

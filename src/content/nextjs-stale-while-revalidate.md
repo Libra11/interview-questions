@@ -17,7 +17,7 @@ keywords:
   - 缓存策略
   - ISR
 highlight: stale-while-revalidate 允许返回过期缓存的同时后台更新，实现零等待的用户体验
-order: 9
+order: 54
 ---
 
 ## 问题 1：stale-while-revalidate 是什么？

@@ -16,7 +16,7 @@ keywords:
   - valueOf
   - toString
 highlight: 理解 ToPrimitive 抽象操作的执行流程，掌握 +、==、if 等场景下的转换规则
-order: 12
+order: 77
 ---
 
 ## 问题 1：JavaScript 有哪些数据类型？如何判断类型？

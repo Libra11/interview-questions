@@ -17,7 +17,7 @@ keywords:
   - DOM解析
   - 性能优化
 highlight: 理解 CSS 加载机制,优化页面渲染性能
-order: 16
+order: 100
 ---
 
 ## 问题 1：CSS 加载是否阻塞 DOM 解析

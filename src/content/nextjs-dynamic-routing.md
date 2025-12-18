@@ -17,7 +17,7 @@ keywords:
   - Catch-all Routes
   - 可选捕获
 highlight: 理解 Next.js 动态路由的三种形式，掌握处理复杂 URL 结构的方法
-order: 411
+order: 721
 ---
 
 ## 问题 1：什么是动态路由 [id]？

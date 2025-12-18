@@ -16,7 +16,7 @@ keywords:
   - 嵌套路由
   - 路由参数
 highlight: 动态路由使用 :param 定义参数，嵌套路由使用 children 配置子路由。
-order: 230
+order: 539
 ---
 
 ## 问题 1：动态路由

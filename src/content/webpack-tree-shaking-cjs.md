@@ -17,7 +17,7 @@ keywords:
   - 静态分析
   - 动态导入
 highlight: CommonJS 是动态的，导入导出在运行时确定，无法在编译时静态分析，因此无法进行 Tree-shaking。
-order: 638
+order: 768
 ---
 
 ## 问题 1：ES Module vs CommonJS 的核心差异

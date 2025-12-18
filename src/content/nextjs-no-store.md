@@ -17,7 +17,7 @@ keywords:
   - 实时数据
   - 动态渲染
 highlight: no-store 用于需要每次都获取最新数据的场景，会触发动态渲染
-order: 8
+order: 48
 ---
 
 ## 问题 1：no-store 是什么？

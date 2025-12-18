@@ -17,7 +17,7 @@ keywords:
   - DOM ref
   - mutable ref
 highlight: DOM ref 使用 useRef<HTMLElement>(null)，可变值 ref 使用 useRef<T>(initialValue)。
-order: 283
+order: 640
 ---
 
 ## 问题 1：DOM 元素 ref

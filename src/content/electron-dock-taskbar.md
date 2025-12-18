@@ -16,7 +16,7 @@ keywords:
   - 任务栏进度条
   - badge
 highlight: macOS 使用 app.dock API，Windows 使用 BrowserWindow 的任务栏方法
-order: 30
+order: 176
 ---
 
 ## 问题 1：如何在 macOS Dock 显示徽标？

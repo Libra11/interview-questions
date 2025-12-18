@@ -17,7 +17,7 @@ keywords:
   - getStaticPaths
   - 预渲染
 highlight: 理解 generateStaticParams 如何替代 getStaticPaths，掌握静态页面生成的最佳实践
-order: 412
+order: 722
 ---
 
 ## 问题 1：generateStaticParams 是什么？

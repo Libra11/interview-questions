@@ -17,7 +17,7 @@ keywords:
   - ES modules
   - bundle optimization
 highlight: Tree-shaking 是移除未使用代码的优化技术，依赖 ES Modules 的静态分析特性。
-order: 287
+order: 644
 ---
 
 ## 问题 1：什么是 Tree-shaking？

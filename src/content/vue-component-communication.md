@@ -18,7 +18,7 @@ keywords:
   - Provide Inject
   - 状态管理
 highlight: 掌握 Vue 组件通信的所有方式，理解不同场景的最佳选择
-order: 19
+order: 126
 ---
 
 ## 问题 1：父子组件通信有哪些方式？

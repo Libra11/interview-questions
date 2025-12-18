@@ -17,7 +17,7 @@ keywords:
   - 模块合并
   - 性能优化
 highlight: Scope Hoisting 将多个模块合并到一个函数作用域中，减少函数声明和闭包开销，提升运行性能。
-order: 634
+order: 764
 ---
 
 ## 问题 1：什么是 Scope Hoisting？

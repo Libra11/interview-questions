@@ -17,7 +17,7 @@ keywords:
   - 性能优化
   - 最佳实践
 highlight: 理解 v-if 和 v-for 的优先级问题，掌握正确的使用方式
-order: 16
+order: 104
 ---
 
 ## 问题 1：为什么不推荐 v-if 和 v-for 同时使用？

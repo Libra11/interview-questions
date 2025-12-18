@@ -17,7 +17,7 @@ keywords:
   - RPC
   - 远程过程调用
 highlight: Server Action 通过 RPC 机制直接调用服务器函数，无需手动创建 API 端点
-order: 35
+order: 195
 ---
 
 ## 问题 1：Server Action 的工作原理是什么？

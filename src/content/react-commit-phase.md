@@ -18,7 +18,7 @@ keywords:
   - 副作用
   - 生命周期
 highlight: Commit 阶段同步执行，分为三个子阶段处理不同类型的副作用
-order: 110
+order: 354
 ---
 
 ## 问题 1：Commit 阶段是什么？

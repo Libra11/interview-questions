@@ -16,7 +16,7 @@ keywords:
   - 全局状态
   - Store 设计
 highlight: 通过模块化 Store、类型安全、持久化等策略设计可维护的状态管理系统。
-order: 273
+order: 625
 ---
 
 ## 问题 1：Store 模块划分

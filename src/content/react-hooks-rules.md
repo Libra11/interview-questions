@@ -18,7 +18,7 @@ keywords:
   - Hooks 链表
   - ESLint
 highlight: Hooks 依赖调用顺序来匹配状态，必须保证每次渲染的调用顺序一致
-order: 120
+order: 386
 ---
 
 ## 问题 1：Hooks 的调用规则是什么？

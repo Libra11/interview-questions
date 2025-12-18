@@ -17,7 +17,7 @@ keywords:
   - dependency tracking
   - effect system
 highlight: Proxy 允许 Vue 拦截对象的所有操作（读取、设置、删除），从而实现自动的依赖收集和触发更新，这是 Vue 3 响应式系统的基石。
-order: 152
+order: 434
 ---
 
 ## 问题 1：为什么使用 Proxy？

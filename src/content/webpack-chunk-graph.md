@@ -17,7 +17,7 @@ keywords:
   - 代码分割
   - 打包原理
 highlight: ChunkGraph 管理模块到 Chunk 的映射关系，决定哪些模块打包到同一个文件，是代码分割的核心。
-order: 698
+order: 828
 ---
 
 ## 问题 1：什么是 ChunkGraph？

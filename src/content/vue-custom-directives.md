@@ -16,7 +16,7 @@ keywords:
   - directive hooks
   - binding object
 highlight: 自定义指令主要用于复用底层的 DOM 访问逻辑。在 Vue 3 中，指令的钩子函数被重命名以更好地与组件生命周期保持一致。
-order: 134
+order: 415
 ---
 
 ## 问题 1：什么是自定义指令？什么时候使用？

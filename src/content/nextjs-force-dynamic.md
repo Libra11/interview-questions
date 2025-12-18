@@ -16,7 +16,7 @@ keywords:
   - Next.js 动态渲染
   - Route Segment Config
 highlight: force-dynamic 是控制页面动态渲染的关键配置，理解它的作用对优化应用至关重要
-order: 22
+order: 142
 ---
 
 ## 问题 1：force-dynamic 的基本作用是什么？

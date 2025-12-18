@@ -17,7 +17,7 @@ keywords:
   - v-slot
   - slot props
 highlight: 通过具名插槽，我们可以在一个组件中定义多个插槽出口，让父组件精确控制内容的插入位置。
-order: 143
+order: 425
 ---
 
 ## 问题 1：为什么需要多个插槽？

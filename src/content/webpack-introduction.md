@@ -16,7 +16,7 @@ keywords:
   - 模块打包
   - 前端构建
 highlight: Webpack 是一个模块打包工具，它解决了前端模块化、依赖管理和资源处理的核心问题。
-order: 600
+order: 730
 ---
 
 ## 问题 1：什么是 Webpack？

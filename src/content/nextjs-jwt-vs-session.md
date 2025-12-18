@@ -17,7 +17,7 @@ keywords:
   - 身份验证
   - Token
 highlight: JWT 适合无状态场景和 Edge Runtime，Session 适合需要即时控制的场景
-order: 21
+order: 138
 ---
 
 ## 问题 1：JWT 和 Session 的基本区别

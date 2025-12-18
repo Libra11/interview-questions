@@ -17,7 +17,7 @@ keywords:
   - CommonJS Tree-shaking
   - 死代码消除
 highlight: Webpack 5 支持嵌套的 Tree-shaking、内部模块 Tree-shaking，以及对 CommonJS 的部分 Tree-shaking 支持。
-order: 665
+order: 795
 ---
 
 ## 问题 1：嵌套的 Tree-shaking

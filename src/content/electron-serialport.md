@@ -16,7 +16,7 @@ keywords:
   - 串口
   - 硬件通信
 highlight: serialport 是原生模块，需要正确编译并在主进程中使用
-order: 77
+order: 272
 ---
 
 ## 问题 1：安装和编译

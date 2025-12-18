@@ -16,7 +16,7 @@ keywords:
   - 窗口选项
   - webPreferences
 highlight: BrowserWindow 提供丰富的配置选项来控制窗口的外观、行为和安全特性
-order: 19
+order: 122
 ---
 
 ## 问题 1：窗口尺寸和位置相关的配置有哪些？

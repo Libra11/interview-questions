@@ -16,7 +16,7 @@ keywords:
   - 文件变化
   - watch
 highlight: 使用 chokidar 库可以更可靠地跨平台监听文件系统变化
-order: 37
+order: 199
 ---
 
 ## 问题 1：如何使用 Node.js 原生 API 监听？

@@ -17,7 +17,7 @@ keywords:
   - 单文件组件
   - Vue 配置
 highlight: vue-loader 将 Vue 单文件组件（.vue）解析为 JavaScript 模块，需要配合 VueLoaderPlugin 使用。
-order: 683
+order: 813
 ---
 
 ## 问题 1：基本配置

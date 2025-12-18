@@ -17,7 +17,7 @@ keywords:
   - 编译打包
   - 职责分工
 highlight: Webpack 负责模块打包，Babel 负责代码转换。通过 babel-loader，Webpack 在打包过程中调用 Babel 转换代码。
-order: 685
+order: 815
 ---
 
 ## 问题 1：各自的职责

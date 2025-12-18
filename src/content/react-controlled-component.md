@@ -17,7 +17,7 @@ keywords:
   - React forms
   - input state
 highlight: 受控组件是指表单元素的值由 React state 控制，通过 onChange 更新 state 来改变显示值。
-order: 261
+order: 600
 ---
 
 ## 问题 1：受控组件的定义？

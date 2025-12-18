@@ -17,7 +17,7 @@ keywords:
   - 服务器端操作
   - 表单提交
 highlight: Server Action 是 Next.js 提供的服务器端数据变更机制，简化了表单处理和数据更新
-order: 32
+order: 186
 ---
 
 ## 问题 1：Server Action 的基本概念是什么？

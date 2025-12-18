@@ -17,7 +17,7 @@ keywords:
   - WebSocket
   - 热更新原理
 highlight: Dev Server 通过 WebSocket 与浏览器通信，当文件变化时发送更新信息，浏览器端运行时代码负责替换模块。
-order: 642
+order: 772
 ---
 
 ## 问题 1：HMR 的整体架构

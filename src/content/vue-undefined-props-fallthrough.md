@@ -17,7 +17,7 @@ keywords:
   - inheritAttrs
   - undefined props
 highlight: 未定义的 Props 不会丢失，它们会作为透传 Attributes 自动添加到子组件的根元素上，或者通过 $attrs 手动访问。
-order: 140
+order: 422
 ---
 
 ## 问题 1：子组件能接收未定义的 Props 吗？

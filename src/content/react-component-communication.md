@@ -19,7 +19,7 @@ keywords:
   - lifting state up
   - redux
 highlight: React 数据流是单向的，但通过提升状态、Context API 和外部状态管理库，可以实现灵活的组件通信。
-order: 124
+order: 394
 ---
 
 ## 问题 1：父子组件之间如何通信？

@@ -17,7 +17,7 @@ keywords:
   - iframe
   - 窗口通信
 highlight: 掌握跨域窗口通信的标准方案 postMessage API
-order: 5
+order: 28
 ---
 
 ## 问题 1：什么是 postMessage

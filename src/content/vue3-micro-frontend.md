@@ -16,7 +16,7 @@ keywords:
   - qiankun
   - 子应用
 highlight: 通过 qiankun、Module Federation 等方案实现 Vue3 微前端架构。
-order: 276
+order: 631
 ---
 
 ## 问题 1：微前端方案选择

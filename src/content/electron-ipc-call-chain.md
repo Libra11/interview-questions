@@ -17,7 +17,7 @@ keywords:
   - ipc 调用链
   - 进程通信追踪
 highlight: 学会追踪和分析 Electron IPC 调用链，快速定位进程间通信问题。
-order: 85
+order: 281
 ---
 
 ## 问题 1：为什么需要追踪 IPC 调用链？

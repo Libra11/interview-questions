@@ -17,7 +17,7 @@ keywords:
   - chunks
   - cacheGroups
 highlight: SplitChunksPlugin 通过 cacheGroups 配置分割策略，将公共代码和第三方库提取到单独的 chunk。
-order: 624
+order: 754
 ---
 
 ## 问题 1：SplitChunksPlugin 是什么？

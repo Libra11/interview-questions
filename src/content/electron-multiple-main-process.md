@@ -16,7 +16,7 @@ keywords:
   - 单进程
   - 多实例
 highlight: 一个 Electron 应用只有一个主进程，但可以创建多个渲染进程（窗口）
-order: 9
+order: 52
 ---
 
 ## 问题 1：一个 Electron 应用可以有多个主进程吗？

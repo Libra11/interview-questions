@@ -17,7 +17,7 @@ keywords:
   - enter
   - after-enter
 highlight: 动画钩子允许使用 JavaScript 控制动画，适合复杂动画或与动画库集成。
-order: 258
+order: 595
 ---
 
 ## 问题 1：完整的钩子列表

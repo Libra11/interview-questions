@@ -16,7 +16,7 @@ keywords:
   - 预加载
   - 安全桥接
 highlight: preload 脚本是连接主进程和渲染进程的安全桥梁，在页面加载前执行
-order: 17
+order: 108
 ---
 
 ## 问题 1：preload 脚本是什么？

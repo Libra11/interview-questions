@@ -18,7 +18,7 @@ keywords:
   - Fiber
   - 链表结构
 highlight: memoizedState 是 Hooks 状态存储的核心，通过链表结构实现多个 Hooks 的状态管理
-order: 101
+order: 314
 ---
 
 ## 问题 1：什么是 memoizedState？

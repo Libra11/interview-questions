@@ -18,7 +18,7 @@ keywords:
   - slice.call
   - NodeList
 highlight: Array.from 是现代首选，旧方案基于原型借用，选择取决于语法支持与性能权衡。
-order: 130
+order: 405
 ---
 
 ## 问题一：什么叫“类数组”？

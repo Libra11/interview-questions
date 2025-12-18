@@ -18,7 +18,7 @@ keywords:
   - 浏览器存储
   - Web Storage
 highlight: Cookie 会随请求发送到服务器，LocalStorage 持久化存储，SessionStorage 会话级存储，各有适用场景
-order: 114
+order: 368
 ---
 
 ## 问题 1：三种存储方式的基本概念是什么？

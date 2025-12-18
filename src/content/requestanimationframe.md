@@ -17,7 +17,7 @@ keywords:
   - 动画优化
   - 帧率控制
 highlight: 理解 requestAnimationFrame 的优势和原理，掌握动画性能优化技巧，能够创建流畅的动画效果
-order: 50
+order: 231
 ---
 
 ## 问题 1：requestAnimationFrame 的基本概念

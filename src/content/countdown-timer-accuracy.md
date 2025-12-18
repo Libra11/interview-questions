@@ -18,7 +18,7 @@ keywords:
   - 时间误差
   - requestAnimationFrame
 highlight: 倒计时误差的根本原因是 JavaScript 单线程和事件循环机制，通过时间校准和 Web Worker 可以提高精度
-order: 127
+order: 399
 ---
 
 ## 问题 1：为什么倒计时会有误差？

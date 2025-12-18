@@ -17,7 +17,7 @@ keywords:
   - reflow
   - repaint
 highlight: 主要瓶颈在于 JavaScript 执行、样式计算、布局（reflow）、绑制（repaint）和合成。
-order: 268
+order: 614
 ---
 
 ## 问题 1：渲染流水线

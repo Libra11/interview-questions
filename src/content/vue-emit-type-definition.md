@@ -16,7 +16,7 @@ keywords:
   - emit 类型
   - 事件类型
 highlight: Vue3 通过 defineEmits 定义事件类型，支持运行时声明和 TypeScript 类型声明两种方式。
-order: 217
+order: 509
 ---
 
 ## 问题 1：基本的 emit 声明

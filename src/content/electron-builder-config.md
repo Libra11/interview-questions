@@ -16,7 +16,7 @@ keywords:
   - 打包配置
   - 构建选项
 highlight: Electron Builder 通过 JSON 或 JS 配置文件定义打包行为
-order: 58
+order: 250
 ---
 
 ## 问题 1：配置文件格式

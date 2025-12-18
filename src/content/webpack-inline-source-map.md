@@ -17,7 +17,7 @@ keywords:
   - 文件体积
   - 安全风险
 highlight: inline-source-map 将 Source Map 内联到 bundle 中，导致文件体积大幅增加，且暴露源代码，不适合生产环境。
-order: 674
+order: 804
 ---
 
 ## 问题 1：inline-source-map 是什么？

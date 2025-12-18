@@ -17,7 +17,7 @@ keywords:
   - 防止 hook
   - 通信安全
 highlight: 掌握 IPC 安全防护措施，防止恶意脚本劫持进程间通信。
-order: 96
+order: 302
 ---
 
 ## 问题 1：IPC 被 Hook 的风险是什么？

@@ -16,7 +16,7 @@ keywords:
   - 复杂类型
   - TypeScript
 highlight: Vue3 支持使用 TypeScript 接口、泛型、联合类型等为 Props 定义复杂类型。
-order: 254
+order: 587
 ---
 
 ## 问题 1：基础类型定义

@@ -17,7 +17,7 @@ keywords:
   - yarn vs npm
   - 依赖管理
 highlight: pnpm 通过硬链接和符号链接实现了极致的磁盘空间节省和安装速度提升
-order: 6
+order: 36
 ---
 
 ## 问题 1：三者的基本特点是什么？

@@ -17,7 +17,7 @@ keywords:
   - 逆变
   - 类型兼容
 highlight: 理解类型变型是掌握 TypeScript 类型系统的高级知识，对编写类型安全的代码至关重要
-order: 118
+order: 380
 ---
 
 ## 问题 1：什么是类型变型（Variance）？

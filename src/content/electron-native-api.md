@@ -17,7 +17,7 @@ keywords:
   - 原生API
   - FFI
 highlight: 使用 node-ffi-napi 或 koffi 可以直接调用系统动态链接库
-order: 76
+order: 271
 ---
 
 ## 问题 1：调用原生库的方式

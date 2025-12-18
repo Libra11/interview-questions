@@ -17,7 +17,7 @@ keywords:
   - singleton
   - Hooks 报错
 highlight: 通过 singleton 配置确保只加载一个 React 实例，配合 strictVersion 和 requiredVersion 保证版本兼容。
-order: 670
+order: 800
 ---
 
 ## 问题 1：为什么会有冲突？

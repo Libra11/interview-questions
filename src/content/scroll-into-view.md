@@ -18,7 +18,7 @@ keywords:
   - 元素定位
   - smooth scroll
 highlight: scrollIntoView 可以将元素滚动到可视区域，支持平滑滚动和位置控制
-order: 98
+order: 307
 ---
 
 ## 问题 1：scrollIntoView 是什么？

@@ -17,7 +17,7 @@ keywords:
   - 构建分析
   - 优化策略
 highlight: Webpack 构建瓶颈通常在 Loader 处理、模块解析、代码压缩三个阶段，可通过分析工具定位具体问题。
-order: 659
+order: 789
 ---
 
 ## 问题 1：常见的性能瓶颈

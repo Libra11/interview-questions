@@ -17,7 +17,7 @@ keywords:
   - Error Boundary
   - 错误处理
 highlight: 理解 Next.js 错误边界的工作原理，掌握如何优雅地处理应用错误
-order: 409
+order: 719
 ---
 
 ## 问题 1：error.tsx 是什么？

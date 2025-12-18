@@ -16,7 +16,7 @@ keywords:
   - 路由动画
   - 页面切换
 highlight: 通过 router-view 的 v-slot 配合 Transition 组件实现页面级过渡动画。
-order: 260
+order: 599
 ---
 
 ## 问题 1：基础页面过渡

@@ -17,7 +17,7 @@ keywords:
   - synchronous effect
   - DOM measurement
 highlight: useLayoutEffect 在 DOM 更新后同步执行，适合需要在浏览器绘制前读取或修改 DOM 的场景。
-order: 211
+order: 488
 ---
 
 ## 问题 1：执行时机有什么不同？

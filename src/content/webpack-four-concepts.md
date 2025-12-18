@@ -19,7 +19,7 @@ keywords:
   - loader
   - plugin
 highlight: entry 定义入口、output 定义输出、loader 转换模块、plugin 扩展功能，这四个概念构成了 Webpack 的基础。
-order: 602
+order: 732
 ---
 
 ## 问题 1：Entry（入口）是什么？

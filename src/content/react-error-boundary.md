@@ -17,7 +17,7 @@ keywords:
   - componentDidCatch
   - error handling
 highlight: 错误边界是捕获子组件渲染错误的 React 组件，防止整个应用崩溃。
-order: 272
+order: 622
 ---
 
 ## 问题 1：错误边界是什么？

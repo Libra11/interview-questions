@@ -18,7 +18,7 @@ keywords:
   - justify-content
   - align-items
 highlight: Flex 布局是一维布局模型，通过容器和项目的属性配合，可以轻松实现各种复杂的布局效果
-order: 129
+order: 403
 ---
 
 ## 问题 1：什么是 Flex 布局？

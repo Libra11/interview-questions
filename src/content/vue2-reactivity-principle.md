@@ -19,7 +19,7 @@ keywords:
   - Watcher
   - Observer
 highlight: 理解 Vue2 响应式系统的核心机制，掌握数据劫持和依赖收集的实现原理
-order: 54
+order: 240
 ---
 
 ## 问题：Vue2 响应式实现的原理是什么？

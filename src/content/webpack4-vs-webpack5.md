@@ -17,7 +17,7 @@ keywords:
   - 版本区别
   - 新特性
 highlight: Webpack 5 最大的改进是持久化缓存、Module Federation、更好的 Tree-shaking 和内置资源模块。
-order: 661
+order: 791
 ---
 
 ## 问题 1：核心差异对比

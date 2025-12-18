@@ -18,7 +18,7 @@ keywords:
   - ETag
   - Last-Modified
 highlight: 304 状态码表示资源未修改,浏览器可以使用缓存,是HTTP缓存机制的重要组成部分
-order: 22
+order: 141
 ---
 
 ## 问题 1:304 状态码是什么?

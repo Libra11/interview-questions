@@ -16,7 +16,7 @@ keywords:
   - 文件读取
   - IPC
 highlight: 通过 preload 脚本暴露受控的文件读取 API，在主进程中执行实际的文件操作
-order: 35
+order: 193
 ---
 
 ## 问题 1：为什么 nodeIntegration = false 时不能直接读取文件？

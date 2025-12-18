@@ -18,7 +18,7 @@ keywords:
   - DOM 3级事件
   - addEventListener
 highlight: DOM 事件经历了从 0级到 3级的演进，DOM 2级引入了 addEventListener，是目前推荐的事件处理方式
-order: 118
+order: 378
 ---
 
 ## 问题 1：什么是 DOM 事件级别？

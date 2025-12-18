@@ -16,7 +16,7 @@ keywords:
   - 暴露方法
   - 组件实例
 highlight: defineExpose 用于在 script setup 中显式声明要暴露给父组件的属性和方法。
-order: 252
+order: 583
 ---
 
 ## 问题 1：为什么需要 defineExpose？

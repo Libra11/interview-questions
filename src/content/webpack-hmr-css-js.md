@@ -17,7 +17,7 @@ keywords:
   - 热更新差异
   - style-loader
 highlight: CSS 热更新只需替换样式表，无副作用；JS 热更新需要处理模块状态和依赖关系，更复杂。
-order: 643
+order: 773
 ---
 
 ## 问题 1：CSS 热更新的简单性

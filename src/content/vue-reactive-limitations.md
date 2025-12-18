@@ -17,7 +17,7 @@ keywords:
   - proxy
   - ref vs reactive
 highlight: reactive() 只能用于对象类型，且不能替换整个对象，解构会丢失响应性。对于这些场景，ref() 是更好的选择。
-order: 151
+order: 433
 ---
 
 ## 问题 1：reactive() 有哪些局限性？

@@ -17,7 +17,7 @@ keywords:
   - server state
   - client state
 highlight: React Query 管理服务端状态（异步数据），Redux 管理客户端状态，两者解决不同问题。
-order: 237
+order: 552
 ---
 
 ## 问题 1：两者解决什么问题？

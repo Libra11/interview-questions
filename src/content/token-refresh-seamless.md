@@ -17,7 +17,7 @@ keywords:
   - 无感刷新
   - 请求拦截器
 highlight: 通过 Refresh Token 和请求拦截器实现 Token 无感刷新，提升用户体验
-order: 13
+order: 84
 ---
 
 ## 问题 1：什么是 Token 无感刷新？

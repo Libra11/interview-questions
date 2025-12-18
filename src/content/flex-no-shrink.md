@@ -17,7 +17,7 @@ keywords:
   - 不压缩
   - 弹性布局
 highlight: 掌握 flex-shrink 属性,控制子元素的收缩行为
-order: 10
+order: 61
 ---
 
 ## 问题 1：如何让 flex 子元素不压缩

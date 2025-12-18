@@ -17,7 +17,7 @@ keywords:
   - revalidate
   - 数据获取
 highlight: Next.js 扩展了原生 fetch API，添加了强大的缓存和重新验证功能
-order: 39
+order: 207
 ---
 
 ## 问题 1：Next.js fetch 的基本扩展是什么？

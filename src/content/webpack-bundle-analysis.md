@@ -17,7 +17,7 @@ keywords:
   - 体积优化
   - 依赖分析
 highlight: 使用 webpack-bundle-analyzer 可视化分析 bundle 组成，找出体积大的模块和重复依赖，指导优化方向。
-order: 708
+order: 838
 ---
 
 ## 问题 1：使用 webpack-bundle-analyzer

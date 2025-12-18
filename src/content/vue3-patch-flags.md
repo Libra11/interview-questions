@@ -16,7 +16,7 @@ keywords:
   - 补丁标记
   - diff 优化
 highlight: PatchFlags 标记 VNode 的动态部分类型，让 diff 只检查需要更新的内容。
-order: 244
+order: 567
 ---
 
 ## 问题 1：什么是 PatchFlags？

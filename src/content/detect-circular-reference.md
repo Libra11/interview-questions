@@ -18,7 +18,7 @@ keywords:
   - WeakSet
   - 深拷贝
 highlight: 使用 WeakSet 或 Map 记录已访问对象是检测循环引用的最佳方式，可以避免内存泄漏
-order: 125
+order: 395
 ---
 
 ## 问题 1：什么是循环引用？

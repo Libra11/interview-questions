@@ -16,7 +16,7 @@ keywords:
   - 安全漏洞
   - webPreferences
 highlight: nodeIntegration、contextIsolation、webSecurity 等配置错误会导致严重安全漏洞
-order: 39
+order: 205
 ---
 
 ## 问题 1：最危险的配置有哪些？

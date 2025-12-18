@@ -19,7 +19,7 @@ keywords:
   - lazy loading
   - code splitting
 highlight: 异步组件允许我们将应用拆分成多个小块，只在需要时才加载，显著提升首屏加载速度。
-order: 154
+order: 436
 ---
 
 ## 问题 1：什么是异步组件？为什么需要它？

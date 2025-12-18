@@ -17,7 +17,7 @@ keywords:
   - 静态表
   - 动态表
 highlight: 掌握 HTTP/2 HPACK 压缩算法，理解如何通过首部压缩大幅减少网络传输
-order: 203
+order: 454
 ---
 
 ## 问题 1：为什么 HTTP/2 需要首部压缩？

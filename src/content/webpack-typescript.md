@@ -17,7 +17,7 @@ keywords:
   - babel-loader
   - 类型检查
 highlight: Webpack 支持通过 ts-loader 或 babel-loader + @babel/preset-typescript 编译 TypeScript，各有优缺点。
-order: 684
+order: 814
 ---
 
 ## 问题 1：使用 ts-loader

@@ -17,7 +17,7 @@ keywords:
   - visibility hidden
   - opacity
 highlight: 掌握不同隐藏方法的特点,选择合适的隐藏方式
-order: 12
+order: 74
 ---
 
 ## 问题 1：CSS 隐藏元素的常用方法

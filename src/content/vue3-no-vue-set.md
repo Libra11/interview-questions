@@ -16,7 +16,7 @@ keywords:
   - Proxy
   - defineProperty
 highlight: Proxy 可以拦截所有对象操作，包括属性添加和删除，因此不再需要 Vue.set。
-order: 215
+order: 503
 ---
 
 ## 问题 1：Vue2 为什么需要 Vue.set？

@@ -17,7 +17,7 @@ keywords:
   - ESM
   - 开发体验
 highlight: Vite 利用浏览器原生 ESM 和按需编译，实现了秒级启动和毫秒级热更新
-order: 3
+order: 18
 ---
 
 ## 问题 1：Vite 和 Webpack 的核心差异是什么？

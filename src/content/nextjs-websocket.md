@@ -17,7 +17,7 @@ keywords:
   - Socket.io
   - Server-Sent Events
 highlight: 掌握在 Next.js 中实现实时通信的多种方案和最佳实践
-order: 314
+order: 695
 ---
 
 ## 问题 1：Next.js 中 WebSocket 的实现挑战是什么？

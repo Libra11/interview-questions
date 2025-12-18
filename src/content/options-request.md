@@ -17,7 +17,7 @@ keywords:
   - 预检请求
   - HTTP方法
 highlight: 理解 OPTIONS 请求的作用，掌握 CORS 预检机制和优化方法
-order: 211
+order: 487
 ---
 
 ## 问题 1：OPTIONS 请求是什么？

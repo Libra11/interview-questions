@@ -17,7 +17,7 @@ keywords:
   - Suspense
   - dynamic import
 highlight: React.lazy 配合动态 import 实现组件级代码分割，Suspense 处理加载状态。
-order: 269
+order: 616
 ---
 
 ## 问题 1：基本原理？

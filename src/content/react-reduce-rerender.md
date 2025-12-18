@@ -17,7 +17,7 @@ keywords:
   - prevent rerender
   - performance
 highlight: 减少重渲染的方法：React.memo、状态下移、children 模式、useMemo/useCallback、Context 拆分。
-order: 267
+order: 612
 ---
 
 ## 问题 1：使用 React.memo

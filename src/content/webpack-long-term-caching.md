@@ -17,7 +17,7 @@ keywords:
   - 缓存策略
   - 缓存优化
 highlight: 长效缓存通过 contenthash、代码分割、稳定的模块 ID 和 runtimeChunk 实现，让未变化的文件保持缓存。
-order: 650
+order: 780
 ---
 
 ## 问题 1：什么是长效缓存？

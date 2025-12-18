@@ -17,7 +17,7 @@ keywords:
   - performance optimization
   - React hooks
 highlight: useCallback 缓存函数本身，useMemo 缓存函数的返回值，两者都用于避免不必要的重新计算。
-order: 213
+order: 495
 ---
 
 ## 问题 1：两者的基本区别？

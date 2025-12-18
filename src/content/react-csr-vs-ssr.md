@@ -17,7 +17,7 @@ keywords:
   - server side rendering
   - rendering comparison
 highlight: CSR 在浏览器渲染，首屏慢但交互流畅；SSR 在服务器渲染，首屏快但需要服务器资源。
-order: 277
+order: 632
 ---
 
 ## 问题 1：渲染流程对比

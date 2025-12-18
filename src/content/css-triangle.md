@@ -17,7 +17,7 @@ keywords:
   - clip-path
   - 箭头
 highlight: 掌握 CSS 绘制三角形的技巧,实现各种箭头和装饰效果
-order: 18
+order: 114
 ---
 
 ## 问题 1：使用 border 绘制三角形的原理

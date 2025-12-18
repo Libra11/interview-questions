@@ -17,7 +17,7 @@ keywords:
   - React Query
   - axios
 highlight: 优雅管理 API：分层封装、统一错误处理、类型安全、请求/响应拦截、使用 React Query。
-order: 301
+order: 659
 ---
 
 ## 问题 1：API 层封装

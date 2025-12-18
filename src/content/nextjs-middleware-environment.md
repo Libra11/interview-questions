@@ -17,7 +17,7 @@ keywords:
   - Next.js Edge
   - 运行时限制
 highlight: 理解 Middleware 的 Edge Runtime 环境及其限制
-order: 317
+order: 704
 ---
 
 ## 问题 1：Middleware 运行在什么环境？

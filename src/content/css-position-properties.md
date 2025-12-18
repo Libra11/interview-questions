@@ -19,7 +19,7 @@ keywords:
   - fixed
   - sticky
 highlight: position 属性控制元素的定位方式，理解不同取值的定位参照物和文档流表现是掌握 CSS 布局的关键
-order: 101
+order: 312
 ---
 
 ## 问题 1：position 有哪些常见的属性值？

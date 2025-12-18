@@ -17,7 +17,7 @@ keywords:
   - 资源哈希
   - immutable
 highlight: Next.js 通过内容哈希和 immutable 指令实现静态资源的永久缓存
-order: 6
+order: 34
 ---
 
 ## 问题 1：Next.js 如何处理静态资源缓存？

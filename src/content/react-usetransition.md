@@ -17,7 +17,7 @@ keywords:
   - non-blocking update
   - concurrent
 highlight: useTransition 将状态更新标记为"可中断"，让紧急更新（如用户输入）优先执行。
-order: 225
+order: 528
 ---
 
 ## 问题 1：useTransition 解决什么问题？

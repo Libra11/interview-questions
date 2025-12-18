@@ -17,7 +17,7 @@ keywords:
   - browserwindow 调试
   - 白屏问题
 highlight: 系统掌握 BrowserWindow 显示问题的排查方法，快速定位和解决窗口异常。
-order: 86
+order: 282
 ---
 
 ## 问题 1：常见的窗口显示问题有哪些？

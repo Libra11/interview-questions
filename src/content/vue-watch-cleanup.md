@@ -18,7 +18,7 @@ keywords:
   - side effects
   - watchEffect
 highlight: 当侦听器执行异步操作时，如果数据快速变化导致多次触发，需要清理上一次的副作用以避免竞态条件和资源泄漏。
-order: 144
+order: 426
 ---
 
 ## 问题 1：什么是侦听器的副作用清理？

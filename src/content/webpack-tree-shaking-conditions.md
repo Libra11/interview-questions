@@ -17,7 +17,7 @@ keywords:
   - sideEffects
   - production 模式
 highlight: Tree-shaking 需要 ES Module 语法、production 模式、正确的 sideEffects 配置，以及支持 Tree-shaking 的第三方库。
-order: 637
+order: 767
 ---
 
 ## 问题 1：必须使用 ES Module

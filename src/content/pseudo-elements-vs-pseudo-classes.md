@@ -18,7 +18,7 @@ keywords:
   - after
   - hover
 highlight: 掌握伪元素和伪类,实现更灵活的样式控制
-order: 17
+order: 111
 ---
 
 ## 问题 1：伪类和伪元素的定义

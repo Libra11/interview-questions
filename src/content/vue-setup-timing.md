@@ -16,7 +16,7 @@ keywords:
   - vue setup
   - 组件初始化
 highlight: setup() 在 beforeCreate 之前执行，此时组件实例尚未创建，无法访问 this。
-order: 203
+order: 457
 ---
 
 ## 问题 1：setup() 在什么时候执行？

@@ -17,7 +17,7 @@ keywords:
   - React Hooks
   - asynchronous
 highlight: useCallback 本身不限制函数类型，但直接将 async 函数作为依赖或返回值需要注意其副作用和清理机制。
-order: 122
+order: 390
 ---
 
 ## 问题 1：useCallback 能否接收 async 函数？

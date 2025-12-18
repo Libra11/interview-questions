@@ -17,7 +17,7 @@ keywords:
   - css-loader
   - file-loader
 highlight: 掌握 babel-loader、css-loader、style-loader、file-loader 等核心 Loader 的作用和配置方式。
-order: 613
+order: 743
 ---
 
 ## 问题 1：JavaScript 相关 Loader

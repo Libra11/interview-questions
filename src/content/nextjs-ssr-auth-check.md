@@ -17,7 +17,7 @@ keywords:
   - 身份验证
   - 登录状态
 highlight: Server Components 可以直接在服务端检测登录状态，无需客户端 JavaScript
-order: 22
+order: 143
 ---
 
 ## 问题 1：为什么要在 SSR 中检测登录状态？

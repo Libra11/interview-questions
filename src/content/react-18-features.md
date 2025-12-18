@@ -17,7 +17,7 @@ keywords:
   - automatic batching
   - Suspense
 highlight: React 18 引入并发渲染机制，让 React 可以中断渲染、优先处理紧急更新。
-order: 223
+order: 524
 ---
 
 ## 问题 1：React 18 有哪些核心新特性？

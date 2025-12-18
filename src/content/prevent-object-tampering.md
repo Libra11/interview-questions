@@ -17,7 +17,7 @@ keywords:
   - Proxy
   - 私有字段
 highlight: 理解三种保护级别的差异，掌握不同场景下的最佳实践
-order: 24
+order: 152
 ---
 
 ## 问题 1：JavaScript 中有哪些防止对象被篡改的方式？

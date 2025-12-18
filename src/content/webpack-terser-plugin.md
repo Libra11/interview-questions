@@ -17,7 +17,7 @@ keywords:
   - 混淆
   - 优化
 highlight: terser-webpack-plugin 是 Webpack 5 默认的 JavaScript 压缩工具，支持 ES6+ 语法，提供代码压缩、混淆和优化功能。
-order: 677
+order: 807
 ---
 
 ## 问题 1：terser-webpack-plugin 的作用

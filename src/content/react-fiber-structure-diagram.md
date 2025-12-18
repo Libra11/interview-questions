@@ -17,7 +17,7 @@ keywords:
   - Fiber node
   - React internals
 highlight: Fiber 是链表结构，每个节点包含 child、sibling、return 指针，形成可遍历的树。
-order: 302
+order: 662
 ---
 
 ## 问题 1：Fiber 节点结构

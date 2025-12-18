@@ -16,7 +16,7 @@ keywords:
   - exposeInMainWorld
   - 上下文隔离
 highlight: contextBridge 是在隔离的上下文间安全传递 API 的唯一方式
-order: 18
+order: 115
 ---
 
 ## 问题 1：为什么不能直接修改 window？

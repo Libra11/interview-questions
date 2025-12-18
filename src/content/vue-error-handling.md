@@ -17,7 +17,7 @@ keywords:
   - errorCaptured
   - 异常捕获
 highlight: 掌握 Vue 的错误处理机制，构建健壮的应用程序
-order: 17
+order: 112
 ---
 
 ## 问题 1：Vue 提供了哪些错误处理机制？

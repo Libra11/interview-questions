@@ -17,7 +17,7 @@ keywords:
   - interruptible rendering
   - scheduling
 highlight: Fiber 架构让 React 渲染可中断，支持优先级调度，解决了同步渲染阻塞主线程的问题。
-order: 250
+order: 578
 ---
 
 ## 问题 1：React 15 有什么问题？

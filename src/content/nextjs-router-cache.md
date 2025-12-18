@@ -17,7 +17,7 @@ keywords:
   - Prefetch
   - Next.js 导航
 highlight: Router Cache 是唯一的客户端缓存，通过预取和缓存 RSC Payload 实现即时导航
-order: 5
+order: 27
 ---
 
 ## 问题 1：Router Cache 是什么？

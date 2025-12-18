@@ -16,7 +16,7 @@ keywords:
   - Loader 开发
   - Loader API
 highlight: Loader 本质是一个函数，接收源代码字符串，返回转换后的代码，可通过 this 访问 Webpack API。
-order: 617
+order: 747
 ---
 
 ## 问题 1：Loader 的基本结构

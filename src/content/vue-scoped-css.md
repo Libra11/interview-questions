@@ -18,7 +18,7 @@ keywords:
   - deep selector
   - vue sfc
 highlight: scoped 通过为组件的 DOM 元素和 CSS 选择器添加唯一的 data 属性（如 data-v-f3f3eg9），实现样式隔离。
-order: 156
+order: 438
 ---
 
 ## 问题 1：scoped 的作用是什么？

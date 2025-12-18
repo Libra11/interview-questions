@@ -17,7 +17,7 @@ keywords:
   - getServerSideProps
   - getStaticPaths
 highlight: 掌握 Next.js 各种数据获取方法的使用场景和最佳实践
-order: 320
+order: 709
 ---
 
 ## 问题 1：Next.js 提供了哪些数据获取方法？

@@ -17,7 +17,7 @@ keywords:
   - clearfix
   - 浮动塌陷
 highlight: 清除浮动是 CSS 布局中的经典问题，掌握多种清除方案能够灵活应对不同场景
-order: 106
+order: 337
 ---
 
 ## 问题 1：为什么需要清除浮动？

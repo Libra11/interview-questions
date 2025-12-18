@@ -17,7 +17,7 @@ keywords:
   - 执行时机
   - 副作用
 highlight: 掌握 useLayoutEffect 和 useEffect 的核心区别，理解何时使用哪个 Hook
-order: 13
+order: 83
 ---
 
 ## 问题 1：useLayoutEffect 和 useEffect 的执行时机有什么区别？

@@ -18,7 +18,7 @@ keywords:
   - DOM解析
   - 资源加载
 highlight: DOMContentLoaded 在 DOM 解析完成后触发，load 在所有资源加载完成后触发，选择合适的事件可以优化页面性能
-order: 132
+order: 410
 ---
 
 ## 问题 1：DOMContentLoaded 和 load 事件的基本区别是什么？

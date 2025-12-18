@@ -17,7 +17,7 @@ keywords:
   - Provider
   - global state
 highlight: Context 适合传递"全局"数据，如主题、用户信息、语言设置等，避免 props 层层传递。
-order: 231
+order: 540
 ---
 
 ## 问题 1：Context 解决什么问题？

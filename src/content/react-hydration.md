@@ -17,7 +17,7 @@ keywords:
   - SSR
   - server rendering
 highlight: Hydration 是将服务端渲染的静态 HTML 与客户端 React 关联，使其变为可交互应用。
-order: 249
+order: 576
 ---
 
 ## 问题 1：什么是 Hydration？

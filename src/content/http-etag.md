@@ -18,7 +18,7 @@ keywords:
   - 强验证
   - 弱验证
 highlight: ETag 通过内容指纹实现精确的缓存验证，解决 Last-Modified 的时间精度和内容变化检测问题
-order: 90
+order: 291
 ---
 
 ## 问题 1：ETag 是什么？

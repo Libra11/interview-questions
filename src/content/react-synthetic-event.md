@@ -17,7 +17,7 @@ keywords:
   - event normalization
   - event pooling
 highlight: 合成事件是 React 对原生事件的跨浏览器包装，提供一致的 API 和更好的性能。
-order: 239
+order: 556
 ---
 
 ## 问题 1：什么是合成事件？

@@ -17,7 +17,7 @@ keywords:
   - tree diff
   - component diff
 highlight: React diff 通过三个策略将复杂度从 O(n³) 降到 O(n)：同层比较、类型判断、key 标识。
-order: 220
+order: 517
 ---
 
 ## 问题 1：Diff 算法解决什么问题？

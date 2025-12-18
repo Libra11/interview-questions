@@ -17,7 +17,7 @@ keywords:
   - Native ESM
   - 开发服务器
 highlight: Webpack 是 Bundle-based，启动时需要打包所有模块；Vite 利用浏览器原生 ESM，按需编译，启动极快。
-order: 603
+order: 733
 ---
 
 ## 问题 1：最核心的区别是什么？

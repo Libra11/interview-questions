@@ -18,7 +18,7 @@ keywords:
   - 代码分割
   - Suspense
 highlight: React.lazy 利用动态 import 和 Suspense 实现组件级别的代码分割
-order: 201
+order: 448
 ---
 
 ## 问题 1：React.lazy 是什么？

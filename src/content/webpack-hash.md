@@ -16,7 +16,7 @@ keywords:
   - 文件指纹
   - 缓存策略
 highlight: 给文件加 hash 是为了实现长期缓存，文件内容变化时 hash 变化，浏览器才会重新请求。
-order: 608
+order: 738
 ---
 
 ## 问题 1：为什么要给文件加 hash？

@@ -17,7 +17,7 @@ keywords:
   - 配置不生效
   - CDN
 highlight: publicPath 不生效通常由配置位置错误、缺少尾部斜杠、HTML 模板硬编码路径或运行时配置问题导致。
-order: 705
+order: 835
 ---
 
 ## 问题 1：检查配置位置

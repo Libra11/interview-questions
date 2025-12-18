@@ -17,7 +17,7 @@ keywords:
   - fiber memoizedState
   - hooks linked list
 highlight: useState 通过在 Fiber 节点上维护一个链表来存储状态，利用闭包和调用顺序来关联状态和更新函数。
-order: 158
+order: 440
 ---
 
 ## 问题 1：useState 的基本用法

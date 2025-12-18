@@ -17,7 +17,7 @@ keywords:
   - prevent bubbling
   - React events
 highlight: 使用 e.stopPropagation() 阻止合成事件冒泡，但注意它不能阻止原生事件。
-order: 241
+order: 560
 ---
 
 ## 问题 1：如何阻止 React 事件冒泡？

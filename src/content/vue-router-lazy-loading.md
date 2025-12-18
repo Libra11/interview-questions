@@ -16,7 +16,7 @@ keywords:
   - 动态导入
   - 代码分割
 highlight: 路由懒加载通过动态 import() 实现，将每个路由组件打包成独立的 chunk，按需加载。
-order: 232
+order: 543
 ---
 
 ## 问题 1：什么是路由懒加载？

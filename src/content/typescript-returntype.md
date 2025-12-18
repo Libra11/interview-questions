@@ -17,7 +17,7 @@ keywords:
   - 函数返回类型
   - 类型推断
 highlight: ReturnType 是 TypeScript 中常用的工具类型，能够自动提取函数的返回值类型
-order: 115
+order: 371
 ---
 
 ## 问题 1：ReturnType 是什么？

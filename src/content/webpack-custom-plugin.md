@@ -17,7 +17,7 @@ keywords:
   - Compiler
   - Compilation
 highlight: Plugin 是一个带有 apply 方法的类，通过 Tapable 钩子介入 Webpack 构建流程的各个阶段。
-order: 625
+order: 755
 ---
 
 ## 问题 1：Plugin 的基本结构

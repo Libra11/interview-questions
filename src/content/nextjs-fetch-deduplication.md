@@ -17,7 +17,7 @@ keywords:
   - Next.js 优化
   - 性能优化
 highlight: 掌握 Next.js fetch 去重机制，理解自动去重的工作原理和优化效果
-order: 305
+order: 670
 ---
 
 ## 问题 1：什么是 fetch deduplication？

@@ -18,7 +18,7 @@ keywords:
   - 脚本加载
   - 页面渲染
 highlight: script 位置影响页面渲染和脚本执行时机，使用 defer/async 可以优化加载性能
-order: 101
+order: 315
 ---
 
 ## 问题 1：script 放在不同位置有什么区别？

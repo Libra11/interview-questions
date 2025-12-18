@@ -17,7 +17,7 @@ keywords:
   - contenthash
   - 浏览器缓存
 highlight: 理解三种 hash 的区别是优化浏览器缓存的关键，选对 hash 类型可以最大化缓存命中率
-order: 2
+order: 12
 ---
 
 ## 问题 1：webpack 中的 hash 是什么？

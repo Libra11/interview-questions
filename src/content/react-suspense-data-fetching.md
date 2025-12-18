@@ -17,7 +17,7 @@ keywords:
   - async rendering
   - streaming
 highlight: Suspense 数据获取通过"抛出 Promise"机制，让 React 知道组件正在等待数据。
-order: 229
+order: 536
 ---
 
 ## 问题 1：传统数据获取的问题？

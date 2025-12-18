@@ -16,7 +16,7 @@ keywords:
   - AbortController
   - 路由切换
 highlight: 使用 AbortController 配合路由守卫或组件卸载钩子，在路由变化时取消未完成的请求。
-order: 234
+order: 547
 ---
 
 ## 问题 1：为什么需要取消请求？

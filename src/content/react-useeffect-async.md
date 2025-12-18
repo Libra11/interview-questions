@@ -17,7 +17,7 @@ keywords:
   - cleanup function
   - Promise
 highlight: useEffect 回调必须返回 cleanup 函数或 undefined，而 async 函数返回 Promise，会破坏清理机制。
-order: 313
+order: 693
 ---
 
 ## 问题 1：问题现象

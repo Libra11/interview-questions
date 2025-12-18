@@ -16,7 +16,7 @@ keywords:
   - GlobalComponents
   - 类型声明
 highlight: 通过扩展 Vue 的 GlobalComponents 接口，为全局组件提供完整的类型支持。
-order: 255
+order: 589
 ---
 
 ## 问题 1：问题背景

@@ -17,7 +17,7 @@ keywords:
   - 缓存失效
   - 增量静态再生成
 highlight: revalidate 是实现 ISR 的核心配置，让静态页面也能保持数据新鲜度
-order: 23
+order: 148
 ---
 
 ## 问题 1：revalidate 的基本工作原理是什么？

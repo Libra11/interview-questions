@@ -19,7 +19,7 @@ keywords:
   - global properties
   - vue ecosystem
 highlight: 插件是 Vue 扩展能力的基石，通过 app.use() 安装，可以为应用添加全局级别的功能，如路由、状态管理和 UI 库。
-order: 132
+order: 411
 ---
 
 ## 问题 1：什么是 Vue 插件？有什么作用？

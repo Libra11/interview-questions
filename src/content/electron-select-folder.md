@@ -16,7 +16,7 @@ keywords:
   - openDirectory
   - dialog
 highlight: 使用 dialog.showOpenDialog 配合 openDirectory 属性实现文件夹选择
-order: 36
+order: 197
 ---
 
 ## 问题 1：如何打开文件夹选择对话框？

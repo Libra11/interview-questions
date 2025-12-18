@@ -17,7 +17,7 @@ keywords:
   - loader 缓存
   - 构建加速
 highlight: cache-loader 将 loader 的处理结果缓存到磁盘，下次构建时直接读取缓存，跳过耗时的转换过程。
-order: 656
+order: 786
 ---
 
 ## 问题 1：cache-loader 的作用

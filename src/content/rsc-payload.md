@@ -17,7 +17,7 @@ keywords:
   - 序列化
   - 组件传输
 highlight: RSC Payload 是 React Server Component 的核心传输格式，理解它是掌握 RSC 工作原理的关键
-order: 28
+order: 170
 ---
 
 ## 问题 1：RSC Payload 是什么？

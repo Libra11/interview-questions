@@ -17,7 +17,7 @@ keywords:
   - FormData
   - 数据验证
 highlight: Server Action 提供了最简洁的表单处理方式，无需 API 路由和复杂的客户端代码
-order: 34
+order: 192
 ---
 
 ## 问题 1：Server Action 如何接收表单数据？

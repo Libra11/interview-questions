@@ -17,7 +17,7 @@ keywords:
   - Popover API
   - Tooltip
 highlight: 掌握溢出检测算法与 Popover API 的正确使用方式，提升用户体验。
-order: 9
+order: 57
 ---
 
 ## 问题 1：基础方案 - CSS 文本溢出处理

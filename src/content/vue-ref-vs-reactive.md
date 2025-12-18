@@ -17,7 +17,7 @@ keywords:
   - .value
   - proxy
 highlight: ref 适用于所有类型且需要 .value 访问，reactive 只适用于对象类型但访问更简洁。实践中推荐优先使用 ref。
-order: 153
+order: 435
 ---
 
 ## 问题 1：核心区别对比

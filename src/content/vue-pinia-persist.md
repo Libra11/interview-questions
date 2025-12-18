@@ -16,7 +16,7 @@ keywords:
   - pinia-plugin-persistedstate
   - localStorage
 highlight: Pinia 持久化可通过 pinia-plugin-persistedstate 插件实现，也可手动使用 localStorage + $subscribe 实现。
-order: 237
+order: 553
 ---
 
 ## 问题 1：为什么需要持久化？

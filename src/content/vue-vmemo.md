@@ -16,7 +16,7 @@ keywords:
   - 性能优化
   - 缓存渲染
 highlight: v-memo 用于缓存模板子树，只有依赖值变化时才重新渲染，适合优化大型列表。
-order: 224
+order: 527
 ---
 
 ## 问题 1：v-memo 是什么？

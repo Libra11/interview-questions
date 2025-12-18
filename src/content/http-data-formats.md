@@ -17,7 +17,7 @@ keywords:
   - JSON
   - 表单数据
 highlight: 掌握 HTTP 常见数据格式及其使用场景，理解 Content-Type 的作用
-order: 210
+order: 482
 ---
 
 ## 问题 1：HTTP 中的 Content-Type 是什么？

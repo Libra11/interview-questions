@@ -17,7 +17,7 @@ keywords:
   - when to use memo
   - optimization
 highlight: React.memo 适合渲染成本高、props 稳定、频繁重渲染的纯展示组件。
-order: 266
+order: 610
 ---
 
 ## 问题 1：适合使用的场景？

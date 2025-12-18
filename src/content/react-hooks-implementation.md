@@ -18,7 +18,7 @@ keywords:
   - Hooks 链表
   - 闭包
 highlight: Hooks 通过 Fiber 节点的 memoizedState 链表存储状态
-order: 118
+order: 379
 ---
 
 ## 问题 1：Hooks 的存储结构是什么？

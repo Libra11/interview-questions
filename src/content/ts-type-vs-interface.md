@@ -17,7 +17,7 @@ keywords:
   - 类型声明
   - 声明合并
 highlight: 理解 type 和 interface 的核心区别，掌握在实际开发中的最佳实践
-order: 314
+order: 697
 ---
 
 ## 问题 1：type 和 interface 的基本定义是什么？

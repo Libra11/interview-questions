@@ -16,7 +16,7 @@ keywords:
   - 跨站脚本
   - 安全编码
 highlight: Electron 中的 XSS 比 Web 更危险，需要严格的输入验证和安全的 DOM 操作
-order: 41
+order: 211
 ---
 
 ## 问题 1：为什么 Electron 中的 XSS 更危险？

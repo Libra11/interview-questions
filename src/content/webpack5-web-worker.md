@@ -17,7 +17,7 @@ keywords:
   - 多线程
   - Webpack5
 highlight: Webpack 5 原生支持 Web Worker，无需额外 loader，直接使用 new Worker() 语法即可自动打包。
-order: 666
+order: 796
 ---
 
 ## 问题 1：Webpack 5 的 Worker 支持

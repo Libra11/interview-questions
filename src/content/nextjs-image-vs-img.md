@@ -17,7 +17,7 @@ keywords:
   - 图片优化
   - 原生 img
 highlight: next/image 提供自动优化、懒加载和响应式图片，显著提升性能和用户体验
-order: 12
+order: 76
 ---
 
 ## 问题 1：next/image 提供了哪些自动优化？

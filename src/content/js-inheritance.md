@@ -19,7 +19,7 @@ keywords:
   - 寄生组合继承
   - Class继承
 highlight: 寄生组合继承是 ES5 中最完善的继承方式，ES6 的 Class 继承本质上是寄生组合继承的语法糖
-order: 120
+order: 385
 ---
 
 ## 问题 1：什么是原型链继承？

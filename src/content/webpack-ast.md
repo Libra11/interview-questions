@@ -17,7 +17,7 @@ keywords:
   - 依赖分析
   - 代码转换
 highlight: Webpack 使用 AST 分析代码结构，识别 import/require 语句来收集依赖，并进行代码转换和优化。
-order: 628
+order: 758
 ---
 
 ## 问题 1：什么是 AST？

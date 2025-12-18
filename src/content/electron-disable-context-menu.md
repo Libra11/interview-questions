@@ -16,7 +16,7 @@ keywords:
   - contextmenu
   - 自定义菜单
 highlight: 通过 preventDefault 禁用默认右键菜单，然后实现自定义菜单
-order: 27
+order: 165
 ---
 
 ## 问题 1：如何完全禁用右键菜单？

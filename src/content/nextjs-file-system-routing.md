@@ -17,7 +17,7 @@ keywords:
   - 约定式路由
   - App Router
 highlight: 理解 Next.js 如何将文件结构映射为应用路由，掌握约定式路由的核心原理
-order: 401
+order: 711
 ---
 
 ## 问题 1：什么是文件系统路由？

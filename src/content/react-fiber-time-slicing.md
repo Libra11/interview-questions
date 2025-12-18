@@ -18,7 +18,7 @@ keywords:
   - requestIdleCallback
   - Scheduler
 highlight: Fiber 通过可中断的工作循环和优先级调度实现时间切片
-order: 108
+order: 347
 ---
 
 ## 问题 1：什么是时间切片？

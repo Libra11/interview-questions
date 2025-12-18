@@ -17,7 +17,7 @@ keywords:
   - 弱ETag
   - 缓存验证
 highlight: 理解 ETag 的变化机制，掌握强弱 ETag 的使用场景和最佳实践
-order: 207
+order: 470
 ---
 
 ## 问题 1：ETag 是什么，它是如何工作的？

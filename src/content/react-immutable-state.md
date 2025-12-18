@@ -18,7 +18,7 @@ keywords:
   - spread operator
   - shallow copy
 highlight: React 依赖引用相等性来检测变更，直接修改状态会导致更新丢失。使用 Spread 语法或 Immer 库是最佳实践。
-order: 128
+order: 402
 ---
 
 ## 问题 1：为什么 React 强调数据不可变性 (Immutability)？

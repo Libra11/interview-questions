@@ -17,7 +17,7 @@ keywords:
   - XSS
   - 安全策略
 highlight: CSP 是防御 XSS 攻击的重要安全机制，通过限制资源加载来源保护网站安全
-order: 5
+order: 26
 ---
 
 ## 问题 1：什么是 CSP？

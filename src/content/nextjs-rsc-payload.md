@@ -17,7 +17,7 @@ keywords:
   - Server Components
   - 客户端导航
 highlight: 理解 RSC Payload 的本质和工作机制，掌握服务端组件的传输原理
-order: 318
+order: 706
 ---
 
 ## 问题 1：什么是 RSC Payload？
